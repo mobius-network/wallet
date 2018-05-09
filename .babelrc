@@ -1,0 +1,12 @@
+{
+  "presets": [
+    "react-native",
+    "flow",
+    "react-native-dotenv"
+  ],
+  "plugins": [
+    ["babel-plugin-module-resolver", {
+      "root": ["./src"]
+    }],
+  ]
+}
