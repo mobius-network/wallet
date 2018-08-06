@@ -16,6 +16,7 @@ const config = {
       /.*\/packages\/components\/node_modules\/.*/,
     ]);
   },
+
   getProjectRoots() {
     return getRoots();
   },
@@ -28,8 +29,22 @@ const config = {
   getAssetRoots() {
     return getRoots();
   },
+
   extraNodeModules: {
     'react-native': path.resolve(cwd, './node_modules/react-native'),
+  },
+
+  getDependencyConfig(packageName) {
+    const platforms = this.getPlatformConfig();
+    const folder = path.join(process.cwd(), 'node_modules', packageName);
+
+    const result = { assets: [], commands: {}, params: [] };
+
+    Object.keys(platforms).forEach(key => {
+      result[key] = platforms[key].dependencyConfig(folder, {});
+    });
+
+    return result;
   },
 };
 
