@@ -1,0 +1,18 @@
+import { merge } from 'state/utils';
+import { createActions, createReducer } from 'redux-yo';
+
+export const {{ camelCase name }}Actions = createActions(['dummy'], '{{ camelCase name }}');
+
+const initialState = {
+  dummy: undefined,
+};
+
+export const {{ camelCase name }}Reducer = createReducer(
+  {
+    [{{ camelCase name }}Actions.dummy]: (state, value) =>
+      merge(state, {
+        value,
+      }),
+  },
+  initialState
+);

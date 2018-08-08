@@ -34,18 +34,18 @@ const config = {
     'react-native': path.resolve(cwd, './node_modules/react-native'),
   },
 
-  getDependencyConfig(packageName) {
-    const platforms = this.getPlatformConfig();
-    const folder = path.join(process.cwd(), 'node_modules', packageName);
-
-    const result = { assets: [], commands: {}, params: [] };
-
-    Object.keys(platforms).forEach(key => {
-      result[key] = platforms[key].dependencyConfig(folder, {});
-    });
-
-    return result;
-  },
+  // getDependencyConfig(packageName) {
+  //   const platforms = this.getPlatformConfig();
+  //   const folder = path.join(process.cwd(), 'node_modules', packageName);
+  //
+  //   const result = { assets: [], commands: {}, params: [] };
+  //
+  //   Object.keys(platforms).forEach(key => {
+  //     result[key] = platforms[key].dependencyConfig(folder, {});
+  //   });
+  //
+  //   return result;
+  // },
 };
 
 module.exports = config;

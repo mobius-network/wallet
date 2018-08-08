@@ -1,11 +1,9 @@
-// @flow
-
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-// import { API_HOST } from 'react-native-dotenv';
+// import PropTypes from 'prop-types';
+import { StyleSheet, View, Text } from 'react-native';
 import { SimpleCard } from '@mobius-network/components';
 
-type Props = {};
+// import { Container, Title } from './styles';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,23 +17,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
 });
 
-export default class App extends Component<Props> {
+class Dashboard extends Component {
   render() {
     return (
       <View style={styles.container}>
         <SimpleCard color="green" title="Card">
           <Text style={styles.welcome}>Welcome to React Native!</Text>
         </SimpleCard>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>text</Text>
+        <Text>Home Screen</Text>
       </View>
     );
   }
 }
+
+export default Dashboard;

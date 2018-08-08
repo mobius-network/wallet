@@ -1,0 +1,5 @@
+{{#if withContainer}}
+export { default } from './{{ properCase name }}Container';
+{{else}}
+export { default } from './{{ properCase name }}';
+{{/if}}

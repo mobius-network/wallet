@@ -1,0 +1,16 @@
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
+import { authActions, getIsAuthorized } from 'state/auth';
+
+import {{ properCase name }} from './{{ properCase name }}';
+
+const mapStateToProps = createStructuredSelector({
+  isAuthorized: getIsAuthorized,
+});
+
+const actions = {
+  ...authActions,
+};
+
+export default connect(mapStateToProps, actions)({{ properCase name }});
