@@ -40,12 +40,11 @@ module.exports = function configurePlop(plop) {
         });
       }
 
-      ['styles', 'index'].forEach(template =>
-        actions.push({
-          type: 'add',
-          path: `src/components/{{ path }}/{{ properCase name }}/${template}.js`,
-          templateFile: `templates/component/${template}.js.hbs`,
-        }));
+      ['styles', 'index'].forEach(template => actions.push({
+        type: 'add',
+        path: `src/components/{{ path }}/{{ properCase name }}/${template}.js`,
+        templateFile: `templates/component/${template}.js.hbs`,
+      }));
 
       return actions;
     },

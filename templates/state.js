@@ -14,12 +14,11 @@ module.exports = function configurePlop(plop) {
     actions: () => {
       const actions = [];
 
-      ['selectors', 'reducer', 'index'].forEach(template =>
-        actions.push({
-          type: 'add',
-          path: `src/state/{{ camelCase name }}/${template}.js`,
-          templateFile: `templates/state/${template}.js.hbs`,
-        }));
+      ['selectors', 'reducer', 'index'].forEach(template => actions.push({
+        type: 'add',
+        path: `src/state/{{ camelCase name }}/${template}.js`,
+        templateFile: `templates/state/${template}.js.hbs`,
+      }));
 
       return actions;
     },
