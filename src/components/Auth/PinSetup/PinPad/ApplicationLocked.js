@@ -64,57 +64,59 @@ class ApplicationLocked extends React.PureComponent {
           throw 'Quit application';
         }
       }}
-      style={this.props.styleButton ? this.props.styleButton : styles.button}>
+      style={this.props.styleButton ? this.props.styleButton : styles.button}
+    >
       <Text
         style={
           this.props.styleTextButton
             ? this.props.styleTextButton
             : styles.closeButtonText
-        }>
+        }
+      >
         {this.props.textButton}
       </Text>
     </TouchableOpacity>
-  )
+  );
 
   renderTimer = (minutes: number, seconds: number) => (
     <View
       style={
-        this.props.styleViewTimer
-          ? this.props.styleViewTimer
-          : styles.viewTimer
-      }>
+        this.props.styleViewTimer ? this.props.styleViewTimer : styles.viewTimer
+      }
+    >
       <Text
         style={
           this.props.styleTextTimer
             ? this.props.styleTextTimer
             : styles.textTimer
-        }>
+        }
+      >
         {`${minutes < 10 ? `0${minutes}` : minutes}:${
           seconds < 10 ? `0${seconds}` : seconds
         }`}
       </Text>
     </View>
-  )
+  );
 
   renderTitle = () => (
-    <Text
-      style={this.props.styleTitle ? this.props.styleTitle : styles.title}>
+    <Text style={this.props.styleTitle ? this.props.styleTitle : styles.title}>
       {this.props.textTitle || 'Maximum attempts reached'}
     </Text>
-  )
+  );
 
   renderIcon = () => (
     <View
       style={
         this.props.styleViewIcon ? this.props.styleViewIcon : styles.viewIcon
-      }>
+      }
+    >
       <Icon
         name={this.props.nameIcon ? this.props.nameIcon : 'lock'}
         size={this.props.sizeIcon ? this.props.sizeIcon : 24}
         color={this.props.colorIcon ? this.props.colorIcon : colors.white}
       />
     </View>
-  )
+  );
 
   renderErrorLocked = () => {
     const minutes = Math.floor(this.state.timeDiff / 1000 / 60);
@@ -129,7 +131,8 @@ class ApplicationLocked extends React.PureComponent {
           enter={{
             opacity: [1],
             timing: { delay: 1000, duration: 1500, ease: easeLinear },
-          }}>
+          }}
+        >
           {(state: any) => (
             <View
               style={[
@@ -137,7 +140,8 @@ class ApplicationLocked extends React.PureComponent {
                   ? this.props.styleViewTextLock
                   : styles.viewTextLock,
                 { opacity: state.opacity },
-              ]}>
+              ]}
+            >
               {this.props.titleComponent
                 ? this.props.titleComponent()
                 : this.renderTitle()}
@@ -150,7 +154,8 @@ class ApplicationLocked extends React.PureComponent {
               <Text
                 style={
                   this.props.styleText ? this.props.styleText : styles.text
-                }>
+                }
+              >
                 {this.props.textDescription
                   ? this.props.textDescription
                   : `To protect your information, access has been locked for ${Math.ceil(
@@ -160,7 +165,8 @@ class ApplicationLocked extends React.PureComponent {
               <Text
                 style={
                   this.props.styleText ? this.props.styleText : styles.text
-                }>
+                }
+              >
                 Come back later and try again.
               </Text>
             </View>
@@ -174,7 +180,8 @@ class ApplicationLocked extends React.PureComponent {
           enter={{
             opacity: [1],
             timing: { delay: 2000, duration: 1500, ease: easeLinear },
-          }}>
+          }}
+        >
           {(state: any) => (
             <View style={{ opacity: state.opacity, flex: 1 }}>
               <View
@@ -182,7 +189,8 @@ class ApplicationLocked extends React.PureComponent {
                   this.props.styleViewButton
                     ? this.props.styleViewButton
                     : styles.viewCloseButton
-                }>
+                }
+              >
                 {this.props.buttonComponent
                   ? this.props.buttonComponent()
                   : this.renderButton()}
@@ -192,7 +200,7 @@ class ApplicationLocked extends React.PureComponent {
         </Animate>
       </View>
     );
-  }
+  };
 
   render() {
     return (
@@ -201,7 +209,8 @@ class ApplicationLocked extends React.PureComponent {
           this.props.styleMainContainer
             ? this.props.styleMainContainer
             : styles.container
-        }>
+        }
+      >
         {this.renderErrorLocked()}
       </View>
     );

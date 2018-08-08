@@ -44,13 +44,13 @@ class PinCodeEnter extends React.PureComponent {
             this.launchTouchID();
           });
         })
-        .catch((error) => {
+        .catch(error => {
           console.warn('TouchID error', error);
         });
     }
   }
 
-  endProcess = async (pinCode) => {
+  endProcess = async pinCode => {
     if (this.props.handleResult) {
       this.props.handleResult(pinCode);
       return;
@@ -88,7 +88,7 @@ class PinCodeEnter extends React.PureComponent {
         this.props.changeInternalStatus(PinResultStatus.failure);
       }
     }
-  }
+  };
 
   async launchTouchID() {
     try {
@@ -109,7 +109,8 @@ class PinCodeEnter extends React.PureComponent {
           this.props.styleContainer
             ? this.props.styleContainer
             : styles.container
-        }>
+        }
+      >
         <PinCode
           endProcess={this.endProcess}
           sentenceTitle={this.props.title}

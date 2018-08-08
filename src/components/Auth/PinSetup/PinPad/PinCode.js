@@ -26,8 +26,8 @@ export const PinStatus = {
   enter: 'enter',
 };
 
-const vw = Dimensions.get('window').width; //full width
-const vh = Dimensions.get('window').height; //full height
+const vw = Dimensions.get('window').width;
+const vh = Dimensions.get('window').height;
 
 class PinCode extends React.PureComponent {
   constructor(props) {
@@ -128,19 +128,9 @@ class PinCode extends React.PureComponent {
         }}>
         {({ opacity }) => (
           <TouchableHighlight
-            style={
-              this.props.styleButtonCircle
-                ? this.props.styleButtonCircle
-                : styles.buttonCircle
-            }
-            underlayColor={
-              this.props.numbersButtonOverlayColor
-                ? this.props.numbersButtonOverlayColor
-                : colors.turquoise
-            }
+            style={styles.buttonCircle}
+            underlayColor="transparent"
             disabled={disabled}
-            onShowUnderlay={() => this.setState({ textButtonSelected: text })}
-            onHideUnderlay={() => this.setState({ textButtonSelected: '' })}
             onPress={() => {
               this.onPressButtonNumber(text);
             }}>
@@ -151,14 +141,7 @@ class PinCode extends React.PureComponent {
                   : styles.text,
                 {
                   opacity,
-                  color:
-                    this.state.textButtonSelected === text
-                      ? this.props.styleColorButtonTitleSelected
-                        ? this.props.styleColorButtonTitleSelected
-                        : colors.white
-                      : this.props.styleColorButtonTitle
-                        ? this.props.styleColorButtonTitle
-                        : colors.grey,
+                  color: colors.turquoise,
                 },
               ]}>
               {text}
@@ -397,7 +380,7 @@ class PinCode extends React.PureComponent {
             opacity: 0,
             colorTitle: this.props.styleColorTitle
               ? this.props.styleColorTitle
-              : colors.grey,
+              : colors.black,
             colorSubtitle: this.props.styleColorSubtitle
               ? this.props.styleColorSubtitle
               : colors.grey,
@@ -408,7 +391,7 @@ class PinCode extends React.PureComponent {
             colorTitle: [
               this.props.styleColorTitle
                 ? this.props.styleColorTitle
-                : colors.grey,
+                : colors.black,
             ],
             colorSubtitle: [
               this.props.styleColorSubtitle
@@ -475,7 +458,7 @@ class PinCode extends React.PureComponent {
             ? this.props.passwordComponent()
             : this.renderCirclePassword()}
         </View>
-        <Grid style={{ width: vw, borderWidth: 1 }}>
+        <Grid style={{ width: vw }}>
           <Row>
             {_.range(1, 4).map(i => (
               <Col key={i} style={{ justifyContent: 'center', alignItems: 'center' }}>
@@ -535,7 +518,6 @@ let styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
   },
   viewTitle: {
     flexDirection: 'column',
@@ -572,13 +554,12 @@ let styles = StyleSheet.create({
     borderRadius: grid.unit * 2,
   },
   textTitle: {
-    fontSize: 20,
-    fontWeight: '200',
-    lineHeight: grid.unit * 2.5,
+    fontSize: 30,
+    lineHeight: 60,
+    fontWeight: '600',
   },
   textSubtitle: {
-    fontSize: grid.unit,
-    fontWeight: '200',
+    fontSize: 20,
     textAlign: 'center',
   },
   viewCirclePassword: {

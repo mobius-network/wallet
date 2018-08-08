@@ -1,6 +1,10 @@
 import * as React from 'react';
 import {
-  StyleProp, StyleSheet, TextStyle, View, ViewStyle,
+  StyleProp,
+  StyleSheet,
+  TextStyle,
+  View,
+  ViewStyle,
 } from 'react-native';
 import * as Keychain from 'react-native-keychain';
 import PinCode, { PinStatus } from './PinCode';
@@ -17,11 +21,11 @@ class PinCodeChoose extends React.PureComponent {
     this.endProcessConfirm = this.endProcessConfirm.bind(this);
   }
 
-  endProcessCreation = (pinCode) => {
+  endProcessCreation = pinCode => {
     this.setState({ pinCode, status: PinStatus.confirm });
-  }
+  };
 
-  endProcessConfirm = async (pinCode) => {
+  endProcessConfirm = async pinCode => {
     if (pinCode === this.state.pinCode) {
       if (this.props.storePin) {
         this.props.storePin(pinCode);
@@ -35,11 +39,11 @@ class PinCodeChoose extends React.PureComponent {
     } else {
       this.setState({ status: PinStatus.choose });
     }
-  }
+  };
 
   cancelConfirm = () => {
     this.setState({ status: PinStatus.choose });
-  }
+  };
 
   render() {
     return (
@@ -48,7 +52,8 @@ class PinCodeChoose extends React.PureComponent {
           this.props.styleContainer
             ? this.props.styleContainer
             : styles.container
-        }>
+        }
+      >
         {this.state.status === PinStatus.choose && (
           <PinCode
             endProcess={this.endProcessCreation}

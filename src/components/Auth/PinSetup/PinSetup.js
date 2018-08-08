@@ -12,7 +12,6 @@ class PinSetup extends Component {
   render() {
     return (
       <Container>
-        <Title>PinSetup</Title>
         <PINCode
           status="choose"
           passwordLength={6}

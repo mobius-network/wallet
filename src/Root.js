@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { SafeAreaView, StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { I18nextProvider } from 'react-i18next';
@@ -25,7 +26,10 @@ class Root extends Component {
       <Provider store={store}>
         <I18nextProvider i18n={i18n}>
           <PersistGate loading={<Loading fullScreen />} persistor={persistor}>
-            <Navigator />
+            <SafeAreaView style={{ flex: 1, backgroundColor: '#297ebd' }}>
+              <StatusBar barStyle="light-content" />
+              <Navigator />
+            </SafeAreaView>
           </PersistGate>
         </I18nextProvider>
       </Provider>

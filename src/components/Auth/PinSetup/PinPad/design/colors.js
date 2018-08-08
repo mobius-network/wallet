@@ -1,4 +1,5 @@
 const colors = {
+  black: '#000000',
   red: '#FC4349',
   alert: '#FC4349',
   green: '#8CC63F',
@@ -11,8 +12,8 @@ const colors = {
   base: '#445878',
   primary: '#799AE0',
   pink: '#FF87C3',
-  grey: '#9dafc8',
-  turquoise: '#7BCDD0',
+  grey: '#7d7d7e',
+  turquoise: '#3994e2',
   darkBlue: '#1B4581',
   cash: '#FF87C3',
   nzSecurities: '#799AE0',
@@ -24,7 +25,7 @@ const colors = {
   globalDebtSecurities: '#213249',
 };
 
-const documentColor = (docType) => {
+const documentColor = docType => {
   switch (docType) {
     case 'CUSTODY_REPORT':
       return colors.pink;

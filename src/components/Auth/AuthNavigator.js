@@ -6,4 +6,6 @@ import PinSetup from './PinSetup';
 export default createStackNavigator({
   Welcome,
   PinSetup,
+}, {
+  headerMode: 'none',
 });
