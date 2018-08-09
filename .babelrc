@@ -12,6 +12,10 @@
           "./src"
         ]
       }
-    ]
+    ],
+    ["babel-plugin-rewrite-require", {
+      aliases: {
+      }
+    }]
   ]
 }

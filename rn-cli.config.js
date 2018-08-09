@@ -31,9 +31,23 @@ const config = {
   },
 
   extraNodeModules: {
+    // TODO: filter out unnecessary libraries
     'react-native': path.resolve(cwd, './node_modules/react-native'),
+    'react-native-crypto': path.resolve(cwd, './node_modules/react-native-crypto'),
+    crypto: path.resolve(cwd, './node_modules/react-native-crypto'),
+    stream: path.resolve(cwd, './node_modules/stream-browserify'),
+    randombytes: path.resolve(cwd, './node_modules/react-native-randombytes'),
+    eventsource: path.resolve(cwd, './node_modules/react-native-event-source'),
+    '@tradle/react-native-http': path.resolve(cwd, './node_modules/@tradle/react-native-http'),
+    vm: path.resolve(cwd, './node_modules/vm-browserify'),
+    fs: path.resolve(cwd, './node_modules/react-native-level-fs'),
+    path: path.resolve(cwd, './node_modules/path-browserify'),
+    https: path.resolve(cwd, './node_modules/https-browserify'),
+    'https-browserify': path.resolve(cwd, './node_modules/https-browserify'),
+    http: path.resolve(cwd, './node_modules/@tradle/react-native-http'),
   },
 
+  // TODO: fix non RN error happeninng on `react-native link`
   // getDependencyConfig(packageName) {
   //   const platforms = this.getPlatformConfig();
   //   const folder = path.join(process.cwd(), 'node_modules', packageName);

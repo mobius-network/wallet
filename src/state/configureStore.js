@@ -1,3 +1,4 @@
+import { boostStore, createRequestMiddleware } from 'redux-boost'
 import { createStore, applyMiddleware, compose } from 'redux';
 import { persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
@@ -41,6 +42,7 @@ function makeStore(initialState = {}) {
   const createStoreWithMiddleware = enhance([
     sagaMiddleware,
     eventFilterMiddleware,
+    createRequestMiddleware(),
   ]);
 
   const store = createStoreWithMiddleware(getReducer(), initialState);
@@ -51,6 +53,8 @@ function makeStore(initialState = {}) {
 }
 
 const store = makeStore();
+
+boostStore(store);
 
 export const persistor = persistStore(store);
 

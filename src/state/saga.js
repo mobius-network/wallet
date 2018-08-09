@@ -1,7 +1,17 @@
-import { fork, all } from 'redux-saga/effects';
+import { all, call } from 'redux-saga/effects';
 
-// import sagas from './sagas';
+import {
+  watchAccountSaga,
+  signupSaga,
+  submitTransactionSaga,
+  loginSaga,
+} from '@mobius-network/core';
 
 export default function* rootSaga() {
-  yield all([fork([])]);
+  yield all([
+    call(watchAccountSaga),
+    call(signupSaga),
+    call(submitTransactionSaga),
+    call(loginSaga),
+  ]);
 }

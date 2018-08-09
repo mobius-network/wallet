@@ -15,25 +15,51 @@
     "create:component": "plop component",
     "create:state": "plop state",
     "clean": "watchman watch-del-all && rm -rf ./ios/build ./android/build $TMPDIR/react-*",
-    "link": "react-native link"
+    "link": "react-native link",
+    "postinstall_": "node_modules/.bin/rn-nodeify --install crypto --hack"
   },
   "dependencies": {
     "@haskkor/react-native-pincode": "https://github.com/valerybugakov/react-native-pincode",
     "@mobius-network/components": "0.0.1",
+    "@tradle/react-native-http": "^2.0.1",
+    "assert": "^1.1.1",
+    "asyncstorage-down": "^4.0.1",
+    "browserify-zlib": "~0.1.4",
+    "console-browserify": "^1.1.0",
+    "constants-browserify": "^1.0.0",
+    "crypto-browserify": "^3.12.0",
+    "dns.js": "^1.0.1",
+    "events": "^1.0.0",
+    "eventsource": "^1.0.5",
+    "https-browserify": "^1.0.0",
     "i18next": "^11.5.0",
     "i18next-react-native-language-detector": "^1.0.2",
+    "level-filesystem": "^1.2.0",
+    "levelup": "^3.1.1",
+    "path-browserify": "^1.0.0",
+    "process": "^0.11.0",
     "react": "16.4.2",
     "react-native": "0.56.0",
+    "react-native-crypto": "^2.1.2",
     "react-native-easy-grid": "0.2.0",
+    "react-native-event-source": "^1.0.1",
     "react-native-i18n": "^2.0.15",
     "react-native-keychain": "^3.0.0",
+    "react-native-level-fs": "^3.0.1",
+    "react-native-randombytes": "^3.5.0",
+    "react-native-stream": "^0.1.9",
     "react-native-vector-icons": "^5.0.0",
     "react-navigation": "^2.11.2",
     "redux": "^4.0.0",
+    "redux-boost": "^0.0.19",
     "redux-logger": "^3.0.6",
     "redux-persist": "^5.9.1",
     "redux-saga": "^0.16.0",
-    "styled-components": "^3.4.1"
+    "stellar-hd-wallet": "^0.0.7",
+    "stellar-sdk": "^0.10.2",
+    "stream-browserify": "^2.0.1",
+    "styled-components": "^3.4.1",
+    "vm-browserify": "^1.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.0.0-beta.56",
@@ -42,6 +68,7 @@
     "babel-eslint": "^8.2.6",
     "babel-jest": "23.4.2",
     "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-rewrite-require": "^1.14.5",
     "babel-preset-react-native": "^5.0.0",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.0.0",
@@ -56,10 +83,8 @@
     "lint-staged": "^7.2.0",
     "prettier": "^1.12.1",
     "react-native-dotenv": "^0.2.0",
-    "react-test-renderer": "16.4.2"
-  },
-  "resolutions": {
-    "react-native-easy-grid": "^0.2.0"
+    "react-test-renderer": "16.4.2",
+    "rn-nodeify": "tradle/rn-nodeify"
   },
   "jest": {
     "preset": "react-native"

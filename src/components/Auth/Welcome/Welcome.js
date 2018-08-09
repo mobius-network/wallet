@@ -14,8 +14,9 @@ class Welcome extends Component {
     return (
       <Container>
         <Title>Welcome</Title>
+        <Title>Create a wallet ...</Title>
         <StartButton
-          title="Go to Details"
+          title="Setup wallet"
           onPress={() => navigation.navigate('PinSetup')}
         />
       </Container>
