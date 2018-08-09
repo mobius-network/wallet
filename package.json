@@ -15,14 +15,21 @@
     "create:component": "plop component",
     "create:state": "plop state",
     "clean": "watchman watch-del-all && rm -rf ./ios/build ./android/build $TMPDIR/react-*",
-    "link": "react-native link"
+    "link": "react-native link",
+    "hack:crypto": "node_modules/.bin/rn-nodeify --install crypto --hack"
   },
   "dependencies": {
     "@haskkor/react-native-pincode": "https://github.com/valerybugakov/react-native-pincode",
     "@mobius-network/components": "0.0.1",
     "@tradle/react-native-http": "^2.0.1",
+    "assert": "^1.1.1",
     "asyncstorage-down": "^4.0.1",
+    "browserify-zlib": "~0.1.4",
+    "console-browserify": "^1.1.0",
+    "constants-browserify": "^1.0.0",
     "crypto-browserify": "^3.12.0",
+    "dns.js": "^1.0.1",
+    "events": "^1.0.0",
     "eventsource": "^1.0.5",
     "https-browserify": "^1.0.0",
     "i18next": "^11.5.0",
