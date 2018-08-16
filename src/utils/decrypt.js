@@ -1,7 +1,7 @@
 import crypto from 'crypto';
 import * as Keychain from 'react-native-keychain';
 
-export async function encrypt(password) {
+export async function decrypt(password) {
   const encryptedMnemonic = await Keychain.getGenericPassword({
     service: 'mnemonic',
   });
