@@ -1,10 +1,12 @@
 import { createSwitchNavigator } from 'react-navigation';
 
+import wrapNavigator from 'components/shared/wrapNavigator';
+
 import Splash from 'components/Splash';
 import AuthStack from 'components/Auth';
 import AppStack from 'components/App';
 
-export default createSwitchNavigator(
+const MainNavigator = createSwitchNavigator(
   {
     Splash,
     Auth: AuthStack,
@@ -14,3 +16,5 @@ export default createSwitchNavigator(
     initialRouteName: 'Auth',
   }
 );
+
+export default wrapNavigator('Main')(MainNavigator);

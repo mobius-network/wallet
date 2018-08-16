@@ -1,7 +1,7 @@
 import store from './configureStore';
-// import rootSaga from './saga';
+import rootSaga from './saga';
 
-// store.runSaga(rootSaga);
+store.runSaga(rootSaga);
 
 export { persistor } from './configureStore';
 

@@ -1,9 +1,11 @@
-import { boostStore, createRequestMiddleware } from 'redux-boost'
+import axios from 'axios';
 import { createStore, applyMiddleware, compose } from 'redux';
+import { boostStore, createRequestMiddleware } from 'redux-boost';
 import { persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import eventFilterMiddleware from 'event-filter-redux-middleware';
 
+import { apiUrl } from 'utils';
 import { isDev } from 'utils/env';
 import getReducer from './reducer';
 
@@ -42,7 +44,11 @@ function makeStore(initialState = {}) {
   const createStoreWithMiddleware = enhance([
     sagaMiddleware,
     eventFilterMiddleware,
-    createRequestMiddleware(),
+    createRequestMiddleware({
+      executor: axios.create({
+        baseURL: `${apiUrl}/`,
+      }),
+    }),
   ]);
 
   const store = createStoreWithMiddleware(getReducer(), initialState);

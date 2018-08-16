@@ -1,1 +1,1 @@
-export { default } from './AuthNavigator';
+export * from './AuthNavigator';

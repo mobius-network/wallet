@@ -41,6 +41,7 @@
     "max-len": ["error", 100],
     "no-constant-condition": 0,
     "class-methods-use-this": 0,
+    "implicit-arrow-linebreak": 0,
     "space-before-function-paren": 0,
     "quotes": ["error", "single"],
     "indent": ["error", 2, {

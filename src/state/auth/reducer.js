@@ -2,7 +2,7 @@ import StellarHDWallet from 'stellar-hd-wallet';
 import { REHYDRATE } from 'redux-persist';
 
 import { createReducer, merge } from 'redux-boost';
-import { accountActions } from '@mobius-network/core';
+import { accountActions } from '../account/reducer';
 import { authActions } from './actions';
 
 export * from './actions';
