@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
+import SplashScreen from 'react-native-splash-screen';
 import { PersistGate } from 'redux-persist/integration/react';
 import { I18nextProvider } from 'react-i18next';
 
@@ -14,6 +15,10 @@ import Navigator from './Navigator';
 import { SafeArea } from './styles';
 
 class Root extends Component {
+  componentDidMount() {
+    SplashScreen.hide();
+  }
+
   // componentDidCatch(error, info) {
   //   notify(error, info);
   // }

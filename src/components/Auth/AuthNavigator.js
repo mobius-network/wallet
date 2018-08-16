@@ -5,7 +5,7 @@ import wrapNavigator, { routeKeys } from 'components/shared/wrapNavigator';
 import Welcome from './Welcome';
 import PinSetup from './PinSetup';
 
-const AuthNavigator = createStackNavigator(
+export const AuthNavigator = createStackNavigator(
   {
     Welcome,
     PinSetup,
