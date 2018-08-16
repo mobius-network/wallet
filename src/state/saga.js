@@ -1,12 +1,5 @@
 import { all } from 'redux-saga/effects';
 
-// import {
-//   watchAccountSaga,
-//   signupSaga,
-//   submitTransactionSaga,
-//   loginSaga,
-// } from '@mobius-network/core';
-
 import watchAccountSaga from './sagas/watchAccount';
 import signupSaga from './sagas/signup';
 import submitTransactionSaga from './sagas/submitTransaction';
