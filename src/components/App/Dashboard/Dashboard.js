@@ -1,13 +1,30 @@
 import React, { Component } from 'react';
 
-import { Container, Title } from './styles';
+import {
+  Gradient,
+  Title,
+  BalanceContainer,
+  CurrencySymbol,
+  BalanceAmount,
+} from './styles';
 
 class Dashboard extends Component {
+  static defaultProps = {
+    balanceAmount: 0,
+  };
+
   render() {
+    const { balanceAmount } = this.props;
+
     return (
-      <Container>
-        <Title>Dashboard</Title>
-      </Container>
+      <Gradient>
+        <Title>Current Balance</Title>
+
+        <BalanceContainer>
+          <CurrencySymbol>$</CurrencySymbol>
+          <BalanceAmount>{balanceAmount}</BalanceAmount>
+        </BalanceContainer>
+      </Gradient>
     );
   }
 }

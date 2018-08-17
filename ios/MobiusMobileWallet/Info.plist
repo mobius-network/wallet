@@ -36,7 +36,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Entypo.ttf</string>
@@ -53,6 +53,18 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>Helvetica Neue Bold.ttf</string>
+		<string>Helvetica Neue Medium.ttf</string>
+		<string>Helvetica Neue Thin.ttf</string>
+		<string>Helvetica Neue.ttf</string>
+		<string>Nunito Sans Bold.ttf</string>
+		<string>Nunito Sans Light.ttf</string>
+		<string>Nunito Sans Regular.ttf</string>
+		<string>Nunito Sans SemiBold.ttf</string>
+		<string>Roboto Bold.ttf</string>
+		<string>Roboto Medium.ttf</string>
+		<string>Roboto Thin.ttf</string>
+		<string>Roboto.ttf</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
