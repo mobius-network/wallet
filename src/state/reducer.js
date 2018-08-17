@@ -4,12 +4,10 @@ import { AsyncStorage } from 'react-native';
 import { persistReducer } from 'redux-persist';
 import { reducer as formReducer } from 'redux-form';
 
-import {
-  authReducer,
-  accountReducer,
-  notificationsReducer,
-  transfersReducer,
-} from '@mobius-network/core';
+import { accountReducer } from './account';
+import { authReducer } from './auth';
+import { notificationsReducer } from './notifications';
+import { transfersReducer } from './transfers';
 
 const rootReducer = combineReducers({
   form: formReducer,

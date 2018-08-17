@@ -4,9 +4,14 @@ import wrapNavigator, { routeKeys } from 'components/shared/wrapNavigator';
 
 import Dashboard from './Dashboard';
 
-export const AppNavigator = createStackNavigator({
-  Dashboard,
-});
+export const AppNavigator = createStackNavigator(
+  {
+    Dashboard,
+  },
+  {
+    headerMode: 'none',
+  }
+);
 
 export const appRoutes = routeKeys(AppNavigator);
 
