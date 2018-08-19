@@ -4,7 +4,7 @@ import jwt from 'react-native-jwt';
 const deviceId = DeviceInfo.getDeviceId();
 const secret = 'hardcoded';
 
-export default function encodeFundToken(address) {
+export function encodeFundToken(address) {
   const payload = {
     sub: address,
     jti: deviceId,

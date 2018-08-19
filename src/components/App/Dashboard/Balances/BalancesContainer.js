@@ -1,23 +1,23 @@
 import { connect } from 'react-redux';
 
 import { authActions } from 'state/auth';
+import { getAssetInfo } from 'state/prices';
 
 import Balances from './Balances';
 
-const mapStateToProps = () => ({
+const mapStateToProps = state => ({
   balances: [
-    {
+    // TODO: simplify seletors
+    getAssetInfo(state, {
       asset: 'mobi',
-      usdPrice: 0.035386,
-      usdAmount: 0,
-      amount: 0,
-    },
-    {
-      asset: 'xlm',
-      usdPrice: 0.179123,
-      usdAmount: 0,
-      amount: 0,
-    },
+      sellAsset: 'mobi',
+      buyAsset: 'usd',
+    }),
+    getAssetInfo(state, {
+      asset: 'native',
+      sellAsset: 'xlm',
+      buyAsset: 'usd',
+    }),
   ],
 });
 

@@ -3,12 +3,20 @@ import PINCode from './PinPad';
 // import * as Keychain from 'react-native-keychain'
 // import PropTypes from 'prop-types';
 
-import { Container, Title } from './styles';
+import { Container } from './styles';
 
 class PinSetup extends Component {
   static propTypes = {
     // name: PropTypes.string.isRequired,
   };
+
+  componentDidMount() {
+    // TODO: delete me
+    setTimeout(() => {
+      // NOTE: timeout is required to wait for navigators to register on mount
+      this.props.loginStart({ password: '123123' });
+    }, 1000);
+  }
 
   render() {
     const { navigation } = this.props;

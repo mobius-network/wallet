@@ -17,7 +17,7 @@ class Dashboard extends Component {
   };
 
   render() {
-    const { balanceAmount } = this.props;
+    const { usdBalance } = this.props;
 
     return (
       <Container>
@@ -26,7 +26,7 @@ class Dashboard extends Component {
 
           <BalanceContainer>
             <CurrencySymbol>$</CurrencySymbol>
-            <BalanceAmount>{balanceAmount}</BalanceAmount>
+            <BalanceAmount>{usdBalance}</BalanceAmount>
           </BalanceContainer>
         </Gradient>
 

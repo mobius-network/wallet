@@ -14,8 +14,8 @@ const MainNavigator = createSwitchNavigator(
   },
   {
     // TODO: revert initial route to Auth
-    // initialRouteName: 'Auth',
-    initialRouteName: 'App',
+    initialRouteName: 'Auth',
+    // initialRouteName: 'App',
   }
 );
 

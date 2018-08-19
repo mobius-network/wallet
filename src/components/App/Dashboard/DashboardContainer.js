@@ -1,19 +1,15 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { authActions, getIsAuthorized } from 'state/auth';
+import { getUsdBalance } from 'state/prices';
 
 import Dashboard from './Dashboard';
 
 const mapStateToProps = createStructuredSelector({
-  isAuthorized: getIsAuthorized,
+  usdBalance: getUsdBalance,
 });
-
-const actions = {
-  ...authActions,
-};
 
 export default connect(
   mapStateToProps,
-  actions
+  null
 )(Dashboard);

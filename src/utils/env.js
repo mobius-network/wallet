@@ -6,4 +6,7 @@ export const apiUrl = process.env.API_URL;
 
 if (isDev) {
   console.disableYellowBox = true;
+
+  // Show network requests in remote debugger
+  global.XMLHttpRequest = global.originalXMLHttpRequest || global.XMLHttpRequest;
 }

@@ -8,12 +8,14 @@ import { accountReducer } from './account';
 import { authReducer } from './auth';
 import { notificationsReducer } from './notifications';
 import { transfersReducer } from './transfers';
+import { pricesReducer } from './prices';
 
 const rootReducer = combineReducers({
   form: formReducer,
   data: dataReducer,
   requests: requestsReducer,
 
+  prices: pricesReducer,
   auth: authReducer,
   masterAccount: accountReducer,
   notifications: notificationsReducer,

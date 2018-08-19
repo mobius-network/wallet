@@ -3,9 +3,8 @@ import { fetchStart } from 'redux-boost';
 import StellarHDWallet from 'stellar-hd-wallet';
 import * as Keychain from 'react-native-keychain';
 import { takeLatest, call, put } from 'redux-saga/effects';
-import { encrypt } from '@mobius-network/core';
 
-import encodeFundToken from 'utils/jwt';
+import { encrypt, encodeFundToken } from 'utils';
 import navigator from 'state/navigator';
 
 // import navigator from 'state/navigator';
