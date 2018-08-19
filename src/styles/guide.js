@@ -1,5 +1,7 @@
 export const colors = {
   darkBlue: '#0E497D',
+  darkGray: '#1B1D1D',
+  gray: '#A7AEB8',
 };
 
 export const fonts = {

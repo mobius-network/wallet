@@ -20,6 +20,7 @@ export const Gradient = styled(LinearGradient).attrs({
 `;
 
 export const Title = styled.Text`
+  margin-bottom: 16;
   font-size: 14;
   font-family: ${fonts.helveticaNeue.bold};
   color: ${colors.darkBlue};
@@ -33,6 +34,7 @@ export const BalanceContainer = styled.View`
 `;
 
 export const CurrencySymbol = styled.Text`
+  margin-right: 2;
   font-size: 28;
   font-family: ${fonts.roboto.regular};
   color: white;
@@ -40,6 +42,7 @@ export const CurrencySymbol = styled.Text`
 
 export const BalanceAmount = styled.Text`
   font-size: 54;
+  line-height: 54;
   font-family: ${fonts.roboto.regular};
   color: white;
 `;

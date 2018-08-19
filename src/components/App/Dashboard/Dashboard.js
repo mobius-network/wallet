@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
+import Balances from './Balances';
+
 import {
+  Container,
   Gradient,
   Title,
   BalanceContainer,
@@ -17,14 +20,18 @@ class Dashboard extends Component {
     const { balanceAmount } = this.props;
 
     return (
-      <Gradient>
-        <Title>Current Balance</Title>
+      <Container>
+        <Gradient>
+          <Title>Current Balance</Title>
 
-        <BalanceContainer>
-          <CurrencySymbol>$</CurrencySymbol>
-          <BalanceAmount>{balanceAmount}</BalanceAmount>
-        </BalanceContainer>
-      </Gradient>
+          <BalanceContainer>
+            <CurrencySymbol>$</CurrencySymbol>
+            <BalanceAmount>{balanceAmount}</BalanceAmount>
+          </BalanceContainer>
+        </Gradient>
+
+        <Balances />
+      </Container>
     );
   }
 }
