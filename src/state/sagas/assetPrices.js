@@ -1,4 +1,3 @@
-import axios from 'axios';
 import CoinMarketCap from 'coinmarketcap-api';
 import { delay } from 'redux-saga';
 import {
@@ -13,7 +12,7 @@ const currencyIds = {
   xlm: 512,
 };
 
-const marketCapClient = new CoinMarketCap({ fetcher: axios });
+const marketCapClient = new CoinMarketCap();
 const watchers = {};
 
 export function* loadCurrencyPrice(id) {
