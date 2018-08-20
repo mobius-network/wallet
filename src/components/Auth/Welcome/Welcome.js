@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-import { Container, Title, StartButton } from './styles';
+import NoticeView from 'components/shared/NoticeView';
+import Button from 'components/shared/Button';
 
 class Welcome extends Component {
   static propTypes = {
-    // name: PropTypes.string.isRequired,
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func.isRequired,
+    }).isRequired,
   };
 
-  render() {
-    const { navigation } = this.props;
+  handleNavigationClick = to => () => this.props.navigation.navigate(to);
 
+  render() {
     return (
-      <Container>
-        <Title>Welcome</Title>
-        <Title>Create a wallet ...</Title>
-        <StartButton
+      <NoticeView
+        title="Welcome"
+        description="Create a wallet to send and receive money with friends using cryptocurrency."
+      >
+        <Button
           title="Setup wallet"
-          onPress={() => navigation.navigate('PinSetup')}
+          onPress={this.handleNavigationClick('PinSetup')}
         />
-      </Container>
+        <Button
+          title="Recover Existing Account"
+          onPress={() => {}}
+          variant="text"
+        />
+      </NoticeView>
     );
   }
 }
