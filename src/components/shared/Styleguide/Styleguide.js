@@ -6,10 +6,10 @@ export const colors = {
   lightBorder: '#E6E6E6',
   textDefault: '#000000',
   textWhite: '#FFFFFF',
-  textLight: '#999999',
+  textLight: '#A7AEB8',
   textPrimary: '#3894E6',
   textSecondary: '#666666',
-  darkBlue: '#3A4372',
+  darkBlue: '#0E497D',
   error: '#EB506A',
 };
 
@@ -35,13 +35,10 @@ export const fonts = {
 };
 
 export const fontSizes = {
-  title: 40,
-  default: 16,
   button: 14,
-};
-
-export const lineHeights = {
-  calculateDefault: fontSize => fontSize * 1.6,
+  default: 16,
+  small: 13,
+  title: 40,
 };
 
 export const shadows = {

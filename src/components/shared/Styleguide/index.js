@@ -1,4 +1,4 @@
-import * as Styleguide from './Styleguide';
+import * as helpers from './helpers';
 
-export default Styleguide;
 export * from './Styleguide';
+export { helpers };

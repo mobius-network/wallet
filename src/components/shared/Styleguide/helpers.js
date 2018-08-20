@@ -7,4 +7,7 @@ export const centerContentFlex = `
 `;
 
 export const vw = Dimensions.get('window').width;
+
 export const vh = Dimensions.get('window').height;
+
+export const calculateLineHeight = fontSize => fontSize * 1.6;

@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
-import { fonts, colors } from 'styles';
+import { colors, fonts, fontSizes } from 'components/shared/Styleguide';
 
 import Icon from 'components/shared/Icon';
 
 export const Container = styled.View`
+  align-items: center;
   display: flex;
   flex-direction: row;
+  margin-bottom: 31;
   margin-left: 16;
   margin-right: 16;
-  margin-bottom: 31;
-  align-items: center;
 `;
 
 export const CurrencyIcon = styled(Icon)`
@@ -20,37 +20,37 @@ export const CurrencyIcon = styled(Icon)`
 export const AssetInfo = styled.View``;
 
 export const Asset = styled.Text`
-  font-size: 16;
+  color: ${colors.textDefault};
   font-family: ${fonts.roboto.regular};
-  color: ${colors.darkGray};
+  font-size: ${fontSizes.default};
   line-height: 24;
   text-transform: uppercase;
 `;
 
 export const Price = styled.Text`
-  font-size: 13;
+  color: ${colors.textLight};
   font-family: ${fonts.roboto.regular};
-  color: ${colors.gray};
+  font-size: ${fontSizes.small};
   line-height: 14;
 `;
 
 export const AmountInfo = styled.View`
+  align-items: flex-end;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   margin-left: auto;
 `;
 
 export const UsdAmount = styled.Text`
-  font-size: 16;
+  color: ${colors.textDefault};
   font-family: ${fonts.roboto.bold};
-  color: ${colors.darkGray};
+  font-size: ${fontSizes.default};
   line-height: 24;
 `;
 
 export const Amount = styled.Text`
-  font-size: 13;
+  color: ${colors.textLight};
   font-family: ${fonts.roboto.regular};
-  color: ${colors.gray};
+  font-size: ${fontSizes.small};
   line-height: 14;
 `;

@@ -4,7 +4,7 @@ import {
   colors,
   fonts,
   fontSizes,
-  lineHeights,
+  helpers,
 } from 'components/shared/Styleguide';
 
 export const ImageBackgroundView = styled.ImageBackground`
@@ -27,7 +27,7 @@ export const Title = styled.Text`
   font-family: ${fonts.helveticaNeue.bold};
   font-size: ${fontSizes.title};
   font-weight: bold;
-  line-height: ${lineHeights.calculateDefault(fontSizes.title)};
+  line-height: ${helpers.calculateLineHeight(fontSizes.title)};
   margin-bottom: 10;
   text-align: center;
 `;
@@ -36,7 +36,7 @@ export const Description = styled.Text`
   color: ${colors.textSecondary};
   font-family: ${fonts.helveticaNeue.regular};
   font-size: ${fontSizes.default};
-  line-height: ${lineHeights.calculateDefault(fontSizes.default)};
+  line-height: ${helpers.calculateLineHeight(fontSizes.default)};
   margin-bottom: 50;
   text-align: center;
 `;
