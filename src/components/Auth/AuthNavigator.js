@@ -12,7 +12,7 @@ export const AuthNavigator = createStackNavigator(
   },
   {
     headerMode: 'none',
-    initialRouteName: 'PinSetup',
+    initialRouteName: 'Welcome',
   }
 );
 

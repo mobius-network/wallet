@@ -1,19 +1,5 @@
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-
-import { authActions, getIsAuthorized } from 'state/auth';
+import { translate } from 'react-i18next';
 
 import Welcome from './Welcome';
 
-const mapStateToProps = createStructuredSelector({
-  isAuthorized: getIsAuthorized,
-});
-
-const actions = {
-  ...authActions,
-};
-
-export default connect(
-  mapStateToProps,
-  actions
-)(Welcome);
+export default translate('translation')(Welcome);

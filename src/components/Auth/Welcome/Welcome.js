@@ -9,24 +9,22 @@ class Welcome extends Component {
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
     }).isRequired,
+    t: PropTypes.func.isRequired,
   };
 
   handleNavigationClick = to => () => this.props.navigation.navigate(to);
 
   render() {
+    const { t } = this.props;
+
     return (
       <NoticeView
-        title="Welcome"
-        description="Create a wallet to send and receive money with friends using cryptocurrency."
+        description={t('welcome.description')}
+        title={t('welcome.title')}
       >
         <Button
-          title="Setup wallet"
           onPress={this.handleNavigationClick('PinSetup')}
-        />
-        <Button
-          title="Recover Existing Account"
-          onPress={() => {}}
-          variant="text"
+          title={t('welcome.setupWalletButton')}
         />
       </NoticeView>
     );
