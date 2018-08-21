@@ -4,7 +4,7 @@
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "2436h",
-      "filename" : "LaunchScreen1125x2436.png",
+      "filename" : "iphone-x.png",
       "minimum-system-version" : "11.0",
       "orientation" : "portrait",
       "scale" : "3x"
@@ -13,7 +13,7 @@
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "736h",
-      "filename" : "LaunchScreen1242x2208.png",
+      "filename" : "iPhone 6 Plus - Portrait.png",
       "minimum-system-version" : "8.0",
       "orientation" : "portrait",
       "scale" : "3x"
@@ -22,7 +22,7 @@
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "667h",
-      "filename" : "LaunchScreen750x1334.png",
+      "filename" : "iPhone 6 - Portrait.png",
       "minimum-system-version" : "8.0",
       "orientation" : "portrait",
       "scale" : "2x"
@@ -30,7 +30,7 @@
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
-      "filename" : "LaunchScreen640x960-2.png",
+      "filename" : "iPhone - Portrait@2x-1.png",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
       "scale" : "2x"
@@ -39,7 +39,7 @@
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "retina4",
-      "filename" : "LaunchScreen640 × 1136-1.png",
+      "filename" : "iPhone 5 - Portrait-1.png",
       "minimum-system-version" : "7.0",
       "orientation" : "portrait",
       "scale" : "2x"
@@ -47,21 +47,21 @@
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
-      "filename" : "79378-25123-default.png",
+      "filename" : "iPhone - Portrait.png",
       "extent" : "full-screen",
       "scale" : "1x"
     },
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
-      "filename" : "LaunchScreen640x960.png",
+      "filename" : "iPhone - Portrait@2x.png",
       "extent" : "full-screen",
       "scale" : "2x"
     },
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
-      "filename" : "LaunchScreen640 × 1136.png",
+      "filename" : "iPhone 5 - Portrait.png",
       "extent" : "full-screen",
       "subtype" : "retina4",
       "scale" : "2x"
