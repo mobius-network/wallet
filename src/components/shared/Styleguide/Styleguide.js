@@ -37,6 +37,7 @@ export const fonts = {
 export const fontSizes = {
   button: 14,
   default: 16,
+  secondaryTitle: 32,
   small: 13,
   title: 40,
 };

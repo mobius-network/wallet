@@ -68,7 +68,6 @@
     "import/no-unresolved": 2,
 
     "react/prefer-stateless-function": 0,
-    "react/prop-types": 0,
     "react/sort-comp": [2, {
       "order": [
         "static-methods",
@@ -85,7 +84,7 @@
         ]
       }
     }],
-
+    "react/no-deprecated": 0,
     "react-native/no-color-literals": 0
   }
 }
