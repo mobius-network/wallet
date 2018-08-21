@@ -61,7 +61,11 @@
       "allowShortCircuit": true,
       "allowTernary": true
     }],
-
+    "prefer-destructuring": ["error", {
+      "AssignmentExpression": {
+        "array": false
+      }
+    }],
     "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": 0,
     "import/named": 2,

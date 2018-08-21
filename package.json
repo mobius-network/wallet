@@ -19,8 +19,6 @@
     "hack:crypto": "node_modules/.bin/rn-nodeify --install crypto --hack"
   },
   "dependencies": {
-    "@haskkor/react-native-pincode": "https://github.com/valerybugakov/react-native-pincode",
-    "@mobius-network/components": "0.0.1",
     "@tradle/react-native-http": "^2.0.1",
     "assert": "^1.1.1",
     "asyncstorage-down": "^4.0.1",

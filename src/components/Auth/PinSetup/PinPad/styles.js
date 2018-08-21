@@ -1,5 +1,13 @@
-import styled from 'styled-components';
+import { StyleSheet } from 'react-native';
 
-export const Container = styled.View``;
+import { colors } from 'components/shared/Styleguide';
 
-export const Title = styled.Text``;
+export default StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    backgroundColor: colors.bgLight,
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
+});

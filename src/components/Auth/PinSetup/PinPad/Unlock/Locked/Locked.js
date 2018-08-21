@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
-const timeToLock = 150000; // 5 minutes
+const timeToLock = 300000; // 5 minutes
 
 class Locked extends Component {
   static propTypes = {
