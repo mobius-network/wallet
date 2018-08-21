@@ -9,6 +9,15 @@
       "title": "Welcome",
       "description": "Create a wallet to send and receive money with friends using cryptocurrency.",
       "setupWalletButton": "Setup Wallet"
+    },
+    "pinSetup": {
+      "chooseSubtitle": "Enter a 6-digit PIN to access your mobile wallet",
+      "chooseTitle": "Set a Pin",
+      "confirmSubtitle": "Please re-enter your PIN.",
+      "confirmTitle": "Confirm PIN",
+      "lockedSubtitle": "To protect your information, access has been locked for 5 minutes. Try again later.",
+      "lockedTitle": "Maximum attempts reached",
+      "unlockTitle": "Enter your PIN code"
     }
   }
 }

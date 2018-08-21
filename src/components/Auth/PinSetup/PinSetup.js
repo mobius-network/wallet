@@ -12,6 +12,7 @@ class PinSetup extends Component {
       navigate: PropTypes.func.isRequired,
     }).isRequired,
     signupStart: PropTypes.func.isRequired,
+    t: PropTypes.func.isRequired,
   };
 
   state = {
@@ -35,22 +36,21 @@ class PinSetup extends Component {
   }
 
   render() {
-    const { navigation } = this.props;
+    const { navigation, t } = this.props;
     const { isPinRetreived, pin, step } = this.state;
 
     if (isPinRetreived) {
       return (
         <PinPad
-          chooseSubtitle="Enter a 6-digit PIN to access your mobile wallet"
-          chooseTitle="Set a Pin"
-          confirmSubtitle="Please re-enter your PIN."
-          confirmTitle="Confirm PIN"
+          chooseSubtitle={t('pinSetup.chooseSubtitle')}
+          chooseTitle={t('pinSetup.chooseTitle')}
+          confirmSubtitle={t('pinSetup.confirmSubtitle')}
+          confirmTitle={t('pinSetup.confirmTitle')}
+          lockedSubtitle={t('pinSetup.lockedSubtitle')}
+          lockedTitle={t('pinSetup.lockedTitle')}
           pin={pin}
           step={step}
-          unlockTitle="Enter your PIN code"
-          lockedTitle="Maximum attempts reached"
-          lockedSubtitle="To protect your information, access has been locked for 5 minutes.
-            Try again later."
+          unlockTitle={t('pinSetup.unlockTitle')}
           onComplete={() => {
             navigation.navigate('Welcome');
           }}
