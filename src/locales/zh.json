@@ -1,0 +1,14 @@
+{
+  "translation": {
+    "shared": {
+      "cancel": "取消",
+      "close": "关闭",
+      "continue": "继续"
+    },
+    "welcome": {
+      "title": "Chinise 继续",
+      "description": "Create a wallet to send and receive money with friends using cryptocurrency.",
+      "setupWalletButton": "Setup Wallet"
+    }
+  }
+}
