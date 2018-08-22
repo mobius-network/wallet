@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { boostStore, createRequestMiddleware } from 'redux-boost';
-import { persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import eventFilterMiddleware from 'event-filter-redux-middleware';
 
@@ -61,7 +60,5 @@ function makeStore(initialState = {}) {
 const store = makeStore();
 
 boostStore(store);
-
-export const persistor = persistStore(store);
 
 export default store;
