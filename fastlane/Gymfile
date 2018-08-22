@@ -1,0 +1,22 @@
+# For more information about this configuration visit
+# https://docs.fastlane.tools/actions/gym/#gymfile
+
+scheme "MobiusMobileWallet"
+export_method "development"
+clean false
+
+for_lane :alpha do
+  clean true
+  export_method "ad-hoc"
+end
+
+for_lane :beta do
+  clean true
+  export_method "app-store"
+end
+
+for_lane :production do
+  clean true
+  export_method "app-store"
+end
+

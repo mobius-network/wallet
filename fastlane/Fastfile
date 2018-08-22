@@ -1,0 +1,78 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+
+fastlane_version '2.95.0'
+
+default_platform :ios
+
+platform :ios do
+
+  lane :setup do
+    sh("cp -r ../ios/podspecs/ ../node_modules")
+    cocoapods(podfile: "./ios")
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    scan
+  end
+
+  desc 'Prepare local build'
+  lane :local do
+    sync_code_signing
+    build_app
+  end
+
+  desc 'Push a new build to Crashlytics.'
+  lane :alpha do
+    sync_code_signing
+    ensure_git_status_clean
+    increment_build_number
+    build_app
+    commit_version_bump
+    crashlytics(groups: "mobius,evil-martians")
+  end
+
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    sync_code_signing
+    build_app
+    upload_to_testflight
+  end
+
+  desc "Push a new production build to App Store"
+  lane :production do
+    sync_code_signing
+    build_app
+    upload_to_appstore
+  end
+end
+
+platform :android do
+  desc 'Clean Android project.'
+  lane :clean do
+    gradle(task: 'clean', project_dir: 'android/')
+  end
+
+  desc 'Build the Android application.'
+  lane :build do
+    clean
+    gradle(
+      task: 'assemble',
+      build_type: 'Release',
+      project_dir: 'android/'
+    )
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :deploy do
+    build
+    gradle(task: "assembleRelease")
+    #upload_to_play_store
+  end
+end

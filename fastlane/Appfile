@@ -1,0 +1,8 @@
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
+
+app_identifier  "network.mobius.wallet"
+apple_id        "ios@mobius.network"
+
+itc_team_id     "119104973"
+team_id         "RW55Q5RBBV"
