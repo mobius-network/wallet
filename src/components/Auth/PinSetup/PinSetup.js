@@ -8,9 +8,6 @@ import PinPad from './PinPad';
 class PinSetup extends Component {
   static propTypes = {
     loginStart: PropTypes.func.isRequired,
-    navigation: PropTypes.shape({
-      navigate: PropTypes.func.isRequired,
-    }).isRequired,
     signupStart: PropTypes.func.isRequired,
     t: PropTypes.func.isRequired,
   };
@@ -35,8 +32,20 @@ class PinSetup extends Component {
     });
   }
 
+  handlePinPadComplete = () => {
+    const { loginStart, signupStart } = this.props;
+    const { step } = this.state;
+
+    if (step === 'choose') {
+      signupStart();
+      return;
+    }
+
+    loginStart();
+  };
+
   render() {
-    const { navigation, t } = this.props;
+    const { t } = this.props;
     const { isPinRetreived, pin, step } = this.state;
 
     if (isPinRetreived) {
@@ -51,9 +60,7 @@ class PinSetup extends Component {
           pin={pin}
           step={step}
           unlockTitle={t('pinSetup.unlockTitle')}
-          onComplete={() => {
-            navigation.navigate('Welcome');
-          }}
+          onComplete={this.handlePinPadComplete}
         />
       );
     }
