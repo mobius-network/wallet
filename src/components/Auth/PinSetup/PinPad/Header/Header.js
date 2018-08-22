@@ -83,12 +83,14 @@ class Header extends Component {
     const { title, errorTitle, showError } = this.props;
 
     return (
-      <Text
-        selectable={false}
-        style={[showError ? styles.errorTitle : styles.title, { opacity }]}
-      >
-        {showError ? errorTitle : title}
-      </Text>
+      <View style={styles.titleContainer}>
+        <Text
+          selectable={false}
+          style={[showError ? styles.errorTitle : styles.title, { opacity }]}
+        >
+          {showError ? errorTitle : title}
+        </Text>
+      </View>
     );
   };
 

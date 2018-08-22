@@ -16,12 +16,16 @@ export default StyleSheet.create({
   },
   textContainer: {
     alignItems: 'stretch',
-    flex: 1,
     flexDirection: 'column',
     paddingBottom: 44,
-    paddingLeft: 24,
-    paddingRight: 24,
+    marginLeft: 24,
+    marginRight: 24,
     paddingTop: 44,
+  },
+  titleContainer: {
+    flexDirection: 'row',
+    flexShrink: 0,
+    width: helpers.vw - 48,
   },
   title: {
     color: colors.textDefault,
@@ -29,6 +33,8 @@ export default StyleSheet.create({
     fontSize: fontSizes.secondaryTitle,
     marginBottom: 9,
     textAlign: 'center',
+    flex: 1,
+    flexWrap: 'wrap',
   },
   subtitle: {
     color: colors.textSecondary,

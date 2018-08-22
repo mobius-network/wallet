@@ -7,7 +7,7 @@ import Balances from './Balances';
 
 const mapStateToProps = state => ({
   balances: [
-    // TODO: simplify seletors
+    // TODO: simplify selectors
     getAssetInfo(state, {
       asset: 'mobi',
       sellAsset: 'mobi',

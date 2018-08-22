@@ -11,7 +11,7 @@ export const getAssetPrice = createSelector(
   getSellAsset,
   getBuyAsset,
   getPrices,
-  (sell, buy, prices) => get(prices, `${sell}.${buy}`)
+  (sell, buy, prices) => get(prices, `${sell}.${buy}`) || 0
 );
 
 export const getAssetInfo = createSelector(
@@ -19,7 +19,7 @@ export const getAssetInfo = createSelector(
   getBuyAsset,
   getAssetBalance,
   getAssetPrice,
-  (sellAsset, buyAsset, sellAmount, price) => ({
+  (sellAsset, buyAsset, sellAmount = 0, price = 0) => ({
     asset: sellAsset,
     amount: sellAmount,
     [`${buyAsset}Price`]: price,
