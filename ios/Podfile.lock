@@ -2,7 +2,10 @@ PODS:
   - boost-for-react-native (1.63.0)
   - BVLinearGradient (2.4.0):
     - React
+  - Crashlytics (3.10.7):
+    - Fabric (~> 1.7.11)
   - DoubleConversion (1.1.5)
+  - Fabric (1.7.11)
   - Folly (2016.10.31.00):
     - boost-for-react-native
     - DoubleConversion
@@ -77,7 +80,9 @@ PODS:
 
 DEPENDENCIES:
   - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
+  - Crashlytics (~> 3.10.7)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
+  - Fabric (~> 1.7.11)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - react-native-os (from `../node_modules/react-native-os`)
@@ -109,6 +114,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - boost-for-react-native
+    - Crashlytics
+    - Fabric
 
 EXTERNAL SOURCES:
   BVLinearGradient:
@@ -145,7 +152,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BVLinearGradient: 4b3f3bdf1ac1a52a5ef5e65c9585d793a7c3f825
+  Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
   DoubleConversion: a9706f16e388b53ff12cca34473428ee29746a26
+  Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
   Folly: c89ac2d5c6ab169cd7397ef27485c44f35f742c7
   glog: b3b0330915eccea41c5cc9731a77cf564a9be5ea
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11

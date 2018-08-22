@@ -268,6 +268,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				70CA992E212B7F7B0082B8FB /* Submit to Crashlytics */,
 				4141A9C557F6DDB73A89B68D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -446,6 +447,21 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobiusMobileWallet/Pods-MobiusMobileWallet-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		70CA992E212B7F7B0082B8FB /* Submit to Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "Submit to Crashlytics";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 4ea1a1a782563f93a83a98bce41c728d73c8db91 0cea280d9a60bfe5655258dbf308703c70a944ed696731799f0d42de0fa99e9d";
 		};
 		8D9018C0053E781AC9916471 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
