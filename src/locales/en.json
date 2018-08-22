@@ -18,6 +18,20 @@
       "lockedSubtitle": "To protect your information, access has been locked for 5 minutes. Try again later.",
       "lockedTitle": "Maximum attempts reached",
       "unlockTitle": "Enter your PIN code"
+    },
+    "mnemonic": {
+      "confirm": {
+        "alertButton": "Show Me Again",
+        "alertMessage": "You’ve selected the wrong mnemonic phrase. Please reread your phrase, write it down, and try again.",
+        "alertTitle": "Incorrect Phrase",
+        "description": "Which one was yours?",
+        "title": "Confirm Your Mnemonic Phrase"
+      },
+      "write": {
+        "continueButton": "I’ve written it down",
+        "description": "You’ll need this phrase to access your account on another device.",
+        "title": "Write Down Your Mnemonic Phrase"
+      }
     }
   }
 }

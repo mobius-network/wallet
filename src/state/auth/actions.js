@@ -5,13 +5,10 @@ export const authActions = createActions(
     'loginStart',
     'loginSuccess',
     'signupStart',
-    'signupSuccess',
+    'signupFinish',
     'logout',
     'watchAccount',
     'set',
-    'setMnemonic',
-    'setKeystore',
-    'setSignupStep',
   ],
   'auth'
 );
