@@ -8,41 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* MobiusMobileWalletTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MobiusMobileWalletTests.m */; };
-		0EDF66E4F9A14D46B3F192ED /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AB473E6CFDB455ABBABB52D /* SimpleLineIcons.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2040E98CC9FC4424A6358B54 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D584BAF71CB34B43A8242FED /* MaterialCommunityIcons.ttf */; };
 		39B86FE855A8483E8308E28F /* Helvetica Neue Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A501A9A2A2A4BEABD9B09DD /* Helvetica Neue Thin.ttf */; };
-		39B955875B4E4961B0BD9109 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1194298833548E290FAE719 /* FontAwesome5_Regular.ttf */; };
-		3FA4294207B94268845F65E9 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FDB132B3F6B4B9A994FDA56 /* Octicons.ttf */; };
 		4947DB422CA144F4B1A0108F /* Roboto Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78A1D453588241A99F6EBDF9 /* Roboto Italic.ttf */; };
-		562973BB90DF464EB39E9501 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8530BDC2BDF3425AA9E51A84 /* Entypo.ttf */; };
 		59B1877204AC684C58B0EFFD /* libPods-MobiusMobileWalletTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD55B8DD1FCD19B8DEFA52B /* libPods-MobiusMobileWalletTests.a */; };
 		5D8D3290578F4485977F151E /* Nunito Sans Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 966BB142B9B44C4EBD6ABF22 /* Nunito Sans Italic.ttf */; };
 		71660C9B8A4D44E7AD9596CF /* Nunito Sans Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6E8786D23B342C2A8C5297A /* Nunito Sans Light.ttf */; };
 		7CB954CDEA5A604881E98D08 /* libPods-MobiusMobileWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC2CADE496F458B1E2C8672 /* libPods-MobiusMobileWallet.a */; };
 		83F6DC1518824E018C733149 /* Roboto Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ECE6A48F96C4BAC8BF489D8 /* Roboto Bold.ttf */; };
 		8A7987054D8D4511B55027A3 /* Roboto Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1515DD7DADCB45CB9227333E /* Roboto Medium.ttf */; };
-		8D1510B5700F402BB5E8250E /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1CF260E9C5040B28CDBD302 /* FontAwesome.ttf */; };
 		8D156BDF17B6433A96F2A4BA /* Roboto Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 292D26B43110450E8534050D /* Roboto Thin.ttf */; };
 		9E28206700EA4D719DAAB7F5 /* Helvetica Neue Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F296E4FC2F5402082F07962 /* Helvetica Neue Medium.ttf */; };
 		A2C5DFA512B4419C8334240A /* Nunito Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52F3E6E48E7F48329C4B9431 /* Nunito Sans Regular.ttf */; };
-		B094FAD3A49446EFAA12038C /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66A9793AF9BE4F13A7CADF75 /* Ionicons.ttf */; };
-		B2A7004C5AB9432C812B45A4 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D40CF87FED254FB5A4381F75 /* Foundation.ttf */; };
-		B8D9204AFFBF4FDD96CBEB8D /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2E4B75D135F49C39044F8B7 /* FontAwesome5_Brands.ttf */; };
 		B8E2406E35EB474989AB0DF5 /* Nunito Sans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DD017C94262423A9EF12F88 /* Nunito Sans Bold.ttf */; };
-		BC91E3C608E64B22B5B90223 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7BE5DAF011C4D57859AC81C /* MaterialIcons.ttf */; };
 		BD274C6FBACE41F699347EF6 /* Helvetica Neue Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47F291CF454449488EF7A11C /* Helvetica Neue Bold.ttf */; };
 		C2C418DC3CD144C6875373C8 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89F9404328D54B39B885FE8B /* Roboto.ttf */; };
 		D042CDFFE93C4FFE9410B3C6 /* Helvetica Neue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97DB4B87A3CE4721975E2AB5 /* Helvetica Neue.ttf */; };
-		D241CA9350EC4A9DB5217247 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA7522363004858A0DF3F45 /* FontAwesome5_Solid.ttf */; };
-		D25159EC307E4B3E8CAE5941 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57217C270F8F41DE81EE4DDC /* Feather.ttf */; };
 		F6D0D10901774F07A8FBA2E3 /* Helvetica Neue Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1A4434F98F742D9B1FA9409 /* Helvetica Neue Italic.ttf */; };
-		FE63513692124A4581A76433 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665B3F20F848472297207A87 /* EvilIcons.ttf */; };
 		FF4D1153AC434B7490274AE3 /* Nunito Sans SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF959C84CFE4779AE1165C3 /* Nunito Sans SemiBold.ttf */; };
-		FF6FED7ECC8548FC9D3BBB25 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10BEA389306B49BB96DE4894 /* Zocial.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +46,6 @@
 		00E356EE1AD99517003FC87E /* MobiusMobileWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobiusMobileWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* MobiusMobileWalletTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobiusMobileWalletTests.m; sourceTree = "<group>"; };
-		10BEA389306B49BB96DE4894 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MobiusMobileWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobiusMobileWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MobiusMobileWallet/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = MobiusMobileWallet/AppDelegate.m; sourceTree = "<group>"; };
@@ -70,36 +55,22 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MobiusMobileWallet/main.m; sourceTree = "<group>"; };
 		1515DD7DADCB45CB9227333E /* Roboto Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto Medium.ttf"; path = "../assets/fonts/Roboto Medium.ttf"; sourceTree = "<group>"; };
 		292D26B43110450E8534050D /* Roboto Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto Thin.ttf"; path = "../assets/fonts/Roboto Thin.ttf"; sourceTree = "<group>"; };
-		2AB473E6CFDB455ABBABB52D /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		2F296E4FC2F5402082F07962 /* Helvetica Neue Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Helvetica Neue Medium.ttf"; path = "../assets/fonts/Helvetica Neue Medium.ttf"; sourceTree = "<group>"; };
 		3ECE6A48F96C4BAC8BF489D8 /* Roboto Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto Bold.ttf"; path = "../assets/fonts/Roboto Bold.ttf"; sourceTree = "<group>"; };
 		47F291CF454449488EF7A11C /* Helvetica Neue Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Helvetica Neue Bold.ttf"; path = "../assets/fonts/Helvetica Neue Bold.ttf"; sourceTree = "<group>"; };
 		4EAEA74035204177DE9DDED1 /* Pods-MobiusMobileWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiusMobileWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobiusMobileWallet/Pods-MobiusMobileWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		52F3E6E48E7F48329C4B9431 /* Nunito Sans Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito Sans Regular.ttf"; path = "../assets/fonts/Nunito Sans Regular.ttf"; sourceTree = "<group>"; };
-		57217C270F8F41DE81EE4DDC /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		5A501A9A2A2A4BEABD9B09DD /* Helvetica Neue Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Helvetica Neue Thin.ttf"; path = "../assets/fonts/Helvetica Neue Thin.ttf"; sourceTree = "<group>"; };
-		665B3F20F848472297207A87 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		66A9793AF9BE4F13A7CADF75 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
-		70F8AA422132A587001E1C3C /* RNRandomBytes.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNRandomBytes.xcodeproj; path = "../node_modules/react-native-randombytes/RNRandomBytes.xcodeproj"; sourceTree = "<group>"; };
 		70F8AB5021333FD3001E1C3C /* MobiusMobileWallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = MobiusMobileWallet.entitlements; path = MobiusMobileWallet/MobiusMobileWallet.entitlements; sourceTree = "<group>"; };
 		78A1D453588241A99F6EBDF9 /* Roboto Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto Italic.ttf"; path = "../assets/fonts/Roboto Italic.ttf"; sourceTree = "<group>"; };
 		7C330E7A8E8F01E31A1A56C6 /* Pods-MobiusMobileWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiusMobileWalletTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobiusMobileWalletTests/Pods-MobiusMobileWalletTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DD017C94262423A9EF12F88 /* Nunito Sans Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito Sans Bold.ttf"; path = "../assets/fonts/Nunito Sans Bold.ttf"; sourceTree = "<group>"; };
-		8530BDC2BDF3425AA9E51A84 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		89F9404328D54B39B885FE8B /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = ../assets/fonts/Roboto.ttf; sourceTree = "<group>"; };
-		8FDB132B3F6B4B9A994FDA56 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		966BB142B9B44C4EBD6ABF22 /* Nunito Sans Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito Sans Italic.ttf"; path = "../assets/fonts/Nunito Sans Italic.ttf"; sourceTree = "<group>"; };
 		97DB4B87A3CE4721975E2AB5 /* Helvetica Neue.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Helvetica Neue.ttf"; path = "../assets/fonts/Helvetica Neue.ttf"; sourceTree = "<group>"; };
-		9BA7522363004858A0DF3F45 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		9DF959C84CFE4779AE1165C3 /* Nunito Sans SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito Sans SemiBold.ttf"; path = "../assets/fonts/Nunito Sans SemiBold.ttf"; sourceTree = "<group>"; };
-		A1CF260E9C5040B28CDBD302 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		A2E4B75D135F49C39044F8B7 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		A3AC44DB6C3609ADE72548AA /* Pods-MobiusMobileWalletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiusMobileWalletTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobiusMobileWalletTests/Pods-MobiusMobileWalletTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C7BE5DAF011C4D57859AC81C /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		D1194298833548E290FAE719 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		D1A4434F98F742D9B1FA9409 /* Helvetica Neue Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Helvetica Neue Italic.ttf"; path = "../assets/fonts/Helvetica Neue Italic.ttf"; sourceTree = "<group>"; };
-		D40CF87FED254FB5A4381F75 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		D584BAF71CB34B43A8242FED /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		D6E8786D23B342C2A8C5297A /* Nunito Sans Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito Sans Light.ttf"; path = "../assets/fonts/Nunito Sans Light.ttf"; sourceTree = "<group>"; };
 		ED08AF5F7FD3026E76E207DF /* Pods-MobiusMobileWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiusMobileWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobiusMobileWallet/Pods-MobiusMobileWallet.release.xcconfig"; sourceTree = "<group>"; };
 		FBC2CADE496F458B1E2C8672 /* libPods-MobiusMobileWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobiusMobileWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,20 +132,6 @@
 		17AB42BF644B4A5C9AE6DC6F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8530BDC2BDF3425AA9E51A84 /* Entypo.ttf */,
-				665B3F20F848472297207A87 /* EvilIcons.ttf */,
-				57217C270F8F41DE81EE4DDC /* Feather.ttf */,
-				A1CF260E9C5040B28CDBD302 /* FontAwesome.ttf */,
-				A2E4B75D135F49C39044F8B7 /* FontAwesome5_Brands.ttf */,
-				D1194298833548E290FAE719 /* FontAwesome5_Regular.ttf */,
-				9BA7522363004858A0DF3F45 /* FontAwesome5_Solid.ttf */,
-				D40CF87FED254FB5A4381F75 /* Foundation.ttf */,
-				66A9793AF9BE4F13A7CADF75 /* Ionicons.ttf */,
-				D584BAF71CB34B43A8242FED /* MaterialCommunityIcons.ttf */,
-				C7BE5DAF011C4D57859AC81C /* MaterialIcons.ttf */,
-				8FDB132B3F6B4B9A994FDA56 /* Octicons.ttf */,
-				2AB473E6CFDB455ABBABB52D /* SimpleLineIcons.ttf */,
-				10BEA389306B49BB96DE4894 /* Zocial.ttf */,
 				47F291CF454449488EF7A11C /* Helvetica Neue Bold.ttf */,
 				2F296E4FC2F5402082F07962 /* Helvetica Neue Medium.ttf */,
 				5A501A9A2A2A4BEABD9B09DD /* Helvetica Neue Thin.ttf */,
@@ -319,8 +276,6 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* MobiusMobileWallet */,
@@ -343,35 +298,21 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				562973BB90DF464EB39E9501 /* Entypo.ttf in Resources */,
-				FE63513692124A4581A76433 /* EvilIcons.ttf in Resources */,
-				D25159EC307E4B3E8CAE5941 /* Feather.ttf in Resources */,
-				8D1510B5700F402BB5E8250E /* FontAwesome.ttf in Resources */,
-				B8D9204AFFBF4FDD96CBEB8D /* FontAwesome5_Brands.ttf in Resources */,
-				39B955875B4E4961B0BD9109 /* FontAwesome5_Regular.ttf in Resources */,
-				D241CA9350EC4A9DB5217247 /* FontAwesome5_Solid.ttf in Resources */,
-				B2A7004C5AB9432C812B45A4 /* Foundation.ttf in Resources */,
-				B094FAD3A49446EFAA12038C /* Ionicons.ttf in Resources */,
-				2040E98CC9FC4424A6358B54 /* MaterialCommunityIcons.ttf in Resources */,
-				BC91E3C608E64B22B5B90223 /* MaterialIcons.ttf in Resources */,
-				3FA4294207B94268845F65E9 /* Octicons.ttf in Resources */,
-				0EDF66E4F9A14D46B3F192ED /* SimpleLineIcons.ttf in Resources */,
-				FF6FED7ECC8548FC9D3BBB25 /* Zocial.ttf in Resources */,
-				BD274C6FBACE41F699347EF6 /* Helvetica Neue Bold.ttf in Resources */,
-				9E28206700EA4D719DAAB7F5 /* Helvetica Neue Medium.ttf in Resources */,
-				39B86FE855A8483E8308E28F /* Helvetica Neue Thin.ttf in Resources */,
 				D042CDFFE93C4FFE9410B3C6 /* Helvetica Neue.ttf in Resources */,
-				B8E2406E35EB474989AB0DF5 /* Nunito Sans Bold.ttf in Resources */,
+				39B86FE855A8483E8308E28F /* Helvetica Neue Thin.ttf in Resources */,
+				9E28206700EA4D719DAAB7F5 /* Helvetica Neue Medium.ttf in Resources */,
+				F6D0D10901774F07A8FBA2E3 /* Helvetica Neue Italic.ttf in Resources */,
+				BD274C6FBACE41F699347EF6 /* Helvetica Neue Bold.ttf in Resources */,
 				71660C9B8A4D44E7AD9596CF /* Nunito Sans Light.ttf in Resources */,
 				A2C5DFA512B4419C8334240A /* Nunito Sans Regular.ttf in Resources */,
-				FF4D1153AC434B7490274AE3 /* Nunito Sans SemiBold.ttf in Resources */,
-				83F6DC1518824E018C733149 /* Roboto Bold.ttf in Resources */,
-				8A7987054D8D4511B55027A3 /* Roboto Medium.ttf in Resources */,
-				8D156BDF17B6433A96F2A4BA /* Roboto Thin.ttf in Resources */,
-				C2C418DC3CD144C6875373C8 /* Roboto.ttf in Resources */,
-				F6D0D10901774F07A8FBA2E3 /* Helvetica Neue Italic.ttf in Resources */,
 				5D8D3290578F4485977F151E /* Nunito Sans Italic.ttf in Resources */,
+				FF4D1153AC434B7490274AE3 /* Nunito Sans SemiBold.ttf in Resources */,
+				B8E2406E35EB474989AB0DF5 /* Nunito Sans Bold.ttf in Resources */,
+				C2C418DC3CD144C6875373C8 /* Roboto.ttf in Resources */,
+				8D156BDF17B6433A96F2A4BA /* Roboto Thin.ttf in Resources */,
+				8A7987054D8D4511B55027A3 /* Roboto Medium.ttf in Resources */,
 				4947DB422CA144F4B1A0108F /* Roboto Italic.ttf in Resources */,
+				83F6DC1518824E018C733149 /* Roboto Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
