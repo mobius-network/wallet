@@ -1,7 +1,7 @@
 import { NavigationActions } from 'react-navigation';
 
-const navigators = {
-  Splash: undefined,
+export const navigators = {
+  Main: undefined,
   Auth: undefined,
   App: undefined,
 };
