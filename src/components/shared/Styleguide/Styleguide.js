@@ -42,10 +42,6 @@ export const fontSizes = {
   title: 40,
 };
 
-export const shadows = {
-  button: '0 2px 4px #F1F2F7',
-};
-
 export const radius = {
   button: 20,
 };

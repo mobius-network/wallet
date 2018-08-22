@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { TouchableOpacity } from 'react-native';
 
 import {
-  Container, Content, Gradient, Title,
+  Container, Content, Gradient, Title, shadow,
 } from './styles';
 
 class Button extends Component {
@@ -52,7 +52,7 @@ class Button extends Component {
 
     return (
       <ThemeProvider theme={{ square, variant }}>
-        <Container>
+        <Container style={variant !== 'text' && shadow}>
           <TouchableOpacity
             accessibilityComponentType="button"
             disabled={disabled}
