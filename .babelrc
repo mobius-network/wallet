@@ -14,8 +14,8 @@
       }
     ],
     ["babel-plugin-rewrite-require", {
-      aliases: {
-        'node-fetch': 'axios',
+      "aliases": {
+        "node-fetch": "axios"
       }
     }]
   ]
