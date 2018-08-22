@@ -5,7 +5,7 @@ import navigator from 'state/navigator';
 import { authActions } from 'state/auth';
 
 function* run() {
-  const mnemonic = StellarHDWallet.generateMnemonic();
+  const mnemonic = StellarHDWallet.generateMnemonic({ entropyBits: 128 });
 
   yield put(authActions.set({ mnemonic }));
 
