@@ -21,9 +21,8 @@ export const Container = styled.View`
 
 export const Text = styled.Text`
   color: ${colors.textDefault};
-  font-family: ${fonts.helveticaNeue.medium};
+  font-family: ${fonts.helveticaNeue.mediumItalic};
   font-size: ${fontSizes.default};
-  font-style: italic;
   line-height: ${helpers.calculateLineHeight(fontSizes.default, 2)};
   text-align: center;
 `;

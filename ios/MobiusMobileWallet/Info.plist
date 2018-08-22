@@ -36,7 +36,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Entypo.ttf</string>
@@ -65,6 +65,9 @@
 		<string>Roboto Medium.ttf</string>
 		<string>Roboto Thin.ttf</string>
 		<string>Roboto.ttf</string>
+		<string>Helvetica Neue Italic.ttf</string>
+		<string>Nunito Sans Italic.ttf</string>
+		<string>Roboto Italic.ttf</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

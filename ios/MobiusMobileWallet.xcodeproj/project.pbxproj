@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -88,6 +87,9 @@
 		FE63513692124A4581A76433 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665B3F20F848472297207A87 /* EvilIcons.ttf */; };
 		FF4D1153AC434B7490274AE3 /* Nunito Sans SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF959C84CFE4779AE1165C3 /* Nunito Sans SemiBold.ttf */; };
 		FF6FED7ECC8548FC9D3BBB25 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10BEA389306B49BB96DE4894 /* Zocial.ttf */; };
+		F6D0D10901774F07A8FBA2E3 /* Helvetica Neue Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1A4434F98F742D9B1FA9409 /* Helvetica Neue Italic.ttf */; };
+		5D8D3290578F4485977F151E /* Nunito Sans Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 966BB142B9B44C4EBD6ABF22 /* Nunito Sans Italic.ttf */; };
+		4947DB422CA144F4B1A0108F /* Roboto Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78A1D453588241A99F6EBDF9 /* Roboto Italic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -559,6 +561,9 @@
 		E5E35E93676442C894791351 /* RNRandomBytes.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNRandomBytes.xcodeproj; path = "../node_modules/react-native-randombytes/RNRandomBytes.xcodeproj"; sourceTree = "<group>"; };
 		ED767F519A384BACB24FADAE /* libUdpSockets.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libUdpSockets.a; sourceTree = "<group>"; };
 		F8C035954D7641E1817289A8 /* libRNI18n.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNI18n.a; sourceTree = "<group>"; };
+		D1A4434F98F742D9B1FA9409 /* Helvetica Neue Italic.ttf */ = {isa = PBXFileReference; name = "Helvetica Neue Italic.ttf"; path = "../assets/fonts/Helvetica Neue Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		966BB142B9B44C4EBD6ABF22 /* Nunito Sans Italic.ttf */ = {isa = PBXFileReference; name = "Nunito Sans Italic.ttf"; path = "../assets/fonts/Nunito Sans Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		78A1D453588241A99F6EBDF9 /* Roboto Italic.ttf */ = {isa = PBXFileReference; name = "Roboto Italic.ttf"; path = "../assets/fonts/Roboto Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -774,6 +779,9 @@
 				1515DD7DADCB45CB9227333E /* Roboto Medium.ttf */,
 				292D26B43110450E8534050D /* Roboto Thin.ttf */,
 				89F9404328D54B39B885FE8B /* Roboto.ttf */,
+				D1A4434F98F742D9B1FA9409 /* Helvetica Neue Italic.ttf */,
+				966BB142B9B44C4EBD6ABF22 /* Nunito Sans Italic.ttf */,
+				78A1D453588241A99F6EBDF9 /* Roboto Italic.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1635,6 +1643,9 @@
 				39B3C98721296FBB001B4EA9 /* Nunito Sans Light.ttf in Resources */,
 				39B3C98221296FBB001B4EA9 /* Helvetica Neue Thin.ttf in Resources */,
 				C2C418DC3CD144C6875373C8 /* Roboto.ttf in Resources */,
+				F6D0D10901774F07A8FBA2E3 /* Helvetica Neue Italic.ttf in Resources */,
+				5D8D3290578F4485977F151E /* Nunito Sans Italic.ttf in Resources */,
+				4947DB422CA144F4B1A0108F /* Roboto Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

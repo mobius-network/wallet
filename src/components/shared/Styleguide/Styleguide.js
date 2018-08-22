@@ -13,24 +13,39 @@ export const colors = {
   error: '#EB506A',
 };
 
+// It's important to know the exact name of the font to be able to use it
+// Instructions on how to do it using Xcode logging:
+// https://medium.com/@kswanie21/custom-fonts-in-react-native-tutorial-for-ios-android-76ceeaa0eb78
 export const fonts = {
   nunitoSans: {
     light: 'NunitoSans-Light',
     semiBold: 'NunitoSans-SemiBold',
     bold: 'NunitoSans-Bold',
     regular: 'NunitoSans-Regular',
+    italic: 'NunitoSans-Italic',
   },
   roboto: {
     thin: 'Roboto-Thin',
     medium: 'Roboto-Medium',
     bold: 'Roboto-Bold',
     regular: 'Roboto-Regular',
+    italic: 'Roboto-Italic',
   },
   helveticaNeue: {
-    thin: 'HelveticaNeueThin',
-    medium: 'HelveticaNeueMedium',
-    bold: 'HelveticaNeueBold',
+    utlraLightItalic: 'HelveticaNeue-UltraLightItalic',
+    medium: 'HelveticaNeue-Medium',
+    mediumItalic: 'HelveticaNeue-MediumItalic',
+    ultraLight: 'HelveticaNeue-UltraLight',
+    italic: 'HelveticaNeue-Italic',
+    light: 'HelveticaNeue-Light',
+    thinItalic: 'HelveticaNeue-ThinItalic',
+    lightItalic: 'HelveticaNeue-LightItalic',
+    bold: 'HelveticaNeue-Bold',
+    thin: 'HelveticaNeue-Thin',
+    condencedBlack: 'HelveticaNeue-CondensedBlack',
     regular: 'HelveticaNeue',
+    condencedBold: 'HelveticaNeue-CondensedBold',
+    boldItalic: 'HelveticaNeue-BoldItalic',
   },
 };
 
