@@ -33,7 +33,7 @@ function* run() {
     service: 'mnemonic',
   });
 
-  yield call(navigator.navigate, 'Main', 'App');
+  yield call(navigator.navigate, 'Auth', 'Success');
 }
 
 export default takeLatest(authActions.signupFinish, run);

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import NoticeView from 'components/shared/NoticeView';
 import Button from 'components/shared/Button';
 
-class Welcome extends Component {
+class Success extends Component {
   static propTypes = {
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
@@ -12,23 +12,23 @@ class Welcome extends Component {
     t: PropTypes.func.isRequired,
   };
 
-  handleNavigationClick = () => this.props.navigation.navigate('PinSetup');
+  handleNavigationClick = () => this.props.navigation.navigate('App');
 
   render() {
     const { t } = this.props;
 
     return (
       <NoticeView
-        description={t('welcome.description')}
-        title={t('welcome.title')}
+        description={t('success.description')}
+        title={t('success.title')}
       >
         <Button
           onPress={this.handleNavigationClick}
-          title={t('welcome.setupWalletButton')}
+          title={t('shared.continue')}
         />
       </NoticeView>
     );
   }
 }
 
-export default Welcome;
+export default Success;

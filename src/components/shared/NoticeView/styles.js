@@ -27,7 +27,6 @@ export const Title = styled.Text`
   font-family: ${fonts.helveticaNeue.bold};
   font-size: ${fontSizes.title};
   font-weight: bold;
-  line-height: ${helpers.calculateLineHeight(fontSizes.title)};
   margin-bottom: 10;
   text-align: center;
 `;

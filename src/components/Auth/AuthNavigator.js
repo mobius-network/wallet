@@ -6,6 +6,7 @@ import Splash from './Splash';
 import Welcome from './Welcome';
 import PinSetup from './PinSetup';
 import Mnemonic from './Mnemonic';
+import Success from './Success';
 
 export const AuthNavigator = createStackNavigator(
   {
@@ -13,6 +14,7 @@ export const AuthNavigator = createStackNavigator(
     Welcome,
     PinSetup,
     Mnemonic,
+    Success,
   },
   {
     headerMode: 'none',

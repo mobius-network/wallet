@@ -32,6 +32,10 @@
         "description": "You’ll need this phrase to access your account on another device.",
         "title": "Write Down Your Mnemonic Phrase"
       }
+    },
+    "success": {
+      "title": "Your wallet \n is ready!",
+      "description": "Send, receive, and store your coins."
     }
   }
 }
