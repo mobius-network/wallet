@@ -36,6 +36,13 @@
     "success": {
       "title": "Your wallet \n is ready!",
       "description": "Send, receive, and store your coins."
+    },
+    "loadingView": {
+      "description": "Plase, wait",
+      "errorDescription": "Something went wrong. Please try again.",
+      "errorTitle": "Error",
+      "title": "Loading",
+      "tryAgainButton": "Try Again"
     }
   }
 }
