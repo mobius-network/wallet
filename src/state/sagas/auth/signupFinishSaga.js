@@ -16,8 +16,10 @@ function* run() {
 
   const token = encodeFundToken(wallet.seedHex);
 
+  yield call(navigator.navigate, 'Auth', 'Loading');
+
   yield call(fetchStart, {
-    name: 'loadAppAccount',
+    name: 'createAccount',
     payload: `stellar/fund_wallet?payload=${token}`,
   });
 
