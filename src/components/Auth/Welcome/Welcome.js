@@ -25,6 +25,7 @@ class Welcome extends Component {
         <Button
           onPress={this.handleNavigationClick}
           title={t('welcome.setupWalletButton')}
+          testID="setupWalletButton"
         />
       </NoticeView>
     );

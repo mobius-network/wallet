@@ -14,6 +14,7 @@ const config = {
   getBlacklistRE() {
     return metro.createBlacklist([
       /.*\/packages\/components\/node_modules\/.*/,
+      /Pods\/.*/,
     ]);
   },
 
