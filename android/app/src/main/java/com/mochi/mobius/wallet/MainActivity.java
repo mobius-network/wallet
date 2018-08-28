@@ -1,4 +1,4 @@
-package com.mobiusmobilewallet;
+package com.mochi.mobius.wallet;
 
 import com.facebook.react.ReactActivity;
 

@@ -1,22 +1,22 @@
-package com.mobiusmobilewallet;
+package com.mochi.mobius.wallet;
 
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.BV.LinearGradient.LinearGradientPackage;
-import org.devio.rn.splashscreen.SplashScreenReactPackage;
-import com.learnium.RNDeviceInfo.RNDeviceInfo;
-import com.bitgo.randombytes.RandomBytesPackage;
-import com.oblador.vectoricons.VectorIconsPackage;
-import com.tradle.react.UdpSocketsModule;
-import com.peel.react.TcpSocketsModule;
-import com.peel.react.rnos.RNOSModule;
-import com.oblador.keychain.KeychainPackage;
-import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
+import com.bitgo.randombytes.RandomBytesPackage;
+import com.BV.LinearGradient.LinearGradientPackage;
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
+import com.learnium.RNDeviceInfo.RNDeviceInfo;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.oblador.keychain.KeychainPackage;
+import com.peel.react.TcpSocketsModule;
+import com.peel.react.rnos.RNOSModule;
+import com.tradle.react.UdpSocketsModule;
 
 import java.util.Arrays;
 import java.util.List;

@@ -99,7 +99,7 @@ android {
 
 
     defaultConfig {
-        applicationId "com.mobiusmobilewallet"
+        applicationId "com.mochi.mobius.wallet"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
