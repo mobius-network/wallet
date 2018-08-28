@@ -36,7 +36,7 @@ class AddFunds extends Component {
 
   showActionSheet = () => this.actionSheet.show();
 
-  getActionSheetRef = ref => (this.actionSheet = ref);
+  setActionSheetRef = ref => (this.actionSheet = ref);
 
   copyToClipboard = () => {
     Clipboard.setString(this.props.publicKey);
@@ -103,7 +103,7 @@ class AddFunds extends Component {
         </Content>
 
         <ActionSheet
-          ref={this.getActionSheetRef}
+          ref={this.setActionSheetRef}
           title={t('addFunds.selectWallet.title')}
           options={this.options}
           cancelButtonIndex={0}

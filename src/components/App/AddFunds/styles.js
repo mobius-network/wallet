@@ -19,7 +19,7 @@ export const SelectorContainer = styled.View`
   padding-right: 17;
   padding-bottom: 18;
   border-bottom-width: 1;
-  border-color: #e1e1e1;
+  border-color: ${colors.borderColor};
   background-color: #fafafa;
 `;
 
@@ -45,7 +45,7 @@ export const ChevronIcon = styled(Icon).attrs({
   position: absolute;
   right: 17;
   top: 27;
-  color: #1e4979;
+  color: ${colors.darkBlue};
   font-size: 20;
 `;
 
