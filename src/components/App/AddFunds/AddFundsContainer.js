@@ -3,18 +3,15 @@ import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 import { createStructuredSelector } from 'reselect';
 
-import { getUsdBalance } from 'state/prices';
+import { getPublicKeyFor } from 'state/auth';
 
-import Dashboard from './Dashboard';
+import AddFunds from './AddFunds';
 
 const mapStateToProps = createStructuredSelector({
-  usdBalance: getUsdBalance,
+  publicKey: getPublicKeyFor,
 });
 
 export default compose(
-  connect(
-    mapStateToProps,
-    null
-  ),
+  connect(mapStateToProps),
   translate('translation')
-)(Dashboard);
+)(AddFunds);

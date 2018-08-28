@@ -10,6 +10,7 @@ export const colors = {
   textPrimary: '#3894E6',
   textSecondary: '#666666',
   darkBlue: '#0E497D',
+  darkPurple: '#3A4372',
   error: '#EB506A',
 };
 

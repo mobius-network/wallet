@@ -13,7 +13,7 @@ class Button extends Component {
     disabled: PropTypes.bool,
     onPress: PropTypes.func,
     square: PropTypes.bool,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.any.isRequired,
     variant: PropTypes.oneOf(['primary', 'text', 'secondary']),
   };
 
