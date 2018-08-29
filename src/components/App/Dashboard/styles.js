@@ -50,6 +50,4 @@ export const BalanceAmount = styled.Text`
 
 export const ActionButton = styled(Button).attrs({
   square: true,
-})`
-  align-self: flex-end;
-`;
+})``;

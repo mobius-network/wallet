@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
 
 import { Image } from './styles';
@@ -14,6 +15,13 @@ export default class Icon extends Component {
   static getImage(name) {
     return icons[name];
   }
+
+  static propTypes = {
+    name: PropTypes.string.isRequired,
+    style: PropTypes.object,
+    size: PropTypes.number,
+    onPress: PropTypes.func,
+  };
 
   render() {
     const {

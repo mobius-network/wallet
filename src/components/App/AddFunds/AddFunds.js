@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Share, Clipboard } from 'react-native';
 import ActionSheet from 'react-native-custom-actionsheet';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
+import { colors } from 'components/shared/Styleguide';
 
 import QrCode from 'components/shared/QrCode';
 
@@ -20,6 +23,7 @@ import {
   KeyLabel,
   KeyValue,
   ButtonRow,
+  ButtonTitle,
 } from './styles';
 
 class AddFunds extends Component {
@@ -30,6 +34,24 @@ class AddFunds extends Component {
 
   state = {
     selected: 1,
+  };
+
+  buttonTitle = ({ iconName, titlePath }) => (
+    <Fragment>
+      <Icon size={18} name={iconName} color={colors.textPrimary} />
+      <ButtonTitle>{this.props.t(titlePath)}</ButtonTitle>
+    </Fragment>
+  );
+
+  buttons = {
+    copy: this.buttonTitle({
+      iconName: 'content-copy',
+      titlePath: 'addFunds.buttons.copy',
+    }),
+    share: this.buttonTitle({
+      iconName: 'share',
+      titlePath: 'addFunds.buttons.share',
+    }),
   };
 
   options = [this.props.t('addFunds.selectWallet.cancel'), 'MOBI', 'XLM'];
@@ -99,8 +121,16 @@ class AddFunds extends Component {
           </KeyValue>
 
           <ButtonRow>
-            <ClipboardButton onPress={this.copyToClipboard} />
-            <ShareButton onPress={this.shareAddress} />
+            <ClipboardButton
+              variant="secondary"
+              onPress={this.copyToClipboard}
+              title={this.buttons.copy}
+            />
+            <ShareButton
+              variant="secondary"
+              onPress={this.shareAddress}
+              title={this.buttons.share}
+            />
           </ButtonRow>
         </Content>
 

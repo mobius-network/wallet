@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -76,39 +75,29 @@ export const SubTitle = styled.Text`
 `;
 
 export const ButtonTitle = styled.Text`
-  color: #828282;
-  font-family: ${fonts.roboto.regular};
-  font-size: 15;
-  line-height: 20;
-  margin-bottom: 19;
+  color: ${colors.textPrimary};
+  font-family: ${fonts.nunitoSans.regular};
+  font-size: 14;
+  line-height: 26;
+  margin-left: 8;
 `;
 
-export const ClipboardButton = styled(Button).attrs({
-  variant: 'secondary',
-  title: (
-    <Fragment>
-      <Icon name="content-copy" />
-      <ButtonTitle>Copy</ButtonTitle>
-    </Fragment>
-  ),
-})``;
+export const ClipboardButton = styled(Button)`
+  width: 156;
+  box-shadow: none;
+`;
 
-export const ShareButton = styled(Button).attrs({
-  variant: 'secondary',
-  title: (
-    <Fragment>
-      <Icon name="share" />
-      <ButtonTitle>Share</ButtonTitle>
-    </Fragment>
-  ),
-})``;
+export const ShareButton = styled(Button)`
+  width: 156;
+  box-shadow: none;
+`;
 
 export const KeyLabel = styled.Text`
   color: ${colors.darkPurple};
   font-family: ${fonts.helveticaNeue.bold};
   font-size: 14;
   line-height: 14;
-  margin-top: 16;
+  margin-top: 12;
   opacity: 0.5;
 `;
 

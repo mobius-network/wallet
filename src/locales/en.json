@@ -53,8 +53,14 @@
         "title": "Public Key"
       },
       "selectWallet": {
+        "title": "Select wallet",
         "label": "Wallet",
-        "wallet": "Select wallet"
+        "wallet": "Select wallet",
+        "cancel": "Cancel"
+      },
+      "buttons": {
+        "copy": "Copy",
+        "share": "Share"
       }
     }
   }
