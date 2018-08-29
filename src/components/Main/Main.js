@@ -1,22 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StatusBar, Alert } from 'react-native';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-import { translate } from 'react-i18next';
 import SplashScreen from 'react-native-splash-screen';
 
-import {
-  appActions,
-  getIsNeedToShowCredetialAlert,
-  getIsSettingsLoaded,
-} from 'state/app';
-
-import Navigator from './Navigator';
+import Navigator from 'components/Navigator';
 import { SafeArea } from './styles';
 
-class Main extends Component {
+export default class Main extends Component {
   static propTypes = {
     t: PropTypes.func.isRequired,
     isNeedToShowCredetialAlert: PropTypes.bool.isRequired,
@@ -66,20 +56,3 @@ class Main extends Component {
     );
   }
 }
-
-const mapStateToProps = createStructuredSelector({
-  isSettingsLoaded: getIsSettingsLoaded,
-  isNeedToShowCredetialAlert: getIsNeedToShowCredetialAlert,
-});
-
-const actions = {
-  ...appActions,
-};
-
-export default compose(
-  connect(
-    mapStateToProps,
-    actions
-  ),
-  translate('translation')
-)(Main);
