@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Alert } from 'react-native';
 import PropTypes from 'prop-types';
 import { shuffle } from 'lodash';
 
+import Button from 'components/shared/Button';
 import MnemonicView from 'components/shared/MnemonicView';
+import Alert from 'components/shared/Alert';
+import AlertCheckbox from 'components/shared/AlertCheckbox';
 
 import {
   Container, Header, Title, Description,
@@ -18,31 +20,97 @@ class Confirm extends Component {
     t: PropTypes.func.isRequired,
   };
 
+  state = {
+    isConfirmAlertVisible: false,
+    isConfirmAlertChecked: false,
+
+    isErrorAlertVisible: false,
+  };
+
+  toggleCheckbox = () => {
+    this.setState({ isConfirmAlertChecked: !this.state.isConfirmAlertChecked });
+  };
+
+  onError = () => {
+    this.setState(
+      {
+        isConfirmAlertVisible: false,
+        isErrorAlertVisible: false,
+      },
+      this.props.onError
+    );
+  };
+
+  onComplete = () => {
+    this.setState(
+      {
+        isConfirmAlertVisible: false,
+        isErrorAlertVisible: false,
+      },
+      this.props.onComplete
+    );
+  };
+
   handleMnemonicVariantClick = mnemonicVariant => {
-    const {
-      mnemonic, onComplete, onError, t,
-    } = this.props;
+    const { mnemonic } = this.props;
 
     if (mnemonicVariant !== mnemonic) {
-      Alert.alert(
-        t('mnemonic.confirm.alertTitle'),
-        t('mnemonic.confirm.alertMessage'),
-        [{ text: t('mnemonic.confirm.alertButton'), onPress: onError }],
-        { cancelable: false }
-      );
-
-      return;
+      this.setState({ isErrorAlertVisible: true });
+    } else {
+      this.setState({ isConfirmAlertVisible: true });
     }
-
-    onComplete();
   };
 
   render() {
+    const {
+      isErrorAlertVisible,
+      isConfirmAlertVisible,
+      isConfirmAlertChecked,
+    } = this.state;
     const { t, mnemonic, mnemonicVariants } = this.props;
     const mnemonics = shuffle([...mnemonicVariants, mnemonic]);
 
     return (
       <Container>
+        <Alert
+          isVisible={isErrorAlertVisible}
+          title={t('mnemonic.confirm.alertErrorTitle')}
+          text={t('mnemonic.confirm.alertErrorMessage')}
+          buttons={[
+            <Button
+              key="confirm"
+              square={true}
+              variant="text"
+              padding={false}
+              title={t('mnemonic.confirm.alertErrorButton').toUpperCase()}
+              onPress={this.onError}
+            />,
+          ]}
+        />
+
+        <Alert
+          isVisible={isConfirmAlertVisible}
+          title={t('mnemonic.confirm.alertConfirmTitle')}
+          text={t('mnemonic.confirm.alertConfirmMessage')}
+          buttons={[
+            <Button
+              key="confirm"
+              square={true}
+              variant="text"
+              padding={false}
+              title={t('mnemonic.confirm.alertConfirmButton').toUpperCase()}
+              disabled={!isConfirmAlertChecked}
+              onPress={this.onComplete}
+            />,
+          ]}
+        >
+          <AlertCheckbox
+            isChecked={isConfirmAlertChecked}
+            label={t('mnemonic.confirm.alertConfirmUnderstand')}
+            onPress={this.toggleCheckbox}
+          />
+        </Alert>
+
         <Header>
           <Title>{t('mnemonic.confirm.title')}</Title>
           <Description>{t('mnemonic.confirm.description')}</Description>

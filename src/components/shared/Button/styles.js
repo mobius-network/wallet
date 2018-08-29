@@ -48,8 +48,8 @@ export const Content = styled.View`
   flex-direction: row;
   height: 40;
   justify-content: center;
-  padding-left: 30;
-  padding-right: 30;
+  padding-left: ${({ theme }) => (theme.padding ? 30 : 0)};
+  padding-right: ${({ theme }) => (theme.padding ? 30 : 0)};
 `;
 
 export const Gradient = styled(LinearGradient).attrs({
@@ -63,9 +63,10 @@ export const Gradient = styled(LinearGradient).attrs({
 export const Title = styled.Text`
   color: ${({ theme }) => variants[theme.variant].color};
   font-family: ${fonts.nunitoSans.bold};
-  font-size: ${fontSizes.button};
+  font-size: ${fontSizes.normal};
   font-weight: ${({ theme }) => variants[theme.variant].fontWeight};
   text-transform: ${({ theme }) => variants[theme.variant].textTransform};
+  opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
 `;
 
 export const shadow = {

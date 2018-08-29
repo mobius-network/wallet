@@ -16,16 +16,18 @@ class Button extends Component {
     style: ViewPropTypes.style,
     title: PropTypes.any.isRequired,
     variant: PropTypes.oneOf(['primary', 'text', 'secondary']),
+    padding: PropTypes.bool,
   };
 
   static defaultProps = {
     disabled: false,
     square: false,
     variant: 'primary',
+    padding: true,
   };
 
   renderContent = () => {
-    const { title, variant } = this.props;
+    const { title, variant, disabled } = this.props;
 
     if (typeof title !== 'string') {
       return <Content>{title}</Content>;
@@ -36,7 +38,7 @@ class Button extends Component {
         return (
           <Gradient>
             <Content>
-              <Title>{title}</Title>
+              <Title disabled={disabled}>{title}</Title>
             </Content>
           </Gradient>
         );
@@ -44,7 +46,7 @@ class Button extends Component {
       default:
         return (
           <Content>
-            <Title>{title}</Title>
+            <Title disabled={disabled}>{title}</Title>
           </Content>
         );
     }
@@ -52,12 +54,18 @@ class Button extends Component {
 
   render() {
     const {
-      disabled, onPress, square, variant, style,
+      disabled, onPress, square, variant, padding,
     } = this.props;
 
     return (
-      <ThemeProvider theme={{ square, variant }}>
-        <Container style={[variant !== 'text' && shadow, style]}>
+      <ThemeProvider
+        theme={{
+          square,
+          variant,
+          padding,
+        }}
+      >
+        <Container style={variant !== 'text' && shadow}>
           <TouchableOpacity
             accessibilityComponentType="button"
             disabled={disabled}

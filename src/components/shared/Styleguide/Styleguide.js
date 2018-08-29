@@ -51,11 +51,12 @@ export const fonts = {
 };
 
 export const fontSizes = {
-  button: 14,
+  normal: 14,
   default: 16,
   secondaryTitle: 32,
   small: 13,
   title: 40,
+  smallTitle: 18,
 };
 
 export const radius = {

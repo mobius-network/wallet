@@ -1,5 +1,11 @@
 {
   "translation": {
+    "main": {
+      "alertTitle": "Account setup",
+      "alertMessage": "We detected wallet keys from previous app installation on this device. Do you want to continue using existing keys or reset and setup a new account?",
+      "alertReset": "Reset",
+      "alertUseExisting": "Use existing",
+    },
     "shared": {
       "cancel": "Cancel",
       "close": "Close",
@@ -21,16 +27,26 @@
     },
     "mnemonic": {
       "confirm": {
-        "alertButton": "Show Me Again",
-        "alertMessage": "You’ve selected the wrong mnemonic phrase. Please reread your phrase, write it down, and try again.",
-        "alertTitle": "Incorrect Phrase",
         "description": "Which one was yours?",
-        "title": "Confirm Your Mnemonic Phrase"
+        "title": "Confirm Your Mnemonic Phrase",
+        "alertErrorButton": "Show Me Again",
+        "alertErrorTitle": "Incorrect phrase",
+        "alertErrorMessage": "You’ve selected the wrong mnemonic phrase. Please reread your phrase, write it down, and try again.",
+        "alertConfirmTitle": "Don't loose your recovery phrase",
+        "alertConfirmMessage": "If you loose your recovery pharase there is no possible way to recover yoour account",
+        "alertConfirmUnderstand": "Yes, I understand the risk of loosing my recovery phrase.",
+        "alertConfirmButton": "Continue",
       },
       "write": {
         "continueButton": "I’ve written it down",
         "description": "You’ll need this phrase to access your account on another device.",
-        "title": "Write Down Your Mnemonic Phrase"
+        "title": "Write Down Your Mnemonic Phrase",
+
+        "alertTitle": "Copy your phrase",
+        "alertMessage": "Be careful where you paste your phrase. Your wallet is only as secure as the place you store your phrase.",
+        "alertUnderstand": "Yes, I understand the risk of storing my phrase online.",
+        "alertButtonConfirm": "Copy",
+        "alertButtonCancel": "Cancel",
       }
     },
     "success": {
