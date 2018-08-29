@@ -62,6 +62,13 @@
         "copy": "Copy",
         "share": "Share"
       }
+    },
+    "loadingView": {
+      "description": "Plase, wait",
+      "errorDescription": "Something went wrong. Please try again.",
+      "errorTitle": "Error",
+      "title": "Loading",
+      "tryAgainButton": "Try Again"
     }
   }
 }

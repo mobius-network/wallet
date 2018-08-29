@@ -10,7 +10,8 @@ import {
 } from 'components/shared/Styleguide';
 
 export const Container = styled.View`
-  flex-grow: 1;
+  flex: 1;
+  background-color: ${colors.bgLight};
 `;
 
 export const Gradient = styled(HeaderGradient)`

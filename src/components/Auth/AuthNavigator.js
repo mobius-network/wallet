@@ -7,6 +7,7 @@ import Welcome from './Welcome';
 import PinSetup from './PinSetup';
 import Mnemonic from './Mnemonic';
 import Success from './Success';
+import Loading from './Loading';
 
 export const AuthNavigator = createStackNavigator(
   {
@@ -15,6 +16,7 @@ export const AuthNavigator = createStackNavigator(
     PinSetup,
     Mnemonic,
     Success,
+    Loading,
   },
   {
     headerMode: 'none',
