@@ -3,7 +3,10 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import { colors, fonts, helpers } from 'components/shared/Styleguide';
 
-export const Container = styled.View``;
+export const Container = styled.View`
+  background-color: ${colors.bgLight};
+  flex: 1;
+`;
 
 export const Gradient = styled(LinearGradient).attrs({
   colors: ['#37BDE6', '#2D76FD'],
