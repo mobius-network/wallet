@@ -24,7 +24,7 @@
         "description": "Which one was yours?",
         "title": "Confirm Your Mnemonic Phrase",
         "alertErrorButton": "Show Me Again",
-        "alertErrorTitle": "Incorrect Phrase",
+        "alertErrorTitle": "Incorrect phrase",
         "alertErrorMessage": "You’ve selected the wrong mnemonic phrase. Please reread your phrase, write it down, and try again.",
         "alertConfirmTitle": "Don't loose your recovery phrase",
         "alertConfirmMessage": "If you loose your recovery pharase there is no possible way to recover yoour account",
