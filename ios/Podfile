@@ -33,11 +33,16 @@ target 'MobiusMobileWallet' do
   ]
 
   # Add new pods below this line
+
   pod 'BVLinearGradient', path: '../node_modules/react-native-linear-gradient'
+  pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
   pod 'RNDeviceInfo', path: '../node_modules/react-native-device-info'
   pod 'RNI18n', path: '../node_modules/react-native-i18n'
   pod 'RNKeychain', path: '../node_modules/react-native-keychain'
+  pod 'RNSVG', path: '../node_modules/react-native-svg'
   pod 'RNVectorIcons', path: '../node_modules/react-native-vector-icons'
+
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
   pod 'react-native-randombytes', path: '../node_modules/react-native-randombytes'
   pod 'react-native-splash-screen', path: '../node_modules/react-native-splash-screen'
   pod 'react-native-udp', :path => '../node_modules/react-native-udp'

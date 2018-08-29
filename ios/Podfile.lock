@@ -13,6 +13,14 @@ PODS:
   - glog (0.3.4)
   - React (0.56.0):
     - React/Core (= 0.56.0)
+  - react-native-camera (1.2.0):
+    - React
+    - react-native-camera/RCT (= 1.2.0)
+    - react-native-camera/RN (= 1.2.0)
+  - react-native-camera/RCT (1.2.0):
+    - React
+  - react-native-camera/RN (1.2.0):
+    - React
   - react-native-os (1.2.1):
     - React
   - react-native-randombytes (3.5.0):
@@ -68,11 +76,15 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
+  - ReactNativePermissions (1.1.1):
+    - React
   - RNDeviceInfo (0.21.5):
     - React
   - RNI18n (2.0.15):
     - React
   - RNKeychain (3.0.0):
+    - React
+  - RNSVG (6.5.2):
     - React
   - RNVectorIcons (5.0.0):
     - React
@@ -85,6 +97,7 @@ DEPENDENCIES:
   - Fabric (~> 1.7.11)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - react-native-camera (from `../node_modules/react-native-camera`)
   - react-native-os (from `../node_modules/react-native-os`)
   - react-native-randombytes (from `../node_modules/react-native-randombytes`)
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
@@ -105,9 +118,11 @@ DEPENDENCIES:
   - React/RCTTest (from `../node_modules/react-native`)
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
+  - ReactNativePermissions (from `../node_modules/react-native-permissions`)
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNI18n (from `../node_modules/react-native-i18n`)
   - RNKeychain (from `../node_modules/react-native-keychain`)
+  - RNSVG (from `../node_modules/react-native-svg`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -128,6 +143,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   React:
     :path: "../node_modules/react-native"
+  react-native-camera:
+    :path: "../node_modules/react-native-camera"
   react-native-os:
     :path: "../node_modules/react-native-os"
   react-native-randombytes:
@@ -138,12 +155,16 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-tcp"
   react-native-udp:
     :path: "../node_modules/react-native-udp"
+  ReactNativePermissions:
+    :path: "../node_modules/react-native-permissions"
   RNDeviceInfo:
     :path: "../node_modules/react-native-device-info"
   RNI18n:
     :path: "../node_modules/react-native-i18n"
   RNKeychain:
     :path: "../node_modules/react-native-keychain"
+  RNSVG:
+    :path: "../node_modules/react-native-svg"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
   yoga:
@@ -158,17 +179,20 @@ SPEC CHECKSUMS:
   Folly: c89ac2d5c6ab169cd7397ef27485c44f35f742c7
   glog: b3b0330915eccea41c5cc9731a77cf564a9be5ea
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
+  react-native-camera: 68ad5143d2d0636236d46c7de8d2a6455ca52a36
   react-native-os: f6c8fb32540fde2d7ad363614e9bb2d536631a23
   react-native-randombytes: d3184d351604f78e019535178766590188bbc133
   react-native-splash-screen: 8e3f866dc79bfe533baeffd0a38c33f7a7eae7f8
   react-native-tcp: 6e92591b70ddbc97438a3946bd2fcfe3a48505ba
   react-native-udp: 6dc3196a0ac91d6e616450bfb855b488fe1787f0
+  ReactNativePermissions: 9f2d9c45c98800795e6c2ed330e25d11a66a8169
   RNDeviceInfo: 568c5641057313b4912d08a7742ff0b2f753ed5c
   RNI18n: 46b8694063fbd699f2c06a4dc8e835b3176763b1
   RNKeychain: 627c6095cef215dd3d9804a9a9cf45ab96aa3997
+  RNSVG: 6252323c0312735f0af5f58b5adf2965b6a9ffbf
   RNVectorIcons: c0dbfbf6068fefa240c37b0f71bd03b45dddac44
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: a5fa8c97dfe79352e4c2bc15c9ec7f69c046ca1c
+PODFILE CHECKSUM: c4c85459a6aec94be89b1e4b8ec297795210f2b4
 
 COCOAPODS: 1.6.0.beta.1

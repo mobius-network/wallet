@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, ViewPropTypes } from 'react-native';
 
 import {
   Container, Content, Gradient, Title, shadow,
@@ -13,7 +13,8 @@ class Button extends Component {
     disabled: PropTypes.bool,
     onPress: PropTypes.func,
     square: PropTypes.bool,
-    title: PropTypes.string.isRequired,
+    style: ViewPropTypes.style,
+    title: PropTypes.any.isRequired,
     variant: PropTypes.oneOf(['primary', 'text', 'secondary']),
   };
 
@@ -25,6 +26,10 @@ class Button extends Component {
 
   renderContent = () => {
     const { title, variant } = this.props;
+
+    if (typeof title !== 'string') {
+      return <Content>{title}</Content>;
+    }
 
     switch (variant) {
       case 'primary':
@@ -47,12 +52,12 @@ class Button extends Component {
 
   render() {
     const {
-      disabled, onPress, square, variant,
+      disabled, onPress, square, variant, style,
     } = this.props;
 
     return (
       <ThemeProvider theme={{ square, variant }}>
-        <Container style={variant !== 'text' && shadow}>
+        <Container style={[variant !== 'text' && shadow, style]}>
           <TouchableOpacity
             accessibilityComponentType="button"
             disabled={disabled}

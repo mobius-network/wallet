@@ -37,6 +37,32 @@
       "title": "Your wallet \n is ready!",
       "description": "Send, receive, and store your coins."
     },
+    "dashboard": {
+      "title": "Current Balance",
+      "receiveButton": "Receive"
+    },
+    "addFunds": {
+      "headerTitle": "Add Funds",
+      "title": "Transfer from External Wallet",
+      "subtitle": "Use the following address to transfer MOBI or XLM to your wallet.",
+      "share": {
+        "title": "Public key",
+        "subject": "Public key"
+      },
+      "publicKey": {
+        "title": "Public Key"
+      },
+      "selectWallet": {
+        "title": "Select wallet",
+        "label": "Wallet",
+        "wallet": "Select wallet",
+        "cancel": "Cancel"
+      },
+      "buttons": {
+        "copy": "Copy",
+        "share": "Share"
+      }
+    },
     "loadingView": {
       "description": "Plase, wait",
       "errorDescription": "Something went wrong. Please try again.",

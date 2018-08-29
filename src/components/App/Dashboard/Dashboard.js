@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Balances from './Balances';
 
@@ -9,20 +10,31 @@ import {
   BalanceContainer,
   CurrencySymbol,
   BalanceAmount,
+  ActionButton,
 } from './styles';
 
 class Dashboard extends Component {
+  static propTypes = {
+    usdBalance: PropTypes.number.isRequired,
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func.isRequired,
+    }).isRequired,
+    t: PropTypes.func.isRequired,
+  };
+
   static defaultProps = {
     balanceAmount: 0,
   };
 
+  handleNavigationClick = () => this.props.navigation.navigate('AddFunds');
+
   render() {
-    const { usdBalance } = this.props;
+    const { t, usdBalance } = this.props;
 
     return (
       <Container>
         <Gradient>
-          <Title>Current Balance</Title>
+          <Title>{t('dashboard.title')}</Title>
 
           <BalanceContainer>
             <CurrencySymbol>$</CurrencySymbol>
@@ -31,6 +43,12 @@ class Dashboard extends Component {
         </Gradient>
 
         <Balances />
+
+        <ActionButton
+          square
+          onPress={this.handleNavigationClick}
+          title={t('dashboard.receiveButton').toUpperCase()}
+        />
       </Container>
     );
   }
