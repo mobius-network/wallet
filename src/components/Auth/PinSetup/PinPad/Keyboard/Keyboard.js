@@ -7,6 +7,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { easeLinear } from 'd3-ease';
 import { range } from 'lodash';
 
+import { colors } from 'components/shared/Styleguide';
+
 import styles from './styles';
 
 class Keyboard extends Component {
@@ -55,8 +57,8 @@ class Keyboard extends Component {
           <TouchableHighlight
             disabled={isDisabled}
             onPress={this.handleNumberButtonClick(text)}
-            style={styles.numberButton}
-            underlayColor="transparent"
+            style={styles.button}
+            underlayColor={colors.bg}
           >
             <Text
               selectable={false}
@@ -89,8 +91,8 @@ class Keyboard extends Component {
           <TouchableHighlight
             disabled={isDisabled}
             onPress={this.handleDeleteButtonClick}
-            style={styles.colIcon}
-            underlayColor="transparent"
+            style={styles.button}
+            underlayColor={colors.bg}
           >
             <Icon
               name="backspace"

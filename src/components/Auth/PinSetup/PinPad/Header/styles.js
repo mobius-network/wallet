@@ -29,12 +29,12 @@ export default StyleSheet.create({
   },
   title: {
     color: colors.textDefault,
+    flex: 1,
+    flexWrap: 'wrap',
     fontFamily: fonts.helveticaNeue.bold,
     fontSize: fontSizes.secondaryTitle,
     marginBottom: 9,
     textAlign: 'center',
-    flex: 1,
-    flexWrap: 'wrap',
   },
   subtitle: {
     color: colors.textSecondary,
@@ -44,6 +44,8 @@ export default StyleSheet.create({
   },
   errorTitle: {
     color: colors.error,
+    flex: 1,
+    flexWrap: 'wrap',
     fontFamily: fonts.helveticaNeue.bold,
     fontSize: fontSizes.secondaryTitle,
     marginBottom: 9,
