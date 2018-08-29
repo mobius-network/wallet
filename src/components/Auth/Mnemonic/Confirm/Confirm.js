@@ -27,27 +27,27 @@ class Confirm extends Component {
     isErrorAlertVisible: false,
   };
 
-  toggleCheckbox() {
+  toggleCheckbox = () => {
     this.setState({ isConfirmAlertChecked: !this.state.isConfirmAlertChecked });
-  }
+  };
 
-  onError() {
+  onError = () => {
     this.setState({
       isConfirmAlertVisible: false,
       isErrorAlertVisible: false,
     });
 
     this.props.onError();
-  }
+  };
 
-  onComplete() {
+  onComplete = () => {
     this.setState({
       isConfirmAlertVisible: false,
       isErrorAlertVisible: false,
     });
 
     this.props.onComplete();
-  }
+  };
 
   handleMnemonicVariantClick = mnemonicVariant => {
     const { mnemonic } = this.props;
@@ -81,7 +81,7 @@ class Confirm extends Component {
               variant="text"
               padding={false}
               title={t('mnemonic.confirm.alertErrorButton').toUpperCase()}
-              onPress={() => this.onError()}
+              onPress={this.onError}
             />,
           ]}
         />
@@ -98,14 +98,14 @@ class Confirm extends Component {
               padding={false}
               title={t('mnemonic.confirm.alertConfirmButton').toUpperCase()}
               disabled={!isConfirmAlertChecked}
-              onPress={() => this.onComplete()}
+              onPress={this.onComplete}
             />,
           ]}
         >
           <AlertCheckbox
             isChecked={isConfirmAlertChecked}
             label={t('mnemonic.confirm.alertConfirmUnderstand')}
-            onPress={() => this.toggleCheckbox()}
+            onPress={this.toggleCheckbox}
           />
         </Alert>
 

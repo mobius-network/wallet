@@ -27,25 +27,25 @@ class Write extends Component {
     isAlertChecked: false,
   };
 
-  showModal() {
+  showAlert = () => {
     this.setState({ isAlertVisisble: true });
-  }
+  };
 
-  toggleCheckbox() {
+  toggleCheckbox = () => {
     this.setState({ isAlertChecked: !this.state.isAlertChecked });
-  }
+  };
 
-  onCancel() {
+  onCancel = () => {
     this.setState({ isAlertVisisble: false, isAlertChecked: false });
-  }
+  };
 
-  onComplete() {
+  onComplete = () => {
     this.setState({ isAlertVisisble: false });
 
     Clipboard.setString(this.props.mnemonic);
 
     this.props.onComplete();
-  }
+  };
 
   render() {
     const { isAlertVisisble, isAlertChecked } = this.state;
@@ -64,7 +64,7 @@ class Write extends Component {
               variant="text"
               padding={false}
               title={t('mnemonic.write.alertButtonCancel').toUpperCase()}
-              onPress={() => this.onCancel()}
+              onPress={this.onCancel}
             />,
 
             <Button
@@ -74,14 +74,14 @@ class Write extends Component {
               padding={false}
               title={t('mnemonic.write.alertButtonConfirm').toUpperCase()}
               disabled={!isAlertChecked}
-              onPress={() => this.onComplete()}
+              onPress={this.onComplete}
             />,
           ]}
         >
           <AlertCheckbox
             isChecked={isAlertChecked}
             label={t('mnemonic.write.alertUnderstand')}
-            onPress={() => this.toggleCheckbox()}
+            onPress={this.toggleCheckbox}
           />
         </Alert>
 
@@ -95,7 +95,7 @@ class Write extends Component {
         </ContentContainer>
 
         <Button
-          onPress={() => this.showModal()}
+          onPress={this.showAlert}
           title={t('mnemonic.write.continueButton')}
         />
       </Container>
