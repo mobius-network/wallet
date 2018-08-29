@@ -66,7 +66,7 @@ export const Title = styled.Text`
   font-size: ${fontSizes.normal};
   font-weight: ${({ theme }) => variants[theme.variant].fontWeight};
   text-transform: ${({ theme }) => variants[theme.variant].textTransform};
-  opacity: ${({ theme }) => (theme.disabled ? 0.6 : 1)};
+  opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
 `;
 
 export const shadow = {

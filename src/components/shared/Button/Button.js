@@ -27,7 +27,7 @@ class Button extends Component {
   };
 
   renderContent = () => {
-    const { title, variant } = this.props;
+    const { title, variant, disabled } = this.props;
 
     if (typeof title !== 'string') {
       return <Content>{title}</Content>;
@@ -38,7 +38,7 @@ class Button extends Component {
         return (
           <Gradient>
             <Content>
-              <Title>{title}</Title>
+              <Title disabled={disabled}>{title}</Title>
             </Content>
           </Gradient>
         );
@@ -46,7 +46,7 @@ class Button extends Component {
       default:
         return (
           <Content>
-            <Title>{title}</Title>
+            <Title disabled={disabled}>{title}</Title>
           </Content>
         );
     }
@@ -63,7 +63,6 @@ class Button extends Component {
           square,
           variant,
           padding,
-          disabled,
         }}
       >
         <Container style={variant !== 'text' && shadow}>
