@@ -36,7 +36,7 @@ class Write extends Component {
   }
 
   onCancel() {
-    this.setState({ isAlertVisisble: false });
+    this.setState({ isAlertVisisble: false, isAlertChecked: false });
   }
 
   onComplete() {
