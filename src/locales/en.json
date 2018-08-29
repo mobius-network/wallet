@@ -1,5 +1,11 @@
 {
   "translation": {
+    "main": {
+      "alertTitle": "Account setup",
+      "alertMessage": "We detected wallet keys from previous app installation on this device. Do you want to continue using existing keys or reset and setup a new account?",
+      "alertReset": "Reset",
+      "alertUseExisting": "Use existing",
+    },
     "shared": {
       "cancel": "Cancel",
       "close": "Close",
