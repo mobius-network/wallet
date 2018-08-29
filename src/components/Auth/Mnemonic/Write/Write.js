@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
+import { Clipboard } from 'react-native';
 import PropTypes from 'prop-types';
 
 import MnemonicView from 'components/shared/MnemonicView';
 import Button from 'components/shared/Button';
 import Alert from 'components/shared/Alert';
-import CheckBox from 'react-native-check-box';
-
-import { colors } from 'components/shared/Styleguide';
+import AlertCheckbox from 'components/shared/AlertCheckbox';
 
 import {
   Container,
@@ -14,8 +13,6 @@ import {
   Title,
   Description,
   ContentContainer,
-  AlertContainer,
-  AlertCheckboxLabel,
 } from './styles';
 
 class Write extends Component {
@@ -26,12 +23,12 @@ class Write extends Component {
   };
 
   state = {
-    isModalVisible: false,
+    isAlertVisisble: false,
     isAlertChecked: false,
   };
 
   showModal() {
-    this.setState({ isModalVisible: true });
+    this.setState({ isAlertVisisble: true });
   }
 
   toggleCheckbox() {
@@ -39,19 +36,27 @@ class Write extends Component {
   }
 
   onCancel() {
-    this.setState({ isModalVisible: false });
+    this.setState({ isAlertVisisble: false });
+  }
+
+  onComplete() {
+    this.setState({ isAlertVisisble: false });
+
+    Clipboard.setString(this.props.mnemonic);
+
+    this.props.onComplete();
   }
 
   render() {
-    const { isModalVisible, isAlertChecked } = this.state;
-    const { t, mnemonic, onComplete } = this.props;
+    const { isAlertVisisble, isAlertChecked } = this.state;
+    const { t, mnemonic } = this.props;
 
     return (
       <Container>
         <Alert
-          isVisible={isModalVisible}
+          isVisible={isAlertVisisble}
           title={t('mnemonic.write.alertTitle')}
-          text={t('mnemonic.write.alertDescription')}
+          text={t('mnemonic.write.alertMessage')}
           buttons={[
             <Button
               key="cancel"
@@ -69,20 +74,15 @@ class Write extends Component {
               padding={false}
               title={t('mnemonic.write.alertButtonConfirm').toUpperCase()}
               disabled={!isAlertChecked}
-              onPress={() => onComplete()}
+              onPress={() => this.onComplete()}
             />,
           ]}
         >
-          <AlertContainer>
-            <CheckBox
-              isChecked={isAlertChecked}
-              onClick={() => this.toggleCheckbox()}
-              checkBoxColor={colors.textPrimary}
-            />
-            <AlertCheckboxLabel>
-              {t('mnemonic.write.alertUnderstand')}
-            </AlertCheckboxLabel>
-          </AlertContainer>
+          <AlertCheckbox
+            isChecked={isAlertChecked}
+            label={t('mnemonic.write.alertUnderstand')}
+            onPress={() => this.toggleCheckbox()}
+          />
         </Alert>
 
         <Header>

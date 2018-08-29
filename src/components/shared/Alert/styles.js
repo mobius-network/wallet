@@ -6,7 +6,7 @@ export const Container = styled.View``;
 
 export const Window = styled.View`
   background-color: ${colors.bgWhite};
-  padding: 20;
+  padding: 20px;
   border-radius: 3;
 `;
 
