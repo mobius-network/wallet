@@ -75,7 +75,9 @@ class AddFunds extends Component {
         <Touchable onPress={this.showActionSheet}>
           <SelectorContainer>
             <SelectorTitle>{t('addFunds.selectWallet.label')}</SelectorTitle>
-            <SelectedCurrency>{this.options[selected]}</SelectedCurrency>
+            <SelectedCurrency>
+              {this.options[selected].toUpperCase()}
+            </SelectedCurrency>
 
             <ChevronIcon />
           </SelectorContainer>
@@ -91,7 +93,7 @@ class AddFunds extends Component {
             destination={publicKey}
           />
 
-          <KeyLabel>{t('addFunds.publicKey.title')}</KeyLabel>
+          <KeyLabel>{t('addFunds.publicKey.title').toUpperCase()}</KeyLabel>
           <KeyValue>
             {publicKey.slice(0, 11)}…{publicKey.slice(-11)}
           </KeyValue>

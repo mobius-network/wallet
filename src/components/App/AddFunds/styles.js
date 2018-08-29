@@ -19,7 +19,7 @@ export const SelectorContainer = styled.View`
   padding-right: 17;
   padding-bottom: 18;
   border-bottom-width: 1;
-  border-color: ${colors.borderColor};
+  border-color: ${colors.border};
   background-color: #fafafa;
 `;
 
@@ -36,7 +36,6 @@ export const SelectedCurrency = styled.Text`
   font-family: ${fonts.roboto.regular};
   font-size: 15;
   line-height: 14;
-  text-transform: uppercase;
 `;
 
 export const ChevronIcon = styled(Icon).attrs({
@@ -111,7 +110,6 @@ export const KeyLabel = styled.Text`
   line-height: 14;
   margin-top: 16;
   opacity: 0.5;
-  text-transform: uppercase;
 `;
 
 export const KeyValue = styled.Text`

@@ -47,7 +47,7 @@ class Dashboard extends Component {
         <ActionButton
           square
           onPress={this.handleNavigationClick}
-          title={t('dashboard.receiveButton')}
+          title={t('dashboard.receiveButton').toUpperCase()}
         />
       </Container>
     );

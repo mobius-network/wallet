@@ -52,5 +52,4 @@ export const ActionButton = styled(Button).attrs({
   square: true,
 })`
   align-self: flex-end;
-  text-transform: uppercase;
 `;
