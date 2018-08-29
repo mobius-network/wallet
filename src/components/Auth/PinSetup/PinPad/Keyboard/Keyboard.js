@@ -55,7 +55,7 @@ class Keyboard extends Component {
           <TouchableHighlight
             disabled={isDisabled}
             onPress={this.handleNumberButtonClick(text)}
-            style={styles.numberButton}
+            style={styles.button}
             underlayColor="transparent"
           >
             <Text
@@ -89,7 +89,7 @@ class Keyboard extends Component {
           <TouchableHighlight
             disabled={isDisabled}
             onPress={this.handleDeleteButtonClick}
-            style={styles.colIcon}
+            style={styles.button}
             underlayColor="transparent"
           >
             <Icon

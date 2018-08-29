@@ -7,16 +7,19 @@ export default StyleSheet.create({
     width: helpers.vw,
   },
   col: {
-    alignItems: 'stretch',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    paddingLeft: 2,
-    paddingRight: 2,
-  },
-  numberButton: {
     alignItems: 'center',
-    backgroundColor: 'transparent',
+    flexDirection: 'column',
+    height: 63,
     justifyContent: 'center',
+    paddingLeft: 5,
+    paddingRight: 5,
+  },
+  button: {
+    alignItems: 'center',
+    borderRadius: 32,
+    height: 64,
+    justifyContent: 'center',
+    width: 64,
   },
   numberButtonText: {
     color: colors.textPrimary,
