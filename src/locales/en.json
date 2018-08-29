@@ -25,12 +25,23 @@
         "alertMessage": "You’ve selected the wrong mnemonic phrase. Please reread your phrase, write it down, and try again.",
         "alertTitle": "Incorrect Phrase",
         "description": "Which one was yours?",
-        "title": "Confirm Your Mnemonic Phrase"
+        "title": "Confirm Your Mnemonic Phrase",
+
+        "alertTitle": "Don't loose your recovery phrase",
+        "alertDescription": "If you loose your recovery pharase there is no possible way to recover yoour account",
+        "alertUnderstand": "Yes, I understand the risk of loosing my recovery phrase.",
+        "alertButtonConfirm": "Continue",
       },
       "write": {
         "continueButton": "I’ve written it down",
         "description": "You’ll need this phrase to access your account on another device.",
-        "title": "Write Down Your Mnemonic Phrase"
+        "title": "Write Down Your Mnemonic Phrase",
+
+        "alertTitle": "Copy your phrase",
+        "alertDescription": "Be careful where you paste your phrase. Your wallet is only as secure as the place you store your phrase.",
+        "alertUnderstand": "Yes, I understand the risk of storing my phrase online.",
+        "alertButtonConfirm": "Copy",
+        "alertButtonCancel": "Cancel",
       }
     },
     "success": {

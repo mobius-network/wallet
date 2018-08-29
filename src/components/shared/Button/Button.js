@@ -16,12 +16,14 @@ class Button extends Component {
     style: ViewPropTypes.style,
     title: PropTypes.any.isRequired,
     variant: PropTypes.oneOf(['primary', 'text', 'secondary']),
+    padding: PropTypes.bool,
   };
 
   static defaultProps = {
     disabled: false,
     square: false,
     variant: 'primary',
+    padding: true,
   };
 
   renderContent = () => {
@@ -52,12 +54,19 @@ class Button extends Component {
 
   render() {
     const {
-      disabled, onPress, square, variant, style,
+      disabled, onPress, square, variant, padding,
     } = this.props;
 
     return (
-      <ThemeProvider theme={{ square, variant }}>
-        <Container style={[variant !== 'text' && shadow, style]}>
+      <ThemeProvider
+        theme={{
+          square,
+          variant,
+          padding,
+          disabled,
+        }}
+      >
+        <Container style={variant !== 'text' && shadow}>
           <TouchableOpacity
             accessibilityComponentType="button"
             disabled={disabled}

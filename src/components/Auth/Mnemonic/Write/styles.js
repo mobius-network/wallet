@@ -45,3 +45,18 @@ export const Description = styled.Text`
 export const ContentContainer = styled.View`
   flex: 1;
 `;
+
+export const AlertContainer = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+`;
+
+export const AlertCheckboxLabel = styled.Text`
+  color: ${colors.textDefault};
+  font-family: ${fonts.helveticaNeue.bold};
+  font-size: 14;
+  line-height: 22;
+  font-weight: bold;
+  margin-left: 10;
+`;
