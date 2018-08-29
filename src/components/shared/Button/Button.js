@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, ViewPropTypes } from 'react-native';
 
 import {
   Container, Content, Gradient, Title, shadow,
@@ -13,7 +13,7 @@ class Button extends Component {
     disabled: PropTypes.bool,
     onPress: PropTypes.func,
     square: PropTypes.bool,
-    style: PropTypes.object,
+    style: ViewPropTypes.style,
     title: PropTypes.any.isRequired,
     variant: PropTypes.oneOf(['primary', 'text', 'secondary']),
   };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, ViewPropTypes } from 'react-native';
 
 import { Image } from './styles';
 
@@ -18,7 +18,7 @@ export default class Icon extends Component {
 
   static propTypes = {
     name: PropTypes.string.isRequired,
-    style: PropTypes.object,
+    style: ViewPropTypes.style,
     size: PropTypes.number,
     onPress: PropTypes.func,
   };
