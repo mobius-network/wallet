@@ -40,11 +40,9 @@ class Write extends Component {
   };
 
   onComplete = () => {
-    this.setState({ isAlertVisisble: false });
-
     Clipboard.setString(this.props.mnemonic);
 
-    this.props.onComplete();
+    this.setState({ isAlertVisisble: false }, this.props.onComplete);
   };
 
   render() {

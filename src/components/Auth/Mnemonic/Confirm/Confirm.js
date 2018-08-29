@@ -32,21 +32,23 @@ class Confirm extends Component {
   };
 
   onError = () => {
-    this.setState({
-      isConfirmAlertVisible: false,
-      isErrorAlertVisible: false,
-    });
-
-    this.props.onError();
+    this.setState(
+      {
+        isConfirmAlertVisible: false,
+        isErrorAlertVisible: false,
+      },
+      this.props.onError
+    );
   };
 
   onComplete = () => {
-    this.setState({
-      isConfirmAlertVisible: false,
-      isErrorAlertVisible: false,
-    });
-
-    this.props.onComplete();
+    this.setState(
+      {
+        isConfirmAlertVisible: false,
+        isErrorAlertVisible: false,
+      },
+      this.props.onComplete
+    );
   };
 
   handleMnemonicVariantClick = mnemonicVariant => {
