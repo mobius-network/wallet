@@ -30,7 +30,7 @@ platform :ios do
     increment_build_number
     build_app
     commit_version_bump
-    crashlytics(groups: "mobius,evil-martians")
+    crashlytics(groups: "devs")
   end
 
   desc "Push a new beta build to TestFlight"
