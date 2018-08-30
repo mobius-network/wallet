@@ -49,6 +49,3 @@ export const getKeypairFor = createSelector(
     return wallet.getKeypair(accountNumber);
   }
 );
-
-export const getIsNeedToShowCredetialAlert = state =>
-  state.auth.isNeedToShowCredetialAlert;

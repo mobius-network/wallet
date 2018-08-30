@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
-
+import { StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
+import SplashScreen from 'react-native-splash-screen';
 import { I18nextProvider } from 'react-i18next';
 
 // import { notify } from 'utils/honeybadger';
 import i18n from 'utils/i18n';
+
 import store from 'state/store';
-import Main from 'components/Main';
+
+import Navigator from './Navigator';
+import { SafeArea } from './styles';
 
 class Root extends Component {
+  componentDidMount() {
+    SplashScreen.hide();
+  }
+
   // componentDidCatch(error, info) {
   //   notify(error, info);
   // }
@@ -17,7 +25,10 @@ class Root extends Component {
     return (
       <Provider store={store}>
         <I18nextProvider i18n={i18n}>
-          <Main />
+          <SafeArea>
+            <StatusBar barStyle="light-content" />
+            <Navigator />
+          </SafeArea>
         </I18nextProvider>
       </Provider>
     );
