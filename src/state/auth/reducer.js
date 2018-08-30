@@ -11,7 +11,6 @@ const initialState = {
   mnemonic: undefined,
   keystore: undefined,
   accountFunded: false,
-  isNeedToShowCredetialAlert: false,
 };
 
 export const authReducer = createReducer(
