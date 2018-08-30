@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import SplashScreen from 'react-native-splash-screen';
 import { I18nextProvider } from 'react-i18next';
 
-// import { notify } from 'utils/honeybadger';
 import i18n from 'utils/i18n';
 
 import store from 'state/store';
@@ -16,10 +15,6 @@ class Root extends Component {
   componentDidMount() {
     SplashScreen.hide();
   }
-
-  // componentDidCatch(error, info) {
-  //   notify(error, info);
-  // }
 
   render() {
     return (
