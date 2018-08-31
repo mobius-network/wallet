@@ -30,6 +30,7 @@ target 'MobiusMobileWallet' do
     RCTSettings
     RCTText
     RCTWebSocket
+    RCTVibration
   ]
 
   # Add new pods below this line

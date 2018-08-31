@@ -72,6 +72,8 @@ PODS:
     - React/Core
   - React/RCTText (0.56.0):
     - React/Core
+  - React/RCTVibration (0.56.0):
+    - React/Core
   - React/RCTWebSocket (0.56.0):
     - React/Core
     - React/fishhook
@@ -117,6 +119,7 @@ DEPENDENCIES:
   - React/RCTSettings (from `../node_modules/react-native`)
   - React/RCTTest (from `../node_modules/react-native`)
   - React/RCTText (from `../node_modules/react-native`)
+  - React/RCTVibration (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
   - ReactNativePermissions (from `../node_modules/react-native-permissions`)
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
@@ -193,6 +196,6 @@ SPEC CHECKSUMS:
   RNVectorIcons: c0dbfbf6068fefa240c37b0f71bd03b45dddac44
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: c4c85459a6aec94be89b1e4b8ec297795210f2b4
+PODFILE CHECKSUM: 7423f02245f5b1e82668dcfc8ae57b55be29f338
 
 COCOAPODS: 1.6.0.beta.1
