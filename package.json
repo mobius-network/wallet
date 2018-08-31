@@ -52,6 +52,7 @@
     "react-native-device-info": "^0.22.4",
     "react-native-easy-grid": "0.2.0",
     "react-native-event-source": "^1.0.1",
+    "react-native-fabric": "^0.5.1",
     "react-native-i18n": "^2.0.15",
     "react-native-jwt": "^1.0.0",
     "react-native-keychain": "^3.0.0",

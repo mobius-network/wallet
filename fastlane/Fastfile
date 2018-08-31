@@ -6,6 +6,17 @@ fastlane_version '2.95.0'
 default_platform :ios
 
 platform :ios do
+  before_all do
+    ENV["CRASHLYTICS_API_TOKEN"] ||= sh("cd ../ios; bundle exec pod keys get FabricAPIKey")
+    ENV["CRASHLYTICS_BUILD_SECRET"] ||= sh("cd ../ios; bundle exec pod keys get FabricBuildSecret")
+  end
+
+  lane :clean_full do
+    clean_build_artifacts
+    clean_cocoapods_cache
+    clear_derived_data
+    clear_derived_data(derived_data_path: "ios/build")
+  end
 
   lane :setup do
     sh("cp -r ../ios/podspecs/ ../node_modules")
@@ -17,26 +28,30 @@ platform :ios do
     scan
   end
 
+  lane :bump_version do
+    ensure_git_status_clean
+    increment_build_number
+    commit_version_bump
+  end
+
   desc 'Prepare local build'
   lane :local do
     sync_code_signing
-    build_app
+    build_app(configuration: 'Debug')
   end
 
   desc 'Push a new build to Crashlytics.'
   lane :alpha do
     sync_code_signing
-    ensure_git_status_clean
-    increment_build_number
-    build_app
-    commit_version_bump
-    crashlytics(groups: "devs")
+    build_app(clean: true)
+    crashlytics(groups: "devs", debug: true)
+    bump_version
   end
 
   desc "Push a new beta build to TestFlight"
   lane :beta do
     sync_code_signing
-    build_app
+    build_app(clean: true)
     upload_to_testflight
   end
 

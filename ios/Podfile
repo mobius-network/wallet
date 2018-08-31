@@ -2,18 +2,13 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '9.0'
 plugin 'cocoapods-fix-react-native'
+plugin 'cocoapods-keys',
+  project: "MobiusMobileWallet",
+  keys: %w(CrashlyticsAPIToken CrashlyticsBuildSecret)
 
-# use_frameworks!
+inhibit_all_warnings!
 
 target 'MobiusMobileWallet' do
-  pod 'Fabric', '~> 1.7.11'
-  pod 'Crashlytics', '~> 3.10.7'
-
-  pod 'DoubleConversion', podspec: '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
-  pod 'glog', podspec: '../node_modules/react-native/third-party-podspecs/glog.podspec'
-  pod 'Folly', podspec: '../node_modules/react-native/third-party-podspecs/Folly.podspec'
-  pod 'yoga', path: '../node_modules/react-native/ReactCommon/yoga'
-
   pod 'React', path: '../node_modules/react-native', subspecs: %W[
     Core
     CxxBridge
@@ -33,10 +28,19 @@ target 'MobiusMobileWallet' do
     RCTVibration
   ]
 
+  # Third-party dependencies required by React Native
+  pod 'DoubleConversion', podspec: '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'Folly', podspec: '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+  pod 'glog', podspec: '../node_modules/react-native/third-party-podspecs/glog.podspec'
+  pod 'yoga', path: '../node_modules/react-native/ReactCommon/yoga'
+
+
+
   # Add new pods below this line
 
   pod 'BVLinearGradient', path: '../node_modules/react-native-linear-gradient'
   pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
+  pod 'ReactNativeFabric', path: '../node_modules/react-native-fabric'
   pod 'RNDeviceInfo', path: '../node_modules/react-native-device-info'
   pod 'RNI18n', path: '../node_modules/react-native-i18n'
   pod 'RNKeychain', path: '../node_modules/react-native-keychain'
