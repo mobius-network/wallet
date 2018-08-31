@@ -23,6 +23,7 @@ function* run() {
     payload: `stellar/fund_wallet?payload=${token}`,
   });
 
+  yield put(authActions.set({ wallet }));
   yield put(authActions.watchAccount());
 
   const pinStore = yield call(Keychain.getGenericPassword, {
