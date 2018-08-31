@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Text, TouchableHighlight } from 'react-native';
+import { Text } from 'react-native';
 import { Col, Row, Grid } from 'react-native-easy-grid';
-import Animate from 'react-move/Animate';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { easeLinear } from 'd3-ease';
 import { range } from 'lodash';
 
-import { colors } from 'components/shared/Styleguide';
-
+import Button from './Button';
 import styles from './styles';
 
 class Keyboard extends Component {
@@ -43,32 +40,19 @@ class Keyboard extends Component {
     const isDisabled = disabled || pin.length === pinLength;
 
     return (
-      <Animate
-        show={true}
-        start={{
-          opacity: 1,
-        }}
-        update={{
-          opacity: [isDisabled ? 0.5 : 1],
-          timing: { duration: 200, ease: easeLinear },
-        }}
+      <Button
+        disabled={isDisabled}
+        onPress={this.handleNumberButtonClick(text)}
       >
-        {({ opacity }) => (
-          <TouchableHighlight
-            disabled={isDisabled}
-            onPress={this.handleNumberButtonClick(text)}
-            style={styles.button}
-            underlayColor={colors.bg}
+        {({ color, opacity }) => (
+          <Text
+            selectable={false}
+            style={[styles.numberButtonText, { opacity, color }]}
           >
-            <Text
-              selectable={false}
-              style={[styles.numberButtonText, { opacity }]}
-            >
-              {text}
-            </Text>
-          </TouchableHighlight>
+            {text}
+          </Text>
         )}
-      </Animate>
+      </Button>
     );
   };
 
@@ -77,30 +61,14 @@ class Keyboard extends Component {
     const isDisabled = disabled || pin.length === 0;
 
     return (
-      <Animate
-        show={true}
-        start={{
-          opacity: 0.5,
-        }}
-        update={{
-          opacity: [isDisabled ? 0.5 : 1],
-          timing: { duration: 200, ease: easeLinear },
-        }}
-      >
-        {({ opacity }) => (
-          <TouchableHighlight
-            disabled={isDisabled}
-            onPress={this.handleDeleteButtonClick}
-            style={styles.button}
-            underlayColor={colors.bg}
-          >
-            <Icon
-              name="backspace"
-              style={[styles.deleteButtonIcon, { opacity }]}
-            />
-          </TouchableHighlight>
+      <Button disabled={isDisabled} onPress={this.handleDeleteButtonClick}>
+        {({ color, opacity }) => (
+          <Icon
+            name="backspace"
+            style={[styles.deleteButtonIcon, { opacity, color }]}
+          />
         )}
-      </Animate>
+      </Button>
     );
   };
 
