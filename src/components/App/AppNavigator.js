@@ -7,6 +7,7 @@ import NavHeader from 'components/shared/NavHeader';
 
 import Dashboard from './Dashboard';
 import AddFunds from './AddFunds';
+import Success from './Success';
 
 export const AppNavigator = createStackNavigator(
   {
@@ -21,6 +22,12 @@ export const AppNavigator = createStackNavigator(
       navigationOptions: () => ({
         // eslint-disable-next-line
         header: props => <NavHeader {...props} title="addFunds.headerTitle" />
+      }),
+    },
+    Success: {
+      screen: Success,
+      navigationOptions: () => ({
+        header: null,
       }),
     },
   },

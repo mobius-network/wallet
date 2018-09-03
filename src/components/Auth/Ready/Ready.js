@@ -5,7 +5,7 @@ import BackgroundView from 'components/shared/BackgroundView';
 import SimpleInfo from 'components/shared/SimpleInfo';
 import Button from 'components/shared/Button';
 
-class Welcome extends Component {
+class Ready extends Component {
   static propTypes = {
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
@@ -13,7 +13,7 @@ class Welcome extends Component {
     t: PropTypes.func.isRequired,
   };
 
-  handleNavigationClick = () => this.props.navigation.navigate('PinSetup');
+  handleNavigationClick = () => this.props.navigation.navigate('App');
 
   render() {
     const { t } = this.props;
@@ -23,14 +23,14 @@ class Welcome extends Component {
         variant="bottom"
         content={
           <SimpleInfo
-            title={t('welcome.title')}
-            description={t('welcome.description')}
+            title={t('ready.title')}
+            description={t('ready.description')}
           />
         }
         action={
           <Button
             onPress={this.handleNavigationClick}
-            title={t('welcome.setupWalletButton')}
+            title={t('shared.continue')}
           />
         }
       />
@@ -38,4 +38,4 @@ class Welcome extends Component {
   }
 }
 
-export default Welcome;
+export default Ready;

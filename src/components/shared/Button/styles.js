@@ -12,7 +12,6 @@ const variants = {
     borderWidth: 0,
     color: colors.textWhite,
     fontWeight: 700,
-    textTransform: 'uppercase',
   },
   secondary: {
     backgroundColor: colors.bgWhite,
@@ -20,7 +19,6 @@ const variants = {
     borderWidth: 1,
     color: colors.textPrimary,
     fontWeight: 400,
-    textTransform: 'uppercase',
   },
   text: {
     backgroundColor: 'transparent',
@@ -28,7 +26,6 @@ const variants = {
     borderWidth: 0,
     color: colors.textPrimary,
     fontWeight: 400,
-    textTransform: 'none',
   },
 };
 
@@ -65,7 +62,6 @@ export const Title = styled.Text`
   font-family: ${fonts.nunitoSans.bold};
   font-size: ${fontSizes.normal};
   font-weight: ${({ theme }) => variants[theme.variant].fontWeight};
-  text-transform: ${({ theme }) => variants[theme.variant].textTransform};
   opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
 `;
 

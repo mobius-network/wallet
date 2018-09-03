@@ -33,12 +33,14 @@ class Button extends Component {
       return <Content>{title}</Content>;
     }
 
+    const text = variant === 'text' ? title : title.toUpperCase();
+
     switch (variant) {
       case 'primary':
         return (
           <Gradient>
             <Content>
-              <Title disabled={disabled}>{title}</Title>
+              <Title disabled={disabled}>{text}</Title>
             </Content>
           </Gradient>
         );
@@ -46,7 +48,7 @@ class Button extends Component {
       default:
         return (
           <Content>
-            <Title disabled={disabled}>{title}</Title>
+            <Title disabled={disabled}>{text}</Title>
           </Content>
         );
     }

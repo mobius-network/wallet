@@ -14,13 +14,6 @@ export default StyleSheet.create({
     paddingLeft: 5,
     paddingRight: 5,
   },
-  button: {
-    alignItems: 'center',
-    borderRadius: 32,
-    height: 64,
-    justifyContent: 'center',
-    width: 64,
-  },
   numberButtonText: {
     color: colors.textPrimary,
     fontFamily: fonts.helveticaNeue.regular,
