@@ -24,7 +24,6 @@ export const Asset = styled.Text`
   font-family: ${fonts.roboto.regular};
   font-size: ${fontSizes.default};
   line-height: 24;
-  text-transform: uppercase;
 `;
 
 export const Price = styled.Text`
