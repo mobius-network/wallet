@@ -5,32 +5,32 @@ import BackgroundView from 'components/shared/BackgroundView';
 import SimpleInfo from 'components/shared/SimpleInfo';
 import Button from 'components/shared/Button';
 
-class Welcome extends Component {
+class Success extends Component {
   static propTypes = {
+    message: PropTypes.string,
+
+    t: PropTypes.func.isRequired,
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
     }).isRequired,
-    t: PropTypes.func.isRequired,
   };
 
-  handleNavigationClick = () => this.props.navigation.navigate('PinSetup');
+  onComplete = () => this.props.navigation.navigate('Dashboard');
 
   render() {
-    const { t } = this.props;
+    const { t, message } = this.props;
 
     return (
       <BackgroundView
-        variant="bottom"
+        variant="center"
         content={
-          <SimpleInfo
-            title={t('welcome.title')}
-            description={t('welcome.description')}
-          />
+          <SimpleInfo title={t('success.title')} description={message} />
         }
         action={
           <Button
-            onPress={this.handleNavigationClick}
-            title={t('welcome.setupWalletButton')}
+            variant="primary"
+            title={t('shared.done')}
+            onPress={this.onComplete}
           />
         }
       />
@@ -38,4 +38,4 @@ class Welcome extends Component {
   }
 }
 
-export default Welcome;
+export default Success;

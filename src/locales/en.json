@@ -3,7 +3,8 @@
     "shared": {
       "cancel": "Cancel",
       "close": "Close",
-      "continue": "Continue"
+      "continue": "Continue",
+      "done": "Done"
     },
     "welcome": {
       "title": "Welcome",
@@ -43,7 +44,7 @@
         "alertButtonCancel": "Cancel",
       }
     },
-    "success": {
+    "ready": {
       "title": "Your wallet \n is ready!",
       "description": "Send, receive, and store your coins."
     },
@@ -79,6 +80,9 @@
       "errorTitle": "Error",
       "title": "Loading",
       "tryAgainButton": "Try Again"
+    },
+    "success": {
+      "title": "Success!"
     }
   }
 }
