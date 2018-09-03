@@ -7,8 +7,7 @@ default_platform :ios
 
 platform :ios do
   before_all do
-    ENV["CRASHLYTICS_API_TOKEN"] ||= sh("cd ../ios; bundle exec pod keys get FabricAPIKey")
-    ENV["CRASHLYTICS_BUILD_SECRET"] ||= sh("cd ../ios; bundle exec pod keys get FabricBuildSecret")
+    dotgpg_environment(dotgpg_file: '.env.gpg')
   end
 
   lane :clean_full do
@@ -16,9 +15,11 @@ platform :ios do
     clean_cocoapods_cache
     clear_derived_data
     clear_derived_data(derived_data_path: "ios/build")
+    reset_simulator_contents
   end
 
   lane :setup do
+    install_xcode_plugin(github: 'https://github.com/onmyway133/XcodeWay')
     sh("cp -r ../ios/podspecs/ ../node_modules")
     cocoapods(podfile: "./ios")
   end
@@ -31,27 +32,34 @@ platform :ios do
   lane :bump_version do
     ensure_git_status_clean
     increment_build_number
+    update_settings_bundle key: "CurrentAppVersion", value: ":version (:build)"
+    update_settings_bundle key: "BuildDate", value: Time.now.strftime("%Y-%m-%d")
     commit_version_bump
   end
 
-  desc 'Prepare local build'
-  lane :local do
+  desc 'Prepare local development build'
+  lane :dev do
     sync_code_signing
+    update_info_plist(plist_path: 'MobiusMobileWallet/Info.plist', display_name: '∞ Wallet')
+    add_badge(alpha: true)
     build_app(configuration: 'Debug')
   end
 
   desc 'Push a new build to Crashlytics.'
-  lane :alpha do
+  lane :qa do
     sync_code_signing
-    build_app(clean: true)
+    # update_info_plist(plist_path: 'MobiusMobileWallet/Info.plist', display_name: 'Mobius Wallet')
+    add_badge(alpha: true)
+    build_app(clean: false)
+    upload_symbols_to_crashlytics(binary_path: './ios/Pods/Fabric/upload-symbols')
     crashlytics(groups: "devs", debug: true)
-    bump_version
   end
 
   desc "Push a new beta build to TestFlight"
   lane :beta do
     sync_code_signing
-    build_app(clean: true)
+    build_app
+    upload_symbols_to_crashlytics
     upload_to_testflight
   end
 
@@ -59,6 +67,7 @@ platform :ios do
   lane :production do
     sync_code_signing
     build_app
+    upload_symbols_to_crashlytics
     upload_to_appstore
   end
 end
@@ -89,5 +98,14 @@ platform :android do
     build
     gradle(task: "assembleRelease")
     #upload_to_play_store
+  end
+end
+
+before_all do
+  %w[GYM_WORKSPACE SCAN_WORKSPACE].each do |key|
+    ENV[key] ||= ENV['FASTLANE_WORKSPACE']
+  end
+  %w[FL_BUILD_NUMBER_PROJECT FL_UPDATE_PLIST_PROJECT_PATH SETTINGS_BUNDLE_XCODEPROJ].each do |key|
+    ENV[key] ||= ENV['FASTLANE_PROJECT']
   end
 end

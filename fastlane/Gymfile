@@ -1,29 +1,31 @@
 # For more information about this configuration visit
 # https://docs.fastlane.tools/actions/gym/#gymfile
 
-workspace "ios/MobiusMobileWallet.xcworkspace"
 scheme "MobiusMobileWallet"
+configuration "Debug"
 
 derived_data_path "ios/build"
+output_directory "ios/build"
+build_path "ios/build/Archives"
 buildlog_path "ios/build/Logs"
-include_symbols true
-include_bitcode false
+clean true
 
-for_lane :local do
+for_lane :dev do
+  export_method "development"
+  clean false
 end
 
-for_lane :alpha do
-  clean true
+for_lane :qa do
+  configuration "Release"
+  export_method "ad-hoc"
 end
 
 for_lane :beta do
-  clean true
-  include_bitcode true
+  configuration "Release"
+  export_method "app-store"
 end
 
 for_lane :production do
-  clean true
-  include_symbols false
-  include_bitcode true
+  configuration "Release"
+  export_method "app-store"
 end
-

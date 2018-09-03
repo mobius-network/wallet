@@ -6,3 +6,9 @@ apple_id        "ios@mobius.network"
 
 itc_team_id     "119104973"
 team_id         "RW55Q5RBBV"
+
+for_lane :qa do
+end
+
+for_lane :beta do
+end

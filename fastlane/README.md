@@ -36,14 +36,14 @@ Runs all the tests
 fastlane ios bump_version
 ```
 
-### ios local
+### ios dev
 ```
-fastlane ios local
+fastlane ios dev
 ```
-Prepare local build
-### ios alpha
+Prepare local development build
+### ios qa
 ```
-fastlane ios alpha
+fastlane ios qa
 ```
 Push a new build to Crashlytics.
 ### ios beta

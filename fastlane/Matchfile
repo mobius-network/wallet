@@ -1,11 +1,11 @@
-git_url "git@github.com:mobius-network/certificates.git"
+git_url "keybase://team/mobius_network.mobile/ios-certs"
 
 readonly true
 shallow_clone true
 
 type "development"
 
-for_lane :alpha do
+for_lane :qa do
   type "adhoc"
   force_for_new_devices true
 end

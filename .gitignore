@@ -54,6 +54,8 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/devices.txt
 .env.local
+.env.secrets
+.gpg
 
 # Bundle artifact
 *.jsbundle
