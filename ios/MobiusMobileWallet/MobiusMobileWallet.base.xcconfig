@@ -1,0 +1,14 @@
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
+CODE_SIGN_ENTITLEMENTS = MobiusMobileWallet/MobiusMobileWallet.entitlements
+INFOPLIST_FILE = "$(SRCROOT)/$(TARGET_NAME)/Info.plist"
+PRODUCT_BUNDLE_IDENTIFIER = network.mobius.wallet
+PRODUCT_NAME = $(TARGET_NAME)
+TARGETED_DEVICE_FAMILY = 1,2
+
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)"
+HEADER_SEARCH_PATHS = $(inherited) "$(SRCROOT)/../node_modules/react-native-device-info/ios/RNDeviceInfo" "$(SRCROOT)/../node_modules/react-native-i18n/ios" "$(SRCROOT)/../node_modules/react-native-keychain/RNKeychainManager" "$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient" "$(SRCROOT)/../node_modules/react-native-os/ios" "$(SRCROOT)/../node_modules/react-native-randombytes" "$(SRCROOT)/../node_modules/react-native-splash-screen/ios" "$(SRCROOT)/../node_modules/react-native-tcp/ios/**" "$(SRCROOT)/../node_modules/react-native-udp/ios/**" "$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks
+LIBRARY_SEARCH_PATHS = $(inherited) "$(SRCROOT)/$(TARGET_NAME)"
+
+OTHER_LDFLAGS = $(inherited) -ObjC -lc++
+
