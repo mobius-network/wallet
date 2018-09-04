@@ -2,26 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>StringsTable</key>
-	<string>Root</string>
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
-			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>Build date</string>
+			<key>DefaultValue</key>
+			<string>2018-09-04</string>
 			<key>Key</key>
 			<string>BuildDate</string>
-		</dict>
-		<dict>
+			<key>Title</key>
+			<string>Build date</string>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>Current version</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>1.0.0 (18)</string>
 			<key>Key</key>
 			<string>CurrentAppVersion</string>
+			<key>Title</key>
+			<string>Current version</string>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
 		</dict>
 	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
 </dict>
 </plist>
