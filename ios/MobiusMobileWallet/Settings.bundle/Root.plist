@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>DefaultValue</key>
-			<string>2018-09-04</string>
+			<string>2018-09-06</string>
 			<key>Key</key>
 			<string>BuildDate</string>
 			<key>Title</key>
@@ -16,7 +16,7 @@
 		</dict>
 		<dict>
 			<key>DefaultValue</key>
-			<string>1.0.0 (18)</string>
+			<string>1.0.0 (19)</string>
 			<key>Key</key>
 			<string>CurrentAppVersion</string>
 			<key>Title</key>
