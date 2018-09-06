@@ -46,6 +46,11 @@ Prepare local development build
 fastlane ios prepare_distrib
 ```
 
+### ios prepare_alpha
+```
+fastlane ios prepare_alpha
+```
+
 ### ios qa
 ```
 fastlane ios qa
@@ -61,6 +66,11 @@ Push a new beta build to TestFlight
 fastlane ios production
 ```
 Push a new production build to App Store
+### ios refresh_dsyms
+```
+fastlane ios refresh_dsyms
+```
+Pulls up-to-date dSYM files from App Store and uploads them to Crashlytics
 
 ----
 

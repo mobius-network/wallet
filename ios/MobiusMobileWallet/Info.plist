@@ -56,31 +56,31 @@
 		</dict>
 	</dict>
 	<key>NSAppleMusicUsageDescription</key>
-	<string></string>
+	<string>Mobius Wallet shouldn&apos;t request access to the media library. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string></string>
+	<string>Mobius Wallet shouldn&apos;t request access to the bluetooth devices. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSCalendarsUsageDescription</key>
-	<string></string>
+	<string>Mobius Wallet shouldn&apos;t request access to your calendars. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>Mobius Wallet needs access to your device camera to scan QR codes</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string></string>
+	<string>Mobius Wallet shouldn&apos;t request access to your location. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
+	<string>Mobius Wallet shouldn&apos;t request access to your location. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSLocationUsageDescription</key>
-	<string></string>
+	<string>Mobius Wallet shouldn&apos;t request access to your location. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>Mobius Wallet shouldn&apos;t request access to your location. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string></string>
+	<string>Mobius Wallet shouldn&apos;t request access to your microphone. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSMotionUsageDescription</key>
-	<string></string>
+	<string>Mobius Wallet shouldn&apos;t request access to motion data. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string></string>
+	<string>Mobius Wallet shouldn&apos;t request access to your photo library. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>Mobius Wallet shouldn&apos;t request access to your photos. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string></string>
+	<string>Mobius Wallet shouldn&apos;t request access to speech recognition. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Entypo.ttf</string>

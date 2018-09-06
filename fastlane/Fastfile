@@ -20,7 +20,7 @@ platform :ios do
 
   lane :setup do
     sh("cp -r ../ios/Support/podspecs/ ../node_modules")
-    cocoapods(podfile: "./ios")
+    cocoapods
   end
 
   desc "Runs all the tests"
@@ -68,24 +68,31 @@ platform :ios do
   lane :qa do
     sync_code_signing
     build_app(clean: false)
-    upload_symbols_to_crashlytics(binary_path: './ios/Pods/Fabric/upload-symbols')
+    upload_symbols_to_crashlytics
     crashlytics(groups: "devs", debug: true)
   end
 
   desc "Push a new beta build to TestFlight"
-  lane :beta do
+  lane :beta do |options|
+    cocoapods
     sync_code_signing
     build_app
-    upload_symbols_to_crashlytics(binary_path: './ios/Pods/Fabric/upload-symbols')
-    upload_to_testflight
+    upload_to_testflight unless options[:local]
   end
 
   desc "Push a new production build to App Store"
   lane :production do
+    cocoapods
     sync_code_signing
     build_app
-    upload_symbols_to_crashlytics
-    upload_to_appstore
+    upload_to_appstore unless options[:local]
+  end
+
+  desc "Pulls up-to-date dSYM files from App Store and uploads them to Crashlytics"
+  lane :refresh_dsyms do
+    download_dsyms                  # Download dSYM files from iTC
+    upload_symbols_to_crashlytics   # Upload them to Crashlytics
+    clean_build_artifacts           # Delete the local dSYM files
   end
 end
 

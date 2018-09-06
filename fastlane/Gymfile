@@ -23,13 +23,13 @@ for_lane :qa do
 end
 
 for_lane :beta do
-  scheme "Production (Release)"
+  scheme "App-Store"
   configuration "Release"
   export_method "app-store"
 end
 
 for_lane :production do
-  scheme "Production (Release)"
+  scheme "App-Store"
   configuration "Release"
   export_method "app-store"
 end
