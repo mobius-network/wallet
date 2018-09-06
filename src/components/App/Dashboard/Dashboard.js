@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import BurgerButton from 'components/shared/BurgerButton';
+
 import Balances from './Balances';
 
 import {
   Container,
   Gradient,
+  Menu,
   Title,
   BalanceContainer,
   CurrencySymbol,
@@ -18,6 +21,7 @@ class Dashboard extends Component {
     usdBalance: PropTypes.number.isRequired,
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
+      openDrawer: PropTypes.func.isRequired,
     }).isRequired,
     t: PropTypes.func.isRequired,
   };
@@ -25,6 +29,8 @@ class Dashboard extends Component {
   static defaultProps = {
     balanceAmount: 0,
   };
+
+  handleBurgerButtonClick = () => this.props.navigation.openDrawer();
 
   handleNavigationClick = () => this.props.navigation.navigate('AddFunds');
 
@@ -34,6 +40,10 @@ class Dashboard extends Component {
     return (
       <Container>
         <Gradient>
+          <Menu>
+            <BurgerButton onPress={this.handleBurgerButtonClick} />
+          </Menu>
+
           <Title>{t('dashboard.title')}</Title>
 
           <BalanceContainer>

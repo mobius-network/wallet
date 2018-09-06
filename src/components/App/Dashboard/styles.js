@@ -21,6 +21,12 @@ export const Gradient = styled(HeaderGradient)`
   width: ${helpers.vw};
 `;
 
+export const Menu = styled.View`
+  position: absolute;
+  left: 16;
+  top: 16;
+`;
+
 export const Title = styled.Text`
   color: ${colors.darkBlue};
   font-family: ${fonts.helveticaNeue.bold};

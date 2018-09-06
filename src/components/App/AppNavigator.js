@@ -1,18 +1,39 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
 
-import wrapNavigator, { routeKeys } from 'components/shared/wrapNavigator';
+import wrapNavigator, {
+  routeKeys,
+  notifyDrawer,
+} from 'components/shared/wrapNavigator';
 
+import DrawerContent from 'components/shared/DrawerContent';
 import NavHeader from 'components/shared/NavHeader';
 
 import Dashboard from './Dashboard';
 import AddFunds from './AddFunds';
 import Success from './Success';
 
-export const AppNavigator = createStackNavigator(
+export const DrawerNavigator = notifyDrawer(
+  createDrawerNavigator(
+    {
+      Dashboard: {
+        screen: Dashboard,
+        navigationOptions: () => ({
+          header: null,
+        }),
+      },
+    },
+    {
+      initialRouteName: 'Dashboard',
+      contentComponent: DrawerContent,
+    }
+  )
+);
+
+export const StacNavigator = createStackNavigator(
   {
-    Dashboard: {
-      screen: Dashboard,
+    DrawerNavigator: {
+      screen: DrawerNavigator,
       navigationOptions: () => ({
         header: null,
       }),
@@ -36,6 +57,6 @@ export const AppNavigator = createStackNavigator(
   }
 );
 
-export const appRoutes = routeKeys(AppNavigator);
+export const appRoutes = routeKeys(StacNavigator);
 
-export default wrapNavigator('App')(AppNavigator);
+export default wrapNavigator('App')(StacNavigator);
