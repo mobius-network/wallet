@@ -1,11 +1,14 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '9.3'
 
 plugin 'cocoapods-fix-react-native'
 
 inhibit_all_warnings!
 
 target 'MobiusMobileWallet' do
+  pod 'Fabric'
+  pod 'Crashlytics'
+  
   pod 'React', path: '../node_modules/react-native', subspecs: %W[
     Core
     CxxBridge

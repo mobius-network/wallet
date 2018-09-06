@@ -1,0 +1,4 @@
+#include "Pods/Target Support Files/Pods-MobiusMobileWallet/Pods-MobiusMobileWallet.debug.xcconfig"
+#include "MobiusMobileWallet.base.xcconfig"
+DEAD_CODE_STRIPPING = NO
+PROVISIONING_PROFILE_SPECIFIER = match Development network.mobius.wallet

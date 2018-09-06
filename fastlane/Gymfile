@@ -7,7 +7,7 @@ configuration "Debug"
 derived_data_path "ios/build"
 output_directory "ios/build"
 build_path "ios/build/Archives"
-buildlog_path "ios/build/Logs"
+buildlog_path "ios/build/MobiusMobileWallet/Logs"
 clean true
 
 for_lane :dev do
@@ -21,11 +21,13 @@ for_lane :qa do
 end
 
 for_lane :beta do
+  scheme "Production (Release)"
   configuration "Release"
   export_method "app-store"
 end
 
 for_lane :production do
+  scheme "Production (Release)"
   configuration "Release"
   export_method "app-store"
 end

@@ -41,6 +41,11 @@ fastlane ios bump_version
 fastlane ios dev
 ```
 Prepare local development build
+### ios prepare_distrib
+```
+fastlane ios prepare_distrib
+```
+
 ### ios qa
 ```
 fastlane ios qa

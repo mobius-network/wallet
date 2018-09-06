@@ -1,0 +1,5 @@
+#include "Pods/Target Support Files/Pods-MobiusMobileWallet/Pods-MobiusMobileWallet.release.xcconfig"
+#include "MobiusMobileWallet.base.xcconfig"
+
+PROVISIONING_PROFILE_SPECIFIER = match AppStore network.mobius.wallet
+

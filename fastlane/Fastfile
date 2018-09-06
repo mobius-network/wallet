@@ -19,8 +19,7 @@ platform :ios do
   end
 
   lane :setup do
-    install_xcode_plugin(github: 'https://github.com/onmyway133/XcodeWay')
-    sh("cp -r ../ios/podspecs/ ../node_modules")
+    sh("cp -r ../ios/Support/podspecs/ ../node_modules")
     cocoapods(podfile: "./ios")
   end
 
@@ -45,6 +44,20 @@ platform :ios do
     build_app(configuration: 'Debug')
   end
 
+  lane :prepare_distrib do
+    appicon(
+      appicon_devices: [:ipad, :iphone, :ios_marketing],
+      appicon_image_file: "ios/assets/app-icon.png",
+      appicon_path: "ios/MobiusMobileWallet/Assets.xcassets",
+      remove_alpha: true
+    )
+    update_info_plist(
+      plist_path: 'MobiusMobileWallet/Info.plist',
+      app_identifier: 'network.mobius.wallet',
+      display_name: 'Mobius Wallet'
+    )
+  end
+
   desc 'Push a new build to Crashlytics.'
   lane :qa do
     sync_code_signing
@@ -58,6 +71,7 @@ platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
     sync_code_signing
+    prepare_distrib
     build_app
     upload_symbols_to_crashlytics
     upload_to_testflight

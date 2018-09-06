@@ -4,7 +4,7 @@
   "description": "Mobius Network mobile wallet",
   "license": "MIT",
   "scripts": {
-    "setup": "bundle install && bundle exec fastlane setup",
+    "setup": "bundle install && bundle exec fastlane install_plugins && bundle exec fastlane setup",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:fresh": "npm start -- --reset-cache",
     "android": "react-native run-android",

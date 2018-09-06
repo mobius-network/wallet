@@ -98,7 +98,9 @@ PODS:
 
 DEPENDENCIES:
   - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
+  - Crashlytics
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
+  - Fabric
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - react-native-camera (from `../node_modules/react-native-camera`)
@@ -182,10 +184,10 @@ SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BVLinearGradient: 4b3f3bdf1ac1a52a5ef5e65c9585d793a7c3f825
   Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
-  DoubleConversion: a9706f16e388b53ff12cca34473428ee29746a26
+  DoubleConversion: a6ec5115d02a687c3a7350d6462b8c3e744bfa41
   Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
-  Folly: c89ac2d5c6ab169cd7397ef27485c44f35f742c7
-  glog: b3b0330915eccea41c5cc9731a77cf564a9be5ea
+  Folly: fa458a15230e6bee654f3e2b25f6be60f0b61bf3
+  glog: cffdcd539a4fed795bdf0146afde6dd4a981576c
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
   react-native-camera: 68ad5143d2d0636236d46c7de8d2a6455ca52a36
   react-native-os: f6c8fb32540fde2d7ad363614e9bb2d536631a23
@@ -202,6 +204,6 @@ SPEC CHECKSUMS:
   RNVectorIcons: c0dbfbf6068fefa240c37b0f71bd03b45dddac44
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: 779f76dc300046260209175cfbffde2467af8a0f
+PODFILE CHECKSUM: f9f1dc255cf48ee82db6e846313e2b4b40442306
 
 COCOAPODS: 1.6.0.beta.1
