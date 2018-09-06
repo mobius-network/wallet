@@ -8,7 +8,9 @@ derived_data_path "ios/build"
 output_directory "ios/build"
 build_path "ios/build/Archives"
 buildlog_path "ios/build/MobiusMobileWallet/Logs"
-clean true
+clean false
+include_symbols true
+include_bitcode true
 
 for_lane :dev do
   export_method "development"

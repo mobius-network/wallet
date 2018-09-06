@@ -501,7 +501,7 @@
 			baseConfigurationReference = 7098ED4D213DA6BA0068DB08 /* MobiusMobileWallet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "MobiusMobileWallet/Info.plist";
+				INFOPLIST_FILE = MobiusMobileWallet/Info.plist;
 			};
 			name = Debug;
 		};
@@ -510,7 +510,7 @@
 			baseConfigurationReference = 7098ED4E213DA6BB0068DB08 /* MobiusMobileWallet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "MobiusMobileWallet/Info.plist";
+				INFOPLIST_FILE = MobiusMobileWallet/Info.plist;
 			};
 			name = Release;
 		};

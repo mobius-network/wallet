@@ -58,11 +58,15 @@ platform :ios do
     )
   end
 
+  lane :prepare_alpha do
+    # update_info_plist(plist_path: 'MobiusMobileWallet/Info.plist', display_name: 'Mobius Wallet')
+    add_badge(alpha: true)
+
+  end
+
   desc 'Push a new build to Crashlytics.'
   lane :qa do
     sync_code_signing
-    # update_info_plist(plist_path: 'MobiusMobileWallet/Info.plist', display_name: 'Mobius Wallet')
-    add_badge(alpha: true)
     build_app(clean: false)
     upload_symbols_to_crashlytics(binary_path: './ios/Pods/Fabric/upload-symbols')
     crashlytics(groups: "devs", debug: true)
@@ -71,9 +75,8 @@ platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
     sync_code_signing
-    prepare_distrib
     build_app
-    upload_symbols_to_crashlytics
+    upload_symbols_to_crashlytics(binary_path: './ios/Pods/Fabric/upload-symbols')
     upload_to_testflight
   end
 

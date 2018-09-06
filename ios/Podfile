@@ -18,10 +18,10 @@ target 'MobiusMobileWallet' do
     RCTActionSheet
     RCTAnimation
     RCTBlob
+    RCTCameraRoll
     RCTImage
     RCTLinkingIOS
     RCTNetwork
-    RCTPushNotification
     RCTSettings
     RCTText
     RCTWebSocket
