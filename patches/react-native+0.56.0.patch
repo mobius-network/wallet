@@ -1,0 +1,29 @@
+patch-package
+--- a/node_modules/react-native/Libraries/NativeAnimation/RCTNativeAnimatedNodesManager.h
++++ b/node_modules/react-native/Libraries/NativeAnimation/RCTNativeAnimatedNodesManager.h
+@@ -7,7 +7,7 @@
+ 
+ #import <Foundation/Foundation.h>
+ 
+-#import <RCTAnimation/RCTValueAnimatedNode.h>
++#import "RCTValueAnimatedNode.h"
+ #import <React/RCTBridgeModule.h>
+ #import <React/RCTUIManager.h>
+ 
+--- a/node_modules/react-native/local-cli/link/android/patches/makeBuildPatch.js
++++ b/node_modules/react-native/local-cli/link/android/patches/makeBuildPatch.js
+@@ -12,12 +12,12 @@ const normalizeProjectName = require('./normalizeProjectName');
+ module.exports = function makeBuildPatch(name) {
+   const normalizedProjectName = normalizeProjectName(name);
+   const installPattern = new RegExp(
+-    `\\s{4}(compile)(\\(|\\s)(project)\\(\\\':${normalizedProjectName}\\\'\\)(\\)|\\s)`,
++    `\\s{4}(implementation)(\\(|\\s)(project)\\(\\\':${normalizedProjectName}\\\'\\)(\\)|\\s)`,
+   );
+ 
+   return {
+     installPattern,
+     pattern: /[^ \t]dependencies {(\r\n|\n)/,
+-    patch: `    compile project(':${normalizedProjectName}')\n`,
++    patch: `    implementation project(':${normalizedProjectName}')\n`,
+   };
+ };
