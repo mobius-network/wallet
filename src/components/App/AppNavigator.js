@@ -30,7 +30,7 @@ export const DrawerNavigator = notifyDrawer(
   )
 );
 
-export const StacNavigator = createStackNavigator(
+export const StackNavigator = createStackNavigator(
   {
     DrawerNavigator: {
       screen: DrawerNavigator,
@@ -57,6 +57,6 @@ export const StacNavigator = createStackNavigator(
   }
 );
 
-export const appRoutes = routeKeys(StacNavigator);
+export const appRoutes = routeKeys(StackNavigator);
 
-export default wrapNavigator('App')(StacNavigator);
+export default wrapNavigator('App')(StackNavigator);
