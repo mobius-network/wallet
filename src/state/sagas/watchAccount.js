@@ -9,7 +9,7 @@ import {
   cancel,
 } from 'redux-saga/effects';
 import { requestActions } from 'redux-boost';
-import { assets, safeLoadAccount, createTrustline } from '@mobius-network/core';
+import { assets, safeLoadAccount, createTrustline } from 'core';
 
 import { authActions } from '../auth/reducer';
 import { getPublicKeyFor } from '../auth/selectors';

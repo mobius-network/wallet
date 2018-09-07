@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { parseBalance, parsedBalanceValue } from '@mobius-network/core';
+import { parseBalance, parsedBalanceValue } from 'core';
 
 import {
   getAsset, getMobiAsset, getNativeAsset, getFixed,
