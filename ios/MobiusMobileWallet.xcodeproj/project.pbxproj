@@ -134,21 +134,21 @@
 		17AB42BF644B4A5C9AE6DC6F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				47F291CF454449488EF7A11C /* Helvetica Neue Bold.ttf */,
-				2F296E4FC2F5402082F07962 /* Helvetica Neue Medium.ttf */,
-				5A501A9A2A2A4BEABD9B09DD /* Helvetica Neue Thin.ttf */,
 				97DB4B87A3CE4721975E2AB5 /* Helvetica Neue.ttf */,
+				5A501A9A2A2A4BEABD9B09DD /* Helvetica Neue Thin.ttf */,
+				D1A4434F98F742D9B1FA9409 /* Helvetica Neue Italic.ttf */,
+				2F296E4FC2F5402082F07962 /* Helvetica Neue Medium.ttf */,
+				47F291CF454449488EF7A11C /* Helvetica Neue Bold.ttf */,
 				7DD017C94262423A9EF12F88 /* Nunito Sans Bold.ttf */,
 				D6E8786D23B342C2A8C5297A /* Nunito Sans Light.ttf */,
+				966BB142B9B44C4EBD6ABF22 /* Nunito Sans Italic.ttf */,
 				52F3E6E48E7F48329C4B9431 /* Nunito Sans Regular.ttf */,
 				9DF959C84CFE4779AE1165C3 /* Nunito Sans SemiBold.ttf */,
-				3ECE6A48F96C4BAC8BF489D8 /* Roboto Bold.ttf */,
-				1515DD7DADCB45CB9227333E /* Roboto Medium.ttf */,
-				292D26B43110450E8534050D /* Roboto Thin.ttf */,
 				89F9404328D54B39B885FE8B /* Roboto.ttf */,
-				D1A4434F98F742D9B1FA9409 /* Helvetica Neue Italic.ttf */,
-				966BB142B9B44C4EBD6ABF22 /* Nunito Sans Italic.ttf */,
+				292D26B43110450E8534050D /* Roboto Thin.ttf */,
 				78A1D453588241A99F6EBDF9 /* Roboto Italic.ttf */,
+				1515DD7DADCB45CB9227333E /* Roboto Medium.ttf */,
+				3ECE6A48F96C4BAC8BF489D8 /* Roboto Bold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
