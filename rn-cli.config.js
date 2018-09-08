@@ -6,7 +6,6 @@ const cwd = path.resolve(__dirname);
 function getRoots() {
   return [
     cwd, // current directory
-    path.resolve(cwd, '../..'), // project directory
   ];
 }
 

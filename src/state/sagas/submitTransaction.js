@@ -1,6 +1,6 @@
 import { requestActions } from 'redux-boost';
 import { takeLatest, put, select } from 'redux-saga/effects';
-import { submitOperation } from '@mobius-network/core';
+import { submitOperation } from 'core';
 
 import { accountActions } from '../account/reducer';
 import { getKeypairFor } from '../auth/selectors';

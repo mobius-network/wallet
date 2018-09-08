@@ -1,7 +1,7 @@
 import { get } from 'lodash';
 import { createSelector } from 'reselect';
 import { getSellAsset, getBuyAsset } from 'state/utils';
-import { parsedBalanceValue } from '@mobius-network/core';
+import { parsedBalanceValue } from 'core';
 
 import { getAssetBalance, getBalance } from 'state/account/selectors';
 

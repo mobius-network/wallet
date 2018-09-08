@@ -18,11 +18,6 @@ platform :ios do
     reset_simulator_contents
   end
 
-  lane :setup do
-    sh("cp -r ../ios/Support/podspecs/ ../node_modules")
-    cocoapods
-  end
-
   desc "Runs all the tests"
   lane :test do
     scan
@@ -53,8 +48,7 @@ platform :ios do
     )
     update_info_plist(
       plist_path: 'MobiusMobileWallet/Info.plist',
-      app_identifier: 'network.mobius.wallet',
-      display_name: 'Mobius Wallet'
+      display_name: 'Manifold'
     )
   end
 

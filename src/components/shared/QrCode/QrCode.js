@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import QRCode from 'react-native-qrcode-svg';
-import querystring from 'querystring';
-import { assets } from '@mobius-network/core';
+import querystring from 'query-string';
+import { assets } from 'core';
 
 class QrCode extends Component {
   static generatePayURI = ({
