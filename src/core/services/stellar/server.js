@@ -1,5 +1,5 @@
 import { Server, Network } from 'stellar-sdk';
-import { stellarTestnet, stellarHorizonUrl} from 'utils/env';
+import { stellarTestnet, stellarHorizonUrl } from 'utils/env';
 
 if (stellarTestnet) {
   Network.useTestNetwork();

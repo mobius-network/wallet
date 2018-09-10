@@ -41,8 +41,7 @@ export const getUsdBalance = createSelector(
     }
 
     const total = Object.keys(prices).reduce(
-      (sum, asset) =>
-        sum + prices[asset].usd * parsedBalanceValue(balance, mapAssets[asset]),
+      (sum, asset) => sum + prices[asset].usd * parsedBalanceValue(balance, mapAssets[asset]),
       0
     );
 

@@ -1,27 +1,25 @@
 {
-  "name": "@mobius-network/wallet",
-  "version": "0.0.1",
-  "description": "Mobius Network mobile wallet",
   "license": "MIT",
   "scripts": {
-    "postinstall": "yarn run install:gems && yarn run install:hacks && yarn run install:pods",
-    "install:hacks": "yarn run patch-package",
-    "install:gems": "bundle check || bundle install",
-    "install:pods": "diff ios/Podfile.lock ios/Pods/Manifest.lock || bundle exec pod install --project-directory=ios",
-    "secrets": "bundle exec dotgpg cat .env.gpg > .env && bundle exec dotgpg cat .env.production.gpg > .env.production",
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "start:fresh": "npm start -- --reset-cache",
-    "link": "react-native link",
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "test": "node node_modules/jest/bin/jest.js --watch",
-    "prettier": "npx prettier --write src/**/*.js *.js",
-    "lint": "npx eslint --fix --ext js .",
-    "format": "npm run prettier && npm run lint",
+    "clean:metro": "watchman watch-del-all && rm -rf $TMPDIR/{react,metro,haste}*",
+    "clean": "yarn run clean:metro && rm -rf ./ios/build ./android/build",
     "create:component": "plop component",
     "create:state": "plop state",
-    "clean": "yarn run clean:metro && rm -rf ./ios/build ./android/build",
-    "clean:metro": "watchman watch-del-all && rm -rf $TMPDIR/{react,metro,haste}*"
+    "format": "prettier --write src/**/*.js *.js",
+    "install:gems": "bundle check || bundle install",
+    "install:hacks": "yarn run patch-package",
+    "install:pods": "diff ios/Podfile.lock ios/Pods/Manifest.lock || bundle exec pod install --project-directory=ios",
+    "ios": "react-native run-ios",
+    "link": "react-native link",
+    "lint-staged": "lint-staged",
+    "lint": "eslint --quiet . --ext .js",
+    "postinstall": "yarn run install:gems && yarn run install:hacks && yarn run install:pods",
+    "precommit": "lint-staged",
+    "secrets": "bundle exec dotgpg cat .env.gpg > .env && bundle exec dotgpg cat .env.production.gpg > .env.production",
+    "start:fresh": "yarn run start -- --reset-cache",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "node node_modules/jest/bin/jest.js --watch"
   },
   "dependencies": {
     "@tradle/react-native-http": "^2.0.1",
@@ -61,7 +59,7 @@
     "react-native-linear-gradient": "2.4.0",
     "react-native-modal": "^6.5.0",
     "react-native-permissions": "^1.1.1",
-    "react-native-qrcode-svg": "^5.1.0",
+    "react-native-qrcode-svg": "^5.1.1",
     "react-native-randombytes": "^3.5.0",
     "react-native-splash-screen": "^3.1.1",
     "react-native-svg": "^6.5.2",
@@ -87,21 +85,21 @@
     "@babel/cli": "7.0.0",
     "@babel/core": "7.0.0",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "8.2.6",
+    "babel-eslint": "9.0.0",
     "babel-jest": "23.4.2",
     "babel-plugin-module-resolver": "^3.1.1",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-babel": "^5.1.0",
-    "eslint-plugin-flowtype": "^2.50.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
-    "eslint-plugin-react-native": "^3.2.1",
-    "flow-bin": "^0.78.0",
+    "eslint-plugin-react-native": "^3.3.0",
+    "husky": "^0.14.3",
     "immutable": "^3.7.4",
     "jest": "22.4.3",
     "lint-staged": "^7.2.0",
+    "metro": "^0.45.1",
     "metro-react-native-babel-preset": "0.45.1",
     "patch-package": "^5.1.1",
     "postinstall-postinstall": "^1.0.0",
@@ -109,9 +107,7 @@
     "react-native-create-bridge": "^2.0.1",
     "react-native-dotenv": "^0.2.0",
     "react-test-renderer": "16.4.2",
-    "rimraf": "2.6.2",
-    "rn-nodeify": "tradle/rn-nodeify",
-    "wsrun": "^2.2.0"
+    "rimraf": "2.6.2"
   },
   "rnpm": {
     "assets": [
@@ -131,5 +127,12 @@
     "node": ">= 8.11.3",
     "npm": ">= 6.2",
     "yarn": ">= 1.9"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
