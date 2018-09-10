@@ -1,0 +1,19 @@
+patch-package
+--- a/node_modules/react-native-svg/android/build.gradle
++++ b/node_modules/react-native-svg/android/build.gradle
+@@ -41,13 +41,10 @@ repositories {
+         // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+         url "$projectDir/../../../node_modules/react-native/android"
+     }
+-    maven {
+-        url 'https://maven.google.com/'
+-        name 'Google'
+-    }
++    google()
+ }
+
+ dependencies {
+     //noinspection GradleDynamicVersion
+-    compile 'com.facebook.react:react-native:+'
++    implementation 'com.facebook.react:react-native:+'
+ }

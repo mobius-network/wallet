@@ -1,0 +1,10 @@
+patch-package
+--- a/node_modules/react-native-i18n/android/build.gradle
++++ b/node_modules/react-native-i18n/android/build.gradle
+@@ -22,5 +22,5 @@ android {
+ }
+
+ dependencies {
+-  compile "com.facebook.react:react-native:+" // From node_modules
++  implementation "com.facebook.react:react-native:+" // From node_modules
+ }
