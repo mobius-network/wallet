@@ -1,11 +1,12 @@
 import { Server, Network } from 'stellar-sdk';
+import { stellarTestnet, stellarHorizonUrl} from 'utils/env';
 
-if (process.env.STELLAR_TESTNET === 'true') {
+if (stellarTestnet) {
   Network.useTestNetwork();
 } else {
   Network.usePublicNetwork();
 }
 
-export const stellarServer = new Server(process.env.STELLAR_HORIZON_URL);
+export const stellarServer = new Server(stellarHorizonUrl);
 
 export const submitTransaction = (...args) => stellarServer.submitTransaction(...args);
