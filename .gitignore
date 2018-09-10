@@ -41,6 +41,9 @@ buck-out/
 \.buckd/
 *.keystore
 
+# Android
+android/captures
+
 # fastlane
 #
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
@@ -53,13 +56,18 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/devices.txt
-.env.local
-.env.secrets
 .env
-.env.production
+.env.*
+!.env.default
+!.env.*.gpg
 
 # Bundle artifact
 *.jsbundle
 
 # Cocoapods
 ios/Pods/
+
+# Crashlytics Android
+crashlytics-build.properties
+com_crashlytics_export_strings.xml
+

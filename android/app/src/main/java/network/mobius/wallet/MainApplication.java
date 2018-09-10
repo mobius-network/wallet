@@ -5,6 +5,7 @@ import android.app.Application;
 import com.crashlytics.android.Crashlytics;
 import io.fabric.sdk.android.Fabric;
 
+import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -13,14 +14,13 @@ import com.facebook.soloader.SoLoader;
 import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 import com.bitgo.randombytes.RandomBytesPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
-import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.horcrux.svg.SvgPackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
-import com.oblador.vectoricons.VectorIconsPackage;
 import com.oblador.keychain.KeychainPackage;
-import com.peel.react.TcpSocketsModule;
-import com.peel.react.rnos.RNOSModule;
-import com.tradle.react.UdpSocketsModule;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.smixx.fabric.FabricPackage;
+
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import org.reactnative.camera.RNCameraPackage;
 
 import java.util.Arrays;
@@ -39,18 +39,15 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new FabricPackage(),
-            new SvgPackage(),
-            new RNCameraPackage(),
-            new LinearGradientPackage(),
-            new SplashScreenReactPackage(),
-            new RNDeviceInfo(),
-            new RandomBytesPackage(),
-            new VectorIconsPackage(),
-            new UdpSocketsModule(),
-            new TcpSocketsModule(),
-            new RNOSModule(),
             new KeychainPackage(),
-            new RNI18nPackage()
+            new LinearGradientPackage(),
+            new RandomBytesPackage(),
+            new RNCameraPackage(),
+            new RNDeviceInfo(),
+            new RNI18nPackage(),
+            new SplashScreenReactPackage(),
+            new SvgPackage(),
+            new VectorIconsPackage()
       );
     }
 
