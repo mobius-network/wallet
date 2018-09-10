@@ -32,6 +32,9 @@
       "exports": "always-multiline",
       "functions": "ignore"
     }],
+    "import/no-extraneous-dependencies": [2, {
+      "devDependencies": true
+    }],
     "import/prefer-default-export": 0,
     "max-len": [1, 120, 2, {
       "ignoreComments": true,
