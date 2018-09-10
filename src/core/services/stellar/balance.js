@@ -1,10 +1,8 @@
+import { mobiAsset } from 'utils/env';
 import { Asset, Operation } from 'stellar-sdk';
 
 export const assets = {
-  mobi: new Asset(
-    process.env.MOBI_ASSET,
-    process.env.MOBI_ASSET_ISSUER
-  ),
+  mobi: mobiAsset,
   native: Asset.native(),
   xlm: Asset.native(),
   usd: new Asset(

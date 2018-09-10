@@ -1,5 +1,5 @@
 import DeviceInfo from 'react-native-device-info';
-import jwt from 'react-native-jwt';
+import jwt from 'jwt-simple';
 
 const deviceId = DeviceInfo.getDeviceId();
 const secret = 'hardcoded';
