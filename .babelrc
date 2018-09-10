@@ -1,22 +1,15 @@
 {
   "presets": [
-    "react-native",
-    "@babel/preset-flow",
-    "module:react-native-dotenv"
+    "module:metro-react-native-babel-preset"
   ],
   "plugins": [
     [
-      "babel-plugin-module-resolver",
+      "module-resolver",
       {
         "root": [
           "./src"
         ]
       }
-    ],
-    ["babel-plugin-rewrite-require", {
-      "aliases": {
-        "node-fetch": "axios"
-      }
-    }]
+    ]
   ]
 }
