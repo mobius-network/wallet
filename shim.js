@@ -42,8 +42,3 @@ process.env['NODE_ENV'] = isDev ? 'development' : 'production';
 if (!process.version) {
   process.version = '';
 }
-
-// Pass variables to core mobule
-const config = require('./src/config/dev.env');
-
-Object.assign(process.env, config);

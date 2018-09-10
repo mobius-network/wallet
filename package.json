@@ -101,6 +101,7 @@
     "immutable": "^3.7.4",
     "jest": "22.4.3",
     "lint-staged": "^7.2.0",
+    "metro-react-native-babel-preset": "0.45.1",
     "patch-package": "^5.1.1",
     "postinstall-postinstall": "^1.0.0",
     "prettier": "^1.12.1",
