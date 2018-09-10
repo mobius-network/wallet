@@ -7,20 +7,18 @@ import {
 
 export const getMasterAccount = state => state.masterAccount;
 
-export const createBalanceSelector = accountSelector =>
-  createSelector(accountSelector, account => parseBalance(account));
+export const createBalanceSelector = accountSelector => createSelector(accountSelector, account => parseBalance(account));
 
 export const createAssetBalanceSelector = (
   balanceSelector,
   assetSelector = getAsset
-) =>
-  createSelector([balanceSelector, assetSelector], (balance, asset) => {
-    if (!balance) {
-      return 0;
-    }
+) => createSelector([balanceSelector, assetSelector], (balance, asset) => {
+  if (!balance) {
+    return 0;
+  }
 
-    return parsedBalanceValue(balance, asset);
-  });
+  return parsedBalanceValue(balance, asset);
+});
 
 export const getBalance = createBalanceSelector(getMasterAccount);
 export const getAssetBalance = createAssetBalanceSelector(getBalance);

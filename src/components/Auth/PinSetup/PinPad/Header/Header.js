@@ -79,7 +79,7 @@ class Header extends Component {
     this.props.onErrorShown();
   }
 
-  renderTitle = opacity => {
+  renderTitle = (opacity) => {
     const { title, errorTitle, showError } = this.props;
 
     return (
@@ -94,7 +94,7 @@ class Header extends Component {
     );
   };
 
-  renderSubtitle = opacity => {
+  renderSubtitle = (opacity) => {
     const { subtitle, errorSubtitle, showError } = this.props;
 
     return (

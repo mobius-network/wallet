@@ -3,13 +3,11 @@ const path = require('path');
 
 const cwd = path.resolve(__dirname);
 
-const modulePath = (moduleName) => path.resolve(__dirname, 'node_modules', moduleName);
+const modulePath = moduleName => path.resolve(__dirname, 'node_modules', moduleName);
 
 const config = {
   getBlacklistRE() {
-    return metro.createBlacklist([
-      /Pods\/.*/,
-    ]);
+    return metro.createBlacklist([/Pods\/.*/]);
   },
 
   getProjectRoots() {
@@ -25,9 +23,7 @@ const config = {
    * `./<image.extension>` don't require any entry in here.
    */
   getAssetRoots() {
-    return [
-      path.join(cwd, 'assets'),
-    ];
+    return [path.join(cwd, 'assets')];
   },
 
   resolver: {

@@ -51,7 +51,7 @@ class Confirm extends Component {
     );
   };
 
-  handleMnemonicVariantClick = mnemonicVariant => {
+  handleMnemonicVariantClick = (mnemonicVariant) => {
     const { mnemonic } = this.props;
 
     if (mnemonicVariant !== mnemonic) {

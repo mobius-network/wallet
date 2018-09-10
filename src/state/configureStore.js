@@ -28,6 +28,7 @@ function enhance(middlewareArray = []) {
     composeEnhancers = devtoolsCompose || compose;
 
     if (!devtoolsCompose) {
+      /* eslint-disable global-require */
       const { createLogger } = require('redux-logger');
 
       middlewares.push(createLogger({ collapsed: true }));

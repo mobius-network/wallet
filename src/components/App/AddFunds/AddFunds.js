@@ -83,10 +83,9 @@ class AddFunds extends Component {
     );
   };
 
-  handlePress = index =>
-    this.setState({
-      selected: index || this.state.selected,
-    });
+  handlePress = index => this.setState({
+    selected: index || this.state.selected,
+  });
 
   render() {
     const { t, publicKey } = this.props;

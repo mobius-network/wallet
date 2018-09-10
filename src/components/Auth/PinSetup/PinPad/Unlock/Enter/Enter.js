@@ -34,8 +34,7 @@ class Enter extends Component {
     shouldLock: false,
   };
 
-  repeatFailedAttempt = () =>
-    this.setState({ pin: '', showError: false, shouldLock: false });
+  repeatFailedAttempt = () => this.setState({ pin: '', showError: false, shouldLock: false });
 
   validate = () => {
     const {

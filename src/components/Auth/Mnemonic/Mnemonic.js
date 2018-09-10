@@ -20,8 +20,7 @@ class Mnemonic extends Component {
     step: mnemonicSteps.write,
   };
 
-  handleStepSwitch = (step = mnemonicSteps.confirm) => () =>
-    this.setState({ step });
+  handleStepSwitch = (step = mnemonicSteps.confirm) => () => this.setState({ step });
 
   render() {
     const { step } = this.state;

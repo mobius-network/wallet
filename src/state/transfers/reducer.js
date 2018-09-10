@@ -11,10 +11,9 @@ const initialState = {
 
 export const transfersReducer = createReducer(
   {
-    [transfersActions.setBestPath]: (state, bestPath) =>
-      merge(state, {
-        bestPath,
-      }),
+    [transfersActions.setBestPath]: (state, bestPath) => merge(state, {
+      bestPath,
+    }),
   },
   initialState
 );

@@ -36,10 +36,8 @@ export const Content = styled.View`
   flex: 1;
   align-items: stretch;
   flex-direction: column;
-  justify-content: ${({ theme }) =>
-    variants[theme.variant].content.justifyContent};
-  padding-bottom: ${({ theme }) =>
-    variants[theme.variant].content.paddingBottom};
+  justify-content: ${({ theme }) => variants[theme.variant].content.justifyContent};
+  padding-bottom: ${({ theme }) => variants[theme.variant].content.paddingBottom};
 `;
 
 export const Action = styled.View`

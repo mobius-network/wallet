@@ -16,11 +16,10 @@ import { isDev } from './env';
 const detector = {
   init: Function.prototype,
   type: 'languageDetector',
-  detect: () =>
-    rn18
-      .currentLocale()
-      .split('-')
-      .shift(),
+  detect: () => rn18
+    .currentLocale()
+    .split('-')
+    .shift(),
   cacheUserLanguage: Function.prototype,
 };
 

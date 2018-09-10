@@ -27,10 +27,9 @@ class Choose extends PureComponent {
     step: chooseSteps.setup,
   };
 
-  handleSetupComplete = pin =>
-    this.setState({ pin, step: chooseSteps.confirm });
+  handleSetupComplete = pin => this.setState({ pin, step: chooseSteps.confirm });
 
-  handleConfirmComplete = async pin => {
+  handleConfirmComplete = async (pin) => {
     const { onComplete } = this.props;
 
     await Keychain.setGenericPassword('account', pin, { service: 'pin' });
@@ -38,8 +37,7 @@ class Choose extends PureComponent {
     onComplete(pin);
   };
 
-  handleConfirmFailed = () =>
-    this.setState({ pin: '', step: chooseSteps.setup });
+  handleConfirmFailed = () => this.setState({ pin: '', step: chooseSteps.setup });
 
   render() {
     const { pin, step } = this.state;
