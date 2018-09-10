@@ -4,6 +4,6 @@
 
 ```sh
 yarn start
-react-native run-ios
-react-native run-android
+yarn run ios
+yarn run android
 ```
