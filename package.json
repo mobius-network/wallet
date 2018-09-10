@@ -107,8 +107,7 @@
     "prettier": "^1.12.1",
     "react-native-create-bridge": "^2.0.1",
     "react-test-renderer": "16.4.2",
-    "rimraf": "2.6.2",
-    "rn-nodeify": "tradle/rn-nodeify"
+    "rimraf": "2.6.2"
   },
   "rnpm": {
     "assets": [
