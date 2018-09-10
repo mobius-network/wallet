@@ -8,6 +8,7 @@
     "install:hacks": "yarn run patch-package",
     "install:gems": "bundle check || bundle install",
     "install:pods": "diff ios/Podfile.lock ios/Pods/Manifest.lock || bundle exec pod install --project-directory=ios",
+    "secrets": "bundle exec dotgpg cat .env.gpg > .env && bundle exec dotgpg cat .env.production.gpg > .env.production",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:fresh": "npm start -- --reset-cache",
     "link": "react-native link",
