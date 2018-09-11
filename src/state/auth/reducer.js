@@ -15,10 +15,9 @@ export const authReducer = createReducer(
   {
     [authActions.set]: (state, payload) => merge(state, payload),
 
-    [authActions.loginSuccess]: state =>
-      merge(state, {
-        loggedIn: true,
-      }),
+    [authActions.loginSuccess]: state => merge(state, {
+      loggedIn: true,
+    }),
 
     [authActions.logout]: () => initialState,
   },

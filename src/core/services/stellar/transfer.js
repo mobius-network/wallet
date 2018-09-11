@@ -16,8 +16,9 @@ export async function findBestPath(opts) {
     .limit(limit)
     .call();
 
-  const sortedByPrice = records.sort((a, b) =>
-    a.source_amount - b.source_amount);
+  const sortedByPrice = records.sort(
+    (a, b) => a.source_amount - b.source_amount
+  );
 
   return sortedByPrice[0] || 0;
 }

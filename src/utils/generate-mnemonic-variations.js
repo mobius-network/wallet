@@ -11,6 +11,7 @@ export function generateMnemonicVariations(
   const wordlist = bip39.wordlists[language];
   const result = [];
 
+  /* eslint-disable no-plusplus */
   for (let i = 0; i < variations; i++) {
     const variation = mnemonic.split(' ');
 

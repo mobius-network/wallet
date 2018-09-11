@@ -29,12 +29,6 @@
   optionalDependencies:
     chokidar "^2.0.3"
 
-"@babel/code-frame@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "http://registry.npmjs.org/@babel/code-frame/-/code-frame-7.0.0-beta.44.tgz#2a02643368de80916162be70865c97774f3adbd9"
-  dependencies:
-    "@babel/highlight" "7.0.0-beta.44"
-
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.0.0-beta.35":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.0.0.tgz#06e2ab19bdb535385559aabb5ba59729482800f8"
@@ -59,16 +53,6 @@
     resolve "^1.3.2"
     semver "^5.4.1"
     source-map "^0.5.0"
-
-"@babel/generator@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "http://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.44.tgz#c7e67b9b5284afcf69b309b50d7d37f3e5033d42"
-  dependencies:
-    "@babel/types" "7.0.0-beta.44"
-    jsesc "^2.5.1"
-    lodash "^4.2.0"
-    source-map "^0.5.0"
-    trim-right "^1.0.1"
 
 "@babel/generator@^7.0.0":
   version "7.0.0"
@@ -123,14 +107,6 @@
     "@babel/traverse" "^7.0.0"
     "@babel/types" "^7.0.0"
 
-"@babel/helper-function-name@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "http://registry.npmjs.org/@babel/helper-function-name/-/helper-function-name-7.0.0-beta.44.tgz#e18552aaae2231100a6e485e03854bc3532d44dd"
-  dependencies:
-    "@babel/helper-get-function-arity" "7.0.0-beta.44"
-    "@babel/template" "7.0.0-beta.44"
-    "@babel/types" "7.0.0-beta.44"
-
 "@babel/helper-function-name@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/helper-function-name/-/helper-function-name-7.0.0.tgz#a68cc8d04420ccc663dd258f9cc41b8261efa2d4"
@@ -138,12 +114,6 @@
     "@babel/helper-get-function-arity" "^7.0.0"
     "@babel/template" "^7.0.0"
     "@babel/types" "^7.0.0"
-
-"@babel/helper-get-function-arity@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "http://registry.npmjs.org/@babel/helper-get-function-arity/-/helper-get-function-arity-7.0.0-beta.44.tgz#d03ca6dd2b9f7b0b1e6b32c56c72836140db3a15"
-  dependencies:
-    "@babel/types" "7.0.0-beta.44"
 
 "@babel/helper-get-function-arity@^7.0.0":
   version "7.0.0"
@@ -229,12 +199,6 @@
     "@babel/template" "^7.0.0"
     "@babel/types" "^7.0.0"
 
-"@babel/helper-split-export-declaration@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "http://registry.npmjs.org/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.0.0-beta.44.tgz#c0b351735e0fbcb3822c8ad8db4e583b05ebd9dc"
-  dependencies:
-    "@babel/types" "7.0.0-beta.44"
-
 "@babel/helper-split-export-declaration@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.0.0.tgz#3aae285c0311c2ab095d997b8c9a94cad547d813"
@@ -257,14 +221,6 @@
     "@babel/template" "^7.0.0"
     "@babel/traverse" "^7.0.0"
     "@babel/types" "^7.0.0"
-
-"@babel/highlight@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "http://registry.npmjs.org/@babel/highlight/-/highlight-7.0.0-beta.44.tgz#18c94ce543916a80553edcdcf681890b200747d5"
-  dependencies:
-    chalk "^2.0.0"
-    esutils "^2.0.2"
-    js-tokens "^3.0.0"
 
 "@babel/highlight@^7.0.0":
   version "7.0.0"
@@ -723,15 +679,6 @@
     pirates "^4.0.0"
     source-map-support "^0.5.9"
 
-"@babel/template@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "http://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.44.tgz#f8832f4fdcee5d59bf515e595fc5106c529b394f"
-  dependencies:
-    "@babel/code-frame" "7.0.0-beta.44"
-    "@babel/types" "7.0.0-beta.44"
-    babylon "7.0.0-beta.44"
-    lodash "^4.2.0"
-
 "@babel/template@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.0.0.tgz#c2bc9870405959c89a9c814376a2ecb247838c80"
@@ -739,21 +686,6 @@
     "@babel/code-frame" "^7.0.0"
     "@babel/parser" "^7.0.0"
     "@babel/types" "^7.0.0"
-
-"@babel/traverse@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "http://registry.npmjs.org/@babel/traverse/-/traverse-7.0.0-beta.44.tgz#a970a2c45477ad18017e2e465a0606feee0d2966"
-  dependencies:
-    "@babel/code-frame" "7.0.0-beta.44"
-    "@babel/generator" "7.0.0-beta.44"
-    "@babel/helper-function-name" "7.0.0-beta.44"
-    "@babel/helper-split-export-declaration" "7.0.0-beta.44"
-    "@babel/types" "7.0.0-beta.44"
-    babylon "7.0.0-beta.44"
-    debug "^3.1.0"
-    globals "^11.1.0"
-    invariant "^2.2.0"
-    lodash "^4.2.0"
 
 "@babel/traverse@^7.0.0":
   version "7.0.0"
@@ -768,14 +700,6 @@
     debug "^3.1.0"
     globals "^11.1.0"
     lodash "^4.17.10"
-
-"@babel/types@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "http://registry.npmjs.org/@babel/types/-/types-7.0.0-beta.44.tgz#6b1b164591f77dec0a0342aca995f2d046b3a757"
-  dependencies:
-    esutils "^2.0.2"
-    lodash "^4.2.0"
-    to-fast-properties "^2.0.0"
 
 "@babel/types@7.0.0-beta.51":
   version "7.0.0-beta.51"
@@ -849,10 +773,6 @@
   dependencies:
     Base64 "~0.2.0"
     inherits "~2.0.1"
-
-"@yarnpkg/lockfile@^1.0.0":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@yarnpkg/lockfile/-/lockfile-1.0.2.tgz#833d163680a151d2441a2489f5fe5fa87ac87726"
 
 Base64@~0.2.0:
   version "0.2.1"
@@ -1336,14 +1256,14 @@ babel-core@^7.0.0-bridge.0:
   version "7.0.0-bridge.0"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-7.0.0-bridge.0.tgz#95a492ddd90f9b4e9a4a1da14eb335b87b634ece"
 
-babel-eslint@8.2.6:
-  version "8.2.6"
-  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-8.2.6.tgz#6270d0c73205628067c0f7ae1693a9e797acefd9"
+babel-eslint@9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-9.0.0.tgz#7d9445f81ed9f60aff38115f838970df9f2b6220"
   dependencies:
-    "@babel/code-frame" "7.0.0-beta.44"
-    "@babel/traverse" "7.0.0-beta.44"
-    "@babel/types" "7.0.0-beta.44"
-    babylon "7.0.0-beta.44"
+    "@babel/code-frame" "^7.0.0"
+    "@babel/parser" "^7.0.0"
+    "@babel/traverse" "^7.0.0"
+    "@babel/types" "^7.0.0"
     eslint-scope "3.7.1"
     eslint-visitor-keys "^1.0.0"
 
@@ -1852,10 +1772,6 @@ babel-types@^6.18.0, babel-types@^6.24.1, babel-types@^6.26.0:
     lodash "^4.17.4"
     to-fast-properties "^1.0.3"
 
-babylon@7.0.0-beta.44:
-  version "7.0.0-beta.44"
-  resolved "http://registry.npmjs.org/babylon/-/babylon-7.0.0-beta.44.tgz#89159e15e6e30c5096e22d738d8c0af8a0e8ca1d"
-
 babylon@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
@@ -1931,10 +1847,6 @@ bl@~0.8.1:
   resolved "https://registry.yarnpkg.com/bl/-/bl-0.8.2.tgz#c9b6bca08d1bc2ea00fc8afb4f1a5fd1e1c66e4e"
   dependencies:
     readable-stream "~1.0.26"
-
-bluebird@^3.5.1:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.2.tgz#1be0908e054a751754549c270489c1505d4ab15a"
 
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   version "4.11.8"
@@ -2166,7 +2078,7 @@ chalk@^1.0.0, chalk@^1.1.1, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.3.1:
+chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.1.tgz#18c49ab16a037b6eb0152cc83e3471338215b66e"
   dependencies:
@@ -2808,7 +2720,7 @@ deep-diff@^0.3.5:
   version "0.3.8"
   resolved "https://registry.yarnpkg.com/deep-diff/-/deep-diff-0.3.8.tgz#c01de63efb0eec9798801d40c7e0dae25b582c84"
 
-deep-equal@^1.0.0, deep-equal@^1.0.1:
+deep-equal@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-1.0.1.tgz#f5d260292b660e084eff4cdbc9f08ad3247448b5"
 
@@ -3160,12 +3072,6 @@ eslint-plugin-babel@^5.1.0:
   dependencies:
     eslint-rule-composer "^0.3.0"
 
-eslint-plugin-flowtype@^2.50.0:
-  version "2.50.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.50.0.tgz#953e262fa9b5d0fa76e178604892cf60dfb916da"
-  dependencies:
-    lodash "^4.17.10"
-
 eslint-plugin-import@^2.13.0:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.14.0.tgz#6b17626d2e3e6ad52cfce8807a845d15e22111a8"
@@ -3198,9 +3104,9 @@ eslint-plugin-react-native-globals@^0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-native-globals/-/eslint-plugin-react-native-globals-0.1.2.tgz#ee1348bc2ceb912303ce6bdbd22e2f045ea86ea2"
 
-eslint-plugin-react-native@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react-native/-/eslint-plugin-react-native-3.2.1.tgz#04fcadd3285b7cd2f27146e640c941b00acc4e7e"
+eslint-plugin-react-native@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-native/-/eslint-plugin-react-native-3.3.0.tgz#77135f1b9d69058c5612777aac90d9cd6d35af33"
   dependencies:
     eslint-plugin-react-native-globals "^0.1.1"
 
@@ -3669,10 +3575,6 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-findit@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/findit/-/findit-2.0.0.tgz#6509f0126af4c178551cfa99394e032e13a4d56e"
-
 flat-cache@^1.2.1:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/flat-cache/-/flat-cache-1.3.0.tgz#d3030b32b38154f4e3b7e9c709f490f7ef97c481"
@@ -3681,10 +3583,6 @@ flat-cache@^1.2.1:
     del "^2.0.2"
     graceful-fs "^4.1.2"
     write "^0.2.1"
-
-flow-bin@^0.78.0:
-  version "0.78.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.78.0.tgz#df9fe7f9c9a2dfaff39083949fe2d831b41627b7"
 
 follow-redirects@^1.3.0:
   version "1.5.7"
@@ -3731,14 +3629,6 @@ fragment-cache@^0.2.1:
 fresh@0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
-
-fs-extra@^0.22.1:
-  version "0.22.1"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-0.22.1.tgz#5fd6f8049dc976ca19eb2355d658173cabcce056"
-  dependencies:
-    graceful-fs "^4.1.2"
-    jsonfile "^2.1.0"
-    rimraf "^2.2.8"
 
 fs-extra@^1.0.0:
   version "1.0.0"
@@ -4108,6 +3998,14 @@ http-signature@~1.2.0:
 https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
+
+husky@^0.14.3:
+  version "0.14.3"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-0.14.3.tgz#c69ed74e2d2779769a17ba8399b54ce0b63c12c3"
+  dependencies:
+    is-ci "^1.0.10"
+    normalize-path "^1.0.0"
+    strip-indent "^2.0.0"
 
 i18n-js@3.0.11:
   version "3.0.11"
@@ -4967,13 +4865,13 @@ js-nacl@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/js-nacl/-/js-nacl-1.2.2.tgz#c4633dbfa67dc62f6b73033e5118e564e5abb987"
 
-js-tokens@^3.0.0, js-tokens@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
-
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
+
+js-tokens@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
 js-xdr@^1.0.4:
   version "1.0.4"
@@ -5387,7 +5285,7 @@ lodash.throttle@^4.0.0, lodash.throttle@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
 
-lodash@4.17.10, lodash@^4.0.0, lodash@^4.11.1, lodash@^4.13.1, lodash@^4.16.5, lodash@^4.16.6, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.1:
+lodash@4.17.10, lodash@^4.0.0, lodash@^4.11.1, lodash@^4.13.1, lodash@^4.16.5, lodash@^4.16.6, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0, lodash@^4.6.1:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
@@ -5629,7 +5527,7 @@ metro-visualizer@0.45.1:
     supertest "^3.1.0"
     tippy.js "^2.5.4"
 
-metro@0.45.1, metro@^0.45.0:
+metro@0.45.1, metro@^0.45.0, metro@^0.45.1:
   version "0.45.1"
   resolved "https://registry.yarnpkg.com/metro/-/metro-0.45.1.tgz#3c6d01bd06bc355e003cbe07100df185dfac50bb"
   dependencies:
@@ -5826,7 +5724,7 @@ minimist@0.0.8:
   version "0.0.8"
   resolved "http://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
 
-minimist@^1.1.1, minimist@^1.1.2, minimist@^1.2.0:
+minimist@^1.1.1, minimist@^1.2.0:
   version "1.2.0"
   resolved "http://registry.npmjs.org/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
 
@@ -6015,6 +5913,10 @@ normalize-package-data@^2.3.2:
     semver "2 || 3 || 4 || 5"
     validate-npm-package-license "^3.0.1"
 
+normalize-path@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-1.0.0.tgz#32d0e472f91ff345701c15a8311018d3b0a90379"
+
 normalize-path@^2.0.1, normalize-path@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-2.1.1.tgz#1ab28b556e198363a8c1a6f7e6fa20137fe6aed9"
@@ -6143,7 +6045,7 @@ object.omit@^2.0.0:
     for-own "^0.1.4"
     is-extendable "^0.1.1"
 
-object.pick@^1.1.1, object.pick@^1.3.0:
+object.pick@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/object.pick/-/object.pick-1.3.0.tgz#87a10ac4c1694bd2e1cbf53591a66141fb5dd747"
   dependencies:
@@ -7257,9 +7159,9 @@ react-native-permissions@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-1.1.1.tgz#4876004681ff8556454613d85249b01baff9b35b"
 
-react-native-qrcode-svg@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-qrcode-svg/-/react-native-qrcode-svg-5.1.0.tgz#0f0fc95e332454fe07e4b08bcde579f9b3f4d1d8"
+react-native-qrcode-svg@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-qrcode-svg/-/react-native-qrcode-svg-5.1.1.tgz#f7dc136cb9de2b7b488a51e27048f6bb3c1ed94c"
   dependencies:
     prop-types "^15.5.10"
     qrcode "^1.2.0"
@@ -7882,20 +7784,6 @@ rmc-feedback@^2.0.0:
     babel-runtime "6.x"
     classnames "^2.2.5"
 
-rn-nodeify@tradle/rn-nodeify:
-  version "10.0.0"
-  resolved "https://codeload.github.com/tradle/rn-nodeify/tar.gz/f871fadfed6edef6e208bb3293e66f27466122da"
-  dependencies:
-    "@yarnpkg/lockfile" "^1.0.0"
-    deep-equal "^1.0.0"
-    findit "^2.0.0"
-    fs-extra "^0.22.1"
-    minimist "^1.1.2"
-    object.pick "^1.1.1"
-    run-parallel "^1.1.2"
-    semver "^5.0.1"
-    xtend "^4.0.0"
-
 router@^1.3.3:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/router/-/router-1.3.3.tgz#c142f6b5ea4d6b3359022ca95b6580bd217f89cf"
@@ -7917,10 +7805,6 @@ run-async@^2.2.0:
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.3.0.tgz#0371ab4ae0bdd720d4166d7dfda64ff7a445a6c0"
   dependencies:
     is-promise "^2.1.0"
-
-run-parallel@^1.1.2:
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/run-parallel/-/run-parallel-1.1.9.tgz#c9dd3a7cf9f4b2c4b6244e173a6ed866e61dd679"
 
 rx-lite-aggregates@^4.0.8:
   version "4.0.8"
@@ -8003,7 +7887,7 @@ semver-diff@^2.0.0:
   dependencies:
     semver "^5.0.3"
 
-"semver@2 || 3 || 4 || 5", semver@5.x, semver@^5.0.1, semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.5.1:
+"semver@2 || 3 || 4 || 5", semver@5.x, semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.5.1:
   version "5.5.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.1.tgz#7dfdd8814bdb7cabc7be0fb1d734cfb66c940477"
 
@@ -8265,12 +8149,6 @@ split-string@^3.0.1, split-string@^3.0.2:
   dependencies:
     extend-shallow "^3.0.0"
 
-split@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/split/-/split-1.0.1.tgz#605bd9be303aa59fb35f9229fbea0ddec9ea07d9"
-  dependencies:
-    through "2"
-
 sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
@@ -8447,6 +8325,10 @@ strip-eof@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/strip-eof/-/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
 
+strip-indent@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/strip-indent/-/strip-indent-2.0.0.tgz#5ef8db295d01e6ed6cbf7aab96998d7822527b68"
+
 strip-json-comments@^2.0.1, strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
@@ -8592,7 +8474,7 @@ through2@^2.0.0:
     readable-stream "^2.1.5"
     xtend "~4.0.1"
 
-through@2, through@^2.3.6:
+through@^2.3.6:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
@@ -9088,18 +8970,6 @@ ws@^5.2.0:
   dependencies:
     async-limiter "~1.0.0"
 
-wsrun@^2.2.0:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/wsrun/-/wsrun-2.2.1.tgz#ab93cde5e59d4e8ffd140c06be66e2697c791346"
-  dependencies:
-    bluebird "^3.5.1"
-    chalk "^2.3.0"
-    glob "^7.1.2"
-    lodash "^4.17.4"
-    split "^1.0.1"
-    throat "^4.1.0"
-    yargs "^10.0.3"
-
 xcode@^0.9.1:
   version "0.9.3"
   resolved "https://registry.yarnpkg.com/xcode/-/xcode-0.9.3.tgz#910a89c16aee6cc0b42ca805a6d0b4cf87211cf3"
@@ -9142,10 +9012,6 @@ xtend@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-2.2.0.tgz#eef6b1f198c1c8deafad8b1765a04dad4a01c5a9"
 
-xtend@^4.0.0, xtend@~4.0.0, xtend@~4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
-
 xtend@~2.0.4:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-2.0.6.tgz#5ea657a6dba447069c2e59c58a1138cb0c5e6cee"
@@ -9156,6 +9022,10 @@ xtend@~2.0.4:
 xtend@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-3.0.0.tgz#5cce7407baf642cba7becda568111c493f59665a"
+
+xtend@~4.0.0, xtend@~4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
 
 y18n@^3.2.1:
   version "3.2.1"

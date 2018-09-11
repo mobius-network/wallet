@@ -10,10 +10,9 @@ const initialState = {
 
 export const appReducer = createReducer(
   {
-    [appActions.setSuccessMessage]: (state, payload) =>
-      merge(state, {
-        successMessage: payload,
-      }),
+    [appActions.setSuccessMessage]: (state, payload) => merge(state, {
+      successMessage: payload,
+    }),
   },
   initialState
 );

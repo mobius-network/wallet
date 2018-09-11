@@ -1,6 +1,6 @@
 import { capitalize } from 'lodash';
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import {
   Container,
@@ -15,7 +15,10 @@ import {
 
 class BalanceItem extends Component {
   static propTypes = {
-    // name: PropTypes.string.isRequired,
+    asset: PropTypes.string,
+    amount: PropTypes.number,
+    usdAmount: PropTypes.number,
+    usdPrice: PropTypes.number,
   };
 
   render() {

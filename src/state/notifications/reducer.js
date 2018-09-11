@@ -20,8 +20,7 @@ export const notificationsReducer = createReducer(
 
       return [...state.slice(-4), notification];
     },
-    [notificationsActions.deleteNotification]: (state, { id }) =>
-      state.filter(notification => notification.id !== id),
+    [notificationsActions.deleteNotification]: (state, { id }) => state.filter(notification => notification.id !== id),
   },
   initialState
 );

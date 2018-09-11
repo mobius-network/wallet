@@ -45,7 +45,7 @@ export function* watchCurrencyPrice(id, delayDuration = 10000) {
 
 export function* loadCurrencyPrices() {
   yield all(
-    Object.keys(currencyIds).map(currency => {
+    Object.keys(currencyIds).map((currency) => {
       if (!watchers[currency]) {
         return fork(watchCurrencyPrice, currencyIds[currency]);
       }

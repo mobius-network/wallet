@@ -34,7 +34,7 @@ class Keyboard extends Component {
     onChange(newValue);
   };
 
-  renderNumberButton = number => {
+  renderNumberButton = (number) => {
     const text = number.toString();
     const { disabled, pin, pinLength } = this.props;
     const isDisabled = disabled || pin.length === pinLength;

@@ -13,7 +13,10 @@ export const isProduction = process.env.NODE_ENV === 'production';
 
 export const apiUrl = API_URL || 'https://mobius.network/api/v1';
 export const mobiAsset = new Asset(
-  ...(MOBI_ASSET || 'MOBI-GA6HCMBLTZS5VYYBCATRBRZ3BZJMAFUDKYYF6AH6MVCMGWMRDNSWJPIH').split('-')
+  ...(
+    MOBI_ASSET
+    || 'MOBI-GA6HCMBLTZS5VYYBCATRBRZ3BZJMAFUDKYYF6AH6MVCMGWMRDNSWJPIH'
+  ).split('-')
 );
 export const stellarTestnet = STELLAR_TESTNET === 'true';
 export const stellarHorizonUrl = STELLAR_HORIZON_URL || 'https://horizon.stellar.mobius.network';

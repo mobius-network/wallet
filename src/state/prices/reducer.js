@@ -12,16 +12,15 @@ const initialState = {};
 
 export const pricesReducer = createReducer(
   {
-    [pricesActions.setQuotes]: (state, { symbol, quotes }) =>
-      merge(state, {
-        [symbol.toLowerCase()]: Object.keys(quotes).reduce(
-          (acc, key) => ({
-            ...acc,
-            [key.toLowerCase()]: quotes[key].price,
-          }),
-          {}
-        ),
-      }),
+    [pricesActions.setQuotes]: (state, { symbol, quotes }) => merge(state, {
+      [symbol.toLowerCase()]: Object.keys(quotes).reduce(
+        (acc, key) => ({
+          ...acc,
+          [key.toLowerCase()]: quotes[key].price,
+        }),
+        {}
+      ),
+    }),
   },
   initialState
 );
