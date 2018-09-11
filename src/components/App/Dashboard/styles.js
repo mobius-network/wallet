@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Button from 'components/shared/Button';
 
@@ -19,6 +20,19 @@ export const Gradient = styled(HeaderGradient)`
   display: flex;
   height: 163;
   width: ${helpers.vw};
+`;
+
+export const Menu = styled.TouchableOpacity`
+  position: absolute;
+  left: 16;
+  top: 16;
+`;
+
+export const MenuIcon = styled(Icon).attrs({
+  name: 'menu',
+})`
+  color: white;
+  font-size: 26;
 `;
 
 export const Title = styled.Text`

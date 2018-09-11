@@ -6,6 +6,8 @@ import Balances from './Balances';
 import {
   Container,
   Gradient,
+  Menu,
+  MenuIcon,
   Title,
   BalanceContainer,
   CurrencySymbol,
@@ -18,6 +20,7 @@ class Dashboard extends Component {
     usdBalance: PropTypes.number.isRequired,
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
+      openDrawer: PropTypes.func.isRequired,
     }).isRequired,
     t: PropTypes.func.isRequired,
   };
@@ -25,6 +28,8 @@ class Dashboard extends Component {
   static defaultProps = {
     balanceAmount: 0,
   };
+
+  handleMenuButtonClick = () => this.props.navigation.openDrawer();
 
   handleNavigationClick = () => this.props.navigation.navigate('AddFunds');
 
@@ -34,6 +39,10 @@ class Dashboard extends Component {
     return (
       <Container>
         <Gradient>
+          <Menu onPress={this.handleMenuButtonClick}>
+            <MenuIcon />
+          </Menu>
+
           <Title>{t('dashboard.title')}</Title>
 
           <BalanceContainer>
