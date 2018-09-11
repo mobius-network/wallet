@@ -2,7 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/launch_screen"
-    android:orientation="vertical">
+    android:background="@drawable/launch_screen_background"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="105dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/launch_screen_logo"/>
 
 </LinearLayout>
