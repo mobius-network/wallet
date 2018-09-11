@@ -1,11 +1,11 @@
-import StellarHDWallet from 'stellar-hd-wallet';
+import { generateMnemonic } from 'react-native-bip39';
 import { takeLatest, call, put } from 'redux-saga/effects';
 
 import navigator from 'state/navigator';
 import { authActions } from 'state/auth';
 
 function* run() {
-  const mnemonic = StellarHDWallet.generateMnemonic({ entropyBits: 128 });
+  const mnemonic = yield call(generateMnemonic, 128);
 
   yield put(authActions.set({ mnemonic }));
 

@@ -1,7 +1,8 @@
 {
   "license": "MIT",
   "scripts": {
-    "android": "react-native run-android",
+    "android": "react-native run-android --appIdSuffix=debug",
+    "android:release": "react-native run-android --variant=release",
     "clean:metro": "watchman watch-del-all && rm -rf $TMPDIR/{react,metro,haste}*",
     "clean": "yarn run clean:metro && rm -rf ./ios/build ./android/build",
     "create:component": "plop component",
@@ -11,6 +12,7 @@
     "install:hacks": "yarn run patch-package",
     "install:pods": "diff ios/Podfile.lock ios/Pods/Manifest.lock || bundle exec pod install --project-directory=ios",
     "ios": "react-native run-ios",
+    "ios:release": "react-native run-ios --configuration=Release",
     "link": "react-native link",
     "lint-staged": "lint-staged",
     "lint": "eslint --quiet . --ext .js",

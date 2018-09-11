@@ -1,0 +1,10 @@
+patch-package
+--- a/node_modules/react-native-linear-gradient/android/build.gradle
++++ b/node_modules/react-native-linear-gradient/android/build.gradle
+@@ -35,5 +35,5 @@ android {
+
+ dependencies {
+     //noinspection GradleDynamicVersion
+-    provided "com.facebook.react:react-native:${_reactNativeVersion}"
++    compileOnly "com.facebook.react:react-native:${_reactNativeVersion}"
+ }

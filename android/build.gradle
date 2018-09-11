@@ -11,9 +11,11 @@ buildscript {
     repositories {
         jcenter()
         google()
+        maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'io.fabric.tools:gradle:1.+'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -24,48 +26,13 @@ allprojects {
     repositories {
         mavenLocal()
         jcenter()
-        maven {
-            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-            url "$rootDir/../node_modules/react-native/android"
-        }
         google()
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url "$rootDir/../node_modules/react-native/android" }
     }
 }
 
-// Force sub libs to use the compile sdk & build tools version
-subprojects { subproject ->
-    afterEvaluate{
-        if((subproject.plugins.hasPlugin('android') || subproject.plugins.hasPlugin('android-library'))) {
-            android {
-                compileSdkVersion rootProject.ext.compileSdkVersion
-                buildToolsVersion rootProject.ext.buildToolsVersion
-            }
-
-            dependencies {
-                implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-            }
-        }
-    }
-}
-
-
-subprojects {
-    ext {
-        def versionArray = getNpmVersionArray()
-        versionMajor = versionArray[0]
-        versionMinor = versionArray[1]
-        versionPatch = versionArray[2]
-    }
-}
-
-// functions for hooking into npm version
-def getNpmVersion() {
-    def inputFile = new File("../package.json")
-    def packageJson = new groovy.json.JsonSlurper().parseText(inputFile.text)
-    return packageJson["version"]
-}
-
-def getNpmVersionArray() { // major [0], minor [1], patch [2]
-    def (major, minor, patch) = getNpmVersion().tokenize('.')
-    return [Integer.parseInt(major), Integer.parseInt(minor), Integer.parseInt(patch)] as int[]
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.4'
+    distributionUrl = distributionUrl.replace("bin", "all")
 }

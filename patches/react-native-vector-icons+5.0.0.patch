@@ -1,0 +1,10 @@
+patch-package
+--- a/node_modules/react-native-vector-icons/android/build.gradle
++++ b/node_modules/react-native-vector-icons/android/build.gradle
+@@ -35,5 +35,5 @@ repositories {
+ }
+
+ dependencies {
+-  compile "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
++  implementation "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
+ }

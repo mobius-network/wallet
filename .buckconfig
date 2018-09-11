@@ -1,8 +1,9 @@
 [android]
-  target = Google Inc.:Google APIs:26
+  target = android-27
 
 [maven_repositories]
   central = https://repo1.maven.org/maven2
+  google = https://maven.google.com
 
 [httpserver]
   port = 0
