@@ -49,7 +49,8 @@
     },
     "dashboard": {
       "title": "Current Balance",
-      "receiveButton": "Receive"
+      "receiveButton": "Receive",
+      "sendButton": "Send"
     },
     "addFunds": {
       "headerTitle": "Add Funds",
@@ -72,6 +73,19 @@
         "copy": "Copy",
         "share": "Share"
       }
+    },
+    "sendFunds": {
+      "headerTitle": "Send",
+      "amountFieldLabel": "Amount",
+      "submitButton": "Continue"
+    },
+    "addressForm": {
+      "headerTitle": "AmountSelected",
+      "submitLabel": "Pay",
+      "addressFieldLabel": "To",
+      "addressFieldPlaceholder": "Scan code or enter address",
+      "memoFieldLabel": "Memo ID",
+      "memoFieldPlaceholder": "Optional"
     },
     "loadingView": {
       "description": "Please wait",

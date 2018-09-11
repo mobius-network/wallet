@@ -12,6 +12,8 @@ import NavHeader from 'components/shared/NavHeader';
 import Dashboard from './Dashboard';
 import AddFunds from './AddFunds';
 import Success from './Success';
+import SendFunds from './SendFunds';
+import AddressForm from './AddressForm';
 
 export const DrawerNavigator = notifyDrawer(
   createDrawerNavigator(
@@ -41,12 +43,26 @@ export const StackNavigator = createStackNavigator(
     AddFunds: {
       screen: AddFunds,
       navigationOptions: () => ({
-        // eslint-disable-next-line
-        header: props => <NavHeader {...props} title="addFunds.headerTitle" />
+        /* eslint-disable-next-line react/display-name */
+        header: props => <NavHeader {...props} title="addFunds.headerTitle" />,
       }),
     },
     Success: {
       screen: Success,
+      navigationOptions: () => ({
+        header: null,
+      }),
+    },
+    SendFunds: {
+      screen: SendFunds,
+      navigationOptions: () => ({
+        /* eslint-disable-next-line react/display-name */
+        header: props => <NavHeader {...props} title="sendFunds.headerTitle" />,
+      }),
+    },
+    AddressForm: {
+      screen: AddressForm,
+      mode: 'modal',
       navigationOptions: () => ({
         header: null,
       }),

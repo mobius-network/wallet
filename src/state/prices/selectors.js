@@ -1,6 +1,6 @@
 import { get } from 'lodash';
 import { createSelector } from 'reselect';
-import { getSellAsset, getBuyAsset } from 'state/utils';
+import { getSellAsset, getBuyAsset, getSellAmount } from 'state/utils';
 import { parsedBalanceValue } from 'core';
 
 import { getAssetBalance, getBalance } from 'state/account/selectors';
@@ -31,6 +31,12 @@ const mapAssets = {
   mobi: 'mobi',
   xlm: 'native',
 };
+
+export const getUsdPrice = createSelector(
+  getSellAmount,
+  getAssetPrice,
+  (sellAmount = 0, price = 0) => sellAmount * price
+);
 
 export const getUsdBalance = createSelector(
   getPrices,
