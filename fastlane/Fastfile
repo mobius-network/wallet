@@ -48,7 +48,7 @@ platform :ios do
     )
     update_info_plist(
       plist_path: 'MobiusMobileWallet/Info.plist',
-      display_name: 'Manifold'
+      display_name: 'Mobius Wallet'
     )
   end
 
