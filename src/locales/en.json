@@ -96,6 +96,10 @@
     },
     "success": {
       "title": "Success!"
+    },
+    "sidebarNavigation": {
+      "addFunds": "Add Funds",
+      "withdrawFunds": "Withdraw Funds"
     }
   }
 }
