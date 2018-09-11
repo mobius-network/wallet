@@ -4,15 +4,16 @@ import PropTypes from 'prop-types';
 import Balances from './Balances';
 
 import {
+  ActionButton,
+  BalanceAmount,
+  BalanceContainer,
+  ButtonRow,
   Container,
+  CurrencySymbol,
   Gradient,
   Menu,
   MenuIcon,
   Title,
-  BalanceContainer,
-  CurrencySymbol,
-  BalanceAmount,
-  ActionButton,
 } from './styles';
 
 class Dashboard extends Component {
@@ -53,11 +54,13 @@ class Dashboard extends Component {
 
         <Balances />
 
-        <ActionButton
-          onPress={this.handleNavigationClick}
-          square
-          title={t('dashboard.receiveButton').toUpperCase()}
-        />
+        <ButtonRow>
+          <ActionButton
+            onPress={this.handleNavigationClick}
+            square
+            title={t('dashboard.receiveButton').toUpperCase()}
+          />
+        </ButtonRow>
       </Container>
     );
   }
