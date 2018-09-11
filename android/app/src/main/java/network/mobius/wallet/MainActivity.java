@@ -1,6 +1,10 @@
 package network.mobius.wallet;
 
+import android.os.Bundle;
+
 import com.facebook.react.ReactActivity;
+
+import org.devio.rn.splashscreen.SplashScreen;
 
 public class MainActivity extends ReactActivity {
 
@@ -11,5 +15,12 @@ public class MainActivity extends ReactActivity {
     @Override
     protected String getMainComponentName() {
         return "MobiusMobileWallet";
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        SplashScreen.show(this, R.style.SplashScreenTheme);
+        setTheme(R.style.AppTheme);
+        super.onCreate(savedInstanceState);
     }
 }
