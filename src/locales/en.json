@@ -30,7 +30,7 @@
         "alertConfirmTitle": "Don't loose your recovery phrase",
         "alertConfirmMessage": "If you loose your recovery pharase there is no possible way to recover yoour account",
         "alertConfirmUnderstand": "Yes, I understand the risk of loosing my recovery phrase.",
-        "alertConfirmButton": "Continue",
+        "alertConfirmButton": "Continue"
       },
       "write": {
         "continueButton": "I’ve written it down",
@@ -41,7 +41,7 @@
         "alertMessage": "Be careful where you paste your phrase. Your wallet is only as secure as the place you store your phrase.",
         "alertUnderstand": "Yes, I understand the risk of storing my phrase online.",
         "alertButtonConfirm": "Copy",
-        "alertButtonCancel": "Cancel",
+        "alertButtonCancel": "Cancel"
       }
     },
     "ready": {
