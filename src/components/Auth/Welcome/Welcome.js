@@ -20,19 +20,19 @@ class Welcome extends Component {
 
     return (
       <BackgroundView
-        variant="bottom"
-        content={
-          <SimpleInfo
-            title={t('welcome.title')}
-            description={t('welcome.description')}
-          />
-        }
         action={
           <Button
             onPress={this.handleNavigationClick}
             title={t('welcome.setupWalletButton')}
           />
         }
+        content={
+          <SimpleInfo
+            description={t('welcome.description')}
+            title={t('welcome.title')}
+          />
+        }
+        variant="bottom"
       />
     );
   }

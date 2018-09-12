@@ -9,10 +9,10 @@ class Success extends Component {
   static propTypes = {
     message: PropTypes.string,
 
-    t: PropTypes.func.isRequired,
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
     }).isRequired,
+    t: PropTypes.func.isRequired,
   };
 
   onComplete = () => this.props.navigation.navigate('Dashboard');
@@ -22,17 +22,17 @@ class Success extends Component {
 
     return (
       <BackgroundView
-        variant="center"
-        content={
-          <SimpleInfo title={t('success.title')} description={message} />
-        }
         action={
           <Button
-            variant="primary"
-            title={t('shared.done')}
             onPress={this.onComplete}
+            title={t('shared.done')}
+            variant="primary"
           />
         }
+        content={
+          <SimpleInfo description={message} title={t('success.title')} />
+        }
+        variant="center"
       />
     );
   }

@@ -10,8 +10,8 @@ import { Container, Buttons, Link } from './styles';
 class DrawerContent extends Component {
   static propTypes = {
     navigation: PropTypes.shape({
-      navigate: PropTypes.func.isRequired,
       closeDrawer: PropTypes.func.isRequired,
+      navigate: PropTypes.func.isRequired,
     }).isRequired,
   };
 

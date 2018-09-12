@@ -18,9 +18,9 @@ export default class Icon extends Component {
 
   static propTypes = {
     name: PropTypes.string.isRequired,
-    style: ViewPropTypes.style,
-    size: PropTypes.number,
     onPress: PropTypes.func,
+    size: PropTypes.number,
+    style: ViewPropTypes.style,
   };
 
   render() {

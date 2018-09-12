@@ -14,12 +14,12 @@ import {
 
 class Alert extends Component {
   static propTypes = {
-    title: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    children: PropTypes.any,
     buttons: PropTypes.arrayOf(PropTypes.any),
-
+    children: PropTypes.any,
     isVisible: PropTypes.bool,
+    text: PropTypes.string.isRequired,
+
+    title: PropTypes.string.isRequired,
   };
 
   static defaultProps = {

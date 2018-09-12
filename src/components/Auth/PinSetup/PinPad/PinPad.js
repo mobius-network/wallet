@@ -21,8 +21,8 @@ const pinPadComponents = {
 class PinPad extends PureComponent {
   static propTypes = {
     onComplete: PropTypes.func,
-    step: PropTypes.oneOf(Object.values(pinPadSteps)),
     pinLength: PropTypes.number,
+    step: PropTypes.oneOf(Object.values(pinPadSteps)),
   };
 
   static defaultProps = {

@@ -120,9 +120,9 @@ class Header extends Component {
     if (pin.length >= index + 1) {
       return (
         <LinearGradient
+          key={index}
           colors={['#4637E6', '#8C2DFD']}
           end={{ x: 1, y: 1 }}
-          key={index}
           start={{ x: 0, y: 1 }}
           style={[styles.dot, { left: x }]}
         />
@@ -139,13 +139,13 @@ class Header extends Component {
     return (
       <View style={styles.container}>
         <Animate
-          show={true}
-          start={{
-            opacity: 0,
-          }}
           enter={{
             opacity: [1],
             timing: { duration: 200, ease: easeLinear },
+          }}
+          show={true}
+          start={{
+            opacity: 0,
           }}
         >
           {({ opacity }) => (

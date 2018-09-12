@@ -7,9 +7,9 @@ import Keyboard from '../../Keyboard';
 class Setup extends Component {
   static propTypes = {
     onComplete: PropTypes.func.isRequired,
+    pinLength: PropTypes.number.isRequired,
     subtitle: PropTypes.string,
     title: PropTypes.string.isRequired,
-    pinLength: PropTypes.number.isRequired,
   };
 
   state = {

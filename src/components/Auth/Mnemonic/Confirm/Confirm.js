@@ -73,36 +73,36 @@ class Confirm extends Component {
     return (
       <Container>
         <Alert
-          isVisible={isErrorAlertVisible}
-          title={t('mnemonic.confirm.alertErrorTitle')}
-          text={t('mnemonic.confirm.alertErrorMessage')}
           buttons={[
             <Button
               key="confirm"
-              square={true}
-              variant="text"
-              padding={false}
-              title={t('mnemonic.confirm.alertErrorButton').toUpperCase()}
               onPress={this.onError}
+              padding={false}
+              square={true}
+              title={t('mnemonic.confirm.alertErrorButton').toUpperCase()}
+              variant="text"
             />,
           ]}
+          isVisible={isErrorAlertVisible}
+          text={t('mnemonic.confirm.alertErrorMessage')}
+          title={t('mnemonic.confirm.alertErrorTitle')}
         />
 
         <Alert
-          isVisible={isConfirmAlertVisible}
-          title={t('mnemonic.confirm.alertConfirmTitle')}
-          text={t('mnemonic.confirm.alertConfirmMessage')}
           buttons={[
             <Button
               key="confirm"
-              square={true}
-              variant="text"
-              padding={false}
-              title={t('mnemonic.confirm.alertConfirmButton').toUpperCase()}
               disabled={!isConfirmAlertChecked}
               onPress={this.onComplete}
+              padding={false}
+              square={true}
+              title={t('mnemonic.confirm.alertConfirmButton').toUpperCase()}
+              variant="text"
             />,
           ]}
+          isVisible={isConfirmAlertVisible}
+          text={t('mnemonic.confirm.alertConfirmMessage')}
+          title={t('mnemonic.confirm.alertConfirmTitle')}
         >
           <AlertCheckbox
             isChecked={isConfirmAlertChecked}

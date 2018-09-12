@@ -66,6 +66,12 @@
           "render"
         ]
       }
+    }],
+    "react/sort-prop-types": [2, {
+      "sortShapeProp": true
+    }],
+    "react/jsx-sort-props": [2, {
+      "reservedFirst": true
     }]
   }
 }

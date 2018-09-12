@@ -15,7 +15,7 @@
     "ios:release": "react-native run-ios --configuration=Release",
     "link": "react-native link",
     "lint-staged": "lint-staged",
-    "lint": "eslint --quiet . --ext .js",
+    "lint": "eslint --quiet src --ext .js",
     "postinstall": "yarn run install:gems && yarn run install:hacks && yarn run install:pods",
     "precommit": "lint-staged",
     "secrets": "bundle exec dotgpg cat .env.gpg > .env && bundle exec dotgpg cat .env.production.gpg > .env.production",
