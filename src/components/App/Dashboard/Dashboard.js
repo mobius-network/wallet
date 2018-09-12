@@ -54,8 +54,8 @@ class Dashboard extends Component {
         <Balances />
 
         <ActionButton
-          square
           onPress={this.handleNavigationClick}
+          square
           title={t('dashboard.receiveButton').toUpperCase()}
         />
       </Container>

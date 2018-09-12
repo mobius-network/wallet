@@ -52,29 +52,29 @@ class Write extends Component {
     return (
       <Container>
         <Alert
-          isVisible={isAlertVisisble}
-          title={t('mnemonic.write.alertTitle')}
-          text={t('mnemonic.write.alertMessage')}
           buttons={[
             <Button
               key="cancel"
-              square={true}
-              variant="text"
-              padding={false}
-              title={t('mnemonic.write.alertButtonCancel').toUpperCase()}
               onPress={this.onCancel}
+              padding={false}
+              square={true}
+              title={t('mnemonic.write.alertButtonCancel').toUpperCase()}
+              variant="text"
             />,
 
             <Button
               key="confirm"
-              square={true}
-              variant="text"
-              padding={false}
-              title={t('mnemonic.write.alertButtonConfirm').toUpperCase()}
               disabled={!isAlertChecked}
               onPress={this.onComplete}
+              padding={false}
+              square={true}
+              title={t('mnemonic.write.alertButtonConfirm').toUpperCase()}
+              variant="text"
             />,
           ]}
+          isVisible={isAlertVisisble}
+          text={t('mnemonic.write.alertMessage')}
+          title={t('mnemonic.write.alertTitle')}
         >
           <AlertCheckbox
             isChecked={isAlertChecked}

@@ -38,7 +38,7 @@ class AddFunds extends Component {
 
   buttonTitle = ({ iconName, titlePath }) => (
     <Fragment>
-      <Icon size={18} name={iconName} color={colors.textPrimary} />
+      <Icon color={colors.textPrimary} name={iconName} size={18} />
       <ButtonTitle>{this.props.t(titlePath)}</ButtonTitle>
     </Fragment>
   );
@@ -109,9 +109,9 @@ class AddFunds extends Component {
           <SubTitle>{t('addFunds.subtitle')}</SubTitle>
 
           <QrCode
-            size={192}
             asset={this.options[selected]}
             destination={publicKey}
+            size={192}
           />
 
           <KeyLabel>{t('addFunds.publicKey.title').toUpperCase()}</KeyLabel>
@@ -121,25 +121,25 @@ class AddFunds extends Component {
 
           <ButtonRow>
             <ClipboardButton
-              variant="secondary"
               onPress={this.copyToClipboard}
               title={this.buttons.copy}
+              variant="secondary"
             />
             <ShareButton
-              variant="secondary"
               onPress={this.shareAddress}
               title={this.buttons.share}
+              variant="secondary"
             />
           </ButtonRow>
         </Content>
 
         <ActionSheet
           ref={this.setActionSheetRef}
-          title={t('addFunds.selectWallet.title')}
-          options={this.options}
           cancelButtonIndex={0}
           destructiveButtonIndex={3}
           onPress={this.handlePress}
+          options={this.options}
+          title={t('addFunds.selectWallet.title')}
         />
       </Container>
     );

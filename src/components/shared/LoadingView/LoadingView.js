@@ -29,7 +29,13 @@ class LoadingView extends Component {
 
     return (
       <BackgroundView
-        variant="bottom"
+        action={
+          error ? (
+            <Button onPress={onError} title={t('loadingView.tryAgainButton')} />
+          ) : (
+            <FakeButton />
+          )
+        }
         content={
           <Content>
             {isLoading && (
@@ -40,24 +46,18 @@ class LoadingView extends Component {
 
             {error ? (
               <SimpleInfo
-                title={t('loadingView.errorTitle')}
                 description={t('loadingView.errorDescription')}
+                title={t('loadingView.errorTitle')}
               />
             ) : (
               <SimpleInfo
-                title={t('loadingView.title')}
                 description={t('loadingView.description')}
+                title={t('loadingView.title')}
               />
             )}
           </Content>
         }
-        action={
-          error ? (
-            <Button onPress={onError} title={t('loadingView.tryAgainButton')} />
-          ) : (
-            <FakeButton />
-          )
-        }
+        variant="bottom"
       />
     );
   }

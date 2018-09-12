@@ -40,8 +40,8 @@ class Mnemonic extends Component {
           <Confirm
             mnemonic={mnemonic}
             mnemonicVariants={mnemonicVariants}
-            onError={this.handleStepSwitch(mnemonicSteps.write)}
             onComplete={signupFinish}
+            onError={this.handleStepSwitch(mnemonicSteps.write)}
           />
         );
 

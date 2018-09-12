@@ -57,10 +57,10 @@ class PinSetup extends Component {
           confirmTitle={t('pinSetup.confirmTitle')}
           lockedSubtitle={t('pinSetup.lockedSubtitle')}
           lockedTitle={t('pinSetup.lockedTitle')}
+          onComplete={this.handlePinPadComplete}
           pin={pin}
           step={step}
           unlockTitle={t('pinSetup.unlockTitle')}
-          onComplete={this.handlePinPadComplete}
         />
       );
     }

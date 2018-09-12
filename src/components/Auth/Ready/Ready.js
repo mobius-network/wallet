@@ -20,19 +20,19 @@ class Ready extends Component {
 
     return (
       <BackgroundView
-        variant="bottom"
-        content={
-          <SimpleInfo
-            title={t('ready.title')}
-            description={t('ready.description')}
-          />
-        }
         action={
           <Button
             onPress={this.handleNavigationClick}
             title={t('shared.continue')}
           />
         }
+        content={
+          <SimpleInfo
+            description={t('ready.description')}
+            title={t('ready.title')}
+          />
+        }
+        variant="bottom"
       />
     );
   }

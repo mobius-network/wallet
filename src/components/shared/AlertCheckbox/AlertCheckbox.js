@@ -24,9 +24,9 @@ class AlertCheckbox extends Component {
     return (
       <Container>
         <CheckBox
+          checkBoxColor={colors.textPrimary}
           isChecked={isChecked}
           onClick={() => onPress()}
-          checkBoxColor={colors.textPrimary}
         />
         <Label>{label}</Label>
       </Container>

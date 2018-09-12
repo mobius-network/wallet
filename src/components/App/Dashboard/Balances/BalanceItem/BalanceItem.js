@@ -28,7 +28,7 @@ class BalanceItem extends Component {
 
     return (
       <Container>
-        <CurrencyIcon size={40} name={`currency${capitalize(asset)}`} />
+        <CurrencyIcon name={`currency${capitalize(asset)}`} size={40} />
 
         <AssetInfo>
           <Asset>{asset}</Asset>
