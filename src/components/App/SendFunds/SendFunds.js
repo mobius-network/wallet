@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import ActionSheet from 'react-native-custom-actionsheet';
-import Keyboard from 'components/Auth/PinSetup/PinPad/Keyboard';
+
+import Keyboard from 'components/shared/Keyboard';
 
 import {
   Container,
@@ -75,8 +75,8 @@ class SendFunds extends Component {
 
         <Keyboard
           onChange={this.handleKeyboardChange}
-          pin={amount}
-          pinLength={99}
+          value={amount}
+          withDecimals
         />
 
         <SubmitButton

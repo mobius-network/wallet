@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
+import Keyboard from 'components/shared/Keyboard';
 import Header from '../../Header';
-import Keyboard from '../../Keyboard';
 
 class Setup extends Component {
   static propTypes = {
@@ -41,9 +41,9 @@ class Setup extends Component {
           title={title}
         />
         <Keyboard
+          maxLength={pinLength}
           onChange={this.handleKeyboardChange}
-          pin={pin}
-          pinLength={pinLength}
+          value={pin}
         />
       </Fragment>
     );

@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
+import Keyboard from 'components/shared/Keyboard';
 import Header from '../../Header';
-import Keyboard from '../../Keyboard';
 
 class Enter extends Component {
   static propTypes = {
@@ -91,9 +91,9 @@ class Enter extends Component {
         />
         <Keyboard
           disabled={showError}
+          maxLength={pinLength}
           onChange={this.handleKeyboardChange}
-          pin={pin}
-          pinLength={pinLength}
+          value={pin}
         />
       </Fragment>
     );
