@@ -3,8 +3,18 @@ import {
   call, cancel, fork, put, take, takeLatest,
 } from 'redux-saga/effects';
 
-import { getMarketQuotes } from 'core/services/coinmarketcap';
+import {
+  COINMARKETCAP_API_URL,
+  COINMARKETCAP_API_KEY,
+} from 'react-native-dotenv';
+
+import CoinMarketCap from 'core/services/coinmarketcap';
 import { pricesActions } from 'state/prices/actions';
+
+const cmcClient = new CoinMarketCap(
+  COINMARKETCAP_API_URL,
+  COINMARKETCAP_API_KEY
+);
 
 let watcher;
 
@@ -12,7 +22,7 @@ function* getPrices() {
   try {
     const {
       data: { data },
-    } = yield call(getMarketQuotes);
+    } = yield call(cmcClient.getMarketQuotes);
 
     yield put(pricesActions.setQuotes(data));
   } catch (error) {

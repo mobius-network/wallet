@@ -1,39 +1,66 @@
 import axios from 'axios';
-import {
-  COINMARKETCAP_API_URL,
-  COINMARKETCAP_API_KEY,
-} from 'react-native-dotenv';
+import { isNil } from 'lodash';
 
 export const currencies = {
   2429: 'mobi',
   512: 'xlm',
 };
 
-/**
- * `axios` instance preconfigured to interact with Coinmarketcap API.
- * @param {Object} [config={}] - axios request config object
- */
-export const client = (config = {}) => axios({
-  baseURL: COINMARKETCAP_API_URL,
-  method: 'GET',
-  headers: {
-    'X-CMC_PRO_API_KEY': COINMARKETCAP_API_KEY,
-  },
-  ...config,
-});
+class CoinMarketCap {
+  /**
+   * Creates an instance of simple CoinMarketCap client.
+   * @param {string} apiUrl - Coinmarketcap API url
+   * @param {string} apiKey - Coinmarketcap API key
+   */
+  constructor(apiUrl, apiKey) {
+    this.validateParams(apiUrl, apiKey);
 
-/**
- * Get latest market quotes for all available currencies
- * @returns {Promise}
- */
-export const getMarketQuotes = () => {
-  const config = {
-    url: '/cryptocurrency/quotes/latest',
-    params: {
-      id: Object.keys(currencies).join(','),
-      convert: 'USD',
-    },
+    this.config = {
+      baseURL: apiUrl,
+      method: 'GET',
+      headers: {
+        'X-CMC_PRO_API_KEY': apiKey,
+      },
+    };
+  }
+
+  /**
+   * Make a request to Coinmarketcap API
+   * @param {*} [config={}]
+   * @returns {Promise}
+   */
+  call = (config = {}) => axios({ ...this.config, ...config });
+
+  /**
+   * Get latest market quotes for all available currencies
+   * @returns {Promise}
+   */
+  getMarketQuotes = () => {
+    const config = {
+      url: '/cryptocurrency/quotes/latest',
+      params: {
+        id: Object.keys(currencies).join(','),
+        convert: 'USD',
+      },
+    };
+
+    return this.call(config);
   };
 
-  return client(config);
-};
+  /**
+   * Validate constructor params. Raise if required params are missing.
+   * @param {string} apiUrl - Coinmarketcap API url
+   * @param {string} apiKey - Coinmarketcap API key
+   */
+  validateParams(apiUrl, apiKey) {
+    if (isNil(apiUrl)) {
+      throw new Error('Missing API url');
+    }
+
+    if (isNil(apiKey)) {
+      throw new Error('Missing API key');
+    }
+  }
+}
+
+export default CoinMarketCap;
