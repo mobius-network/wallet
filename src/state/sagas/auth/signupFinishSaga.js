@@ -10,13 +10,13 @@ import navigator from 'state/navigator';
 import { authActions, getMnemonic } from 'state/auth';
 
 function* run() {
+  yield call(navigator.navigate, 'Auth', 'Loading');
+
   const mnemonic = yield select(getMnemonic);
 
   const wallet = StellarHDWallet.fromMnemonic(mnemonic);
 
   const token = encodeFundToken(wallet.seedHex);
-
-  yield call(navigator.navigate, 'Auth', 'Loading');
 
   yield call(fetchStart, {
     name: 'createAccount',

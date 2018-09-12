@@ -7,6 +7,8 @@ import navigator from 'state/navigator';
 import { authActions } from 'state/auth';
 
 function* run() {
+  yield call(navigator.navigate, 'Auth', 'Loading');
+
   const pinStore = yield call(Keychain.getGenericPassword, {
     service: 'pin',
   });
