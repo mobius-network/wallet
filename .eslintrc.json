@@ -66,6 +66,9 @@
           "render"
         ]
       }
+    }],
+    "react/sort-prop-types": [2, {
+      "sortShapeProp": true
     }]
   }
 }

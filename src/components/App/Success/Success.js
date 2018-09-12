@@ -9,10 +9,10 @@ class Success extends Component {
   static propTypes = {
     message: PropTypes.string,
 
-    t: PropTypes.func.isRequired,
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
     }).isRequired,
+    t: PropTypes.func.isRequired,
   };
 
   onComplete = () => this.props.navigation.navigate('Dashboard');

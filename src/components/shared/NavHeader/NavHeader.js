@@ -8,11 +8,11 @@ import {
 
 class NavHeader extends Component {
   static propTypes = {
-    title: PropTypes.string.isRequired,
     navigation: PropTypes.shape({
       pop: PropTypes.func.isRequired,
     }).isRequired,
     t: PropTypes.func.isRequired,
+    title: PropTypes.string.isRequired,
   };
 
   goBack = () => this.props.navigation.pop();

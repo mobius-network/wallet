@@ -17,12 +17,12 @@ import {
 
 class Dashboard extends Component {
   static propTypes = {
-    usdBalance: PropTypes.number.isRequired,
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
       openDrawer: PropTypes.func.isRequired,
     }).isRequired,
     t: PropTypes.func.isRequired,
+    usdBalance: PropTypes.number.isRequired,
   };
 
   static defaultProps = {

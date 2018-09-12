@@ -8,10 +8,10 @@ import { Container, Label } from './styles';
 
 class AlertCheckbox extends Component {
   static propTypes = {
-    label: PropTypes.string.isRequired,
-    onPress: PropTypes.func.isRequired,
-
     isChecked: PropTypes.bool,
+    label: PropTypes.string.isRequired,
+
+    onPress: PropTypes.func.isRequired,
   };
 
   static defaultProps = {

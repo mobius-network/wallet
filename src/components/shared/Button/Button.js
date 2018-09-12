@@ -12,11 +12,11 @@ class Button extends Component {
     className: PropTypes.string,
     disabled: PropTypes.bool,
     onPress: PropTypes.func,
+    padding: PropTypes.bool,
     square: PropTypes.bool,
     style: ViewPropTypes.style,
     title: PropTypes.any.isRequired,
     variant: PropTypes.oneOf(['primary', 'text', 'secondary']),
-    padding: PropTypes.bool,
   };
 
   static defaultProps = {

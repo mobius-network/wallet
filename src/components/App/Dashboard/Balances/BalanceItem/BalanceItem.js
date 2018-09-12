@@ -15,8 +15,8 @@ import {
 
 class BalanceItem extends Component {
   static propTypes = {
-    asset: PropTypes.string,
     amount: PropTypes.number,
+    asset: PropTypes.string,
     usdAmount: PropTypes.number,
     usdPrice: PropTypes.number,
   };

@@ -8,10 +8,10 @@ import background from './images/bg.png';
 
 class BackgroundView extends Component {
   static propTypes = {
-    variant: PropTypes.oneOf(['center', 'bottom']),
+    action: PropTypes.any,
 
     content: PropTypes.any,
-    action: PropTypes.any,
+    variant: PropTypes.oneOf(['center', 'bottom']),
   };
 
   render() {

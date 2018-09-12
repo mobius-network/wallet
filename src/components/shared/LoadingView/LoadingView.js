@@ -11,10 +11,10 @@ import {
 
 class LoadingView extends Component {
   static propTypes = {
+    error: PropTypes.bool,
     isLoading: PropTypes.bool,
     onError: PropTypes.func.isRequired,
     t: PropTypes.func.isRequired,
-    error: PropTypes.bool,
   };
 
   static defaultProps = {
