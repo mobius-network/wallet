@@ -31,7 +31,7 @@ class BalanceItem extends Component {
         <CurrencyIcon name={`currency${capitalize(asset)}`} size={40} />
 
         <AssetInfo>
-          <Asset>{asset}</Asset>
+          <Asset>{asset.toUpperCase()}</Asset>
           <Price>${usdPrice}</Price>
         </AssetInfo>
 
