@@ -1,0 +1,13 @@
+{
+  "translation": {
+    "shared": {
+      "cancel": "Отмена",
+      "close": "Закрыть",
+      "continue": "Продолжить",
+      "done": "Готово"
+    },
+    "pinSetup": {
+      "unlockTitle": "Введите ПИН-код"
+    }
+  }
+}
