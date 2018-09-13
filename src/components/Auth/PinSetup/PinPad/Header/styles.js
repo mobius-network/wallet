@@ -7,20 +7,45 @@ import {
   helpers,
 } from 'components/shared/Styleguide';
 
+const titleStyles = {
+  flex: 1,
+  flexWrap: 'wrap',
+  fontFamily: fonts.helveticaNeue.bold,
+  fontSize: fontSizes.secondaryTitle,
+  textAlign: 'center',
+};
+
+const subtitleStyles = {
+  fontSize: fontSizes.default,
+  lineHeight: helpers.calculateLineHeight(fontSizes.default),
+  textAlign: 'center',
+  position: 'absolute',
+  width: helpers.vw - 48,
+  bottom: -(helpers.calculateLineHeight(fontSizes.default) + 9),
+};
+
+const dotStyles = {
+  borderRadius: 10,
+  height: 20,
+  marginLeft: 9,
+  marginRight: 9,
+  width: 20,
+};
+
 export default StyleSheet.create({
   container: {
     alignItems: 'center',
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
   },
   textContainer: {
     alignItems: 'stretch',
+    flex: 0,
     flexDirection: 'column',
-    paddingBottom: 44,
+    justifyContent: 'center',
     marginLeft: 24,
     marginRight: 24,
-    paddingTop: 44,
   },
   titleContainer: {
     flexDirection: 'row',
@@ -28,64 +53,36 @@ export default StyleSheet.create({
     width: helpers.vw - 48,
   },
   title: {
+    ...titleStyles,
     color: colors.textDefault,
-    flex: 1,
-    flexWrap: 'wrap',
-    fontFamily: fonts.helveticaNeue.bold,
-    fontSize: fontSizes.secondaryTitle,
-    marginBottom: 9,
-    textAlign: 'center',
   },
   subtitle: {
+    ...subtitleStyles,
     color: colors.textSecondary,
-    fontSize: fontSizes.default,
-    lineHeight: helpers.calculateLineHeight(fontSizes.default),
-    textAlign: 'center',
   },
   errorTitle: {
+    ...titleStyles,
     color: colors.error,
-    flex: 1,
-    flexWrap: 'wrap',
-    fontFamily: fonts.helveticaNeue.bold,
-    fontSize: fontSizes.secondaryTitle,
-    marginBottom: 9,
-    textAlign: 'center',
   },
   errorSubtitle: {
+    ...subtitleStyles,
     color: colors.error,
-    fontSize: fontSizes.default,
-    lineHeight: helpers.calculateLineHeight(fontSizes.default),
-    textAlign: 'center',
   },
   dotsContainer: {
-    alignItems: 'center',
+    alignItems: 'flex-start',
+    flex: 0,
     flexDirection: 'row',
     justifyContent: 'center',
-    paddingBottom: 80,
   },
-  dot: {
-    borderRadius: 12,
-    height: 24,
-    marginLeft: 9,
-    marginRight: 9,
-    width: 24,
-  },
+  dot: dotStyles,
   emptyDot: {
+    ...dotStyles,
     borderColor: '#BEBEBE',
-    borderRadius: 12,
     borderWidth: 1,
-    height: 24,
-    marginLeft: 9,
-    marginRight: 9,
-    width: 24,
   },
   errorDot: {
+    ...dotStyles,
     borderColor: colors.error,
-    borderRadius: 12,
     borderWidth: 1,
-    height: 24,
-    marginLeft: 9,
-    marginRight: 9,
-    width: 24,
   },
 });

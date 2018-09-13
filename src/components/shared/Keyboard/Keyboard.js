@@ -120,28 +120,28 @@ class Keyboard extends Component {
 
     return (
       <Grid style={styles.grid}>
-        <Row>
+        <Row style={styles.row}>
           {range(1, 4).map(i => (
             <Col key={i} style={styles.col}>
               {this.renderNumberButton(i)}
             </Col>
           ))}
         </Row>
-        <Row>
+        <Row style={styles.row}>
           {range(4, 7).map(i => (
             <Col key={i} style={styles.col}>
               {this.renderNumberButton(i)}
             </Col>
           ))}
         </Row>
-        <Row>
+        <Row style={styles.row}>
           {range(7, 10).map(i => (
             <Col key={i} style={styles.col}>
               {this.renderNumberButton(i)}
             </Col>
           ))}
         </Row>
-        <Row>
+        <Row style={styles.row}>
           <Col style={styles.col}>
             {withDecimals ? this.renderDelimiterButton() : null}
           </Col>
