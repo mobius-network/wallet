@@ -1,0 +1,87 @@
+{
+  "translation": {
+    "shared": {
+      "cancel": "취소",
+      "close": "닫기",
+      "continue": "계속",
+      "done": "완료"
+    },
+    "welcome": {
+      "title": "환영합니다",
+      "description": "암호화폐를 이용함으로써 친구들 사이에 돈을 주고 받을 수 있는 지갑을 만들기",
+      "setupWalletButton": "설치 지갑"
+    },
+    "pinSetup": {
+      "chooseSubtitle": "전자 지갑에 접근할 수 있는 비밀번호 6자리를 입력하세요",
+      "chooseTitle": "암호 설정",
+      "confirmSubtitle": "암호를 다시 입력하세요",
+      "confirmTitle": "암호 확인",
+      "lockedSubtitle": "정보를 보호하기 위해 액세스가 5 분간 잠겼습니다. 나중에 다시 시도하십시오.",
+      "lockedTitle": "최대 시도 횟수",
+      "unlockTitle": "암호를 시 입력하세요"
+    },
+    "mnemonic": {
+      "confirm": {
+        "description": "어떤 것이 당신의 것입니까?",
+        "title": "연상 구절을 확인해주세요",
+        "alertErrorButton": "다시 보기",
+        "alertErrorTitle": "틀린 구절",
+        "alertErrorMessage": "잘못된 연상 구절을 선택했습니다. 당신의 구절을 다시 읽으신 다음에 적으시고 다시 시도해보세요.",
+        "alertConfirmTitle": "복구 구절을 잊어버리지 마세요!",
+        "alertConfirmMessage": "연상 구절을 잊어버리셨다면 계정을 복구시킬 수 없습니다.",
+        "alertConfirmUnderstand": "네, 복구 구절을 잊어버림으로써 오는 위험을 이해합니다.",
+        "alertConfirmButton": "계속"
+      },
+      "write": {
+        "continueButton": "나는 그것을 적어 놓았다.",
+        "description": "다른 기기에 당신의 계정에 접속하기 위해서는 이 구절이 필요합니다.",
+        "title": "연상 구절을 적으세요",
+        "alertTitle": "클립보드에 복사",
+        "alertMessage": "비밀스런 단어 조합은 안전하고 안전한 장소에 보관하십시오. 이 문구는 모든 돈을 나타냅니다. 종이에 글을 쓰고 아무도 보여주지 마십시오.",
+        "alertUnderstand": "네, 복구 구절을 잊어버림으로써 오는 위험을 이해합니다.",
+        "alertButtonConfirm": "복사",
+        "alertButtonCancel": "취소"
+      }
+    },
+    "ready": {
+      "title": "당신의 지갑은 준비되었습니다!",
+      "description": "보내고 받고 코인을 저축하기"
+    },
+    "dashboard": {
+      "title": "현재 잔고",
+      "receiveButton": "받기"
+    },
+    "addFunds": {
+      "headerTitle": "자금을 더하다",
+      "title": "외부 지갑으로부터 이체하기",
+      "subtitle": "MOBI 또는 XLM을 지갑에 전송하려면 다음 주소를 사용하십시오.",
+      "share": {
+        "title": "공개 열쇠",
+        "subject": "공개 열쇠"
+      },
+      "publicKey": {
+        "title": "공개 열쇠"
+      },
+      "selectWallet": {
+        "title": "지갑 선택",
+        "label": "지갑",
+        "wallet": "지갑 선택",
+        "cancel": "취소"
+      },
+      "buttons": {
+        "copy": "복사",
+        "share": "공유"
+      }
+    },
+    "loadingView": {
+      "description": "기다려주십시오",
+      "errorDescription": "뭔가 잘못 됐어. 다시 시도하십시오.",
+      "errorTitle": "오류",
+      "title": "로딩",
+      "tryAgainButton": "다시 시도하십시오"
+    },
+    "success": {
+      "title": "성공!"
+    }
+  }
+}
