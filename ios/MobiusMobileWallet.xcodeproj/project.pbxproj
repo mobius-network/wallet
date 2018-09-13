@@ -16,7 +16,7 @@
 		5D8D3290578F4485977F151E /* Nunito Sans Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 966BB142B9B44C4EBD6ABF22 /* Nunito Sans Italic.ttf */; };
 		703B7179213E262600AE6E0E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 703B7178213E262600AE6E0E /* Settings.bundle */; };
 		709DA828214177B900AF344D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 709DA827214177B900AF344D /* Assets.xcassets */; };
-		709DA82A21417ABA00AF344D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 709DA82921417ABA00AF344D /* Launch Screen.storyboard */; };
+		70C1AF0C2149D8B600AD6840 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C1AF0E2149D8B600AD6840 /* Launch Screen.storyboard */; };
 		71660C9B8A4D44E7AD9596CF /* Nunito Sans Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6E8786D23B342C2A8C5297A /* Nunito Sans Light.ttf */; };
 		7CB954CDEA5A604881E98D08 /* libPods-MobiusMobileWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC2CADE496F458B1E2C8672 /* libPods-MobiusMobileWallet.a */; };
 		83F6DC1518824E018C733149 /* Roboto Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ECE6A48F96C4BAC8BF489D8 /* Roboto Bold.ttf */; };
@@ -60,6 +60,8 @@
 		4EAEA74035204177DE9DDED1 /* Pods-MobiusMobileWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiusMobileWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobiusMobileWallet/Pods-MobiusMobileWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		52F3E6E48E7F48329C4B9431 /* Nunito Sans Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito Sans Regular.ttf"; path = "../assets/fonts/Nunito Sans Regular.ttf"; sourceTree = "<group>"; };
 		5A501A9A2A2A4BEABD9B09DD /* Helvetica Neue Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Helvetica Neue Thin.ttf"; path = "../assets/fonts/Helvetica Neue Thin.ttf"; sourceTree = "<group>"; };
+		7011242C2149F7D700C0BDFE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = "ru.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
+		7011242D214A7D1000C0BDFE /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = "ko.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
 		703B7178213E262600AE6E0E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		7098ED46213DA4870068DB08 /* Project.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.debug.xcconfig; sourceTree = "<group>"; };
 		7098ED47213DA4870068DB08 /* Project.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.release.xcconfig; sourceTree = "<group>"; };
@@ -71,7 +73,8 @@
 		7098ED54213DA7C80068DB08 /* MobiusMobileWalletTests.base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MobiusMobileWalletTests.base.xcconfig; sourceTree = "<group>"; };
 		7098ED55213DA7C80068DB08 /* MobiusMobileWalletTests.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MobiusMobileWalletTests.debug.xcconfig; sourceTree = "<group>"; };
 		709DA827214177B900AF344D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		709DA82921417ABA00AF344D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		70C1AF0D2149D8B600AD6840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		70C1AF162149DD4000AD6840 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
 		78A1D453588241A99F6EBDF9 /* Roboto Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto Italic.ttf"; path = "../assets/fonts/Roboto Italic.ttf"; sourceTree = "<group>"; };
 		7C330E7A8E8F01E31A1A56C6 /* Pods-MobiusMobileWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiusMobileWalletTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobiusMobileWalletTests/Pods-MobiusMobileWalletTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DD017C94262423A9EF12F88 /* Nunito Sans Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito Sans Bold.ttf"; path = "../assets/fonts/Nunito Sans Bold.ttf"; sourceTree = "<group>"; };
@@ -125,8 +128,8 @@
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				709DA827214177B900AF344D /* Assets.xcassets */,
-				709DA82921417ABA00AF344D /* Launch Screen.storyboard */,
 				703B7178213E262600AE6E0E /* Settings.bundle */,
+				70C1AF0E2149D8B600AD6840 /* Launch Screen.storyboard */,
 			);
 			path = MobiusMobileWallet;
 			sourceTree = "<group>";
@@ -293,6 +296,9 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ko,
+				ru,
+				zh-Hans,
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
@@ -334,7 +340,7 @@
 				8D156BDF17B6433A96F2A4BA /* Roboto Thin.ttf in Resources */,
 				8A7987054D8D4511B55027A3 /* Roboto Medium.ttf in Resources */,
 				4947DB422CA144F4B1A0108F /* Roboto Italic.ttf in Resources */,
-				709DA82A21417ABA00AF344D /* Launch Screen.storyboard in Resources */,
+				70C1AF0C2149D8B600AD6840 /* Launch Screen.storyboard in Resources */,
 				83F6DC1518824E018C733149 /* Roboto Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +486,20 @@
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		70C1AF0E2149D8B600AD6840 /* Launch Screen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70C1AF0D2149D8B600AD6840 /* Base */,
+				70C1AF162149DD4000AD6840 /* zh-Hans */,
+				7011242C2149F7D700C0BDFE /* ru */,
+				7011242D214A7D1000C0BDFE /* ko */,
+			);
+			name = "Launch Screen.storyboard";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {

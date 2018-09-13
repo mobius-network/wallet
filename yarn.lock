@@ -4007,10 +4007,6 @@ husky@^0.14.3:
     normalize-path "^1.0.0"
     strip-indent "^2.0.0"
 
-i18n-js@3.0.11:
-  version "3.0.11"
-  resolved "https://registry.yarnpkg.com/i18n-js/-/i18n-js-3.0.11.tgz#f9e96bdb641c5b9d6be12759d7c422089987ef02"
-
 i18next@^11.5.0:
   version "11.7.0"
   resolved "https://registry.yarnpkg.com/i18next/-/i18next-11.7.0.tgz#caf2f3d512ca5b2f556f065f698f33d44ca311d7"
@@ -7125,15 +7121,13 @@ react-native-fabric@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/react-native-fabric/-/react-native-fabric-0.5.1.tgz#e5eb65c56196355b41f230c14adcc9c4bcf60dda"
 
-react-native-i18n@^2.0.15:
-  version "2.0.15"
-  resolved "https://registry.yarnpkg.com/react-native-i18n/-/react-native-i18n-2.0.15.tgz#09b5a9836116fa7dbd0054c46e2d1014c1ef3c65"
-  dependencies:
-    i18n-js "3.0.11"
-
 react-native-keychain@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-native-keychain/-/react-native-keychain-3.0.0.tgz#29da1dfa43c2581f76bf9420914fd38a1558cf18"
+
+react-native-languages@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-languages/-/react-native-languages-3.0.0.tgz#c2ffcd799e5cc4f091b8183450198d55c03a8720"
 
 react-native-level-fs@^3.0.1:
   version "3.0.1"

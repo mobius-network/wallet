@@ -1,0 +1,87 @@
+{
+  "translation": {
+    "shared": {
+      "cancel": "取消",
+      "close": "关闭",
+      "continue": "下一步",
+      "done": "完成"
+    },
+    "welcome": {
+      "title": "欢迎",
+      "description": "创建钱包并向朋友发送和接收加密货币",
+      "setupWalletButton": "设置钱包"
+    },
+    "pinSetup": {
+      "chooseSubtitle": "输入6个数字的密码解锁钱包",
+      "chooseTitle": "设置密码",
+      "confirmSubtitle": "请重新输入密码",
+      "confirmTitle": "确认密码",
+      "lockedSubtitle": "为了保护您的信息，锁定访问5分钟，请稍后再试",
+      "lockedTitle": "达到最大尝试次数",
+      "unlockTitle": "请输入密码"
+    },
+    "mnemonic": {
+      "confirm": {
+        "description": "下面哪个是你的助记词？",
+        "title": "确认助记词",
+        "alertErrorButton": "重新显示",
+        "alertErrorTitle": "助记词错误",
+        "alertErrorMessage": "您选择了错误的助记词，请重新阅读，将其抄写下来，并再次选择",
+        "alertConfirmTitle": "不要弄丢您的助计词",
+        "alertConfirmMessage": "如果您丢失了助计词，则无法恢复帐户",
+        "alertConfirmUnderstand": "我已了解丢失助记词的后果",
+        "alertConfirmButton": "下一步"
+      },
+      "write": {
+        "continueButton": "我已抄写完毕",
+        "description": "当您在其他设备登陆时需要输入这个助记词",
+        "title": "抄写下您的助计词",
+        "alertTitle": "复制助计词",
+        "alertMessage": "注意不要随便粘贴助记词，助记词仅在您的钱包里是安全的",
+        "alertUnderstand": "是的，我已了解在线存储助计词的风险",
+        "alertButtonConfirm": "复制",
+        "alertButtonCancel": "取消"
+      }
+    },
+    "ready": {
+      "title": "您的钱包已准备完毕！",
+      "description": "发送，接收并存储加密货币"
+    },
+    "dashboard": {
+      "title": "当前资产",
+      "receiveButton": "收款"
+    },
+    "addFunds": {
+      "headerTitle": "添加资产",
+      "title": "从外部钱包转账",
+      "subtitle": "使用以下地址将MOBI或XLM转移到您的钱包",
+      "share": {
+        "title": "地址",
+        "subject": "地址"
+      },
+      "publicKey": {
+        "title": "地址"
+      },
+      "selectWallet": {
+        "title": "选择钱包",
+        "label": "钱包",
+        "wallet": "选择钱包",
+        "cancel": "取消"
+      },
+      "buttons": {
+        "copy": "复制",
+        "share": "转发"
+      }
+    },
+    "loadingView": {
+      "description": "请稍等",
+      "errorDescription": "发生错误，请再试一次",
+      "errorTitle": "错误",
+      "title": "加载中",
+      "tryAgainButton": "再试一次"
+    },
+    "success": {
+      "title": "完成！"
+    }
+  }
+}

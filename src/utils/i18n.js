@@ -1,7 +1,9 @@
+import RNLanguages from 'react-native-languages';
 import i18n from 'i18next';
-import rn18 from 'react-native-i18n';
 import en from 'locales/en.json';
-import zh from 'locales/zh.json';
+import ko from 'locales/ko.json';
+import ru from 'locales/ru.json';
+import zh from 'locales/zh_CN.json';
 import { isDev } from './env';
 
 /*
@@ -13,17 +15,8 @@ import { isDev } from './env';
  *
  */
 
-const detector = {
-  init: Function.prototype,
-  type: 'languageDetector',
-  detect: () => rn18
-    .currentLocale()
-    .split('-')
-    .shift(),
-  cacheUserLanguage: Function.prototype,
-};
-
-i18n.use(detector).init({
+i18n.init({
+  lng: RNLanguages.language,
   debug: isDev,
   fallbackLng: 'en',
   interpolation: {
@@ -32,7 +25,9 @@ i18n.use(detector).init({
   react: {
     wait: false,
   },
-  resources: { en, zh },
+  resources: {
+    en, ko, ru, zh,
+  },
 });
 
 export default i18n;

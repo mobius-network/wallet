@@ -11,7 +11,6 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
-import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 import com.bitgo.randombytes.RandomBytesPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.horcrux.svg.SvgPackage;
@@ -21,6 +20,7 @@ import com.oblador.vectoricons.VectorIconsPackage;
 import com.smixx.fabric.FabricPackage;
 
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
+import com.reactcommunity.rnlanguages.RNLanguagesPackage;
 import org.reactnative.camera.RNCameraPackage;
 
 import java.util.Arrays;
@@ -44,7 +44,7 @@ public class MainApplication extends Application implements ReactApplication {
             new RandomBytesPackage(),
             new RNCameraPackage(),
             new RNDeviceInfo(),
-            new RNI18nPackage(),
+            new RNLanguagesPackage(),
             new SplashScreenReactPackage(),
             new SvgPackage(),
             new VectorIconsPackage()
