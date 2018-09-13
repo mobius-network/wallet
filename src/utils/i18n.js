@@ -1,8 +1,9 @@
 import RNLanguages from 'react-native-languages';
 import i18n from 'i18next';
 import en from 'locales/en.json';
+import ko from 'locales/ko.json';
 import ru from 'locales/ru.json';
-import zh from 'locales/zh.json';
+import zh from 'locales/zh_CN.json';
 import { isDev } from './env';
 
 /*
@@ -24,7 +25,9 @@ i18n.init({
   react: {
     wait: false,
   },
-  resources: { en, ru, zh },
+  resources: {
+    en, ko, ru, zh,
+  },
 });
 
 export default i18n;
