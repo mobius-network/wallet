@@ -27,8 +27,8 @@
         "alertErrorButton": "Show Me Again",
         "alertErrorTitle": "Incorrect phrase",
         "alertErrorMessage": "You’ve selected the wrong mnemonic phrase. Please reread your phrase, write it down, and try again.",
-        "alertConfirmTitle": "Don't loose your recovery phrase",
-        "alertConfirmMessage": "If you loose your recovery pharase there is no possible way to recover yoour account",
+        "alertConfirmTitle": "Don't lose your recovery phrase",
+        "alertConfirmMessage": "If you lose your recovery phrase there is no possible way to recover your account",
         "alertConfirmUnderstand": "Yes, I understand the risk of loosing my recovery phrase.",
         "alertConfirmButton": "Continue"
       },
@@ -40,8 +40,8 @@
         "alertTitle": "Copy your phrase",
         "alertMessage": "Be careful where you paste your phrase. Your wallet is only as secure as the place you store your phrase.",
         "alertUnderstand": "Yes, I understand the risk of storing my phrase online.",
-        "alertButtonConfirm": "Copy",
-        "alertButtonCancel": "Cancel"
+        "alertButtonConfirm": "Continue",
+        "alertButtonCancel": "Cancel",
       }
     },
     "ready": {
