@@ -27,16 +27,15 @@
         "alertErrorButton": "Show Me Again",
         "alertErrorTitle": "Incorrect phrase",
         "alertErrorMessage": "You’ve selected the wrong mnemonic phrase. Please reread your phrase, write it down, and try again.",
-        "alertConfirmTitle": "Don't loose your recovery phrase",
-        "alertConfirmMessage": "If you loose your recovery pharase there is no possible way to recover yoour account",
-        "alertConfirmUnderstand": "Yes, I understand the risk of loosing my recovery phrase.",
+        "alertConfirmTitle": "Don't lose your recovery phrase",
+        "alertConfirmMessage": "If you lose your recovery phrase there is no possible way to recover yoour account.",
+        "alertConfirmUnderstand": "Yes, I understand the risk of losing my recovery phrase.",
         "alertConfirmButton": "Continue"
       },
       "write": {
         "continueButton": "I’ve written it down",
         "description": "You’ll need this phrase to access your account on another device.",
         "title": "Write Down Your Mnemonic Phrase",
-
         "alertTitle": "Copy your phrase",
         "alertMessage": "Be careful where you paste your phrase. Your wallet is only as secure as the place you store your phrase.",
         "alertUnderstand": "Yes, I understand the risk of storing my phrase online.",
@@ -75,7 +74,7 @@
       }
     },
     "loadingView": {
-      "description": "Plase, wait",
+      "description": "Please wait",
       "errorDescription": "Something went wrong. Please try again.",
       "errorTitle": "Error",
       "title": "Loading",
