@@ -6,7 +6,7 @@ import { getAssetPrice } from 'state/prices';
 import { getAssetBalance } from 'state/account';
 import { transfersActions, getAsset } from 'state/transfers';
 
-import SendFunds from './SendFunds';
+import SendAmount from './SendAmount';
 
 const mapStateToProps = (state) => {
   const asset = getAsset(state);
@@ -28,4 +28,4 @@ export default compose(
     mapDispatchToProps
   ),
   translate('translation')
-)(SendFunds);
+)(SendAmount);

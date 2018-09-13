@@ -13,7 +13,7 @@ import {
   SubmitButton,
 } from './styles';
 
-class SendFunds extends Component {
+class SendAmount extends Component {
   static propTypes = {
     asset: PropTypes.string.isRequired,
     balance: PropTypes.number.isRequired,
@@ -82,7 +82,7 @@ class SendFunds extends Component {
         <SubmitButton
           disabled={!valid}
           onPress={this.submitAmount}
-          title={t('sendFunds.submitButton')}
+          title={t('sendAmount.submitButton')}
         />
 
         <ActionSheet
@@ -98,4 +98,4 @@ class SendFunds extends Component {
   }
 }
 
-export default SendFunds;
+export default SendAmount;

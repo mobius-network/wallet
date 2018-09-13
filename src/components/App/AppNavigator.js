@@ -12,7 +12,7 @@ import NavHeader from 'components/shared/NavHeader';
 import Dashboard from './Dashboard';
 import AddFunds from './AddFunds';
 import Success from './Success';
-import SendFunds from './SendFunds';
+import SendAmount from './SendAmount';
 import AddressForm from './AddressForm';
 
 export const DrawerNavigator = notifyDrawer(
@@ -53,11 +53,11 @@ export const StackNavigator = createStackNavigator(
         header: null,
       }),
     },
-    SendFunds: {
-      screen: SendFunds,
+    SendAmount: {
+      screen: SendAmount,
       navigationOptions: () => ({
         /* eslint-disable-next-line react/display-name */
-        header: props => <NavHeader {...props} title="sendFunds.headerTitle" />,
+        header: props => <NavHeader {...props} title="sendAmount.headerTitle" />,
       }),
     },
     AddressForm: {

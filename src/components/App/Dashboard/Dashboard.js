@@ -44,7 +44,7 @@ class Dashboard extends Component {
 
   openReceiveScreen = () => this.props.navigation.navigate('AddFunds');
 
-  openSendScreen = () => this.props.navigation.navigate('SendFunds');
+  openSendScreen = () => this.props.navigation.navigate('SendAmount');
 
   handleMenuButtonClick = () => this.props.navigation.openDrawer();
 

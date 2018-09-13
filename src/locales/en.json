@@ -74,7 +74,7 @@
         "share": "Share"
       }
     },
-    "sendFunds": {
+    "sendAmount": {
       "headerTitle": "Send",
       "amountFieldLabel": "Amount",
       "submitButton": "Continue"
