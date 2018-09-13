@@ -20,12 +20,19 @@ class Confirm extends Component {
     t: PropTypes.func.isRequired,
   };
 
-  state = {
-    isConfirmAlertVisible: false,
-    isConfirmAlertChecked: false,
+  constructor(props) {
+    super(props);
 
-    isErrorAlertVisible: false,
-  };
+    const { mnemonic, mnemonicVariants } = this.props;
+
+    this.state = {
+      mnemonics: shuffle([...mnemonicVariants, mnemonic]),
+
+      isConfirmAlertVisible: false,
+      isConfirmAlertChecked: false,
+      isErrorAlertVisible: false,
+    };
+  }
 
   toggleCheckbox = () => {
     this.setState({ isConfirmAlertChecked: !this.state.isConfirmAlertChecked });
@@ -63,12 +70,13 @@ class Confirm extends Component {
 
   render() {
     const {
+      mnemonics,
+
       isErrorAlertVisible,
       isConfirmAlertVisible,
       isConfirmAlertChecked,
     } = this.state;
-    const { t, mnemonic, mnemonicVariants } = this.props;
-    const mnemonics = shuffle([...mnemonicVariants, mnemonic]);
+    const { t } = this.props;
 
     return (
       <Container>
