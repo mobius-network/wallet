@@ -1,26 +1,29 @@
-import { merge } from 'state/utils';
+import updateSource from 'immutability-helper';
 import { createReducer } from 'redux-yo';
 
+import { currencies } from 'core/services/coinmarketcap';
 import { pricesActions } from './actions';
 
-/*
- * mobi: {
- *   usd: 0.123123,
- * },
- */
 const initialState = {};
 
 export const pricesReducer = createReducer(
   {
-    [pricesActions.setQuotes]: (state, { symbol, quotes }) => merge(state, {
-      [symbol.toLowerCase()]: Object.keys(quotes).reduce(
-        (acc, key) => ({
-          ...acc,
-          [key.toLowerCase()]: quotes[key].price,
-        }),
-        {}
-      ),
-    }),
+    [pricesActions.setQuotes]: (state, quotes) => {
+      const updates = Object.keys(quotes).reduce((acc, key) => {
+        const assetName = currencies[key];
+        const {
+          quote: { USD },
+        } = quotes[key];
+
+        acc[assetName] = { usd: USD.price };
+
+        return acc;
+      }, {});
+
+      return updateSource(state, {
+        $merge: updates,
+      });
+    },
   },
   initialState
 );
