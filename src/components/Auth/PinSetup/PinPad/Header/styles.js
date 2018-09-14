@@ -18,10 +18,11 @@ const titleStyles = {
 const subtitleStyles = {
   fontSize: fontSizes.default,
   lineHeight: helpers.calculateLineHeight(fontSizes.default),
-  textAlign: 'center',
+  paddingTop: 10,
   position: 'absolute',
+  textAlign: 'center',
+  top: '100%',
   width: helpers.vw - 48,
-  bottom: -(helpers.calculateLineHeight(fontSizes.default) + 9),
 };
 
 const dotStyles = {
