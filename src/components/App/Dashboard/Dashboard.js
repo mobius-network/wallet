@@ -24,7 +24,8 @@ class Dashboard extends Component {
     }).isRequired,
     stopWatchPrices: PropTypes.func.isRequired,
     t: PropTypes.func.isRequired,
-    usdBalance: PropTypes.number.isRequired,
+    usdBalance: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      .isRequired,
     watchPrices: PropTypes.func.isRequired,
   };
 
