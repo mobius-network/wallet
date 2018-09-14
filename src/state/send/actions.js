@@ -1,6 +1,14 @@
 import { createActions } from 'redux-yo';
 
 export const sendActions = createActions(
-  ['resetForm', 'setAmount', 'setAsset'],
+  [
+    'resetForm',
+    'sendFail',
+    'sendFinish',
+    'sendStart',
+    'setAmount',
+    'setAsset',
+    'setFormData',
+  ],
   'send'
 );

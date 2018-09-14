@@ -13,7 +13,7 @@ class LoadingView extends Component {
   static propTypes = {
     error: PropTypes.bool,
     isLoading: PropTypes.bool,
-    onError: PropTypes.func.isRequired,
+    onError: PropTypes.func,
     t: PropTypes.func.isRequired,
   };
 

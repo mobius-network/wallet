@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { ThemeProvider } from 'styled-components';
+
 import { Container, Label, Input } from './styles';
 
 class TextInput extends Component {
@@ -23,17 +25,20 @@ class TextInput extends Component {
       ...rest
     } = this.props;
     const showError = error && (dirty || touched);
+
     return (
-      <Container>
-        {label && <Label>{label}</Label>}
-        <Input
-          {...input}
-          error={showError}
-          onChangeText={input.onChange}
-          placeholder={placeholder}
-          {...rest}
-        />
-      </Container>
+      <ThemeProvider theme={{ error: showError }}>
+        <Container>
+          {label && <Label>{label}</Label>}
+          <Input
+            {...input}
+            error={showError}
+            onChangeText={input.onChange}
+            placeholder={placeholder}
+            {...rest}
+          />
+        </Container>
+      </ThemeProvider>
     );
   }
 }

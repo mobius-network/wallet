@@ -6,6 +6,8 @@ import { sendActions } from './actions';
 const initialState = {
   amount: '0',
   asset: 'mobi',
+  destination: null,
+  memo: null,
 };
 
 export const sendReducer = createReducer(
@@ -16,6 +18,9 @@ export const sendReducer = createReducer(
     }),
     [sendActions.setAsset]: (state, asset) => updateSource(state, {
       $merge: { asset },
+    }),
+    [sendActions.setFormData]: (state, formData) => updateSource(state, {
+      $merge: formData,
     }),
   },
   initialState

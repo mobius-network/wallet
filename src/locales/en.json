@@ -4,7 +4,10 @@
       "cancel": "Cancel",
       "close": "Close",
       "continue": "Continue",
-      "done": "Done"
+      "done": "Done",
+      "no": "No",
+      "yes": "Yes",
+      "ok": "OK"
     },
     "welcome": {
       "title": "Welcome",
@@ -74,14 +77,6 @@
         "share": "Share"
       }
     },
-    "addressForm": {
-      "headerTitle": "AmountSelected",
-      "submitLabel": "Pay",
-      "addressFieldLabel": "To",
-      "addressFieldPlaceholder": "Scan code or enter address",
-      "memoFieldLabel": "Memo ID",
-      "memoFieldPlaceholder": "Optional"
-    },
     "loadingView": {
       "description": "Please wait",
       "errorDescription": "Something went wrong. Please try again.",
@@ -100,6 +95,20 @@
       "amountForm": {
         "headerTitle": "Send",
         "selectAssetTitle": "Select asset"
+      },
+      "addressForm": {
+        "headerTitle": "AmountSelected",
+        "submitButton": "Pay",
+        "addressFieldLabel": "To",
+        "addressFieldPlaceholder": "Scan code or enter address",
+        "memoFieldLabel": "Memo ID",
+        "memoFieldPlaceholder": "Optional",
+        "permissionsConfirmTitle": "Allow Mobius to take pictures and record video?",
+        "permissionsConfirmSettings": "Open Settings"
+      },
+      "success": {
+        "title": "Success!",
+        "description": "You sent <0>{{amount}<\/0> <1>{{asset}}<\/1> to the address <2>{{destination}}<\/2>."
       }
     }
   }

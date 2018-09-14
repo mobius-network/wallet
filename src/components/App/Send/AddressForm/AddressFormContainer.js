@@ -2,10 +2,8 @@ import { compose } from 'redux';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
-import { restMutation } from 'redux-boost';
 
-import { accountActions } from 'state/account';
-import { getAmount, getAsset } from 'state/transfers';
+import { sendActions, getAmount, getAsset } from 'state/send';
 import { getUsdPrice } from 'state/prices';
 
 import { validate } from './validations';
@@ -25,15 +23,19 @@ const mapStateToProps = (state) => {
   };
 };
 
+const mapDispatchToProps = {
+  ...sendActions,
+};
+
 export default compose(
-  connect(mapStateToProps),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  ),
   translate('translation'),
-  restMutation({
-    name: 'withdrawAsset',
-    action: accountActions.transact,
-  }),
   reduxForm({
     form: 'addressForm',
     validate,
+    onChange: (values, dispatch) => dispatch(sendActions.setFormData(values)),
   })
 )(AddressForm);

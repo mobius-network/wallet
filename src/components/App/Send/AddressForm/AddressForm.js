@@ -1,33 +1,21 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Field, SubmissionError } from 'redux-form';
-import { Alert, Keyboard } from 'react-native';
+import { Field } from 'redux-form';
+import { Alert, Keyboard, View } from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import Permissions from 'react-native-permissions';
 import querystring from 'querystring';
 
-import { Operation } from 'stellar-sdk';
-import { assets } from 'core';
-
-import NavHeader from 'components/shared/NavHeader';
+import TextInput from 'components/shared/TextInput';
+import Header from './Header';
 
 import {
-  Container,
-  FormFields,
-  Input,
-  BackButton,
-  BackIcon,
-  TitleContainer,
-  TitleAmount,
-  TitleUsd,
-  SubmitButton,
-  ScanButton,
-  ScanIcon,
+  Container, ScanButton, ScanIcon, QRCameraStyles,
 } from './styles';
 
 class AddressForm extends Component {
   static propTypes = {
-    amount: PropTypes.number.isRequired,
+    amount: PropTypes.string.isRequired,
     asset: PropTypes.string.isRequired,
     change: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
@@ -35,145 +23,132 @@ class AddressForm extends Component {
       navigate: PropTypes.func.isRequired,
       pop: PropTypes.func.isRequired,
     }).isRequired,
+    sendStart: PropTypes.func.isRequired,
     t: PropTypes.func.isRequired,
     usdAmount: PropTypes.number.isRequired,
   };
 
   state = {
-    scannerOpened: false,
     cameraPermission: null,
+    isScannerOpened: false,
   };
 
-  submitPayment = async ({ destination, memo }) => {
-    const {
-      navigation, amount, asset, withdrawAsset,
-    } = this.props;
-
-    const paymentOp = Operation.payment({
-      destination,
-      amount,
-      memo,
-      asset: assets[asset],
-    });
-
-    const { error } = await withdrawAsset.mutate({
-      operation: paymentOp,
-    });
-
-    if (error) {
-      throw new SubmissionError({ amount: error.message });
-    } else {
-      navigation.navigate('amountFormSuccess');
+  toggleScanner = () => {
+    if (this.state.isScannerOpened) {
+      this.setState({ isScannerOpened: false });
+      return;
     }
-  };
 
-  goBack = () => this.props.navigation.pop();
+    Keyboard.dismiss();
 
-  enableScanner = () => {
     Permissions.check('camera').then((response) => {
       // Response is one of: 'authorized', 'denied', 'restricted', or 'undetermined'
-      this.setState({ cameraPermission: response });
-      Keyboard.dismiss();
-
-      if (response === 'authorized') {
-        this.setState({ scannerOpened: true });
-      }
-
-      if (response === 'undetermined') {
-        this.alertForPhotosPermission();
-      }
+      this.setState(
+        {
+          cameraPermission: response,
+          isScannerOpened: response === 'authorized',
+        },
+        () => {
+          if (response === 'undetermined') {
+            this.alertForPhotosPermission();
+          }
+        }
+      );
     });
   };
 
   alertForPhotosPermission() {
-    Alert.alert('Can we access your camera?', 'text', [
+    const { t } = this.props;
+
+    Alert.alert(t('send.addressForm.permissionsConfirmTitle'), null, [
       {
-        text: 'No ',
+        text: t('shared.no'),
         onPress: () => console.log('Permission denied'),
         style: 'cancel',
       },
       this.state.cameraPermission === 'undetermined'
-        ? { text: 'OK', onPress: this.requestPermission }
-        : { text: 'Open Settings', onPress: Permissions.openSettings },
+        ? { text: t('shared.ok'), onPress: this.requestPermission }
+        : {
+          text: t('send.AddressForm.permissionsConfirmSettings'),
+          onPress: Permissions.openSettings,
+        },
     ]);
   }
 
   requestPermission = () => {
     Permissions.request('camera', { type: 'always' }).then((response) => {
-      const scannerOpened = response === 'authorized';
+      const isScannerOpened = response === 'authorized';
 
       // Returns once the user has chosen to 'allow' or to 'not allow' access
       // Response is one of: 'authorized', 'denied', 'restricted', or 'undetermined'
       this.setState({
         cameraPermission: response,
-        scannerOpened,
+        isScannerOpened,
       });
     });
   };
 
-  onScanComplete = ({ data }) => {
+  handleScanComplete = ({ data }) => {
     const query = data.slice(data.indexOf('?') + 1);
     const parsed = querystring.parse(query);
-    this.props.change('destination', parsed.destination);
 
-    this.setState({ scannerOpened: false });
+    this.setState({ isScannerOpened: false }, () => {
+      this.props.change('destination', parsed.destination);
+    });
   };
 
-  render() {
-    const { scannerOpened } = this.state;
+  handleBack = () => this.props.navigation.pop();
 
+  render() {
+    const { isScannerOpened } = this.state;
     const {
-      handleSubmit, t, amount, asset, usdAmount,
+      t, amount, asset, usdAmount, handleSubmit, sendStart,
     } = this.props;
 
     return (
       <Fragment>
-        <NavHeader>
-          <BackButton onPress={this.goBack} underlayColor="transparent">
-            <BackIcon />
-          </BackButton>
-
-          <TitleContainer>
-            <TitleAmount>
-              {amount} {asset}
-            </TitleAmount>
-            <TitleUsd>≈ ${usdAmount.toFixed(2)}</TitleUsd>
-          </TitleContainer>
-
-          <SubmitButton onPress={handleSubmit(this.submitPayment)}>
-            {t('addressForm.submitLabel')}
-          </SubmitButton>
-        </NavHeader>
-
         <Container>
-          <FormFields>
+          <Header
+            amount={amount}
+            asset={asset}
+            onBackButtonClick={this.handleBack}
+            onPress={handleSubmit(sendStart)}
+            t={t}
+            usdAmount={usdAmount}
+          />
+
+          <View>
             <Field
               autoFocus
-              component={Input}
-              label={t('addressForm.addressFieldLabel')}
+              component={TextInput}
+              label={t('send.addressForm.addressFieldLabel')}
               name="destination"
-              placeholder={t('addressForm.addressFieldPlaceholder')}
+              placeholder={t('send.addressForm.addressFieldPlaceholder')}
             />
+
             <Field
               autoFocus
-              component={Input}
-              label={t('addressForm.memoFieldLabel')}
+              component={TextInput}
+              label={t('send.addressForm.memoFieldLabel')}
               name="memo"
-              placeholder={t('addressForm.memoFieldPlaceholder')}
+              placeholder={t('send.addressForm.memoFieldPlaceholder')}
             />
+
             <ScanButton
-              onPress={this.enableScanner}
+              onPress={this.toggleScanner}
               underlayColor="transparent"
             >
               <ScanIcon />
             </ScanButton>
-          </FormFields>
+          </View>
 
-          {scannerOpened && (
+          {isScannerOpened && (
             <QRCodeScanner
-              onRead={this.onScanComplete}
-              reactivate={true}
+              cameraStyle={QRCameraStyles}
+              onRead={this.handleScanComplete}
+              reactivate
               reactivateTimeout={20}
+              showMarker
             />
           )}
         </Container>

@@ -9,7 +9,6 @@ import background from './images/bg.png';
 class BackgroundView extends Component {
   static propTypes = {
     action: PropTypes.any,
-
     content: PropTypes.any,
     variant: PropTypes.oneOf(['center', 'bottom']),
   };
