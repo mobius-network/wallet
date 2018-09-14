@@ -14,6 +14,7 @@
 		4947DB422CA144F4B1A0108F /* Roboto Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78A1D453588241A99F6EBDF9 /* Roboto Italic.ttf */; };
 		59B1877204AC684C58B0EFFD /* libPods-MobiusMobileWalletTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD55B8DD1FCD19B8DEFA52B /* libPods-MobiusMobileWalletTests.a */; };
 		5D8D3290578F4485977F151E /* Nunito Sans Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 966BB142B9B44C4EBD6ABF22 /* Nunito Sans Italic.ttf */; };
+		70112432214BE0F800C0BDFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70112430214BE0F800C0BDFE /* InfoPlist.strings */; };
 		703B7179213E262600AE6E0E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 703B7178213E262600AE6E0E /* Settings.bundle */; };
 		709DA828214177B900AF344D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 709DA827214177B900AF344D /* Assets.xcassets */; };
 		70C1AF0C2149D8B600AD6840 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C1AF0E2149D8B600AD6840 /* Launch Screen.storyboard */; };
@@ -62,6 +63,10 @@
 		5A501A9A2A2A4BEABD9B09DD /* Helvetica Neue Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Helvetica Neue Thin.ttf"; path = "../assets/fonts/Helvetica Neue Thin.ttf"; sourceTree = "<group>"; };
 		7011242C2149F7D700C0BDFE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = "ru.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
 		7011242D214A7D1000C0BDFE /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = "ko.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
+		70112431214BE0F800C0BDFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		70112438214BE20000C0BDFE /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		70112439214BE20400C0BDFE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7011243A214BE20700C0BDFE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		703B7178213E262600AE6E0E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		7098ED46213DA4870068DB08 /* Project.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.debug.xcconfig; sourceTree = "<group>"; };
 		7098ED47213DA4870068DB08 /* Project.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.release.xcconfig; sourceTree = "<group>"; };
@@ -122,14 +127,15 @@
 		13B07FAE1A68108700A75B9A /* MobiusMobileWallet */ = {
 			isa = PBXGroup;
 			children = (
-				13B07FB61A68108700A75B9A /* Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				709DA827214177B900AF344D /* Assets.xcassets */,
-				703B7178213E262600AE6E0E /* Settings.bundle */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				70112430214BE0F800C0BDFE /* InfoPlist.strings */,
 				70C1AF0E2149D8B600AD6840 /* Launch Screen.storyboard */,
+				703B7178213E262600AE6E0E /* Settings.bundle */,
 			);
 			path = MobiusMobileWallet;
 			sourceTree = "<group>";
@@ -298,7 +304,7 @@
 				en,
 				ko,
 				ru,
-				zh-Hans,
+				"zh-Hans",
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
@@ -325,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				709DA828214177B900AF344D /* Assets.xcassets in Resources */,
+				70112432214BE0F800C0BDFE /* InfoPlist.strings in Resources */,
 				703B7179213E262600AE6E0E /* Settings.bundle in Resources */,
 				D042CDFFE93C4FFE9410B3C6 /* Helvetica Neue.ttf in Resources */,
 				39B86FE855A8483E8308E28F /* Helvetica Neue Thin.ttf in Resources */,
@@ -488,6 +495,17 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		70112430214BE0F800C0BDFE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70112431214BE0F800C0BDFE /* Base */,
+				70112438214BE20000C0BDFE /* ko */,
+				70112439214BE20400C0BDFE /* ru */,
+				7011243A214BE20700C0BDFE /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		70C1AF0E2149D8B600AD6840 /* Launch Screen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

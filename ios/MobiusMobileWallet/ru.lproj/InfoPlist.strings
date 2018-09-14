@@ -1,0 +1,10 @@
+/*
+  InfoPlist.strings
+  MobiusMobileWallet
+
+  Created by Sergey Nebolsin on 14/09/2018.
+  Copyright © 2018 Mobius. All rights reserved.
+*/
+"CFBundleDisplayName" = "Mobius Wallet";
+"NSHumanReadableCopyright" = "2018 Mochi Inc. All rights reserved.";
+"NSCameraUsageDescription" = "Mobius Wallet needs access to your device camera to scan QR codes"
