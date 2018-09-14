@@ -49,7 +49,7 @@ class Success extends PureComponent {
             description={
               <Trans i18nKey="send.success.description">
                 {amount}
-                {asset}
+                {asset.toUpperCase()}
                 {maskedDestination}
               </Trans>
             }

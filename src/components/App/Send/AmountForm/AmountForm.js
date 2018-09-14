@@ -79,7 +79,9 @@ class AmountForm extends Component {
 
   render() {
     const { amount, isAlertVisible, isValidAmountEntered } = this.state;
-    const { t, asset, usdPrice } = this.props;
+    const {
+      t, asset, usdPrice, balance,
+    } = this.props;
 
     return (
       <Fragment>
@@ -96,7 +98,10 @@ class AmountForm extends Component {
               />,
             ]}
             isVisible={isAlertVisible}
-            text={t('send.amountForm.alertText')}
+            text={t('send.amountForm.alertText', {
+              balance,
+              asset: asset.toUpperCase(),
+            })}
             title={t('send.amountForm.alertTitle')}
           />
 

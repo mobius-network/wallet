@@ -95,8 +95,8 @@
       "amountForm": {
         "headerTitle": "Send",
         "selectAssetTitle": "Select asset",
-        "alertText": "You can't send amount more than you have in your wallet",
-        "alertTitle": "Error",
+        "alertText": "You have only {{balance}} {{asset}} on your balance. Please, change amount for transfer.",
+        "alertTitle": "Invalid amount",
         "ok": "OK"
       },
       "addressForm": {
@@ -108,13 +108,13 @@
         "memoFieldPlaceholder": "Optional",
         "permissionsConfirmTitle": "Allow Mobius to take pictures and record video?",
         "permissionsConfirmSettings": "Open Settings",
-        "alertText": "Wrong Stellar address",
-        "alertTitle": "Error",
+        "alertText": "Wrong destination address. Please, check it once again.",
+        "alertTitle": "Invalid address",
         "ok": "OK"
       },
       "success": {
         "title": "Success!",
-        "description": "You sent <0>{{amount}<\/0> <1>{{asset}}<\/1> to the address <2>{{destination}}<\/2>."
+        "description": "You sent <0>{{amount}}<\/0> <1>{{asset}}<\/1> to the address <2>{{destination}}<\/2>."
       }
     }
   }
