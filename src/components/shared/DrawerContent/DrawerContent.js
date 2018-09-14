@@ -49,7 +49,7 @@ class DrawerContent extends Component {
               <Link onPress={this.handleLinkPress('AddFunds')}>
                 {t('sidebarNavigation.addFunds')}
               </Link>
-              <Link onPress={this.handleLinkPress('SendAmount')}>
+              <Link onPress={this.handleLinkPress('AmountForm')}>
                 {t('sidebarNavigation.withdrawFunds')}
               </Link>
             </Buttons>

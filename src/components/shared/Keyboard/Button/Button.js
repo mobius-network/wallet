@@ -40,7 +40,7 @@ class Button extends Component {
         }}
         update={{
           opacity: [disabled ? 0.5 : 1],
-          timing: { duration: 200, ease: easeLinear },
+          timing: { duration: 150, ease: easeLinear },
         }}
       >
         {({ opacity }) => (

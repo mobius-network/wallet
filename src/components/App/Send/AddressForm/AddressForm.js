@@ -63,7 +63,7 @@ class AddressForm extends Component {
     if (error) {
       throw new SubmissionError({ amount: error.message });
     } else {
-      navigation.navigate('sendAmountSuccess');
+      navigation.navigate('amountFormSuccess');
     }
   };
 

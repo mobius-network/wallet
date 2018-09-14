@@ -21,11 +21,14 @@ export const createAssetBalanceSelector = (
 });
 
 export const getBalance = createBalanceSelector(getMasterAccount);
+
 export const getAssetBalance = createAssetBalanceSelector(getBalance);
+
 export const getMobiBalance = createAssetBalanceSelector(
   getBalance,
   getMobiAsset
 );
+
 export const getNativeBalance = createAssetBalanceSelector(
   getBalance,
   getNativeAsset

@@ -74,11 +74,6 @@
         "share": "Share"
       }
     },
-    "sendAmount": {
-      "headerTitle": "Send",
-      "amountFieldLabel": "Amount",
-      "submitButton": "Continue"
-    },
     "addressForm": {
       "headerTitle": "AmountSelected",
       "submitLabel": "Pay",
@@ -100,6 +95,12 @@
     "sidebarNavigation": {
       "addFunds": "Add Funds",
       "withdrawFunds": "Withdraw Funds"
+    },
+    "send": {
+      "amountForm": {
+        "headerTitle": "Send",
+        "selectAssetTitle": "Select asset"
+      }
     }
   }
 }

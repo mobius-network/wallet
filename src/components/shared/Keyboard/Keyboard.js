@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Text } from 'react-native';
 import { Col, Row, Grid } from 'react-native-easy-grid';
@@ -8,7 +8,7 @@ import { range, isNumber } from 'lodash';
 import Button from './Button';
 import styles from './styles';
 
-class Keyboard extends Component {
+class Keyboard extends PureComponent {
   static propTypes = {
     disabled: PropTypes.bool,
     maxLength: PropTypes.number,
@@ -77,7 +77,8 @@ class Keyboard extends Component {
 
   renderDelimiterButton = () => {
     const { value, disabled } = this.props;
-    const isDelimeterButtonDisabled = disabled || value.indexOf('.') > -1;
+    const { isDisabled } = this.state;
+    const isDelimeterButtonDisabled = disabled || isDisabled || value.indexOf('.') > -1;
 
     return (
       <Button

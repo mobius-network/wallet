@@ -12,8 +12,8 @@ import NavHeader from 'components/shared/NavHeader';
 import Dashboard from './Dashboard';
 import AddFunds from './AddFunds';
 import Success from './Success';
-import SendAmount from './SendAmount';
-import AddressForm from './AddressForm';
+
+import SendStack from './Send';
 
 export const DrawerNavigator = notifyDrawer(
   createDrawerNavigator(
@@ -34,12 +34,6 @@ export const DrawerNavigator = notifyDrawer(
 
 export const StackNavigator = createStackNavigator(
   {
-    DrawerNavigator: {
-      screen: DrawerNavigator,
-      navigationOptions: () => ({
-        header: null,
-      }),
-    },
     AddFunds: {
       screen: AddFunds,
       navigationOptions: () => ({
@@ -47,29 +41,16 @@ export const StackNavigator = createStackNavigator(
         header: props => <NavHeader {...props} title="addFunds.headerTitle" />,
       }),
     },
-    Success: {
-      screen: Success,
-      navigationOptions: () => ({
-        header: null,
-      }),
-    },
-    SendAmount: {
-      screen: SendAmount,
-      navigationOptions: () => ({
-        /* eslint-disable-next-line react/display-name */
-        header: props => <NavHeader {...props} title="sendAmount.headerTitle" />,
-      }),
-    },
-    AddressForm: {
-      screen: AddressForm,
-      mode: 'modal',
-      navigationOptions: () => ({
-        header: null,
-      }),
-    },
+    DrawerNavigator,
+    Success,
+    Send: SendStack,
   },
   {
     headerMode: 'screen',
+    initialRouteName: 'DrawerNavigator',
+    navigationOptions: () => ({
+      header: null,
+    }),
   }
 );
 
