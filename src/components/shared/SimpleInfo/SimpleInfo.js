@@ -5,7 +5,7 @@ import { Container, Title, Description } from './styles';
 
 class SimpleInfo extends Component {
   static propTypes = {
-    description: PropTypes.string,
+    description: PropTypes.any,
     title: PropTypes.string,
   };
 

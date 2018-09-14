@@ -8,7 +8,8 @@ const createPropSelector = (name, defaultValue) => (_, props) => {
 
 export const getAsset = createPropSelector('asset', 'mobi');
 export const getSellAsset = createPropSelector('sellAsset');
-export const getBuyAsset = createPropSelector('buyAsset');
+export const getBuyAsset = createPropSelector('buyAsset', 'usd');
+export const getSellAmount = createPropSelector('sellAmount', 0);
 
 export const getMobiAsset = () => 'mobi';
 export const getNativeAsset = () => 'native';

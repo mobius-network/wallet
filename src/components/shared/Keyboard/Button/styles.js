@@ -3,9 +3,9 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   button: {
     alignItems: 'center',
-    borderRadius: 32,
-    height: 64,
+    borderRadius: 25,
+    height: 50,
     justifyContent: 'center',
-    width: 64,
+    width: 50,
   },
 });

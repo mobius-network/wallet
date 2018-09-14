@@ -13,6 +13,7 @@ class DrawerContent extends Component {
       closeDrawer: PropTypes.func.isRequired,
       navigate: PropTypes.func.isRequired,
     }).isRequired,
+    t: PropTypes.func.isRequired,
   };
 
   constructor(props) {
@@ -32,22 +33,26 @@ class DrawerContent extends Component {
     setTimeout(() => this.props.navigation.navigate(route), 0);
   };
 
-  handleOnPress = (route) => {
+  handleLinkPress = route => () => {
     this.route = route;
     this.props.navigation.closeDrawer();
   };
 
-  handleAddFunds = () => this.handleOnPress('AddFunds');
-
   render() {
+    const { t } = this.props;
+
     return (
       <ScrollView>
         <SafeAreaView forceInset={{ top: 'always', horizontal: 'never' }}>
           <Container>
             <Buttons>
-              <Link onPress={this.handleAddFunds}>Add Funds</Link>
+              <Link onPress={this.handleLinkPress('AddFunds')}>
+                {t('sidebarNavigation.addFunds')}
+              </Link>
+              <Link onPress={this.handleLinkPress('AmountForm')}>
+                {t('sidebarNavigation.withdrawFunds')}
+              </Link>
             </Buttons>
-            {/* <SignOut>Sign Out</SignOut> */}
           </Container>
         </SafeAreaView>
       </ScrollView>

@@ -41,9 +41,11 @@ class Dashboard extends Component {
     this.props.stopWatchPrices();
   }
 
-  handleMenuButtonClick = () => this.props.navigation.openDrawer();
+  openReceiveScreen = () => this.props.navigation.navigate('AddFunds');
 
-  handleNavigationClick = () => this.props.navigation.navigate('AddFunds');
+  openSendScreen = () => this.props.navigation.navigate('AmountForm');
+
+  handleMenuButtonClick = () => this.props.navigation.openDrawer();
 
   render() {
     const { t, usdBalance } = this.props;
@@ -67,9 +69,14 @@ class Dashboard extends Component {
 
         <ButtonRow>
           <ActionButton
-            onPress={this.handleNavigationClick}
+            onPress={this.openReceiveScreen}
             square
             title={t('dashboard.receiveButton').toUpperCase()}
+          />
+          <ActionButton
+            onPress={this.openSendScreen}
+            square
+            title={t('dashboard.sendButton').toUpperCase()}
           />
         </ButtonRow>
       </Container>

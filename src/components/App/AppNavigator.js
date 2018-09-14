@@ -13,6 +13,8 @@ import Dashboard from './Dashboard';
 import AddFunds from './AddFunds';
 import Success from './Success';
 
+import SendStack from './Send';
+
 export const DrawerNavigator = notifyDrawer(
   createDrawerNavigator(
     {
@@ -32,28 +34,23 @@ export const DrawerNavigator = notifyDrawer(
 
 export const StackNavigator = createStackNavigator(
   {
-    DrawerNavigator: {
-      screen: DrawerNavigator,
-      navigationOptions: () => ({
-        header: null,
-      }),
-    },
     AddFunds: {
       screen: AddFunds,
       navigationOptions: () => ({
-        // eslint-disable-next-line
-        header: props => <NavHeader {...props} title="addFunds.headerTitle" />
+        /* eslint-disable-next-line react/display-name */
+        header: props => <NavHeader {...props} title="addFunds.headerTitle" />,
       }),
     },
-    Success: {
-      screen: Success,
-      navigationOptions: () => ({
-        header: null,
-      }),
-    },
+    DrawerNavigator,
+    Success,
+    Send: SendStack,
   },
   {
     headerMode: 'screen',
+    initialRouteName: 'DrawerNavigator',
+    navigationOptions: () => ({
+      header: null,
+    }),
   }
 );
 

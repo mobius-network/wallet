@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-import { colors, fonts } from 'components/shared/Styleguide';
+import {
+  colors,
+  fonts,
+  fontSizes,
+  helpers,
+} from 'components/shared/Styleguide';
 
 export const Container = styled.View`
   flex: 1;
@@ -14,11 +19,11 @@ export const Buttons = styled.View`
 `;
 
 const Item = styled.Text`
-  font-family: ${fonts.nunitoSans.bold};
-  font-weight: 400;
-  font-size: 20;
-  height: 50;
-  line-height: 50;
+  font-family: ${fonts.roboto.bold};
+  font-size: ${fontSizes.normal};
+  font-weight: bold;
+  line-height: ${helpers.calculateLineHeight(fontSizes.normal)};
+  margin-bottom: 24;
 `;
 
 export const Link = styled(Item)`

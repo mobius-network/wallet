@@ -7,16 +7,17 @@ import { authReducer } from './auth';
 import { notificationsReducer } from './notifications';
 import { transfersReducer } from './transfers';
 import { pricesReducer } from './prices';
+import { sendReducer } from './send';
 
 const rootReducer = combineReducers({
-  data: dataReducer,
-  requests: requestsReducer,
-
-  prices: pricesReducer,
   app: appReducer,
   auth: authReducer,
+  data: dataReducer,
   masterAccount: accountReducer,
   notifications: notificationsReducer,
+  prices: pricesReducer,
+  requests: requestsReducer,
+  send: sendReducer,
   transfers: transfersReducer,
 });
 
