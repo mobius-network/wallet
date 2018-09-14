@@ -16,10 +16,11 @@ function* run() {
 
   const wallet = StellarHDWallet.fromMnemonic(mnemonic);
 
-  const token = encodeFundToken(wallet.seedHex);
+  const token = encodeFundToken(wallet.getPublicKey(0));
 
   yield call(fetchStart, {
     name: 'createAccount',
+    method: 'POST',
     payload: `stellar/fund_wallet?payload=${token}`,
   });
 
