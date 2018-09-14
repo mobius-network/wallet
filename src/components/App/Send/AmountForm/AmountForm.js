@@ -26,7 +26,8 @@ class AmountForm extends Component {
 
   state = {
     amount: '',
-    isValid: false,
+    isValidAmountEntered: false,
+    isAmountLessThanBalance: false,
   };
 
   submitAmount = () => {
@@ -56,9 +57,8 @@ class AmountForm extends Component {
 
   handleKeyboardChange = (amount) => {
     const isValidAmountEntered = amount > 0;
-    const isAmountLessThanBalance = amount < this.props.balance;
 
-    this.setState({ amount, isValidAmountEntered, isAmountLessThanBalance });
+    this.setState({ amount, isValidAmountEntered });
   };
 
   handleAlertOk = () => {
@@ -66,7 +66,9 @@ class AmountForm extends Component {
   };
 
   handleSubmit = () => {
-    const { isValidAmountEntered, isAmountLessThanBalance } = this.state;
+    const { amount, isValidAmountEntered } = this.state;
+
+    const isAmountLessThanBalance = amount < this.props.balance;
 
     const isValid = isValidAmountEntered && isAmountLessThanBalance;
 
