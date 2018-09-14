@@ -32,11 +32,11 @@ class BalanceItem extends Component {
 
         <AssetInfo>
           <Asset>{asset.toUpperCase()}</Asset>
-          <Price>${usdPrice}</Price>
+          <Price>${usdPrice.toFixed(6)}</Price>
         </AssetInfo>
 
         <AmountInfo>
-          <UsdAmount>${usdAmount}</UsdAmount>
+          <UsdAmount>${usdAmount.toFixed(6)}</UsdAmount>
           <Amount>
             {amount} {asset.toUpperCase()}
           </Amount>
