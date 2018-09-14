@@ -10,7 +10,6 @@ export const sendActions = createActions(
     'setAsset',
     'setDestination',
     'setMemo',
-    // 'setFormData',
   ],
   'send'
 );

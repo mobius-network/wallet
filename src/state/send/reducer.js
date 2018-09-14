@@ -25,9 +25,6 @@ export const sendReducer = createReducer(
     [sendActions.setMemo]: (state, memo) => updateSource(state, {
       $merge: { memo },
     }),
-    // [sendActions.setFormData]: (state, formData) => updateSource(state, {
-    //   $merge: formData,
-    // }),
   },
   initialState
 );
