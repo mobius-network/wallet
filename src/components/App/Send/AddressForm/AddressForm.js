@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-// import { Field } from 'redux-form';
 import { Alert, Keyboard, View } from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import Permissions from 'react-native-permissions';
@@ -21,9 +20,7 @@ class AddressForm extends Component {
   static propTypes = {
     amount: PropTypes.string.isRequired,
     asset: PropTypes.string.isRequired,
-    // change: PropTypes.func.isRequired,
     destination: PropTypes.string,
-    // handleSubmit: PropTypes.func.isRequired,
     memo: PropTypes.string,
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
@@ -181,20 +178,6 @@ class AddressForm extends Component {
               label={t('send.addressForm.memoFieldLabel')}
               placeholder={t('send.addressForm.memoFieldPlaceholder')}
             />
-            {/* <Field
-              autoFocus
-              component={TextInput}
-              label={t('send.addressForm.addressFieldLabel')}
-              name="destination"
-            /> */}
-
-            {/* <Field
-              autoFocus
-              component={TextInput}
-              label={t('send.addressForm.memoFieldLabel')}
-              name="memo"
-              placeholder={t('send.addressForm.memoFieldPlaceholder')}
-            /> */}
 
             <ScanButton
               onPress={this.toggleScanner}

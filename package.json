@@ -71,7 +71,6 @@
     "readable-stream": "^3.0.2",
     "redux": "^4.0.0",
     "redux-boost": "^0.0.19",
-    "redux-form": "^7.4.2",
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.16.0",
     "redux-yo": "^0.0.26",
