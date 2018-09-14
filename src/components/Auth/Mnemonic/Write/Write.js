@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Clipboard } from 'react-native';
 import PropTypes from 'prop-types';
 
 import MnemonicView from 'components/shared/MnemonicView';
@@ -40,8 +39,6 @@ class Write extends Component {
   };
 
   onComplete = () => {
-    Clipboard.setString(this.props.mnemonic);
-
     this.setState({ isAlertVisisble: false }, this.props.onComplete);
   };
 
