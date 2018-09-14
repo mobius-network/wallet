@@ -4,6 +4,7 @@ import ActionSheet from 'react-native-custom-actionsheet';
 
 import Keyboard from 'components/shared/Keyboard';
 import Button from 'components/shared/Button';
+import Alert from 'components/shared/Alert';
 
 import Header from './Header';
 
@@ -54,18 +55,51 @@ class AmountForm extends Component {
   handleAssetChange = index => this.props.setAsset(this.options[index].toLowerCase());
 
   handleKeyboardChange = (amount) => {
-    const isValid = amount > 0 && amount < this.props.balance;
+    const isValidAmountEntered = amount > 0;
+    const isAmountLessThanBalance = amount < this.props.balance;
 
-    this.setState({ amount, isValid });
+    this.setState({ amount, isValidAmountEntered, isAmountLessThanBalance });
+  };
+
+  handleAlertOk = () => {
+    this.setState({ isAlertVisible: false });
+  };
+
+  handleSubmit = () => {
+    const { isValidAmountEntered, isAmountLessThanBalance } = this.state;
+
+    const isValid = isValidAmountEntered && isAmountLessThanBalance;
+
+    if (isValid) {
+      this.submitAmount();
+    } else {
+      this.setState({ isAlertVisible: true });
+    }
   };
 
   render() {
-    const { amount, isValid } = this.state;
+    const { amount, isAlertVisible, isValidAmountEntered } = this.state;
     const { t, asset, usdPrice } = this.props;
 
     return (
       <Fragment>
         <Container>
+          <Alert
+            buttons={[
+              <Button
+                key="confirm"
+                onPress={this.handleAlertOk}
+                padding={false}
+                square={true}
+                title={t('send.amountForm.ok').toUpperCase()}
+                variant="text"
+              />,
+            ]}
+            isVisible={isAlertVisible}
+            text={t('send.amountForm.alertText')}
+            title={t('send.amountForm.alertTitle')}
+          />
+
           <Header
             amount={amount}
             asset={asset}
@@ -86,8 +120,8 @@ class AmountForm extends Component {
 
           <ButtonContainer>
             <Button
-              disabled={!isValid}
-              onPress={this.submitAmount}
+              disabled={!isValidAmountEntered}
+              onPress={this.handleSubmit}
               title={t('shared.continue')}
             />
           </ButtonContainer>

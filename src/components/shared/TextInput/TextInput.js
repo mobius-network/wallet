@@ -21,10 +21,10 @@ class TextInput extends Component {
       input,
       label,
       placeholder,
-      meta: { error, dirty, touched },
+      // meta: { error, dirty, touched },
       ...rest
     } = this.props;
-    const showError = error && (dirty || touched);
+    const showError = false; // error && (dirty || touched);
 
     return (
       <ThemeProvider theme={{ error: showError }}>
@@ -32,7 +32,7 @@ class TextInput extends Component {
           {label && <Label>{label}</Label>}
           <Input
             {...input}
-            error={showError}
+            // error={showError}
             onChangeText={input.onChange}
             placeholder={placeholder}
             {...rest}

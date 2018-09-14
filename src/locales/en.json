@@ -94,7 +94,10 @@
     "send": {
       "amountForm": {
         "headerTitle": "Send",
-        "selectAssetTitle": "Select asset"
+        "selectAssetTitle": "Select asset",
+        "alertText": "You can't send amount more than you have in your wallet",
+        "alertTitle": "Error",
+        "ok": "OK"
       },
       "addressForm": {
         "headerTitle": "AmountSelected",
@@ -104,7 +107,10 @@
         "memoFieldLabel": "Memo ID",
         "memoFieldPlaceholder": "Optional",
         "permissionsConfirmTitle": "Allow Mobius to take pictures and record video?",
-        "permissionsConfirmSettings": "Open Settings"
+        "permissionsConfirmSettings": "Open Settings",
+        "alertText": "Wrong Stellar address",
+        "alertTitle": "Error",
+        "ok": "OK"
       },
       "success": {
         "title": "Success!",
