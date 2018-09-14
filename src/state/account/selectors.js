@@ -12,6 +12,7 @@ export const createBalanceSelector = accountSelector => createSelector(accountSe
 const mapAssets = {
   mobi: 'mobi',
   xlm: 'native',
+  native: 'native',
 };
 
 export const createAssetBalanceSelector = (
