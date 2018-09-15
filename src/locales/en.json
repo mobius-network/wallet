@@ -42,7 +42,7 @@
         "alertTitle": "Copy your phrase",
         "alertMessage": "Be careful where you paste your phrase. Your wallet is only as secure as the place you store your phrase.",
         "alertUnderstand": "Yes, I understand the risk of storing my phrase online.",
-        "alertButtonConfirm": "Copy",
+        "alertButtonConfirm": "Continue",
         "alertButtonCancel": "Cancel"
       }
     },
