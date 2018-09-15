@@ -4,7 +4,10 @@
       "cancel": "取消",
       "close": "关闭",
       "continue": "下一步",
-      "done": "完成"
+      "done": "完成",
+      "no": "没有",
+      "yes": "是",
+      "ok": "好的"
     },
     "welcome": {
       "title": "欢迎",
@@ -49,7 +52,8 @@
     },
     "dashboard": {
       "title": "当前资产",
-      "receiveButton": "收款"
+      "receiveButton": "收款",
+      "sendButton": "转账"
     },
     "addFunds": {
       "headerTitle": "添加资产",
@@ -82,6 +86,36 @@
     },
     "success": {
       "title": "完成！"
+    },
+    "sidebarNavigation": {
+      "addFunds": "添加资产",
+      "withdrawFunds": "提现资产"
+    },
+    "send": {
+      "amountForm": {
+        "headerTitle": "转账",
+        "selectAssetTitle": "选择币种",
+        "alertText": "You have only {{balance}} {{asset}} on your balance. Please, change amount for transfer.",
+        "alertTitle": "Invalid amount",
+        "ok": "OK"
+      },
+      "addressForm": {
+        "headerTitle": "金额已选定",
+        "submitButton": "转账",
+        "addressFieldLabel": "发送至",
+        "addressFieldPlaceholder": "扫描二维码或输入地址",
+        "memoFieldLabel": "备忘录ID",
+        "memoFieldPlaceholder": "可选",
+        "permissionsConfirmTitle": "允许Mobius拍照或录像？",
+        "permissionsConfirmSettings": "开放式设置",
+        "alertText": "Wrong destination address. Please, check it once again.",
+        "alertTitle": "Invalid address",
+        "ok": "OK"
+      },
+      "success": {
+        "title": "完成！",
+        "description": "你发送<0>{{amount}}<\/0> <1>{{asset}}<\/1>到地址 <2>{{destination}}<\/2>."
+      }
     }
   }
 }
