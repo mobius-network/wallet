@@ -42,7 +42,7 @@
         "alertTitle": "Copy your phrase",
         "alertMessage": "Be careful where you paste your phrase. Your wallet is only as secure as the place you store your phrase.",
         "alertUnderstand": "Yes, I understand the risk of storing my phrase online.",
-        "alertButtonConfirm": "Continue",
+        "alertButtonConfirm": "Copy",
         "alertButtonCancel": "Cancel"
       }
     },
@@ -94,10 +94,7 @@
     "send": {
       "amountForm": {
         "headerTitle": "Send",
-        "selectAssetTitle": "Select asset",
-        "alertText": "You have only {{balance}} {{asset}} on your balance. Please, change amount for transfer.",
-        "alertTitle": "Invalid amount",
-        "ok": "OK"
+        "selectAssetTitle": "Select asset"
       },
       "addressForm": {
         "headerTitle": "AmountSelected",
@@ -107,14 +104,11 @@
         "memoFieldLabel": "Memo ID",
         "memoFieldPlaceholder": "Optional",
         "permissionsConfirmTitle": "Allow Mobius to take pictures and record video?",
-        "permissionsConfirmSettings": "Open Settings",
-        "alertText": "Wrong destination address. Please, check it once again.",
-        "alertTitle": "Invalid address",
-        "ok": "OK"
+        "permissionsConfirmSettings": "Open Settings"
       },
       "success": {
         "title": "Success!",
-        "description": "You sent <0>{{amount}}<\/0> <1>{{asset}}<\/1> to the address <2>{{destination}}<\/2>."
+        "description": "You sent <0>%1$s<\/0> <1>%1$s<\/1> to the address <2>%1$s<\/2>."
       }
     }
   }

@@ -1,13 +1,97 @@
 {
   "translation": {
     "shared": {
-      "cancel": "Отмена",
-      "close": "Закрыть",
       "continue": "Продолжить",
-      "done": "Готово"
+      "done": "Сделано",
+      "no": "Нет",
+      "yes": "Да",
+      "ok": "Хорошо"
+    },
+    "welcome": {
+      "title": "Добро пожаловать",
+      "setupWalletButton": "Создать кошелек"
     },
     "pinSetup": {
-      "unlockTitle": "Введите ПИН-код"
+      "chooseSubtitle": "Введите 6-значный пин-код для доступа к вашему кошельку",
+      "chooseTitle": "Задайте PIN-код",
+      "confirmSubtitle": "Пожалуйста, повторите свой пин-код.",
+      "confirmTitle": "Подтвердите PIN-код",
+      "unlockTitle": "Введите PIN-код"
+    },
+    "mnemonic": {
+      "confirm": {
+        "alertConfirmButton": "Продолжить"
+      },
+      "write": {
+        "continueButton": "Подтверждаю, что записал фразу",
+        "description": "Эта фраза понадобится вам для доступа к кошельку на другом устройстве.",
+        "title": "Запишите вашу мнемоническую фразу",
+        "alertTitle": "Скопировать фразу",
+        "alertUnderstand": "Да, я понимаю, что рискованно хранить фразу в интернете.",
+        "alertButtonConfirm": "Скопировать",
+        "alertButtonCancel": "Отмена"
+      }
+    },
+    "ready": {
+      "title": "Ваш кошелек\nготов!",
+      "description": "Отправляйте, получайте и храните ваши монеты."
+    },
+    "dashboard": {
+      "title": "Текущий баланс",
+      "sendButton": "Отправить"
+    },
+    "addFunds": {
+      "headerTitle": "Пополнить",
+      "title": "Перевод из другого кошелька",
+      "subtitle": "Используйте этот адрес чтобы перевести MOBI или XLM в ваш кошелек.",
+      "share": {
+        "title": "Адрес",
+        "subject": "Адрес"
+      },
+      "publicKey": {
+        "title": "Адрес"
+      },
+      "selectWallet": {
+        "title": "Выберите кошелек",
+        "label": "Кошелек",
+        "wallet": "Выберите кошелек",
+        "cancel": "Отменить"
+      },
+      "buttons": {
+        "copy": "Скопировать",
+        "share": "Поделиться"
+      }
+    },
+    "loadingView": {
+      "description": "Пожалуйста, подождите",
+      "errorDescription": "Что-то пошло не так. Пожалуйста, попробуйте снова.",
+      "errorTitle": "Ошибка",
+      "title": "Загрузка",
+      "tryAgainButton": "Попробуйте снова"
+    },
+    "success": {
+      "title": "Успешно!"
+    },
+    "sidebarNavigation": {
+      "withdrawFunds": "Вывести средства"
+    },
+    "send": {
+      "amountForm": {
+        "headerTitle": "Отправить",
+        "selectAssetTitle": "Выберите валюту"
+      },
+      "addressForm": {
+        "addressFieldLabel": "Куда",
+        "addressFieldPlaceholder": "Отсканируйте код или введите адрес",
+        "memoFieldLabel": "Мемо ID",
+        "memoFieldPlaceholder": "Необязательно",
+        "permissionsConfirmTitle": "Разрешить приложению снимать фотографии и записывать видео?",
+        "permissionsConfirmSettings": "Открыть Настройки"
+      },
+      "success": {
+        "title": "Успешно!",
+        "description": "Вы отправили <0>%1$s<\/0> <1>%1$s<\/1> на адрес <2>%1$s<\/2>."
+      }
     }
   }
 }
