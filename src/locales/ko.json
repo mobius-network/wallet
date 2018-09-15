@@ -4,7 +4,10 @@
       "cancel": "취소",
       "close": "닫기",
       "continue": "계속",
-      "done": "완료"
+      "done": "완료",
+      "no": "아니",
+      "yes": "예",
+      "ok": "승인"
     },
     "welcome": {
       "title": "환영합니다",
@@ -49,7 +52,8 @@
     },
     "dashboard": {
       "title": "현재 잔고",
-      "receiveButton": "받기"
+      "receiveButton": "받기",
+      "sendButton": "보내기"
     },
     "addFunds": {
       "headerTitle": "자금을 더하다",
@@ -82,6 +86,30 @@
     },
     "success": {
       "title": "성공!"
+    },
+    "sidebarNavigation": {
+      "addFunds": "자금을 더하다",
+      "withdrawFunds": "자금을 빼다"
+    },
+    "send": {
+      "amountForm": {
+        "headerTitle": "보내기",
+        "selectAssetTitle": "코인 선택"
+      },
+      "addressForm": {
+        "headerTitle": "선택한 금액",
+        "submitButton": "지불",
+        "addressFieldLabel": "에게",
+        "addressFieldPlaceholder": "코드 스캔 또는 주소 입력",
+        "memoFieldLabel": "메모 ID",
+        "memoFieldPlaceholder": "선택사항",
+        "permissionsConfirmTitle": "모비우스가 사진 촬영\n및 영상 녹화 허용함?",
+        "permissionsConfirmSettings": "설정 열기"
+      },
+      "success": {
+        "title": "성공!",
+        "description": "너는 보낸다<0>%1$s<\/0> <1>%1$s<\/1> 동전 주소 <2>%1$s<\/2>."
+      }
     }
   }
 }
