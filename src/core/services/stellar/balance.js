@@ -1,5 +1,5 @@
 import { mobiAsset } from 'utils/env';
-import { Asset, Operation } from 'stellar-sdk';
+import { Asset } from 'stellar-sdk';
 
 export const assets = {
   mobi: mobiAsset,
@@ -7,7 +7,7 @@ export const assets = {
   xlm: Asset.native(),
   usd: new Asset(
     'USD',
-    'GA2HGBJIJKI6O4XEM7CZWY5PS6GKSXL6D34ERAJYQSPYA6X6AI7HYW36',
+    'GA2HGBJIJKI6O4XEM7CZWY5PS6GKSXL6D34ERAJYQSPYA6X6AI7HYW36'
   ),
 };
 
@@ -30,8 +30,4 @@ export function parsedBalanceValue(h, asset) {
   }
 
   return parseFloat(balance.balance);
-}
-
-export function createTrustline(asset) {
-  return Operation.changeTrust({ asset });
 }
