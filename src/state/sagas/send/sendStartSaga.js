@@ -1,6 +1,4 @@
-import {
-  takeLatest, call, put, select,
-} from 'redux-saga/effects';
+import { takeLatest, call, select } from 'redux-saga/effects';
 import {
   Memo, MemoText, Operation, TransactionBuilder,
 } from 'stellar-sdk';
@@ -48,9 +46,7 @@ function* run({ payload: { destination, memo } }) {
 
     yield call(navigator.navigate, 'Send', 'Success');
   } catch (error) {
-    console.log(error);
-    yield call(navigator.navigate, 'Main', 'App');
-    yield put(sendActions.resetForm());
+    yield call(navigator.navigate, 'Send', 'AmountForm');
   }
 }
 
