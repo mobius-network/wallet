@@ -1,32 +1,16 @@
-const metro = require('metro');
+const blacklist = require('metro-config/src/defaults/blacklist');
 const path = require('path');
 
 const cwd = path.resolve(__dirname);
 
-const modulePath = moduleName => path.resolve(__dirname, 'node_modules', moduleName);
+const modulePath = moduleName => path.resolve(cwd, 'node_modules', moduleName);
 
-const config = {
-  getBlacklistRE() {
-    return metro.createBlacklist([/Pods\/.*/]);
-  },
-
-  getProjectRoots() {
-    return [
-      cwd, // current directory
-      path.join(cwd, 'src'),
-    ];
-  },
-
-  /**
-   * Specify where to look for assets that are referenced using
-   * `image!<image_name>`. Asset directories for images referenced using
-   * `./<image.extension>` don't require any entry in here.
-   */
-  getAssetRoots() {
-    return [path.join(cwd, 'assets')];
-  },
-
+module.exports = {
+  watchFolders: [
+    path.join(cwd, 'src'),
+  ],
   resolver: {
+    blacklistRE: blacklist(),
     extraNodeModules: {
       crypto: modulePath('crypto-browserify'),
       eventsource: modulePath('react-native-event-source'),
@@ -41,4 +25,3 @@ const config = {
   },
 };
 
-module.exports = config;

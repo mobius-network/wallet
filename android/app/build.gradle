@@ -23,7 +23,7 @@ apply from: "../../node_modules/react-native/react.gradle"
 def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
-def _versionCode = System.getenv("ANDROID_VERSION_CODE") ?: "1"
+def _versionCode = System.getenv("ANDROID_VERSION_CODE") ?: "8"
 def _versionName = System.getenv("ANDROID_VERSION_NAME") ?: "1.0.0"
 
 android {
