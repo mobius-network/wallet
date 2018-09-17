@@ -9,7 +9,7 @@ import {
   cancel,
 } from 'redux-saga/effects';
 import { requestActions } from 'redux-boost';
-import { assets, safeLoadAccount, createTrustline } from 'core';
+import { safeLoadAccount } from 'core';
 
 import { authActions } from '../auth/reducer';
 import { getPublicKeyFor } from '../auth/selectors';
@@ -69,12 +69,7 @@ export function* prepareAccount() {
   const state = yield select();
 
   if (!getMasterTrustlineCreated(state)) {
-    yield put(
-      accountActions.transact({
-        name: 'createTrustline',
-        operation: createTrustline(assets.mobi),
-      })
-    );
+    yield put(accountActions.createTrustline());
   }
 }
 

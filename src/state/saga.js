@@ -1,5 +1,6 @@
 import { all } from 'redux-saga/effects';
 
+import { createTrustlineSaga } from './sagas/account';
 import {
   loginStartSaga,
   signupFinishSaga,
@@ -12,6 +13,7 @@ import watchPricesSaga from './sagas/watchPricesSaga';
 
 export default function* rootSaga() {
   yield all([
+    createTrustlineSaga,
     loginStartSaga,
     sendStartSaga,
     signupFinishSaga,
