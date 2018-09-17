@@ -17,6 +17,12 @@ function* run() {
     service: 'mnemonic',
   });
 
+  if (!encryptedMnemonicStore) {
+    yield put(authActions.signupStart());
+
+    return;
+  }
+
   const mnemonic = yield call(
     decrypt,
     pinStore.password,
