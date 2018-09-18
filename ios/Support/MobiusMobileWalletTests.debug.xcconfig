@@ -1,3 +1,4 @@
 #include "MobiusMobileWalletTests.base.xcconfig"
 #include "Pods/Target Support Files/Pods-MobiusMobileWalletTests/Pods-MobiusMobileWalletTests.debug.xcconfig"
 
+PRODUCT_BUNDLE_IDENTIFIER = network.mobius.wallet.debug.$(PRODUCT_NAME:rfc1034identifier)
