@@ -2,9 +2,7 @@ import { randomBytes } from 'react-native-randombytes';
 import DeviceInfo from 'react-native-device-info';
 import jwt from 'jwt-simple';
 
-import { JWT_SECRET_FUND_WALLET } from 'react-native-dotenv';
-
-import { isDev } from './env';
+import { isDev, walletFundingSecret } from './env';
 
 const uniqueId = isDev
   ? `random-${randomBytes(20).toString('hex')}`
@@ -16,5 +14,5 @@ export function encodeFundToken(address) {
     jti: uniqueId,
   };
 
-  return jwt.encode(payload, JWT_SECRET_FUND_WALLET, 'HS512');
+  return jwt.encode(payload, walletFundingSecret, 'HS512');
 }

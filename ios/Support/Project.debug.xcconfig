@@ -10,4 +10,4 @@ GCC_SYMBOLS_PRIVATE_EXTERN = NO
 MTL_ENABLE_DEBUG_INFO = YES
 ONLY_ACTIVE_ARCH = YES
 
-#include? "../../.env.debug"
+#include? "../../.env.development"

@@ -3,6 +3,7 @@ import {
   MOBI_ASSET,
   STELLAR_TESTNET,
   STELLAR_HORIZON_URL,
+  WALLET_FUNDING_SECRET,
 } from 'react-native-dotenv';
 import { Asset } from 'stellar-sdk';
 
@@ -20,6 +21,7 @@ export const mobiAsset = new Asset(
 );
 export const stellarTestnet = STELLAR_TESTNET === 'true';
 export const stellarHorizonUrl = STELLAR_HORIZON_URL || 'https://horizon.stellar.mobius.network';
+export const walletFundingSecret = WALLET_FUNDING_SECRET;
 
 if (isDev) {
   console.disableYellowBox = true;

@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 project.ext.envConfigFiles = [
-    debug: '.env.debug',
+    debug: '.env.development',
     release: '.env.production'
 ]
 apply from: './dotenv.gradle'
