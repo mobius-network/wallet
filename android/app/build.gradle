@@ -13,6 +13,7 @@ apply plugin: 'io.fabric'
  * https://github.com/facebook/react-native/blob/master/local-cli/templates/HelloWorld/android/app/build.gradle#L14
  */
 project.ext.react = [
+    inputExcludes: ["android/**", "ios/**", ".buckd/**"],
     entryFile: "index.js"
 ]
 apply from: "../../node_modules/react-native/react.gradle"
@@ -20,7 +21,7 @@ apply from: "../../node_modules/react-native/react.gradle"
 
 def enableProguardInReleaseBuilds = false
 
-def _versionCode = System.getenv("ANDROID_VERSION_CODE") ?: "9"
+def _versionCode = System.getenv("ANDROID_VERSION_CODE") ?: "10"
 def _versionName = System.getenv("ANDROID_VERSION_NAME") ?: "1.0.0"
 
 android {
@@ -29,27 +30,34 @@ android {
 
 
     defaultConfig {
-        applicationId 'network.mobius.wallet'
-        applicationIdSuffix ""
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+
+        applicationId 'network.mobius.wallet'
+        applicationIdSuffix ''
+
         versionCode _versionCode as Integer
         versionName _versionName
+        versionNameSuffix ''
+
         manifestPlaceholders = [
-            appName:project.env.get('APP_NAME'),
             fabricApiKey:project.env.get('CRASHLYTICS_API_TOKEN')
         ]
+
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
     }
     buildTypes {
         debug {
-          applicationIdSuffix ".debug"
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-DEBUG'
+            resValue 'string', 'app_name', 'δ-Wallet'
         }
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            resValue 'string', 'app_name', 'Mobius Wallet'
         }
     }
 }
