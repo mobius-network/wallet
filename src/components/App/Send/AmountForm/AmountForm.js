@@ -53,7 +53,9 @@ class AmountForm extends Component {
     resetForm();
   };
 
-  handleAssetChange = index => this.props.setAsset(this.options[index].toLowerCase());
+  handleAssetChange = (index) => {
+    if (index > 0) this.props.setAsset(this.options[index].toLowerCase());
+  };
 
   handleKeyboardChange = (amount) => {
     const isValidAmountEntered = amount > 0;
@@ -137,7 +139,6 @@ class AmountForm extends Component {
         <ActionSheet
           ref={this.setActionSheetRef}
           cancelButtonIndex={0}
-          destructiveButtonIndex={3}
           onPress={this.handleAssetChange}
           options={this.options}
           title={t('send.amountForm.selectAssetTitle')}
