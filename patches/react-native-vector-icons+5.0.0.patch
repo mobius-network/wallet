@@ -1,4 +1,30 @@
 patch-package
+--- a/node_modules/react-native-vector-icons/RNVectorIcons.podspec
++++ b/node_modules/react-native-vector-icons/RNVectorIcons.podspec
+@@ -11,9 +11,20 @@ Pod::Spec.new do |s|
+   s.author         = { "Joel Arvidsson" => "joel@oblador.se" }
+   s.platform       = :ios, "7.0"
+   s.source         = { :git => "https://github.com/oblador/react-native-vector-icons.git", :tag => "v#{s.version}" }
++
+   s.source_files   = 'RNVectorIconsManager/**/*.{h,m}'
+-  s.resources      = "Fonts/*.ttf"
+   s.preserve_paths = "**/*.js"
+   s.dependency 'React'
+
++  %W[
++    Entypo EvilIcons Feather FontAwesome Foundation Ionicons
++    MaterialIcons MaterialCommunityIcons
++    Octicons Zocial SimpleLineIcons
++  ].each do |iset|
++    s.subspec(iset) { |ss| ss.resources = "Fonts/#{iset}.ttf" }
++  end
++
++  s.subspec 'FontAwesome5' do |ss|
++    ss.resources = "Fonts/FontAwesome5_*.ttf"
++  end
+ end
+diff --git a/node_modules/react-native-vector-icons/android/build.gradle b/node_modules/react-native-vector-icons/android/build.gradle
+index 81ff5f8f..8a90446f 100755
 --- a/node_modules/react-native-vector-icons/android/build.gradle
 +++ b/node_modules/react-native-vector-icons/android/build.gradle
 @@ -35,5 +35,5 @@ repositories {
