@@ -12,7 +12,7 @@ module.exports = {
   resolver: {
     blacklistRE: blacklist(),
     extraNodeModules: {
-      crypto: modulePath('crypto-browserify'),
+      crypto: modulePath('react-native-crypto'),
       eventsource: modulePath('react-native-event-source'),
       fs: modulePath('react-native-level-fs'),
       http: modulePath('@tradle/react-native-http'),
@@ -24,4 +24,3 @@ module.exports = {
     },
   },
 };
-
