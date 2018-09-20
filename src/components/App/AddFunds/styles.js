@@ -34,7 +34,7 @@ export const SelectedCurrency = styled.Text`
   color: black;
   font-family: ${fonts.roboto.regular};
   font-size: 15;
-  line-height: 14;
+  line-height: 16;
 `;
 
 export const ChevronIcon = styled(Icon).attrs({
