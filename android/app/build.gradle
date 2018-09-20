@@ -18,6 +18,15 @@ project.ext.react = [
 ]
 apply from: "../../node_modules/react-native/react.gradle"
 
+/**
+ * Add only Material icons
+ * https://github.com/oblador/react-native-vector-icons#option-with-gradle-recommended
+ */
+project.ext.vectoricons = [
+    iconFontNames: [ 'MaterialIcons.ttf', 'MaterialCommunityIcons.ttf' ]
+]
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
 
 def enableProguardInReleaseBuilds = false
 

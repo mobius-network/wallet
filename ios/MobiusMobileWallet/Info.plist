@@ -83,35 +83,17 @@
 	<string>Mobius Wallet shouldn&apos;t request access to speech recognition. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Entypo.ttf</string>
-		<string>EvilIcons.ttf</string>
-		<string>Feather.ttf</string>
-		<string>FontAwesome.ttf</string>
-		<string>FontAwesome5_Brands.ttf</string>
-		<string>FontAwesome5_Regular.ttf</string>
-		<string>FontAwesome5_Solid.ttf</string>
-		<string>Foundation.ttf</string>
-		<string>Ionicons.ttf</string>
 		<string>MaterialCommunityIcons.ttf</string>
 		<string>MaterialIcons.ttf</string>
-		<string>Octicons.ttf</string>
-		<string>SimpleLineIcons.ttf</string>
-		<string>Zocial.ttf</string>
 		<string>Helvetica Neue Bold.ttf</string>
 		<string>Helvetica Neue Medium.ttf</string>
-		<string>Helvetica Neue Thin.ttf</string>
 		<string>Helvetica Neue.ttf</string>
 		<string>Nunito Sans Bold.ttf</string>
-		<string>Nunito Sans Light.ttf</string>
 		<string>Nunito Sans Regular.ttf</string>
-		<string>Nunito Sans SemiBold.ttf</string>
 		<string>Roboto Bold.ttf</string>
 		<string>Roboto Medium.ttf</string>
-		<string>Roboto Thin.ttf</string>
 		<string>Roboto.ttf</string>
 		<string>Helvetica Neue Italic.ttf</string>
-		<string>Nunito Sans Italic.ttf</string>
-		<string>Roboto Italic.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen</string>
