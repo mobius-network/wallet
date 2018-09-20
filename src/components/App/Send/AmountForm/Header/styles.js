@@ -43,8 +43,8 @@ export const BackButton = styled.TouchableHighlight.attrs({
 })``;
 
 export const Container = styled.View`
-  padding-bottom: 48;
-  padding-top: 28;
+  padding-bottom: 20;
+  padding-top: 20;
 `;
 
 export const Decorator = styled.View`
