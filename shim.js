@@ -42,3 +42,8 @@ process.env['NODE_ENV'] = isDev ? 'development' : 'production';
 if (!process.version) {
   process.version = '';
 }
+
+// https://github.com/tradle/rn-nodeify/blob/master/shim.js#L24
+// If using the crypto shim, uncomment the following line to ensure
+// crypto is loaded first, so it can populate global.crypto
+require('crypto');
