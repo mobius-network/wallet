@@ -84,9 +84,6 @@
       "title": "Loading",
       "tryAgainButton": "Try Again"
     },
-    "success": {
-      "title": "Success!"
-    },
     "sidebarNavigation": {
       "addFunds": "Add Funds",
       "withdrawFunds": "Withdraw Funds"
