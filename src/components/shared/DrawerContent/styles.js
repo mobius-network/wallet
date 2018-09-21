@@ -33,3 +33,10 @@ export const Link = styled(Item)`
 export const SignOut = styled(Item)`
   color: ${colors.textSecondary};
 `;
+
+export const Version = styled.Text`
+  font-size: ${fontSizes.small};
+  line-height: ${helpers.calculateLineHeight(fontSizes.small)};
+  color: ${colors.textLight};
+  margin-top: 24px;
+`;

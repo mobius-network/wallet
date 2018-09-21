@@ -25,6 +25,8 @@ PODS:
     - React
   - react-native-splash-screen (3.1.1):
     - React
+  - react-native-version-number (0.3.4):
+    - React
   - React/Core (0.57.0):
     - yoga (= 0.57.0.React)
   - React/CxxBridge (0.57.0):
@@ -103,6 +105,7 @@ DEPENDENCIES:
   - react-native-camera (from `../node_modules/react-native-camera`)
   - react-native-randombytes (from `../node_modules/react-native-randombytes`)
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
+  - react-native-version-number (from `../node_modules/react-native-version-number`)
   - React/Core (from `../node_modules/react-native`)
   - React/CxxBridge (from `../node_modules/react-native`)
   - React/DevSupport (from `../node_modules/react-native`)
@@ -152,6 +155,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-randombytes"
   react-native-splash-screen:
     :path: "../node_modules/react-native-splash-screen"
+  react-native-version-number:
+    :path: "../node_modules/react-native-version-number"
   ReactNativeFabric:
     :path: "../node_modules/react-native-fabric"
   ReactNativePermissions:
@@ -173,14 +178,15 @@ SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BVLinearGradient: 4b3f3bdf1ac1a52a5ef5e65c9585d793a7c3f825
   Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
-  DoubleConversion: 2ca14703beeb6b302b80c2e322b9a17934d105b5
+  DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
   Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
-  Folly: fa458a15230e6bee654f3e2b25f6be60f0b61bf3
-  glog: 2636ba61351c508bea66dd8cd2d2211b4c373335
+  Folly: c89ac2d5c6ab169cd7397ef27485c44f35f742c7
+  glog: e8acf0ebbf99759d3ff18c86c292a5898282dcde
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
   react-native-camera: 68ad5143d2d0636236d46c7de8d2a6455ca52a36
   react-native-randombytes: d3184d351604f78e019535178766590188bbc133
   react-native-splash-screen: 8e3f866dc79bfe533baeffd0a38c33f7a7eae7f8
+  react-native-version-number: 36c0d8eb57a275a6239a860f8dbab3d18299b0e0
   ReactNativeFabric: 3912bf9c714d7cc98110eadf06ca6dedef219322
   ReactNativePermissions: 9f2d9c45c98800795e6c2ed330e25d11a66a8169
   RNDeviceInfo: 568c5641057313b4912d08a7742ff0b2f753ed5c
@@ -190,6 +196,6 @@ SPEC CHECKSUMS:
   RNVectorIcons: 7e335c36ac85b04f966100980df6c438800fb179
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: 0279226ced65751cf6c5520a0fc173e82e93034a
+PODFILE CHECKSUM: a989924282aa932383ef06dae1c90d97fd3e54d7
 
 COCOAPODS: 1.6.0.beta.1

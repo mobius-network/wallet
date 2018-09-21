@@ -35,6 +35,8 @@ target 'MobiusMobileWallet' do
   pod 'yoga', path: '../node_modules/react-native/ReactCommon/yoga'
 
   # Add new pods below this line
+  pod 'react-native-version-number', :path => '../node_modules/react-native-version-number'
+
 
   pod 'BVLinearGradient', path: '../node_modules/react-native-linear-gradient'
   pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
