@@ -105,6 +105,7 @@
     "metro-config": "^0.45.0",
     "metro-react-native-babel-preset": "^0.45.0",
     "patch-package": "^5.1.1",
+    "plop": "^2.1.0",
     "postinstall-postinstall": "^1.0.0",
     "prettier": "^1.12.1",
     "react-native-create-bridge": "^2.0.1",
