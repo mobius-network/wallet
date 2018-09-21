@@ -2,7 +2,7 @@ import { takeLatest, call, put } from 'redux-saga/effects';
 import StellarHDWallet from 'stellar-hd-wallet';
 import * as Keychain from 'react-native-keychain';
 
-import { decrypt } from 'utils';
+import { decrypt, trackEvent } from 'utils';
 import navigator from 'state/navigator';
 import { authActions } from 'state/auth';
 
@@ -36,6 +36,8 @@ function* run() {
   yield call(navigator.navigate, 'Main', 'App');
 
   yield put(authActions.loginSuccess());
+
+  trackEvent('Login::Success');
 }
 
 export default takeLatest(authActions.loginStart, run);

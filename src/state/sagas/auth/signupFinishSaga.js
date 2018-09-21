@@ -6,7 +6,7 @@ import * as Keychain from 'react-native-keychain';
 
 import { API_URL } from 'react-native-dotenv';
 
-import { encrypt, encodeFundToken } from 'utils';
+import { encrypt, encodeFundToken, trackEvent } from 'utils';
 import navigator from 'state/navigator';
 import { authActions, getMnemonic } from 'state/auth';
 import Api from 'core/services/api';
@@ -42,6 +42,8 @@ function* run() {
   });
 
   yield call(navigator.navigate, 'Auth', 'Ready');
+
+  trackEvent('Auth::Success');
 }
 
 export default takeLatest(authActions.signupFinish, run);
