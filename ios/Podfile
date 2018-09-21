@@ -41,12 +41,15 @@ target 'MobiusMobileWallet' do
   pod 'ReactNativeFabric', path: '../node_modules/react-native-fabric'
   pod 'RNDeviceInfo', path: '../node_modules/react-native-device-info'
   pod 'RNKeychain', path: '../node_modules/react-native-keychain'
-  pod 'RNLanguages', :path => '../node_modules/react-native-languages'
+  pod 'RNLanguages', path: '../node_modules/react-native-languages'
   pod 'RNSVG', path: '../node_modules/react-native-svg'
-  pod 'RNVectorIcons', path: '../node_modules/react-native-vector-icons'
+  pod 'RNVectorIcons', path: '../node_modules/react-native-vector-icons', subspecs: %W[
+    MaterialIcons
+    MaterialCommunityIcons
+  ]
 
-  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
-  pod 'react-native-randombytes', :path => '../node_modules/react-native-randombytes'
+  pod 'react-native-camera', path: '../node_modules/react-native-camera'
+  pod 'react-native-randombytes', path: '../node_modules/react-native-randombytes'
   pod 'react-native-splash-screen', path: '../node_modules/react-native-splash-screen'
 
   target 'MobiusMobileWalletTests' do
