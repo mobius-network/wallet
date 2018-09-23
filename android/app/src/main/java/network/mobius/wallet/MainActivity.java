@@ -23,4 +23,9 @@ public class MainActivity extends ReactActivity {
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
     }
+
+    @Override
+    public void invokeDefaultOnBackPressed() {
+        moveTaskToBack(true);
+    }
 }
