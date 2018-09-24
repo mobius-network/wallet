@@ -14,8 +14,11 @@ class SimpleInfo extends Component {
 
     return (
       <Container>
-        <Title selectable={false}>{title}</Title>
-        <Description selectable={false}>{description}</Description>
+        {title && <Title selectable={false}>{title}</Title>}
+
+        {description && (
+          <Description selectable={false}>{description}</Description>
+        )}
       </Container>
     );
   }

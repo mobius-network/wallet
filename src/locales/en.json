@@ -111,6 +111,19 @@
         "title": "Success!",
         "description": "You sent <0>{{amount}}<\/0> <1>{{asset}}<\/1> to the address <2>{{destination}}<\/2>."
       }
+    },
+    "notice": {
+      "error": {
+        "title": "Failed!",
+        "defaultMessage": "Something went wrong. Please try again.",
+        "defaultActionLabel": "Try Again"
+      },
+      "success": {
+        "title": "Success!",
+        "defaultActionLabel": "Done"
+      },
+      "goBack": "Go Back"
+    },
     "validations": {
       "isRequired": "is required",
       "isValidPublicKey": "is not valid address"
