@@ -105,14 +105,15 @@
         "memoFieldPlaceholder": "Optional",
         "permissionsConfirmTitle": "Allow Mobius to take pictures and record video?",
         "permissionsConfirmSettings": "Open Settings",
-        "alertText": "Wrong destination address. Please, check it once again.",
-        "alertTitle": "Invalid address",
-        "ok": "OK"
+        "alertTitle": "Following errors occured:"
       },
       "success": {
         "title": "Success!",
         "description": "You sent <0>{{amount}}<\/0> <1>{{asset}}<\/1> to the address <2>{{destination}}<\/2>."
       }
+    "validations": {
+      "isRequired": "is required",
+      "isValidPublicKey": "is not valid address"
     }
   }
 }

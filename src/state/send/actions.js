@@ -8,8 +8,7 @@ export const sendActions = createActions(
     'sendStart',
     'setAmount',
     'setAsset',
-    'setDestination',
-    'setMemo',
+    'setFormData',
   ],
   'send'
 );

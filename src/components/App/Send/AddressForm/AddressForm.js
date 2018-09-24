@@ -1,15 +1,19 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Alert, Keyboard, View } from 'react-native';
+import {
+  Alert, Keyboard, View, Text,
+} from 'react-native';
+import { Field } from 'redux-form';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import Permissions from 'react-native-permissions';
 import querystring from 'querystring';
-import { StrKey } from 'stellar-sdk';
+import { hasError } from 'revalidate/assertions';
 
 import TextInput from 'components/shared/TextInput';
 import AlertShared from 'components/shared/Alert';
 import Button from 'components/shared/Button';
 
+import { validate } from './validate';
 import Header from './Header';
 
 import {
@@ -20,23 +24,23 @@ class AddressForm extends Component {
   static propTypes = {
     amount: PropTypes.string.isRequired,
     asset: PropTypes.string.isRequired,
+    change: PropTypes.func.isRequired,
     destination: PropTypes.string,
+    handleSubmit: PropTypes.func.isRequired,
     memo: PropTypes.string,
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
       pop: PropTypes.func.isRequired,
     }).isRequired,
-    sendStart: PropTypes.func.isRequired,
-    setDestination: PropTypes.func.isRequired,
-    setMemo: PropTypes.func.isRequired,
     t: PropTypes.func.isRequired,
     usdAmount: PropTypes.number.isRequired,
   };
 
   state = {
     cameraPermission: null,
-    isScannerOpened: false,
     isAlertVisible: false,
+    isScannerOpened: false,
+    validation: {},
   };
 
   toggleScanner = () => {
@@ -94,88 +98,83 @@ class AddressForm extends Component {
     });
   };
 
+  hideAlert = () => {
+    this.setState({ isAlertVisible: false });
+  };
+
   handleScanComplete = ({ data }) => {
     const query = data.slice(data.indexOf('?') + 1);
     const parsed = querystring.parse(query);
 
     this.setState({ isScannerOpened: false }, () => {
-      this.props.setDestination(parsed.destination);
+      this.props.change('destination', parsed.destination);
     });
   };
 
-  handlePay = () => {
-    const { destination, memo, sendStart } = this.props;
+  handleSubmitButtonPress = () => {
+    const { destination, memo, handleSubmit } = this.props;
 
-    if (StrKey.isValidEd25519PublicKey(destination)) {
-      sendStart({ destination, memo });
-    } else {
-      this.setState({ isAlertVisible: true });
-    }
-  };
+    const validation = validate({ destination, memo });
 
-  handleOk = () => {
-    this.setState({ isAlertVisible: false });
+    this.setState({ validation, isAlertVisible: hasError(validation) }, () => {
+      if (hasError(validation)) {
+        return;
+      }
+
+      handleSubmit();
+    });
   };
 
   handleBack = () => this.props.navigation.pop();
 
   render() {
-    const { isScannerOpened, isAlertVisible } = this.state;
+    const { isScannerOpened, isAlertVisible, validation } = this.state;
     const {
-      t,
-      amount,
-      asset,
-      usdAmount,
-      destination,
-      memo,
-      setDestination,
-      setMemo,
+      amount, asset, t, usdAmount,
     } = this.props;
 
     return (
       <Fragment>
-        <Container>
-          <AlertShared
-            buttons={[
-              <Button
-                key="confirm"
-                onPress={this.handleOk}
-                padding={false}
-                square={true}
-                title={t('send.addressForm.ok').toUpperCase()}
-                variant="text"
-              />,
-            ]}
-            isVisible={isAlertVisible}
-            text={t('send.addressForm.alertText')}
-            title={t('send.addressForm.alertTitle')}
-          />
+        <AlertShared
+          buttons={[
+            <Button
+              key="confirm"
+              onPress={this.hideAlert}
+              padding={false}
+              square={true}
+              title={t('shared.ok').toUpperCase()}
+              variant="text"
+            />,
+          ]}
+          isVisible={isAlertVisible}
+          title={t('send.addressForm.alertTitle')}
+        >
+          {Object.keys(validation).map(key => (
+            <Text key={key}>{validation[key]}</Text>
+          ))}
+        </AlertShared>
 
+        <Container>
           <Header
             amount={amount}
             asset={asset}
             onBackButtonClick={this.handleBack}
-            onPress={this.handlePay}
+            onPress={this.handleSubmitButtonPress}
             t={t}
             usdAmount={usdAmount}
           />
 
           <View>
-            <TextInput
-              input={{
-                value: destination,
-                onChange: setDestination,
-              }}
+            <Field
+              autoFocus
+              component={TextInput}
               label={t('send.addressForm.addressFieldLabel')}
-              placeholder={t('send.addressForm.addressFieldPlaceholder')}
+              name="destination"
             />
-
-            <TextInput
-              input={{
-                value: memo,
-                onChange: setMemo,
-              }}
+            <Field
+              component={TextInput}
               label={t('send.addressForm.memoFieldLabel')}
+              name="memo"
               placeholder={t('send.addressForm.memoFieldPlaceholder')}
             />
 

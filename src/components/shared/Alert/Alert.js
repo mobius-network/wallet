@@ -17,8 +17,7 @@ class Alert extends Component {
     buttons: PropTypes.arrayOf(PropTypes.any),
     children: PropTypes.any,
     isVisible: PropTypes.bool,
-    text: PropTypes.string.isRequired,
-
+    text: PropTypes.string,
     title: PropTypes.string.isRequired,
   };
 
@@ -49,7 +48,7 @@ class Alert extends Component {
         >
           <Window>
             <Title>{title}</Title>
-            <Text>{text}</Text>
+            {text && <Text>{text}</Text>}
 
             {children && <Children>{children}</Children>}
 
