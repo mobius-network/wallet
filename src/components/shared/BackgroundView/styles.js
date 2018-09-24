@@ -6,19 +6,11 @@ const variants = {
       justifyContent: 'center',
       paddingBottom: 0,
     },
-    action: {
-      position: 'absolute',
-      bottom: 16,
-    },
   },
   bottom: {
     content: {
       justifyContent: 'flex-end',
       paddingBottom: 50,
-    },
-    action: {
-      position: 'relative',
-      bottom: 0,
     },
   },
 };
@@ -41,7 +33,10 @@ export const Content = styled.View`
 `;
 
 export const Action = styled.View`
-  position: ${({ theme }) => variants[theme.variant].action.position};
-  bottom: ${({ theme }) => variants[theme.variant].action.bottom};
+  width: 100%;
+`;
+
+export const SecondaryAction = styled.View`
+  margin-top: 16;
   width: 100%;
 `;
