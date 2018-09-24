@@ -108,8 +108,7 @@
         "alertTitle": "Following errors occured:"
       },
       "success": {
-        "title": "Success!",
-        "description": "You sent <0>{{amount}}<\/0> <1>{{asset}}<\/1> to the address <2>{{destination}}<\/2>."
+        "message": "You sent {{amount}} {{asset}} to the address {{destination}}."
       }
     },
     "notice": {
