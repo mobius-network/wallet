@@ -2,24 +2,20 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  Gradient,
-  Container,
-  Decorator,
-  DecoratorIcon,
-  DecoratorBefore,
-  DecoratorAfter,
-  NavRow,
-  Title,
+  Amount,
+  AmountContainer,
+  Asset,
+  AssetButton,
+  AssetButtonContent,
+  AssetIcon,
   BackButton,
   BackIcon,
+  Container,
   Content,
-  AmountContainer,
-  Amount,
-  AssetButton,
-  Asset,
-  AssetIcon,
+  Gradient,
+  NavRow,
+  Title,
   UsdAmount,
-  AssetButtonContent,
 } from './styles';
 
 class Header extends PureComponent {
@@ -53,11 +49,6 @@ class Header extends PureComponent {
           <Title>{t('send.amountForm.headerTitle')}</Title>
         </NavRow>
         <Container>
-          <Decorator>
-            <DecoratorBefore />
-            <DecoratorIcon />
-            <DecoratorAfter />
-          </Decorator>
           <Content>
             <AmountContainer>
               <Amount>{amount || 0}</Amount>
