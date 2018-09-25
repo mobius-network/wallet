@@ -9,18 +9,16 @@ import {
 } from 'components/shared/Styleguide';
 
 export const Gradient = styled(HeaderGradient)`
-  padding-bottom: 16;
-  padding-left: 16;
-  padding-right: 16;
-  padding-top: 16;
   width: ${helpers.vw};
 `;
 
 export const NavRow = styled.View`
-  flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  flex-direction: row;
   height: 56;
+  justify-content: flex-start;
+  padding-left: 16;
+  padding-right: 16;
 `;
 
 export const Title = styled.Text`
@@ -43,51 +41,8 @@ export const BackButton = styled.TouchableHighlight.attrs({
 })``;
 
 export const Container = styled.View`
-  padding-bottom: 20;
+  padding-bottom: 40;
   padding-top: 20;
-`;
-
-export const Decorator = styled.View`
-  flex-direction: column;
-  height: 82;
-  justify-content: center;
-  width: 38;
-  align-items: center;
-  position: absolute;
-  left: 0;
-  top: 32;
-`;
-
-export const DecoratorBefore = styled.View`
-  border-color: #76ccec;
-  border-left-width: 1;
-  border-top-width: 1;
-  height: 22;
-  margin-left: 10;
-  width: 10;
-`;
-
-export const DecoratorIcon = styled(Icon).attrs({
-  name: 'shuffle',
-})`
-  border-color: #76ccec;
-  border-radius: 19;
-  border-width: 1;
-  color: #fafafa;
-  font-size: 20;
-  height: 38;
-  line-height: 38;
-  text-align: center;
-  width: 38;
-`;
-
-export const DecoratorAfter = styled.View`
-  border-bottom-width: 1;
-  border-color: #76ccec;
-  border-left-width: 1;
-  height: 22;
-  margin-left: 10;
-  width: 10;
 `;
 
 export const Content = styled.View`
@@ -109,6 +64,7 @@ export const Amount = styled.Text`
   color: ${colors.textWhite};
   font-family: ${fonts.roboto.regular};
   font-size: 74;
+  line-height: ${helpers.calculateLineHeight(74, 1)};
 `;
 
 export const AssetButton = styled.TouchableHighlight.attrs({
@@ -124,9 +80,10 @@ export const AssetButtonContent = styled.View`
 `;
 
 export const Asset = styled.Text`
-  font-family: ${fonts.roboto.bold};
   color: ${colors.textWhite};
+  font-family: ${fonts.roboto.bold};
   font-size: 14;
+  line-height: ${helpers.calculateLineHeight(14, 1)};
 `;
 
 export const AssetIcon = styled(Icon).attrs({
