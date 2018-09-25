@@ -84,9 +84,6 @@
       "title": "Loading",
       "tryAgainButton": "Try Again"
     },
-    "success": {
-      "title": "Success!"
-    },
     "sidebarNavigation": {
       "addFunds": "Add Funds",
       "withdrawFunds": "Withdraw Funds"
@@ -108,14 +105,27 @@
         "memoFieldPlaceholder": "Optional",
         "permissionsConfirmTitle": "Allow Mobius to take pictures and record video?",
         "permissionsConfirmSettings": "Open Settings",
-        "alertText": "Wrong destination address. Please, check it once again.",
-        "alertTitle": "Invalid address",
-        "ok": "OK"
+        "alertTitle": "Following errors occured:"
+      },
+      "success": {
+        "message": "You sent {{amount}} {{asset}} to the address {{destination}}."
+      }
+    },
+    "notice": {
+      "error": {
+        "title": "Failed!",
+        "defaultMessage": "Something went wrong. Please try again.",
+        "defaultActionLabel": "Try Again"
       },
       "success": {
         "title": "Success!",
-        "description": "You sent <0>{{amount}}<\/0> <1>{{asset}}<\/1> to the address <2>{{destination}}<\/2>."
-      }
+        "defaultActionLabel": "Done"
+      },
+      "goBack": "Go Back"
+    },
+    "validations": {
+      "isRequired": "is required",
+      "isValidPublicKey": "is not valid address"
     }
   }
 }

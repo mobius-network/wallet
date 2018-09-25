@@ -3,16 +3,21 @@ import { createStackNavigator } from 'react-navigation';
 import wrapNavigator, { routeKeys } from 'components/shared/wrapNavigator';
 
 import Loading from 'components/shared/LoadingView';
+import Notice from 'components/shared/Notice';
 import AddressForm from './AddressForm';
 import AmountForm from './AmountForm';
-import Success from './Success';
 
 export const SendNavigator = createStackNavigator(
   {
     AddressForm,
     AmountForm,
     Loading,
-    Success,
+    Notice: {
+      screen: Notice,
+      navigationOptions: () => ({
+        gesturesEnabled: false,
+      }),
+    },
   },
   {
     headerMode: 'screen',

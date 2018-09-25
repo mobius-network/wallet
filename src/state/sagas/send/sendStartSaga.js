@@ -4,16 +4,23 @@ import {
 } from 'stellar-sdk';
 import { assets, safeLoadAccount, submitTransaction } from 'core';
 
+import i18n from 'utils/i18n';
 import navigator from 'state/navigator';
 import { getMasterAccount } from 'state/account';
 import { getKeypairFor } from 'state/auth';
-import { sendActions, getAmount, getAsset } from 'state/send';
+import {
+  sendActions,
+  getAmount,
+  getAsset,
+  getDestination,
+  getMemo,
+} from 'state/send';
 
-function* buildTransaction(destination, memo) {
+function* buildTransaction({
+  amount, asset, destination, memo,
+}) {
   const account = yield select(getMasterAccount);
   const accountKeypair = yield select(getKeypairFor);
-  const amount = yield select(getAmount);
-  const asset = yield select(getAsset);
 
   const paymentOp = Operation.payment({
     destination,
@@ -34,19 +41,42 @@ function* buildTransaction(destination, memo) {
   return tx;
 }
 
-function* run({ payload: { destination, memo } }) {
-  yield call(navigator.navigate, 'Send', 'Loading');
-
+function* run() {
   try {
+    yield call(navigator.navigate, 'Send', 'Loading');
+
+    const amount = yield select(getAmount);
+    const asset = yield select(getAsset);
+    const destination = yield select(getDestination);
+    const memo = yield select(getMemo);
+
     yield call(safeLoadAccount, destination);
 
-    const tx = yield call(buildTransaction, destination, memo);
+    const tx = yield call(buildTransaction, {
+      amount,
+      asset,
+      destination,
+      memo,
+    });
 
     yield call(submitTransaction, tx);
 
-    yield call(navigator.navigate, 'Send', 'Success');
+    yield call(navigator.navigate, 'Send', 'Notice', {
+      action: ({ navigate }) => navigate('Dashboard'),
+      type: 'success',
+      message: i18n.t('send.success.message', {
+        amount,
+        asset: asset.toUpperCase(),
+        destination: `${destination.slice(0, 11)}…${destination.slice(-11)}`,
+      }),
+    });
   } catch (error) {
-    yield call(navigator.navigate, 'Send', 'AmountForm');
+    yield call(navigator.navigate, 'Send', 'Notice', {
+      action: ({ dispatch }) => dispatch(sendActions.sendStart()),
+      goBackAction: ({ navigate }) => navigate('Dashboard'),
+      type: 'error',
+      message: i18n.t('notice.error.defaultMessage'),
+    });
   }
 }
 

@@ -9,9 +9,8 @@ import wrapNavigator, {
 import DrawerContent from 'components/shared/DrawerContent';
 import NavHeader from 'components/shared/NavHeader';
 
-import Dashboard from './Dashboard';
 import AddFunds from './AddFunds';
-import Success from './Success';
+import Dashboard from './Dashboard';
 
 import SendStack from './Send';
 
@@ -42,7 +41,6 @@ export const StackNavigator = createStackNavigator(
       }),
     },
     DrawerNavigator,
-    Success,
     Send: SendStack,
   },
   {
