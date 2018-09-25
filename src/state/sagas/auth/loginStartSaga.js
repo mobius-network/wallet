@@ -2,7 +2,7 @@ import { takeLatest, call, put } from 'redux-saga/effects';
 import StellarHDWallet from 'stellar-hd-wallet';
 import * as Keychain from 'react-native-keychain';
 
-import { decrypt, trackEvent } from 'utils';
+import { decrypt, logLogin } from 'utils';
 import navigator from 'state/navigator';
 import { authActions } from 'state/auth';
 
@@ -20,6 +20,7 @@ function* run() {
   if (!encryptedMnemonicStore) {
     yield put(authActions.signupStart());
 
+    logLogin('Pin', false);
     return;
   }
 
@@ -37,7 +38,7 @@ function* run() {
 
   yield put(authActions.loginSuccess());
 
-  trackEvent('Login::Success');
+  logLogin('Pin', true);
 }
 
 export default takeLatest(authActions.loginStart, run);
