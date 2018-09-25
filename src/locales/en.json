@@ -86,7 +86,8 @@
     },
     "sidebarNavigation": {
       "addFunds": "Add Funds",
-      "withdrawFunds": "Withdraw Funds"
+      "withdrawFunds": "Withdraw Funds",
+      "version": "Version: {{appVersion}}-{{buildVersion}}"
     },
     "send": {
       "amountForm": {

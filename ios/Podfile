@@ -35,7 +35,6 @@ target 'MobiusMobileWallet' do
   pod 'yoga', path: '../node_modules/react-native/ReactCommon/yoga'
 
   # Add new pods below this line
-
   pod 'BVLinearGradient', path: '../node_modules/react-native-linear-gradient'
   pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
   pod 'ReactNativeFabric', path: '../node_modules/react-native-fabric'
@@ -51,6 +50,7 @@ target 'MobiusMobileWallet' do
   pod 'react-native-camera', path: '../node_modules/react-native-camera'
   pod 'react-native-randombytes', path: '../node_modules/react-native-randombytes'
   pod 'react-native-splash-screen', path: '../node_modules/react-native-splash-screen'
+  pod 'react-native-version-number', :path => '../node_modules/react-native-version-number'
 
   target 'MobiusMobileWalletTests' do
     inherit! :search_paths

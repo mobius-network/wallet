@@ -90,6 +90,7 @@ dependencies {
     implementation project(':react-native-splash-screen')
     implementation project(':react-native-svg')
     implementation project(':react-native-vector-icons')
+    implementation project(':react-native-version-number')
     implementation "com.facebook.react:react-native:+"
 }
 

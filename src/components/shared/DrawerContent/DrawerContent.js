@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import { SafeAreaView } from 'react-navigation';
+import VersionNumber from 'react-native-version-number';
 
 import Drawer from 'utils/drawer';
 
-import { Container, Buttons, Link } from './styles';
+import {
+  Container, Buttons, Link, Version,
+} from './styles';
 
 class DrawerContent extends Component {
   static propTypes = {
@@ -53,6 +56,13 @@ class DrawerContent extends Component {
                 {t('sidebarNavigation.withdrawFunds')}
               </Link>
             </Buttons>
+
+            <Version>
+              {t('sidebarNavigation.version', {
+                appVersion: VersionNumber.appVersion,
+                buildVersion: VersionNumber.buildVersion,
+              })}
+            </Version>
           </Container>
         </SafeAreaView>
       </ScrollView>

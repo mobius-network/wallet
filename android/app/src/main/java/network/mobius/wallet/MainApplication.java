@@ -11,6 +11,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
+import com.apsl.versionnumber.RNVersionNumberPackage;
 import com.bitgo.randombytes.RandomBytesPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.horcrux.svg.SvgPackage;
@@ -45,6 +46,7 @@ public class MainApplication extends Application implements ReactApplication {
             new RNCameraPackage(),
             new RNDeviceInfo(),
             new RNLanguagesPackage(),
+            new RNVersionNumberPackage(),
             new SplashScreenReactPackage(),
             new SvgPackage(),
             new VectorIconsPackage()
