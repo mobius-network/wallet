@@ -5,6 +5,7 @@ import {
 import { assets, safeLoadAccount, submitTransaction } from 'core';
 
 import i18n from 'utils/i18n';
+import { trackEvent } from 'utils';
 import navigator from 'state/navigator';
 import { getMasterAccount } from 'state/account';
 import { getKeypairFor } from 'state/auth';
@@ -70,6 +71,8 @@ function* run() {
         destination: `${destination.slice(0, 11)}…${destination.slice(-11)}`,
       }),
     });
+
+    trackEvent('Send::Success');
   } catch (error) {
     yield call(navigator.navigate, 'Send', 'Notice', {
       action: ({ dispatch }) => dispatch(sendActions.sendStart()),
@@ -77,6 +80,8 @@ function* run() {
       type: 'error',
       message: i18n.t('notice.error.defaultMessage'),
     });
+
+    trackEvent('Send::Error');
   }
 }
 
