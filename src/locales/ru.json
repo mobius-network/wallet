@@ -1,6 +1,8 @@
 {
   "translation": {
     "shared": {
+      "cancel": "Отменить",
+      "close": "Закрыть",
       "continue": "Продолжить",
       "done": "Сделано",
       "no": "Нет",
@@ -9,6 +11,7 @@
     },
     "welcome": {
       "title": "Добро пожаловать",
+      "description": "Создайте кошелек чтобы отправлять и получать переводы используя криптовалюту.",
       "setupWalletButton": "Создать кошелек"
     },
     "pinSetup": {
@@ -16,19 +19,30 @@
       "chooseTitle": "Задайте PIN-код",
       "confirmSubtitle": "Пожалуйста, повторите свой пин-код.",
       "confirmTitle": "Подтвердите PIN-код",
+      "lockedSubtitle": "Чтобы защитить ваши данные, доступ заблокирован на 5 минут. Попробуйте снова позже.",
+      "lockedTitle": "Максимум попыток",
       "unlockTitle": "Введите PIN-код"
     },
     "mnemonic": {
       "confirm": {
+        "description": "Какая из них ваша?",
+        "title": "Подтвердите вашу мнемоническую фразу",
+        "alertErrorButton": "Показать фразу",
+        "alertErrorTitle": "Неверная фраза",
+        "alertErrorMessage": "Вы выбрали неверную фразу. Пожалуйста, прочитайте вашу фразу, запишите ее и попробуйте снова.",
+        "alertConfirmTitle": "Не теряйте эту фразу",
+        "alertConfirmMessage": "Если вы потеряете мнемоническую фразу, восстановить доступ к вашему кошельку будет невозможно.",
+        "alertConfirmUnderstand": "Да, я понимаю риски в случае потери фразы.",
         "alertConfirmButton": "Продолжить"
       },
       "write": {
         "continueButton": "Подтверждаю, что записал фразу",
         "description": "Эта фраза понадобится вам для доступа к кошельку на другом устройстве.",
         "title": "Запишите вашу мнемоническую фразу",
-        "alertTitle": "Скопировать фразу",
+        "alertTitle": "Скопируйте эту фразу",
+        "alertMessage": "Храните вашу фразу в надежном месте. От этого напрямую зависит безопасность вашего кошелька.",
         "alertUnderstand": "Да, я понимаю, что рискованно хранить фразу в интернете.",
-        "alertButtonConfirm": "Скопировать",
+        "alertButtonConfirm": "Продолжить",
         "alertButtonCancel": "Отмена"
       }
     },
@@ -38,6 +52,7 @@
     },
     "dashboard": {
       "title": "Текущий баланс",
+      "receiveButton": "Получить",
       "sendButton": "Отправить"
     },
     "addFunds": {
@@ -69,29 +84,48 @@
       "title": "Загрузка",
       "tryAgainButton": "Попробуйте снова"
     },
-    "success": {
-      "title": "Успешно!"
-    },
     "sidebarNavigation": {
-      "withdrawFunds": "Вывести средства"
+      "addFunds": "Получить перевод",
+      "withdrawFunds": "Отправить перевод",
+      "version": "Версия: {{appVersion}}-{{buildVersion}}"
     },
     "send": {
       "amountForm": {
         "headerTitle": "Отправить",
-        "selectAssetTitle": "Выберите валюту"
+        "selectAssetTitle": "Выберите валюту",
+        "alertText": "На вашем балансе только {{balance}} {{asset}}. Пожалуйста, измените сумму перевода.",
+        "alertTitle": "Неверная сумма",
+        "ok": "OK"
       },
       "addressForm": {
+        "submitButton": "Отправить",
         "addressFieldLabel": "Куда",
         "addressFieldPlaceholder": "Отсканируйте код или введите адрес",
         "memoFieldLabel": "Мемо ID",
         "memoFieldPlaceholder": "Необязательно",
         "permissionsConfirmTitle": "Разрешить приложению снимать фотографии и записывать видео?",
-        "permissionsConfirmSettings": "Открыть Настройки"
+        "permissionsConfirmSettings": "Открыть Настройки",
+        "alertTitle": "Возникли ошибки:"
+      },
+      "success": {
+        "message": "Вы отправили {{amount}} {{asset}} на адрес {{destination}}."
+      }
+    },
+    "notice": {
+      "error": {
+        "title": "Ошибка!",
+        "defaultMessage": "Что-то пошло не так. Пожалуйста, попробуйте снова.",
+        "defaultActionLabel": "Попробуйте снова"
       },
       "success": {
         "title": "Успешно!",
-        "description": "Вы отправили <0>{{amount}}<\/0> <1>{{asset}}<\/1> на адрес <2>{{destination}}<\/2>."
-      }
+        "defaultActionLabel": "Готово"
+      },
+      "goBack": "Вернуться"
+    },
+    "validations": {
+      "isRequired": "не может отсутствовать",
+      "isValidPublicKey": "недопустимый адрес"
     }
   }
 }
