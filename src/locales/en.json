@@ -31,7 +31,7 @@
         "alertErrorTitle": "Incorrect phrase",
         "alertErrorMessage": "You’ve selected the wrong mnemonic phrase. Please reread your phrase, write it down, and try again.",
         "alertConfirmTitle": "Don't lose your recovery phrase",
-        "alertConfirmMessage": "If you lose your recovery phrase there is no possible way to recover yoour account.",
+        "alertConfirmMessage": "If you lose your recovery phrase, there is no possible way to recover your account.",
         "alertConfirmUnderstand": "Yes, I understand the risk of losing my recovery phrase.",
         "alertConfirmButton": "Continue"
       },
@@ -60,11 +60,11 @@
       "title": "Transfer from External Wallet",
       "subtitle": "Use the following address to transfer MOBI or XLM to your wallet.",
       "share": {
-        "title": "Public key",
-        "subject": "Public key"
+        "title": "Address",
+        "subject": "Address"
       },
       "publicKey": {
-        "title": "Public Key"
+        "title": "Address"
       },
       "selectWallet": {
         "title": "Select wallet",
@@ -98,7 +98,6 @@
         "ok": "OK"
       },
       "addressForm": {
-        "headerTitle": "AmountSelected",
         "submitButton": "Pay",
         "addressFieldLabel": "To",
         "addressFieldPlaceholder": "Scan code or enter address",
@@ -106,7 +105,7 @@
         "memoFieldPlaceholder": "Optional",
         "permissionsConfirmTitle": "Allow Mobius to take pictures and record video?",
         "permissionsConfirmSettings": "Open Settings",
-        "alertTitle": "Following errors occured:"
+        "alertTitle": "Following errors occurred:"
       },
       "success": {
         "message": "You sent {{amount}} {{asset}} to the address {{destination}}."
@@ -126,7 +125,7 @@
     },
     "validations": {
       "isRequired": "is required",
-      "isValidPublicKey": "is not valid address"
+      "isValidPublicKey": "is not a valid address"
     }
   }
 }
