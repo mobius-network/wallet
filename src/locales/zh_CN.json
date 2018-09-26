@@ -84,23 +84,20 @@
       "title": "加载中",
       "tryAgainButton": "再试一次"
     },
-    "success": {
-      "title": "完成！"
-    },
     "sidebarNavigation": {
       "addFunds": "添加资产",
-      "withdrawFunds": "提现资产"
+      "withdrawFunds": "提现资产",
+      "version": "版: {{appVersion}}-{{buildVersion}}"
     },
     "send": {
       "amountForm": {
         "headerTitle": "转账",
         "selectAssetTitle": "选择币种",
-        "alertText": "You have only {{balance}} {{asset}} on your balance. Please, change amount for transfer.",
-        "alertTitle": "Invalid amount",
-        "ok": "OK"
+        "alertText": "您的余额中只有{{balance}} {{asset}}。请更改转帐金额。",
+        "alertTitle": "金额无效",
+        "ok": "好的"
       },
       "addressForm": {
-        "headerTitle": "金额已选定",
         "submitButton": "转账",
         "addressFieldLabel": "发送至",
         "addressFieldPlaceholder": "扫描二维码或输入地址",
@@ -108,14 +105,28 @@
         "memoFieldPlaceholder": "可选",
         "permissionsConfirmTitle": "允许Mobius拍照或录像？",
         "permissionsConfirmSettings": "开放式设置",
-        "alertText": "Wrong destination address. Please, check it once again.",
-        "alertTitle": "Invalid address",
-        "ok": "OK"
+        "alertText": "错误的目的地地址。请再次检查一下。",
+        "alertTitle": "无效地址"
+      },
+      "success": {
+        "message": "你发送{{amount}} {{asset}}到地址{{destination}}."
+      }
+    },
+    "notice": {
+      "error": {
+        "title": "失败!",
+        "defaultMessage": "发生错误，请再试一次",
+        "defaultActionLabel": "再试一次"
       },
       "success": {
         "title": "完成！",
-        "description": "你发送<0>{{amount}}<\/0> <1>{{asset}}<\/1>到地址 <2>{{destination}}<\/2>."
-      }
+        "defaultActionLabel": "完成"
+      },
+      "goBack": "回去"
+    },
+    "validations": {
+      "isRequired": "这是必需的",
+      "isValidPublicKey": "是无效的地址"
     }
   }
 }
