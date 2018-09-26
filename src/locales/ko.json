@@ -84,32 +84,48 @@
       "title": "로딩",
       "tryAgainButton": "다시 시도하십시오"
     },
-    "success": {
-      "title": "성공!"
-    },
     "sidebarNavigation": {
       "addFunds": "자금을 더하다",
-      "withdrawFunds": "자금을 빼다"
+      "withdrawFunds": "자금을 빼다",
+      "version": "번역: {{appVersion}}-{{buildVersion}}"
     },
     "send": {
       "amountForm": {
         "headerTitle": "보내기",
-        "selectAssetTitle": "코인 선택"
+        "selectAssetTitle": "코인 선택",
+        "alertText": "잔액에 {{balance}} {{asset}} 만 있습니다. 전송할 금액을 변경하십시오.",
+        "alertTitle": "무효 금액",
+        "ok": "승인"
       },
       "addressForm": {
-        "headerTitle": "선택한 금액",
         "submitButton": "지불",
         "addressFieldLabel": "에게",
         "addressFieldPlaceholder": "코드 스캔 또는 주소 입력",
         "memoFieldLabel": "메모 ID",
         "memoFieldPlaceholder": "선택사항",
         "permissionsConfirmTitle": "모비우스가 사진 촬영\n및 영상 녹화 허용함?",
-        "permissionsConfirmSettings": "설정 열기"
+        "permissionsConfirmSettings": "설정 열기",
+        "alertTitle": "다음 오류가 발생 했습니다."
+      },
+      "success": {
+        "message": "너는 보낸다 {{amount}} {{asset}} 동전 주소 {{destination}}."
+      }
+    },
+    "notice": {
+      "error": {
+        "title": "실패한!",
+        "defaultMessage": "뭔가 잘못 됐어. 다시 시도하십시오.",
+        "defaultActionLabel": "다시 시도하십시오"
       },
       "success": {
         "title": "성공!",
-        "description": "너는 보낸다<0>{{amount}}<\/0> <1>{{asset}}<\/1> 동전 주소 <2>{{destination}}<\/2>."
-      }
+        "defaultActionLabel": "완료"
+      },
+      "goBack": "돌아 가라."
+    },
+    "validations": {
+      "isRequired": "가 필요합니다.",
+      "isValidPublicKey": "이것은 유효한 주소가 아닙니다."
     }
   }
 }
