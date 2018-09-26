@@ -476,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7098ED55213DA7C80068DB08 /* MobiusMobileWalletTests.debug.xcconfig */;
 			buildSettings = {
+				INFOPLIST_FILE = MobiusMobileWalletTests/Info.plist;
 			};
 			name = Debug;
 		};
@@ -483,6 +484,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7098ED53213DA7C80068DB08 /* MobiusMobileWalletTests.release.xcconfig */;
 			buildSettings = {
+				INFOPLIST_FILE = MobiusMobileWalletTests/Info.plist;
 			};
 			name = Release;
 		};

@@ -1,10 +1,10 @@
-apply plugin: "com.android.application"
+apply plugin: 'com.android.application'
 
 project.ext.envConfigFiles = [
-    debug: ".env.debug",
-    release: ".env.production"
+    debug: '.env.debug',
+    release: '.env.production'
 ]
-apply from: "./dotenv.gradle"
+apply from: './dotenv.gradle'
 
 apply plugin: 'io.fabric'
 
@@ -13,10 +13,10 @@ apply plugin: 'io.fabric'
  * https://github.com/facebook/react-native/blob/master/local-cli/templates/HelloWorld/android/app/build.gradle#L14
  */
 project.ext.react = [
-    inputExcludes: ["android/**", "ios/**", ".buckd/**"],
-    entryFile: "index.js"
+    inputExcludes: ['android/**', 'ios/**', '.buckd/**'],
+    entryFile: 'index.js'
 ]
-apply from: "../../node_modules/react-native/react.gradle"
+apply from: '../../node_modules/react-native/react.gradle'
 
 /**
  * Add only Material icons
@@ -25,13 +25,10 @@ apply from: "../../node_modules/react-native/react.gradle"
 project.ext.vectoricons = [
     iconFontNames: [ 'MaterialIcons.ttf', 'MaterialCommunityIcons.ttf' ]
 ]
-apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+apply from: '../../node_modules/react-native-vector-icons/fonts.gradle'
 
 
 def enableProguardInReleaseBuilds = false
-
-def _versionCode = System.getenv("ANDROID_VERSION_CODE") ?: "10"
-def _versionName = System.getenv("ANDROID_VERSION_NAME") ?: "1.0.0"
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -45,8 +42,8 @@ android {
         applicationId 'network.mobius.wallet'
         applicationIdSuffix ''
 
-        versionCode _versionCode as Integer
-        versionName _versionName
+        versionCode 10
+        versionName '1.0.0'
         versionNameSuffix ''
 
         manifestPlaceholders = [
@@ -54,7 +51,7 @@ android {
         ]
 
         ndk {
-            abiFilters "armeabi-v7a", "x86"
+            abiFilters 'armeabi-v7a', 'x86'
         }
     }
     buildTypes {
@@ -65,17 +62,16 @@ android {
         }
         release {
             minifyEnabled enableProguardInReleaseBuilds
-            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            resValue 'string', 'app_name', 'Mobius Wallet'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    implementation("com.crashlytics.sdk.android:crashlytics:2.9.2@aar") {
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.2@aar') {
       transitive = true;
     }
 
@@ -91,7 +87,7 @@ dependencies {
     implementation project(':react-native-svg')
     implementation project(':react-native-vector-icons')
     implementation project(':react-native-version-number')
-    implementation "com.facebook.react:react-native:+"
+    implementation 'com.facebook.react:react-native:+'
 }
 
 // Run this once to be able to run the application with BUCK

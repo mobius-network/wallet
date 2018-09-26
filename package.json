@@ -1,4 +1,7 @@
 {
+  "name": "@mobius-network/wallet",
+  "version": "1.0.0",
+  "private": true,
   "license": "MIT",
   "scripts": {
     "android": "react-native run-android --appIdSuffix=debug",
@@ -17,6 +20,7 @@
     "lint-staged": "lint-staged",
     "lint": "eslint --quiet src --ext .js",
     "postinstall": "yarn run install:gems && yarn run install:hacks && yarn run install:pods",
+    "postversion": "react-native-version",
     "precommit": "lint-staged",
     "secrets": "bundle exec dotgpg cat .env.gpg > .env && bundle exec dotgpg cat .env.production.gpg > .env.production",
     "start:fresh": "yarn run start -- --reset-cache",
@@ -112,8 +116,17 @@
     "prettier": "^1.12.1",
     "react-native-create-bridge": "^2.0.1",
     "react-native-dotenv": "^0.2.0",
+    "react-native-version": "^2.6.5",
     "react-test-renderer": "16.5.0",
     "rimraf": "2.6.2"
+  },
+  "engines": {
+    "node": ">= 8.11.3"
+  },
+  "devEngines": {
+    "node": ">= 8.11.3",
+    "npm": ">= 6.2",
+    "yarn": ">= 1.9"
   },
   "rnpm": {
     "assets": [
@@ -125,14 +138,6 @@
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
     }
-  },
-  "engines": {
-    "node": ">= 8.11.3"
-  },
-  "devEngines": {
-    "node": ">= 8.11.3",
-    "npm": ">= 6.2",
-    "yarn": ">= 1.9"
   },
   "lint-staged": {
     "src/**/*.js": [
