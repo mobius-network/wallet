@@ -7,8 +7,14 @@ import PinPad from './PinPad';
 
 class PinSetup extends Component {
   static propTypes = {
-    loginStart: PropTypes.func.isRequired,
-    signupStart: PropTypes.func.isRequired,
+    dispatch: PropTypes.func.isRequired,
+    navigation: PropTypes.shape({
+      state: PropTypes.shape({
+        params: PropTypes.shape({
+          action: PropTypes.func.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
     t: PropTypes.func.isRequired,
   };
 
@@ -33,15 +39,16 @@ class PinSetup extends Component {
   }
 
   handlePinPadComplete = () => {
-    const { loginStart, signupStart } = this.props;
-    const { step } = this.state;
+    const {
+      dispatch,
+      navigation: {
+        state: {
+          params: { action },
+        },
+      },
+    } = this.props;
 
-    if (step === 'choose') {
-      signupStart();
-      return;
-    }
-
-    loginStart();
+    action({ dispatch });
   };
 
   render() {

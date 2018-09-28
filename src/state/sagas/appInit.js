@@ -4,6 +4,7 @@ import { call } from 'redux-saga/effects';
 import { isNil } from 'lodash';
 
 import { navigators } from 'state/navigator';
+import { authActions } from 'state/auth';
 
 function* isHasLaunched() {
   const HAS_LAUNCHED = 'hasLaunched';
@@ -41,7 +42,9 @@ export default function* appInit() {
   });
 
   if (pinStore) {
-    navigators.Auth.props.navigation.replace('PinSetup');
+    navigators.Auth.props.navigation.replace('PinSetup', {
+      action: ({ dispatch }) => dispatch(authActions.loginStart()),
+    });
   } else {
     navigators.Auth.props.navigation.replace('Welcome');
   }
