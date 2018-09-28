@@ -9,6 +9,7 @@ export const authActions = createActions(
     'logout',
     'watchAccount',
     'set',
+    'recoveryFinish',
   ],
   'auth'
 );

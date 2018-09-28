@@ -45,6 +45,7 @@ target 'MobiusMobileWallet' do
   pod 'RNVectorIcons', path: '../node_modules/react-native-vector-icons', subspecs: %W[
     MaterialIcons
     MaterialCommunityIcons
+    FontAwesome
   ]
 
   pod 'react-native-camera', path: '../node_modules/react-native-camera'

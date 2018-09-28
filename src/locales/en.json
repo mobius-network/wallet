@@ -10,9 +10,10 @@
       "ok": "OK"
     },
     "welcome": {
-      "title": "Welcome",
       "description": "Create a wallet to send and receive money with friends using cryptocurrency.",
-      "setupWalletButton": "Setup Wallet"
+      "recoverWalletButton": "Recover Existing Account",
+      "setupWalletButton": "Setup Wallet",
+      "title": "Welcome"
     },
     "pinSetup": {
       "chooseSubtitle": "Enter a 6-digit PIN to access your mobile wallet",
@@ -125,7 +126,19 @@
     },
     "validations": {
       "isRequired": "is required",
-      "isValidPublicKey": "is not a valid address"
+      "isValidPublicKey": "is not valid address",
+      "isValidMnemonic": "is not valid mnemonic phrase"
+    },
+    "auth": {
+      "recovery": {
+        "description": "Enter your mnemonic phrase to restore your wallet.",
+        "mnemonicFieldLabel": "Mnemonic Phrase",
+        "mnemonicFieldPlaceholder": "Type out exactly as it’s written",
+        "title": "Recover Your Account",
+        "infoAlertText": "When you create a new wallet you’re asked to write down a text phrase that can be used here to restore your wallet. Unfortunately without your phrase there’s no way to restore your wallet.",
+        "infoAlertTitle": "What is a mnemonic phrase?",
+        "validationAlertTitle": "Following errors occured:"
+      }
     }
   }
 }

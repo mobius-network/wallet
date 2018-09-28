@@ -23,7 +23,7 @@ apply from: '../../node_modules/react-native/react.gradle'
  * https://github.com/oblador/react-native-vector-icons#option-with-gradle-recommended
  */
 project.ext.vectoricons = [
-    iconFontNames: [ 'MaterialIcons.ttf', 'MaterialCommunityIcons.ttf' ]
+    iconFontNames: [ 'MaterialIcons.ttf', 'MaterialCommunityIcons.ttf', 'FontAwesome.ttf' ]
 ]
 apply from: '../../node_modules/react-native-vector-icons/fonts.gradle'
 
