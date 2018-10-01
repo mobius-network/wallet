@@ -10,19 +10,22 @@ class Welcome extends Component {
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
     }).isRequired,
+    signupStart: PropTypes.func.isRequired,
     t: PropTypes.func.isRequired,
   };
 
-  handleNavigationClick = () => this.props.navigation.navigate('PinSetup');
+  handleNavigationClick = (route, params) => () => this.props.navigation.navigate(route, params);
 
   render() {
-    const { t } = this.props;
+    const { t, signupStart } = this.props;
 
     return (
       <BackgroundView
         action={
           <Button
-            onPress={this.handleNavigationClick}
+            onPress={this.handleNavigationClick('PinSetup', {
+              action: ({ dispatch }) => dispatch(signupStart()),
+            })}
             title={t('welcome.setupWalletButton')}
           />
         }
@@ -30,6 +33,13 @@ class Welcome extends Component {
           <SimpleInfo
             description={t('welcome.description')}
             title={t('welcome.title')}
+          />
+        }
+        secondaryAction={
+          <Button
+            onPress={this.handleNavigationClick('Recovery')}
+            title={t('welcome.recoverWalletButton')}
+            variant="text"
           />
         }
         variant="bottom"

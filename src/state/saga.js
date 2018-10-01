@@ -3,6 +3,7 @@ import { all } from 'redux-saga/effects';
 import { createTrustlineSaga } from './sagas/account';
 import {
   loginStartSaga,
+  recoveryFinishSaga,
   signupFinishSaga,
   signupStartSaga,
 } from './sagas/auth';
@@ -15,6 +16,7 @@ export default function* rootSaga() {
   yield all([
     createTrustlineSaga,
     loginStartSaga,
+    recoveryFinishSaga,
     sendStartSaga,
     signupFinishSaga,
     signupStartSaga,

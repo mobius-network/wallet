@@ -89,6 +89,8 @@ PODS:
     - React
   - RNSVG (6.5.2):
     - React
+  - RNVectorIcons/FontAwesome (5.0.0):
+    - React
   - RNVectorIcons/MaterialCommunityIcons (5.0.0):
     - React
   - RNVectorIcons/MaterialIcons (5.0.0):
@@ -128,6 +130,7 @@ DEPENDENCIES:
   - RNKeychain (from `../node_modules/react-native-keychain`)
   - RNLanguages (from `../node_modules/react-native-languages`)
   - RNSVG (from `../node_modules/react-native-svg`)
+  - RNVectorIcons/FontAwesome (from `../node_modules/react-native-vector-icons`)
   - RNVectorIcons/MaterialCommunityIcons (from `../node_modules/react-native-vector-icons`)
   - RNVectorIcons/MaterialIcons (from `../node_modules/react-native-vector-icons`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -196,6 +199,6 @@ SPEC CHECKSUMS:
   RNVectorIcons: 7e335c36ac85b04f966100980df6c438800fb179
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: 9d7161db492ca897a991c9960184c03b96e44a22
+PODFILE CHECKSUM: f2c6653da2d9730bf6c45481f0b3d125392fdb8c
 
 COCOAPODS: 1.6.0.beta.1
