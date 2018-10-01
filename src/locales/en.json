@@ -91,6 +91,7 @@
       "copySecretKey": "Copy Secret Key",
       "HackathonVote": "Global Hackathon Vote",
       "secretKeyCopied": "Secret Key was copied",
+      "payments": "Payments",
       "support": "Support",
       "version": "Version: {{appVersion}}-{{buildVersion}}"
     },

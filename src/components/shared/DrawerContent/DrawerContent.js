@@ -87,6 +87,9 @@ class DrawerContent extends Component {
               <Link onPress={this.handleLinkPress('AmountForm')}>
                 {t('sidebarNavigation.withdrawFunds')}
               </Link>
+              <Link onPress={this.handleLinkPress('Payments')}>
+                {t('sidebarNavigation.payments')}
+              </Link>
               <Link onPress={this.handleSupportPress}>
                 {t('sidebarNavigation.support')}
               </Link>

@@ -10,6 +10,7 @@ class Dashboard extends Component {
   static propTypes = {
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
+      openDrawer: PropTypes.func.isRequired,
     }).isRequired,
     stopWatchPrices: PropTypes.func.isRequired,
     t: PropTypes.func.isRequired,
@@ -34,12 +35,14 @@ class Dashboard extends Component {
 
   openSendScreen = () => this.props.navigation.navigate('AmountForm');
 
+  handleMenuButtonClick = () => this.props.navigation.openDrawer();
+
   render() {
     const { t } = this.props;
 
     return (
       <Container>
-        <CurrentBalance />
+        <CurrentBalance onMenuPress={this.handleMenuButtonClick} />
 
         <Balances />
 

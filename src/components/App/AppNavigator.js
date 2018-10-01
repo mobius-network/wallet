@@ -11,6 +11,7 @@ import NavHeader from 'components/shared/NavHeader';
 
 import AddFunds from './AddFunds';
 import Dashboard from './Dashboard';
+import Payments from './Payments';
 
 import HackathonVoteStack from './HackathonVote';
 import SendStack from './Send';
@@ -20,6 +21,12 @@ export const DrawerNavigator = notifyDrawer(
     {
       Dashboard: {
         screen: Dashboard,
+        navigationOptions: () => ({
+          header: null,
+        }),
+      },
+      Payments: {
+        screen: Payments,
         navigationOptions: () => ({
           header: null,
         }),

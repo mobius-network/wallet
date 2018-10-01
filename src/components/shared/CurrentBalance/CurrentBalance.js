@@ -13,24 +13,19 @@ import {
 
 class CurrentBalance extends Component {
   static propTypes = {
-    navigation: PropTypes.shape({
-      openDrawer: PropTypes.func.isRequired,
-    }).isRequired,
-
+    onMenuPress: PropTypes.func.isRequired,
     t: PropTypes.func.isRequired,
 
     usdBalance: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
       .isRequired,
   };
 
-  handleMenuButtonClick = () => this.props.navigation.openDrawer();
-
   render() {
-    const { t, usdBalance } = this.props;
+    const { t, usdBalance, onMenuPress } = this.props;
 
     return (
       <Gradient>
-        <Menu onPress={this.handleMenuButtonClick}>
+        <Menu onPress={onMenuPress}>
           <MenuIcon />
         </Menu>
 
