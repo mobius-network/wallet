@@ -3,20 +3,18 @@ import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 import { createStructuredSelector } from 'reselect';
 
-import { pricesActions } from 'state/prices';
+import { getUsdBalance } from 'state/prices';
 
-import Dashboard from './Dashboard';
+import CurrentBalance from './CurrentBalance';
 
-const mapStateToProps = createStructuredSelector({});
-
-const actions = {
-  ...pricesActions,
-};
+const mapStateToProps = createStructuredSelector({
+  usdBalance: getUsdBalance,
+});
 
 export default compose(
   connect(
     mapStateToProps,
-    actions
+    {}
   ),
   translate('translation')
-)(Dashboard);
+)(CurrentBalance);
