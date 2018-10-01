@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, Linking } from 'react-native';
 import PropTypes from 'prop-types';
 import { SafeAreaView } from 'react-navigation';
 import VersionNumber from 'react-native-version-number';
@@ -41,6 +41,15 @@ class DrawerContent extends Component {
     this.props.navigation.closeDrawer();
   };
 
+  handleSupportPress = () => {
+    const version = this.props.t('sidebarNavigation.version', {
+      appVersion: VersionNumber.appVersion,
+      buildVersion: VersionNumber.buildVersion,
+    });
+
+    Linking.openURL(`mailto:support@mobius.network?body=\n\n\n${version}`);
+  };
+
   render() {
     const { t } = this.props;
 
@@ -54,6 +63,9 @@ class DrawerContent extends Component {
               </Link>
               <Link onPress={this.handleLinkPress('AmountForm')}>
                 {t('sidebarNavigation.withdrawFunds')}
+              </Link>
+              <Link onPress={this.handleSupportPress}>
+                {t('sidebarNavigation.support')}
               </Link>
             </Buttons>
 
