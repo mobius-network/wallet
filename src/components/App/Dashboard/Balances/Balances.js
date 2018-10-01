@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { capitalize } from 'lodash';
 
-import BalanceItem from 'components/shared/BalanceItem';
+import AmountItem from 'components/shared/AmountItem';
 
 import { Container } from './styles';
 
@@ -19,7 +19,7 @@ class Balances extends Component {
         {balances.map(({
           asset, usdPrice, usdAmount, amount,
         }) => (
-          <BalanceItem
+          <AmountItem
             key={asset}
             description={`$${usdPrice.toFixed(6)}`}
             icon={`currency${capitalize(asset)}`}

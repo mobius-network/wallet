@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 
 import {
   Container,
-  CurrencyIcon,
-  AssetInfo,
-  Asset,
-  Price,
+  IconLogotype,
+  Info,
+  Title,
+  Description,
   AmountInfo,
-  UsdAmount,
-  Amount,
+  MainAmount,
+  SecondartAmount,
 } from './styles';
 
-class BalanceItem extends Component {
+class AmountItem extends Component {
   static propTypes = {
     description: PropTypes.string,
     icon: PropTypes.string,
@@ -32,20 +32,20 @@ class BalanceItem extends Component {
 
     return (
       <Container>
-        <CurrencyIcon name={icon} size={40} />
+        <IconLogotype name={icon} size={40} />
 
-        <AssetInfo>
-          <Asset>{title}</Asset>
-          <Price>{description}</Price>
-        </AssetInfo>
+        <Info>
+          <Title>{title}</Title>
+          <Description>{description}</Description>
+        </Info>
 
         <AmountInfo>
-          <UsdAmount>{mainAmount}</UsdAmount>
-          <Amount>{secondaryAmount}</Amount>
+          <MainAmount>{mainAmount}</MainAmount>
+          <SecondartAmount>{secondaryAmount}</SecondartAmount>
         </AmountInfo>
       </Container>
     );
   }
 }
 
-export default BalanceItem;
+export default AmountItem;
