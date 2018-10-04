@@ -2,25 +2,20 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import CurrentBalance from 'components/shared/CurrentBalance';
+import BottomButtons from 'components/shared/BottomButtons';
+
 import Balances from './Balances';
 
 import {
-  ActionButton,
-  ButtonRow,
-  Container,
-  Gradient,
-  Menu,
-  MenuIcon,
+  Container, Gradient, Menu, MenuIcon,
 } from './styles';
 
 class Dashboard extends Component {
   static propTypes = {
     navigation: PropTypes.shape({
-      navigate: PropTypes.func.isRequired,
       openDrawer: PropTypes.func.isRequired,
     }).isRequired,
     stopWatchPrices: PropTypes.func.isRequired,
-    t: PropTypes.func.isRequired,
     watchPrices: PropTypes.func.isRequired,
   };
 
@@ -36,14 +31,10 @@ class Dashboard extends Component {
     this.props.stopWatchPrices();
   }
 
-  openReceiveScreen = () => this.props.navigation.navigate('AddFunds');
-
-  openSendScreen = () => this.props.navigation.navigate('AmountForm');
-
   handleMenuButtonClick = () => this.props.navigation.openDrawer();
 
   render() {
-    const { t } = this.props;
+    const { navigation } = this.props;
 
     return (
       <Container>
@@ -57,18 +48,7 @@ class Dashboard extends Component {
 
         <Balances />
 
-        <ButtonRow>
-          <ActionButton
-            onPress={this.openReceiveScreen}
-            square
-            title={t('dashboard.receiveButton').toUpperCase()}
-          />
-          <ActionButton
-            onPress={this.openSendScreen}
-            square
-            title={t('dashboard.sendButton').toUpperCase()}
-          />
-        </ButtonRow>
+        <BottomButtons navigation={navigation} />
       </Container>
     );
   }

@@ -6,6 +6,7 @@ import dateformat from 'dateformat';
 import CustomHeader from 'components/shared/CustomHeader';
 import CurrentBalance from 'components/shared/CurrentBalance';
 import AmountItem from 'components/shared/AmountItem';
+import BottomButtons from 'components/shared/BottomButtons';
 
 import { Container, ScrollView, ItemContainer } from './styles';
 
@@ -60,7 +61,7 @@ class Payments extends Component {
   };
 
   render() {
-    const { t, payments } = this.props;
+    const { t, payments, navigation } = this.props;
 
     return (
       <Container>
@@ -72,6 +73,8 @@ class Payments extends Component {
         </CustomHeader>
 
         <ScrollView>{payments.map(this.renderItem)}</ScrollView>
+
+        <BottomButtons navigation={navigation} />
       </Container>
     );
   }

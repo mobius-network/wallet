@@ -10,7 +10,7 @@ import {
   Title,
 } from './styles';
 
-class Header extends PureComponent {
+class CustomHeader extends PureComponent {
   static propTypes = {
     children: PropTypes.any,
     onBackButtonPress: PropTypes.func,
@@ -34,4 +34,4 @@ class Header extends PureComponent {
   }
 }
 
-export default Header;
+export default CustomHeader;
