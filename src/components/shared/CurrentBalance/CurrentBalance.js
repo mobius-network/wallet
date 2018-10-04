@@ -2,18 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import {
+  Container,
   BalanceAmount,
   BalanceContainer,
   CurrencySymbol,
-  Gradient,
-  Menu,
-  MenuIcon,
   Title,
 } from './styles';
 
 class CurrentBalance extends Component {
   static propTypes = {
-    onMenuPress: PropTypes.func.isRequired,
     t: PropTypes.func.isRequired,
 
     usdBalance: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
@@ -21,21 +18,17 @@ class CurrentBalance extends Component {
   };
 
   render() {
-    const { t, usdBalance, onMenuPress } = this.props;
+    const { t, usdBalance } = this.props;
 
     return (
-      <Gradient>
-        <Menu onPress={onMenuPress}>
-          <MenuIcon />
-        </Menu>
-
+      <Container>
         <Title>{t('dashboard.title')}</Title>
 
         <BalanceContainer>
           <CurrencySymbol>$</CurrencySymbol>
           <BalanceAmount>{usdBalance}</BalanceAmount>
         </BalanceContainer>
-      </Gradient>
+      </Container>
     );
   }
 }

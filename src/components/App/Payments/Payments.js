@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import { capitalize } from 'lodash';
 import dateformat from 'dateformat';
 
+import CustomHeader from 'components/shared/CustomHeader';
 import CurrentBalance from 'components/shared/CurrentBalance';
 import AmountItem from 'components/shared/AmountItem';
 
-import { Container, ScrollView } from './styles';
+import { Container, ScrollView, ItemContainer } from './styles';
 
 class Payments extends Component {
   static propTypes = {
     navigation: PropTypes.shape({
-      openDrawer: PropTypes.func.isRequired,
+      navigate: PropTypes.func.isRequired,
     }).isRequired,
     payments: PropTypes.array,
     stopWatchPayments: PropTypes.func.isRequired,
@@ -27,7 +28,11 @@ class Payments extends Component {
     this.props.stopWatchPayments();
   }
 
-  handleMenuButtonClick = () => this.props.navigation.openDrawer();
+  handleBack = async () => {
+    const { navigation } = this.props;
+
+    await navigation.navigate('Dashboard');
+  };
 
   renderItem = (payment) => {
     const { t } = this.props;
@@ -42,23 +47,29 @@ class Payments extends Component {
     const secondaryAmount = `$${usdAmount.toFixed(2)}`;
 
     return (
-      <AmountItem
-        key={id}
-        description={description}
-        icon={icon}
-        mainAmount={mainAmount}
-        secondaryAmount={secondaryAmount}
-        title={title}
-      />
+      <ItemContainer key={id}>
+        <AmountItem
+          description={description}
+          icon={icon}
+          mainAmount={mainAmount}
+          secondaryAmount={secondaryAmount}
+          title={title}
+        />
+      </ItemContainer>
     );
   };
 
   render() {
-    const { payments } = this.props;
+    const { t, payments } = this.props;
 
     return (
       <Container>
-        <CurrentBalance onMenuPress={this.handleMenuButtonClick} />
+        <CustomHeader
+          onBackButtonPress={this.handleBack}
+          title={t('payments.headerTitle')}
+        >
+          <CurrentBalance />
+        </CustomHeader>
 
         <ScrollView>{payments.map(this.renderItem)}</ScrollView>
       </Container>

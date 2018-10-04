@@ -25,12 +25,6 @@ export const DrawerNavigator = notifyDrawer(
           header: null,
         }),
       },
-      Payments: {
-        screen: Payments,
-        navigationOptions: () => ({
-          header: null,
-        }),
-      },
     },
     {
       initialRouteName: 'Dashboard',
@@ -46,6 +40,12 @@ export const StackNavigator = createStackNavigator(
       navigationOptions: () => ({
         /* eslint-disable-next-line react/display-name */
         header: props => <NavHeader {...props} title="addFunds.headerTitle" />,
+      }),
+    },
+    Payments: {
+      screen: Payments,
+      navigationOptions: () => ({
+        header: null,
       }),
     },
     DrawerNavigator,

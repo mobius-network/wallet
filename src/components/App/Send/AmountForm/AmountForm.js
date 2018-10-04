@@ -112,7 +112,7 @@ class AmountForm extends Component {
           <Header
             amount={amount}
             asset={asset}
-            onBackButtonClick={this.handleBack}
+            onBackButtonPress={this.handleBack}
             onPress={this.showActionSheet}
             t={t}
             usdPrice={usdPrice}

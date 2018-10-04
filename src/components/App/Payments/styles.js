@@ -7,8 +7,9 @@ export const Container = styled.View`
   background-color: ${colors.bgLight};
 `;
 
-export const ScrollView = styled.ScrollView`
-  margin-top: 15;
-  padding-top: 16;
-  padding-bottom: 31;
+export const ScrollView = styled.ScrollView``;
+
+export const ItemContainer = styled.View`
+  border-bottom-width: 1;
+  border-color: ${colors.border};
 `;

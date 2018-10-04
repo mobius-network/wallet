@@ -155,7 +155,8 @@
     "payments": {
       "sent": "Sent Money",
       "received": "Received Money",
-      "account": "Created Account"
+      "account": "Created Account",
+      "headerTitle": "Payments",
     }
   }
 }

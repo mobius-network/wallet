@@ -4,7 +4,14 @@ import PropTypes from 'prop-types';
 import CurrentBalance from 'components/shared/CurrentBalance';
 import Balances from './Balances';
 
-import { ActionButton, ButtonRow, Container } from './styles';
+import {
+  ActionButton,
+  ButtonRow,
+  Container,
+  Gradient,
+  Menu,
+  MenuIcon,
+} from './styles';
 
 class Dashboard extends Component {
   static propTypes = {
@@ -40,7 +47,13 @@ class Dashboard extends Component {
 
     return (
       <Container>
-        <CurrentBalance onMenuPress={this.handleMenuButtonClick} />
+        <Gradient>
+          <Menu onPress={this.handleMenuButtonClick}>
+            <MenuIcon />
+          </Menu>
+
+          <CurrentBalance />
+        </Gradient>
 
         <Balances />
 
