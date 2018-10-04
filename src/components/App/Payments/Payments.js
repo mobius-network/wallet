@@ -7,6 +7,7 @@ import CustomHeader from 'components/shared/CustomHeader';
 import CurrentBalance from 'components/shared/CurrentBalance';
 import AmountItem from 'components/shared/AmountItem';
 import BottomButtons from 'components/shared/BottomButtons';
+import LoadingIcon from 'components/shared/LoadingIcon';
 
 import { Container, ScrollView, ItemContainer } from './styles';
 
@@ -71,6 +72,8 @@ class Payments extends Component {
         >
           <CurrentBalance />
         </CustomHeader>
+
+        {payments.length === 0 && <LoadingIcon />}
 
         <ScrollView>{payments.map(this.renderItem)}</ScrollView>
 
