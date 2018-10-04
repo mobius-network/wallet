@@ -151,6 +151,11 @@
       "description": "Vote for your favorite DApp below. You need 5,000 MOBI to vote for the Global Hackathon Community Prize. You may only vote once. Press submit to cast your vote.",
       "submit": "Submit",
       "success": "You've just vote! Votes will be counted on October 14, 2018 at 11:59:59pm PST. Your account must have at least 5,000 MOBI that time or your vote will not be counted."
+    },
+    "payments": {
+      "sent": "Sent Money",
+      "received": "Received Money",
+      "account": "Created Account"
     }
   }
 }

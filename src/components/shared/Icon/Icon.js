@@ -8,6 +8,10 @@ import { Image } from './styles';
 const icons = {
   currencyMobi: require('./images/currency-mobi.png'),
   currencyXlm: require('./images/currency-xlm.png'),
+
+  paymentSent: require('./images/payment-sent.png'),
+  paymentReceived: require('./images/payment-received.png'),
+  paymentAccount: require('./images/payment-received.png'),
 };
 /* eslint-enable global-require */
 
