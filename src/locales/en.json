@@ -88,6 +88,7 @@
     "sidebarNavigation": {
       "addFunds": "Add Funds",
       "withdrawFunds": "Withdraw Funds",
+      "support": "Support",
       "version": "Version: {{appVersion}}-{{buildVersion}}"
     },
     "send": {
