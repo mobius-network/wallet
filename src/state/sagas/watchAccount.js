@@ -39,7 +39,7 @@ export function* loadAccount(publicKey) {
   }
 }
 
-export function* watchAccount(publicKey, delayDuration = 60000) {
+export function* watchAccount(publicKey, delayDuration = 2000) {
   while (true) {
     yield call(loadAccount, publicKey);
     yield call(delay, delayDuration);
