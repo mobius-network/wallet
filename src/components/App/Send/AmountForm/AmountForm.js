@@ -48,7 +48,7 @@ class AmountForm extends Component {
   handleBack = async () => {
     const { navigation, resetForm } = this.props;
 
-    await navigation.navigate('Dashboard');
+    navigation.pop();
 
     resetForm();
   };
