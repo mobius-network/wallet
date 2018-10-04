@@ -16,6 +16,7 @@ export const Container = styled.View`
 
 export const Buttons = styled.View`
   flex: 1;
+  margin-bottom: 24px;
 `;
 
 const Item = styled.Text`
@@ -30,6 +31,10 @@ export const Link = styled(Item)`
   color: ${colors.textPrimary};
 `;
 
+export const DisabledLink = styled(Link)`
+  color: ${colors.textLight};
+`;
+
 export const SignOut = styled(Item)`
   color: ${colors.textSecondary};
 `;
@@ -38,5 +43,4 @@ export const Version = styled.Text`
   font-size: ${fontSizes.small};
   line-height: ${helpers.calculateLineHeight(fontSizes.small)};
   color: ${colors.textLight};
-  margin-top: 24px;
 `;
