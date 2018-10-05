@@ -85,6 +85,9 @@ class DrawerContent extends Component {
             </Buttons>
 
             <Buttons>
+              <Link onPress={this.handleLinkPress('HackathonVote')}>
+                {t('sidebarNavigation.HackathonVote')}
+              </Link>
               {!isSecretCopied && (
                 <Link onPress={this.handleCopySecretKey}>
                   {t('sidebarNavigation.copySecretKey')}

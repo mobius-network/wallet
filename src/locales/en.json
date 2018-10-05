@@ -89,6 +89,7 @@
       "addFunds": "Add Funds",
       "withdrawFunds": "Withdraw Funds",
       "copySecretKey": "Copy Secret Key",
+      "HackathonVote": "Global Hackathon Vote",
       "secretKeyCopied": "Secret Key was copied",
       "support": "Support",
       "version": "Version: {{appVersion}}-{{buildVersion}}"
@@ -142,6 +143,11 @@
         "infoAlertTitle": "What is a mnemonic phrase?",
         "validationAlertTitle": "Following errors occured:"
       }
+    },
+    "hackathonVote": {
+      "title": "Global Hackathon Vote",
+      "description": "Vote for your favorite DApp below. You need 5,000 MOBI to vote for the Global Hackathon Community Prize. You may only vote once. Press submit to cast your vote.",
+      "submit": "Submit"
     }
   }
 }
