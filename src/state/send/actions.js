@@ -9,6 +9,8 @@ export const sendActions = createActions(
     'setAmount',
     'setAsset',
     'setFormData',
+
+    'sendHackathonVote',
   ],
   'send'
 );

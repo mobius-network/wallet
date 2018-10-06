@@ -1,1 +1,2 @@
-export { default } from './HackathonVoteContainer';
+export * from './HackathonVoteNavigator';
+export { default } from './HackathonVoteNavigator';

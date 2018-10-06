@@ -11,8 +11,8 @@ import NavHeader from 'components/shared/NavHeader';
 
 import AddFunds from './AddFunds';
 import Dashboard from './Dashboard';
-import HackathonVote from './HackathonVote';
 
+import HackathonVoteStack from './HackathonVote';
 import SendStack from './Send';
 
 export const DrawerNavigator = notifyDrawer(
@@ -41,14 +41,8 @@ export const StackNavigator = createStackNavigator(
         header: props => <NavHeader {...props} title="addFunds.headerTitle" />,
       }),
     },
-    HackathonVote: {
-      screen: HackathonVote,
-      navigationOptions: () => ({
-        /* eslint-disable-next-line react/display-name */
-        header: props => <NavHeader {...props} title="hackathonVote.title" />,
-      }),
-    },
     DrawerNavigator,
+    HackathonVote: HackathonVoteStack,
     Send: SendStack,
   },
   {

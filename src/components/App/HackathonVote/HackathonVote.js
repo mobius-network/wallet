@@ -17,6 +17,7 @@ class HackathonVote extends Component {
       navigate: PropTypes.func.isRequired,
       pop: PropTypes.func.isRequired,
     }).isRequired,
+    sendHackathonVote: PropTypes.func.isRequired,
     t: PropTypes.func.isRequired,
   };
 
@@ -24,7 +25,9 @@ class HackathonVote extends Component {
     selectedApp: null,
   };
 
-  handleSubmit = () => {};
+  handleSubmit = () => {
+    this.props.sendHackathonVote(this.state.selectedApp);
+  };
 
   handleBack = () => this.props.navigation.pop();
 
@@ -38,7 +41,7 @@ class HackathonVote extends Component {
     const number = Apps[name];
 
     return (
-      <CheckboxRow id={name}>
+      <CheckboxRow key={name}>
         <CheckBox
           checkBoxColor={colors.textPrimary}
           isChecked={number === selectedApp}
