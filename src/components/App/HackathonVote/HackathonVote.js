@@ -13,6 +13,7 @@ import Apps from './apps';
 
 class HackathonVote extends Component {
   static propTypes = {
+    mobiBalance: PropTypes.number.isRequired,
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
       pop: PropTypes.func.isRequired,
@@ -52,7 +53,7 @@ class HackathonVote extends Component {
     );
   };
 
-  render() {
+  renderPoll() {
     const { selectedApp } = this.state;
     const { t } = this.props;
 
@@ -69,6 +70,24 @@ class HackathonVote extends Component {
         />
       </Container>
     );
+  }
+
+  renderNotice() {
+    const { t } = this.props;
+
+    return (
+      <Container>
+        <Description>{t('hackathonVote.notice')}</Description>
+      </Container>
+    );
+  }
+
+  render() {
+    const { mobiBalance } = this.props;
+
+    if (mobiBalance >= 5000) return this.renderPoll();
+
+    return this.renderNotice();
   }
 }
 
