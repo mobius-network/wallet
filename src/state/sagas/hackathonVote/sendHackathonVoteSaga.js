@@ -1,4 +1,7 @@
-import { takeLatest, call, select } from 'redux-saga/effects';
+import { AsyncStorage } from 'react-native';
+import {
+  takeLatest, call, select, put,
+} from 'redux-saga/effects';
 import { Memo, Operation, TransactionBuilder } from 'stellar-sdk';
 import crypto from 'crypto';
 import {
@@ -13,7 +16,7 @@ import { trackEvent } from 'utils';
 import navigator from 'state/navigator';
 import { getMasterAccount } from 'state/account';
 import { getKeypairFor } from 'state/auth';
-import { sendActions } from 'state/send';
+import { hackathonVoteActions } from 'state/hackathonVote';
 
 export function createMemoHash(number, pubkey) {
   const value = `${number}${pubkey}${HACKATHON_VOTING_SECRET}`;
@@ -22,6 +25,11 @@ export function createMemoHash(number, pubkey) {
     .createHash('sha256')
     .update(value)
     .digest('hex');
+}
+
+function* saveHackatonVote() {
+  yield put(hackathonVoteActions.setHackathonVote());
+  yield call(AsyncStorage.setItem, 'isVotedForHackathon', 'true');
 }
 
 function* run(args) {
@@ -43,23 +51,27 @@ function* run(args) {
 
     let tx = new TransactionBuilder(account);
 
-    tx = tx.addMemo(Memo.hash(createMemoHash(payload, keypair.publicKey())));
+    const memoHash = createMemoHash(payload, keypair.publicKey());
+
+    tx = tx.addMemo(Memo.hash(memoHash));
     tx = tx.addOperation(paymentOp).build();
     tx.sign(keypair);
 
     yield call(safeLoadAccount, destination);
     yield call(submitTransaction, tx);
 
+    yield call(saveHackatonVote);
+
     yield call(navigator.navigate, 'HackathonVote', 'Notice', {
       action: ({ navigate }) => navigate('Dashboard'),
       type: 'success',
-      message: i18n.t('send.success.message'),
+      message: i18n.t('hackathonVote.success'),
     });
 
     trackEvent('HackathonVote::Success');
   } catch (error) {
     yield call(navigator.navigate, 'HackathonVote', 'Notice', {
-      action: ({ dispatch }) => dispatch(sendActions.sendHackathonVote(args)),
+      action: ({ dispatch }) => dispatch(hackathonVoteActions.sendHackathonVote(args)),
       goBackAction: ({ navigate }) => navigate('Dashboard'),
       type: 'error',
       message: i18n.t('notice.error.defaultMessage'),
@@ -69,4 +81,4 @@ function* run(args) {
   }
 }
 
-export default takeLatest(sendActions.sendHackathonVote, run);
+export default takeLatest(hackathonVoteActions.sendHackathonVote, run);

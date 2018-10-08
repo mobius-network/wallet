@@ -12,6 +12,7 @@ import {
 
 class DrawerContent extends Component {
   static propTypes = {
+    isVotedForHackathon: PropTypes.bool.isRequired,
     navigation: PropTypes.shape({
       closeDrawer: PropTypes.func.isRequired,
       navigate: PropTypes.func.isRequired,
@@ -66,7 +67,7 @@ class DrawerContent extends Component {
 
   render() {
     const { isSecretCopied } = this.state;
-    const { t } = this.props;
+    const { t, isVotedForHackathon } = this.props;
 
     return (
       <ScrollView>
@@ -85,9 +86,12 @@ class DrawerContent extends Component {
             </Buttons>
 
             <Buttons>
-              <Link onPress={this.handleLinkPress('HackathonVote')}>
-                {t('sidebarNavigation.HackathonVote')}
-              </Link>
+              {!isVotedForHackathon && (
+                <Link onPress={this.handleLinkPress('HackathonVote')}>
+                  {t('sidebarNavigation.HackathonVote')}
+                </Link>
+              )}
+
               {!isSecretCopied && (
                 <Link onPress={this.handleCopySecretKey}>
                   {t('sidebarNavigation.copySecretKey')}

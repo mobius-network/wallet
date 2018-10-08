@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 import { createStructuredSelector } from 'reselect';
 
-import { sendActions } from 'state/send';
+import { hackathonVoteActions } from 'state/hackathonVote';
 
 import HackathonVote from './HackathonVote';
 
 const mapStateToProps = createStructuredSelector({});
 
 const actions = {
-  ...sendActions,
+  ...hackathonVoteActions,
 };
 
 export default compose(

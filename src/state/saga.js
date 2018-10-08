@@ -7,10 +7,11 @@ import {
   signupFinishSaga,
   signupStartSaga,
 } from './sagas/auth';
-import { sendStartSaga, sendHackathonVoteSaga } from './sagas/send';
+import { sendStartSaga } from './sagas/send';
 import submitTransactionSaga from './sagas/submitTransaction';
 import watchAccountSaga from './sagas/watchAccount';
 import watchPricesSaga from './sagas/watchPricesSaga';
+import { sendHackathonVoteSaga } from './sagas/hackathonVote';
 
 export default function* rootSaga() {
   yield all([
