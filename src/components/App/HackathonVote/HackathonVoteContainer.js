@@ -3,17 +3,18 @@ import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 import { createStructuredSelector } from 'reselect';
 
-import { getSecretKeyFor } from 'state/auth';
-import { getIsVotedForHackathon } from 'state/hackathonVote';
+import { getMobiBalance } from 'state/account';
+import { hackathonVoteActions } from 'state/hackathonVote';
 
-import DrawerContent from './DrawerContent';
+import HackathonVote from './HackathonVote';
 
 const mapStateToProps = createStructuredSelector({
-  secretKey: getSecretKeyFor,
-  isVotedForHackathon: getIsVotedForHackathon,
+  mobiBalance: getMobiBalance,
 });
 
-const actions = {};
+const actions = {
+  ...hackathonVoteActions,
+};
 
 export default compose(
   connect(
@@ -21,4 +22,4 @@ export default compose(
     actions
   ),
   translate('translation')
-)(DrawerContent);
+)(HackathonVote);

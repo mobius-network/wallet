@@ -12,6 +12,7 @@ import NavHeader from 'components/shared/NavHeader';
 import AddFunds from './AddFunds';
 import Dashboard from './Dashboard';
 
+import HackathonVoteStack from './HackathonVote';
 import SendStack from './Send';
 
 export const DrawerNavigator = notifyDrawer(
@@ -41,6 +42,7 @@ export const StackNavigator = createStackNavigator(
       }),
     },
     DrawerNavigator,
+    HackathonVote: HackathonVoteStack,
     Send: SendStack,
   },
   {

@@ -8,6 +8,7 @@ import { notificationsReducer } from './notifications';
 import { pricesReducer } from './prices';
 import { sendReducer } from './send';
 import { transfersReducer } from './transfers';
+import { hackathonVoteReducer } from './hackathonVote';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   requests: requestsReducer,
   send: sendReducer,
   transfers: transfersReducer,
+  hackathonVote: hackathonVoteReducer,
 });
 
 export default () => rootReducer;

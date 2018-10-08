@@ -55,7 +55,7 @@ class Notice extends Component {
       case 'error':
         return message || t('notice.error.defaultMessage');
       default:
-        return t(message);
+        return message;
     }
   }
 
