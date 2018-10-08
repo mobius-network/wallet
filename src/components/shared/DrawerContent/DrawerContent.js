@@ -3,6 +3,7 @@ import { ScrollView, Linking, Clipboard } from 'react-native';
 import PropTypes from 'prop-types';
 import { SafeAreaView } from 'react-navigation';
 import VersionNumber from 'react-native-version-number';
+import moment from 'moment-timezone';
 
 import Drawer from 'utils/drawer';
 
@@ -69,6 +70,12 @@ class DrawerContent extends Component {
     const { isSecretCopied } = this.state;
     const { t, isVotedForHackathon } = this.props;
 
+    const isHackatonEnded = moment().isAfter(
+      moment.tz('2018-10-14 23:59:59', 'America/Los_Angeles')
+    );
+
+    const isNeedToShowHackathonLink = !(isVotedForHackathon || isHackatonEnded);
+
     return (
       <ScrollView>
         <SafeAreaView forceInset={{ top: 'always', horizontal: 'never' }}>
@@ -86,7 +93,7 @@ class DrawerContent extends Component {
             </Buttons>
 
             <Buttons>
-              {!isVotedForHackathon && (
+              {isNeedToShowHackathonLink && (
                 <Link onPress={this.handleLinkPress('HackathonVote')}>
                   {t('sidebarNavigation.HackathonVote')}
                 </Link>
