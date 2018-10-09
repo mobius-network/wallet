@@ -15,32 +15,30 @@ export const getPayments = createSelector(
   (keypair, prices, payments) => {
     const publicKey = keypair.publicKey();
 
-    return payments
-      .map((payment) => {
-        let type = '';
+    return payments.map((payment) => {
+      let type = '';
 
-        if (payment.type === 'create_account') type = 'account';
-        else if (payment.from === publicKey) type = 'sent';
-        else type = 'received';
+      if (payment.type === 'create_account') type = 'account';
+      else if (payment.from === publicKey) type = 'sent';
+      else type = 'received';
 
-        const asset = mapAsset[payment.assetType]
-          || mapAsset[payment.assetCode]
-          || mapAsset.native;
+      const asset = mapAsset[payment.assetType]
+        || mapAsset[payment.assetCode]
+        || mapAsset.native;
 
-        const usdRate = (prices[asset] && prices[asset].usd) || 0;
+      const usdRate = (prices[asset] && prices[asset].usd) || 0;
 
-        const amount = parseFloat(payment.amount || payment.startingBalance);
-        const usdAmount = usdRate * parseFloat(amount);
+      const amount = parseFloat(payment.amount || payment.startingBalance);
+      const usdAmount = usdRate * parseFloat(amount);
 
-        return {
-          type,
-          asset,
-          amount,
-          usdAmount,
-          id: payment.id,
-          createdAt: new Date(payment.createdAt),
-        };
-      })
-      .sort((x, y) => y.createdAt - x.createdAt);
+      return {
+        type,
+        asset,
+        amount,
+        usdAmount,
+        id: payment.id,
+        createdAt: new Date(payment.createdAt),
+      };
+    });
   }
 );
