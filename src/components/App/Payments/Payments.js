@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { capitalize } from 'lodash';
-import dateformat from 'dateformat';
+import moment from 'moment-timezone';
 
 import CustomHeader from 'components/shared/CustomHeader';
 import CurrentBalance from 'components/shared/CurrentBalance';
@@ -45,7 +45,7 @@ class Payments extends Component {
     } = payment;
 
     const title = t(`payments.${type}`);
-    const description = dateformat(cretaedAt, 'm/d/yy');
+    const description = moment(cretaedAt).format('MM/D/YY');
     const icon = `payment${capitalize(type)}`;
     const mainAmount = `${toFixed(amount)} ${asset.toUpperCase()}`;
     const secondaryAmount = `$${usdAmount.toFixed(2)}`;
