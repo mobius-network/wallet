@@ -6,12 +6,18 @@ import { parsedBalanceValue } from 'core';
 import { getAssetBalance, getBalance } from 'state/account/selectors';
 
 export const getPrices = state => state.prices;
+export const getHistoricalData = state => state.history;
 
 export const getAssetPrice = createSelector(
   getSellAsset,
   getBuyAsset,
   getPrices,
   (sell, buy, prices) => get(prices, `${sell}.${buy}`) || 0
+);
+
+export const getHistoricalPrices = createSelector(
+  getHistoricalData,
+  history => get(history) || 0
 );
 
 export const getAssetInfo = createSelector(

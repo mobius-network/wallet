@@ -19,6 +19,7 @@ const mapStateToProps = state => ({
       buyAsset: 'usd',
     }),
   ],
+  history: state.prices.history,
 });
 
 const actions = {

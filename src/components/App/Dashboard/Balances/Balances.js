@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
+import { ScrollView } from 'react-native';
 import BalanceItem from './BalanceItem';
 
 import { Container } from './styles';
@@ -11,14 +11,21 @@ class Balances extends Component {
   };
 
   render() {
-    const { balances } = this.props;
+    const { balances, history } = this.props;
 
     return (
-      <Container>
-        {balances.map(balance => (
-          <BalanceItem key={balance.asset} {...balance} />
-        ))}
-      </Container>
+      <ScrollView contentContainerStyle={Container}>
+        {balances.map((balance) => {
+          const historicalData = history ? history[balance.asset] : null;
+          return (
+            <BalanceItem
+              key={balance.asset}
+              {...balance}
+              history={historicalData}
+            />
+          );
+        })}
+      </ScrollView>
     );
   }
 }

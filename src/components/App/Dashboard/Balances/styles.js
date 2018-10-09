@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-
-export const Container = styled.View`
-  flex-grow: 1;
-  margin-top: 25;
-`;
+export const Container = {
+  marginTop: 25,
+  alignSelf: 'stretch',
+  flexGrow: 1,
+};

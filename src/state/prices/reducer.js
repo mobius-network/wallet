@@ -1,6 +1,5 @@
 import updateSource from 'immutability-helper';
 import { createReducer } from 'redux-yo';
-
 import { currencies } from 'core/services/coinmarketcap';
 import { pricesActions } from './actions';
 
@@ -24,6 +23,13 @@ export const pricesReducer = createReducer(
         $merge: updates,
       });
     },
+    [pricesActions.setHistory]: (state, mobiHistory = [], xlmHistory = []) => ({
+      ...state,
+      history: {
+        mobi: mobiHistory.Data,
+        xlm: xlmHistory.Data,
+      },
+    }),
   },
   initialState
 );
