@@ -9,6 +9,8 @@ import AmountItem from 'components/shared/AmountItem';
 import BottomButtons from 'components/shared/BottomButtons';
 import LoadingIcon from 'components/shared/LoadingIcon';
 
+import { toFixed } from 'utils';
+
 import { Container, ScrollView, ItemContainer } from './styles';
 
 class Payments extends Component {
@@ -45,7 +47,7 @@ class Payments extends Component {
     const title = t(`payments.${type}`);
     const description = dateformat(cretaedAt, 'm/d/yy');
     const icon = `payment${capitalize(type)}`;
-    const mainAmount = `${amount.toFixed(2)} ${asset.toUpperCase()}`;
+    const mainAmount = `${toFixed(amount)} ${asset.toUpperCase()}`;
     const secondaryAmount = `$${usdAmount.toFixed(2)}`;
 
     return (

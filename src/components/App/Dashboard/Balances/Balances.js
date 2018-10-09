@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { capitalize } from 'lodash';
 
 import AmountItem from 'components/shared/AmountItem';
+import { toFixed } from 'utils';
 
 import { Container } from './styles';
 
@@ -24,7 +25,7 @@ class Balances extends Component {
             description={`$${usdPrice.toFixed(6)}`}
             icon={`currency${capitalize(asset)}`}
             mainAmount={`$${usdAmount.toFixed(6)}`}
-            secondaryAmount={`${amount} ${asset.toUpperCase()}`}
+            secondaryAmount={`${toFixed(amount)} ${asset.toUpperCase()}`}
             title={asset.toUpperCase()}
           />
         ))}
