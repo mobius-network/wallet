@@ -89,7 +89,7 @@
       "addFunds": "Add Funds",
       "withdrawFunds": "Withdraw Funds",
       "copySecretKey": "Copy Secret Key",
-      "HackathonVote": "Global Hackathon Vote",
+      "hackathonVote": "Global Hackathon Vote",
       "secretKeyCopied": "Secret Key was copied",
       "payments": "Payments",
       "support": "Support",

@@ -98,7 +98,7 @@ class DrawerContent extends Component {
             <Buttons>
               {isNeedToShowHackathonLink && (
                 <Link onPress={this.handleLinkPress('HackathonVote')}>
-                  {t('sidebarNavigation.HackathonVote')}
+                  {t('sidebarNavigation.hackathonVote')}
                 </Link>
               )}
 
