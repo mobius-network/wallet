@@ -71,7 +71,7 @@ class DrawerContent extends Component {
     const { t, isVotedForHackathon } = this.props;
 
     const isHackatonEnded = moment().isAfter(
-      moment.tz('2018-10-14 23:59:59', 'America/Los_Angeles')
+      moment.tz('2018-10-21 23:59:59', 'America/Los_Angeles')
     );
 
     const isNeedToShowHackathonLink = !(isVotedForHackathon || isHackatonEnded);
