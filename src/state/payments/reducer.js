@@ -2,7 +2,10 @@ import { createReducer } from 'redux-yo';
 
 import { paymentsActions } from './actions';
 
-const initialState = [];
+const initialState = {
+  isLoading: true,
+  list: [],
+};
 
 export const paymentsReducer = createReducer(
   {
@@ -19,8 +22,17 @@ export const paymentsReducer = createReducer(
         type: p.type,
       }));
 
-      return payments;
+      return {
+        ...state,
+        isLoading: false,
+        list: payments,
+      };
     },
+
+    [paymentsActions.reset]: state => ({
+      ...state,
+      isLoading: true,
+    }),
   },
   initialState
 );

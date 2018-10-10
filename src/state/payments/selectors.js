@@ -11,7 +11,7 @@ const mapAsset = {
 export const getPayments = createSelector(
   getKeypairFor,
   getPrices,
-  state => state.payments,
+  state => state.payments.list,
   (keypair, prices, payments) => {
     const publicKey = keypair.publicKey();
 
@@ -42,3 +42,5 @@ export const getPayments = createSelector(
     });
   }
 );
+
+export const isLoading = state => state.payments.isLoading;

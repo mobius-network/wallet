@@ -36,6 +36,7 @@ function* watch(delayDuration = 60000) {
 
 function* stopWatch() {
   yield take(paymentsActions.stopWatchPayments);
+  yield put(paymentsActions.reset());
   yield cancel(watcher);
 
   watcher = null;

@@ -15,6 +15,7 @@ import { Container, ScrollView, ItemContainer } from './styles';
 
 class Payments extends Component {
   static propTypes = {
+    isLoading: PropTypes.bool.isRequired,
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
     }).isRequired,
@@ -64,7 +65,9 @@ class Payments extends Component {
   };
 
   render() {
-    const { t, payments, navigation } = this.props;
+    const {
+      t, payments, navigation, isLoading,
+    } = this.props;
 
     return (
       <Container>
@@ -75,7 +78,7 @@ class Payments extends Component {
           <CurrentBalance />
         </CustomHeader>
 
-        {payments.length === 0 && <LoadingIcon />}
+        {isLoading && payments.length === 0 && <LoadingIcon />}
 
         <ScrollView>{payments.map(this.renderItem)}</ScrollView>
 
