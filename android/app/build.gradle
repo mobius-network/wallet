@@ -27,6 +27,8 @@ project.ext.vectoricons = [
 ]
 apply from: '../../node_modules/react-native-vector-icons/fonts.gradle'
 
+// Fix build for react-native-device-info
+project.ext.googlePlayServicesVersion = '16.0.1'
 
 def enableProguardInReleaseBuilds = false
 

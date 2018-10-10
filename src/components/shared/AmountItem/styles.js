@@ -8,25 +8,26 @@ export const Container = styled.View`
   align-items: center;
   display: flex;
   flex-direction: row;
-  margin-bottom: 31;
+  margin-top: 16;
+  margin-bottom: 16;
   margin-left: 16;
   margin-right: 16;
 `;
 
-export const CurrencyIcon = styled(Icon)`
+export const IconLogotype = styled(Icon)`
   margin-right: 16.5;
 `;
 
-export const AssetInfo = styled.View``;
+export const Info = styled.View``;
 
-export const Asset = styled.Text`
+export const Title = styled.Text`
   color: ${colors.textDefault};
   font-family: ${fonts.roboto.regular};
   font-size: ${fontSizes.default};
   line-height: 24;
 `;
 
-export const Price = styled.Text`
+export const Description = styled.Text`
   color: ${colors.textLight};
   font-family: ${fonts.roboto.regular};
   font-size: ${fontSizes.small};
@@ -40,14 +41,14 @@ export const AmountInfo = styled.View`
   margin-left: auto;
 `;
 
-export const UsdAmount = styled.Text`
+export const MainAmount = styled.Text`
   color: ${colors.textDefault};
   font-family: ${fonts.roboto.bold};
   font-size: ${fontSizes.default};
   line-height: 24;
 `;
 
-export const Amount = styled.Text`
+export const SecondartAmount = styled.Text`
   color: ${colors.textLight};
   font-family: ${fonts.roboto.regular};
   font-size: ${fontSizes.small};

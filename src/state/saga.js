@@ -12,6 +12,7 @@ import submitTransactionSaga from './sagas/submitTransaction';
 import watchAccountSaga from './sagas/watchAccount';
 import watchPricesSaga from './sagas/watchPricesSaga';
 import { sendHackathonVoteSaga } from './sagas/hackathonVote';
+import watchPaymentsSaga from './sagas/watchPayments';
 
 export default function* rootSaga() {
   yield all([
@@ -25,5 +26,6 @@ export default function* rootSaga() {
     watchAccountSaga,
     watchPricesSaga,
     sendHackathonVoteSaga,
+    watchPaymentsSaga,
   ]);
 }

@@ -3,14 +3,16 @@ import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 import { createStructuredSelector } from 'reselect';
 
-import { pricesActions } from 'state/prices';
+import { paymentsActions, getPayments, isLoading } from 'state/payments';
+import Payments from './Payments';
 
-import Dashboard from './Dashboard';
-
-const mapStateToProps = createStructuredSelector({});
+const mapStateToProps = createStructuredSelector({
+  payments: getPayments,
+  isLoading,
+});
 
 const actions = {
-  ...pricesActions,
+  ...paymentsActions,
 };
 
 export default compose(
@@ -19,4 +21,4 @@ export default compose(
     actions
   ),
   translate('translation')
-)(Dashboard);
+)(Payments);
