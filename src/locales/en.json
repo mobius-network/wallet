@@ -10,10 +10,10 @@
       "ok": "OK"
     },
     "welcome": {
+      "title": "Welcome",
       "description": "Create a wallet to send and receive money with friends using cryptocurrency.",
-      "recoverWalletButton": "Recover Existing Account",
       "setupWalletButton": "Setup Wallet",
-      "title": "Welcome"
+      "recoverWalletButton": "Recover Existing Account"
     },
     "pinSetup": {
       "chooseSubtitle": "Enter a 6-digit PIN to access your mobile wallet",
@@ -88,12 +88,12 @@
     "sidebarNavigation": {
       "addFunds": "Add Funds",
       "withdrawFunds": "Withdraw Funds",
+      "version": "Version: {{appVersion}}-{{buildVersion}}",
       "copySecretKey": "Copy Secret Key",
-      "hackathonVote": "Global Hackathon Vote",
       "secretKeyCopied": "Secret Key was copied",
-      "payments": "Payments",
       "support": "Support",
-      "version": "Version: {{appVersion}}-{{buildVersion}}"
+      "hackathonVote": "Global Hackathon Vote",
+      "payments": "Payments"
     },
     "send": {
       "amountForm": {
@@ -131,7 +131,7 @@
     },
     "validations": {
       "isRequired": "is required",
-      "isValidPublicKey": "is not valid address",
+      "isValidPublicKey": "is not a valid address",
       "isValidMnemonic": "is not valid mnemonic phrase"
     },
     "auth": {
@@ -150,7 +150,7 @@
       "title": "Global Hackathon Vote",
       "description": "Vote for your favorite DApp below. You need 5,000 MOBI to vote for the Global Hackathon Community Prize. You may only vote once. Press submit to cast your vote.",
       "submit": "Submit",
-      "success": "You've just vote! Votes will be counted on October 14, 2018 at 11:59:59pm PST. Your account must have at least 5,000 MOBI that time or your vote will not be counted."
+      "success": "You just voted! Votes will be counted on October 21, 2018, at 11:59:59pm PST. Your account must have at least 5000 MOBI that time or your vote will not be counted."
     },
     "payments": {
       "sent": "Sent",
