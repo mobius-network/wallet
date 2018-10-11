@@ -12,7 +12,8 @@
     "welcome": {
       "title": "欢迎",
       "description": "创建钱包并向朋友发送和接收加密货币",
-      "setupWalletButton": "设置钱包"
+      "setupWalletButton": "设置钱包",
+      "recoverWalletButton": "恢复现有帐户"
     },
     "pinSetup": {
       "chooseSubtitle": "输入6个数字的密码解锁钱包",
@@ -87,7 +88,11 @@
     "sidebarNavigation": {
       "addFunds": "添加资产",
       "withdrawFunds": "提现资产",
-      "version": "版: {{appVersion}}-{{buildVersion}}"
+      "version": "版: {{appVersion}}-{{buildVersion}}",
+      "copySecretKey": "复制密钥",
+      "secretKeyCopied": "密钥被复制了",
+      "support": "支持",
+      "hackathonVote": "全球黑客马拉松投票"
     },
     "send": {
       "amountForm": {
@@ -125,7 +130,26 @@
     },
     "validations": {
       "isRequired": "这是必需的",
-      "isValidPublicKey": "是无效的地址"
+      "isValidPublicKey": "是无效的地址",
+      "isValidMnemonic": "是无效的助记短语"
+    },
+    "auth": {
+      "recovery": {
+        "description": "输入您的助记词短语以恢复您的钱包。",
+        "mnemonicFieldLabel": "助记短语",
+        "mnemonicFieldPlaceholder": "完全按照书面形式输入",
+        "title": "恢复您的帐户\n",
+        "infoAlertText": "当您创建新钱包时，系统会要求您记下可用于恢复钱包的文字短语。",
+        "infoAlertTitle": "什么是助记短语？",
+        "validationAlertTitle": "发生以下错误："
+      }
+    },
+    "hackathonVote": {
+      "notice": "您必须拥有至少5,000 MOBI才能投票获得全球黑客马拉松社区奖！",
+      "title": "全球黑客马拉松投票",
+      "description": "投票给你最喜欢的DApp。您需要5,000 MOBI才能投票获得全球黑客马拉松社区奖。你只能投一次票。按提交投票。",
+      "submit": "提交",
+      "success": "你刚投票！投票将于2018年10月21日太平洋标准时间晚上11:59:59计算。您的帐户当时必须至少有5000 MOBI，否则您的投票将不会被计算在内。"
     }
   }
 }
