@@ -22,6 +22,24 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>26</string>
+	<key>CodePushDeploymentKey</key>
+	<string>$(CODE_PUSH_IOS_KEY)</string>
+	<key>CodePushPublicKey</key>
+	<string>-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAprJ75f4s/O9Iu7jjnOXj
+vptB7l5O1q4QwuJcVyDISl3OmSlgYMzWnZd90h6D+/YYxX5+RlV1r5mXUssCnVjJ
+205p4nEGS5utKr5NbGGz3IXXelfTRUJETufZmfqyKnQaXGxhaZaEzpHqXa7N1Cwu
+kqiB2/2wjb714THXLZD5nzyjsm8UUC5R6HgTEw+W0aD7B34MvjzZWxAx71Xoluon
+Ehvua73CLzqk0HT8cPIbd7ZZYeBAmTP+DtkHkClxrovQP+gr5IyKrVlj7wj67HUX
+0N3AWbQCYnZBXJnubBWqNgE7iV0RoOJ1NUZxgq/jy6lWRsp8uoQWSMLOVzNkpaum
+xa4J0JH9dhMXK4gpAXt+tsGd1YSyB2hixFOdqBANGND74hxq68kZPSZrdOTZSSPi
+bNPAuo4zeJ+bD4REFi/Gi4p7pMhC43etdilVQgdo3hsUiRIplAbQR2Y0vC9MoZRB
+TAIrlVjK1qx25VTnux5ybEhzDjwIyxbTaQXKMvD0oSPUlr85Jjb6OKtGdPsdBA+f
+LvwwkkoSTIs1QSCXDyYMo3InEusPtj2Dc9K8EGfHMELJVRgCrZSqlWtL9WDZIJiL
+y4rbHDP6ydMy2QesJlCoFnH54EiIqRVrTaNAvoervcCBK4BBC2q3ulRUdb2J0VJy
+dIuuaeHevKbkp5GFMc09r9kCAwEAAQ==
+-----END PUBLIC KEY-----
+</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -30,57 +48,57 @@
 		<array>
 			<dict>
 				<key>KitInfo</key>
-				<dict />
+				<dict/>
 				<key>KitName</key>
 				<string>Crashlytics</string>
 			</dict>
 		</array>
 	</dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
-	<false />
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
-	<true />
+	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
-		<true />
+		<true/>
 		<key>NSAllowsArbitraryLoadsInWebContent</key>
-		<true />
+		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>localhost</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true />
+				<true/>
 			</dict>
 		</dict>
 	</dict>
 	<key>NSAppleMusicUsageDescription</key>
-	<string>Mobius Wallet shouldn't request access to the media library. If you see this, please respond 'NO' and contact support@mobius.network</string>
+	<string>Mobius Wallet shouldn&apos;t request access to the media library. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Mobius Wallet shouldn't request access to the bluetooth devices. If you see this, please respond 'NO' and contact support@mobius.network</string>
+	<string>Mobius Wallet shouldn&apos;t request access to the bluetooth devices. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSCalendarsUsageDescription</key>
-	<string>Mobius Wallet shouldn't request access to your calendars. If you see this, please respond 'NO' and contact support@mobius.network</string>
+	<string>Mobius Wallet shouldn&apos;t request access to your calendars. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Mobius Wallet needs access to your device camera to scan QR codes</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Mobius Wallet shouldn't request access to your location. If you see this, please respond 'NO' and contact support@mobius.network</string>
+	<string>Mobius Wallet shouldn&apos;t request access to your location. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Mobius Wallet shouldn't request access to your location. If you see this, please respond 'NO' and contact support@mobius.network</string>
+	<string>Mobius Wallet shouldn&apos;t request access to your location. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSLocationUsageDescription</key>
-	<string>Mobius Wallet shouldn't request access to your location. If you see this, please respond 'NO' and contact support@mobius.network</string>
+	<string>Mobius Wallet shouldn&apos;t request access to your location. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Mobius Wallet shouldn't request access to your location. If you see this, please respond 'NO' and contact support@mobius.network</string>
+	<string>Mobius Wallet shouldn&apos;t request access to your location. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Mobius Wallet shouldn't request access to your microphone. If you see this, please respond 'NO' and contact support@mobius.network</string>
+	<string>Mobius Wallet shouldn&apos;t request access to your microphone. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSMotionUsageDescription</key>
-	<string>Mobius Wallet shouldn't request access to motion data. If you see this, please respond 'NO' and contact support@mobius.network</string>
+	<string>Mobius Wallet shouldn&apos;t request access to motion data. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Mobius Wallet shouldn't request access to your photo library. If you see this, please respond 'NO' and contact support@mobius.network</string>
+	<string>Mobius Wallet shouldn&apos;t request access to your photo library. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Mobius Wallet shouldn't request access to your photos. If you see this, please respond 'NO' and contact support@mobius.network</string>
+	<string>Mobius Wallet shouldn&apos;t request access to your photos. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Mobius Wallet shouldn't request access to speech recognition. If you see this, please respond 'NO' and contact support@mobius.network</string>
+	<string>Mobius Wallet shouldn&apos;t request access to speech recognition. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>MaterialCommunityIcons.ttf</string>
@@ -103,7 +121,7 @@
 		<string>armv7</string>
 	</array>
 	<key>UIRequiresFullScreen</key>
-	<true />
+	<true/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>
@@ -111,6 +129,6 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false />
+	<false/>
 </dict>
 </plist>

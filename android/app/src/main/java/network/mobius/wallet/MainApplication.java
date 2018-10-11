@@ -16,6 +16,7 @@ import com.bitgo.randombytes.RandomBytesPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.horcrux.svg.SvgPackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
+import com.microsoft.codepush.react.CodePush;
 import com.oblador.keychain.KeychainPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.smixx.fabric.FabricPackage;
@@ -31,31 +32,41 @@ public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
-    public boolean getUseDeveloperSupport() {
-      return BuildConfig.DEBUG;
-    }
-
-    @Override
-    protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-            new FabricPackage(),
-            new KeychainPackage(),
-            new LinearGradientPackage(),
-            new RandomBytesPackage(),
-            new RNCameraPackage(),
-            new RNDeviceInfo(),
-            new RNLanguagesPackage(),
-            new RNVersionNumberPackage(),
-            new SplashScreenReactPackage(),
-            new SvgPackage(),
-            new VectorIconsPackage()
-      );
+    protected String getJSBundleFile() {
+      return CodePush.getJSBundleFile();
     }
 
     @Override
     protected String getJSMainModuleName() {
       return "index";
+    }
+
+    @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.asList(
+          new MainReactPackage(),
+          new CodePush(
+              BuildConfig.CODE_PUSH_ANDROID_KEY,
+              getApplicationContext(),
+              getUseDeveloperSupport()
+          ),
+          new FabricPackage(),
+          new KeychainPackage(),
+          new LinearGradientPackage(),
+          new RandomBytesPackage(),
+          new RNCameraPackage(),
+          new RNDeviceInfo(),
+          new RNLanguagesPackage(),
+          new RNVersionNumberPackage(),
+          new SplashScreenReactPackage(),
+          new SvgPackage(),
+          new VectorIconsPackage()
+      );
+    }
+
+    @Override
+    public boolean getUseDeveloperSupport() {
+      return BuildConfig.DEBUG;
     }
   };
 

@@ -17,6 +17,7 @@ project.ext.react = [
     entryFile: 'index.js'
 ]
 apply from: '../../node_modules/react-native/react.gradle'
+apply from: '../../node_modules/react-native-code-push/android/codepush.gradle'
 
 /**
  * Add only Material icons
@@ -74,6 +75,7 @@ dependencies {
     }
     // From node_modules
     implementation project(':react-native-camera')
+    implementation project(':react-native-code-push')
     implementation project(':react-native-device-info')
     implementation project(':react-native-fabric')
     implementation project(':react-native-keychain')
