@@ -27,15 +27,11 @@ project.ext.vectoricons = [
 ]
 apply from: '../../node_modules/react-native-vector-icons/fonts.gradle'
 
-// Fix build for react-native-device-info
-project.ext.googlePlayServicesVersion = '16.0.1'
-
 def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
-
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
@@ -69,13 +65,11 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
       transitive = true;
     }
-
     // From node_modules
     implementation project(':react-native-camera')
     implementation project(':react-native-device-info')
