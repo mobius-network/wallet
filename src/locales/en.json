@@ -121,6 +121,8 @@
       "error": {
         "title": "Failed!",
         "defaultMessage": "Something went wrong. Please try again.",
+        "networkErrorMessage": "Network error. Check your connection.",
+        "insufficientBalanceMessage": "You don't have enough money for this operation. Check your balance.",
         "defaultActionLabel": "Try Again"
       },
       "success": {
