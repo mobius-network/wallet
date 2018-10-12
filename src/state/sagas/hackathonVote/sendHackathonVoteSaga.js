@@ -11,8 +11,8 @@ import {
 
 import { assets, safeLoadAccount, submitTransaction } from 'core';
 
-import i18n from 'utils/i18n';
-import { trackEvent } from 'utils';
+import i18n, { getMessageByErrorType } from 'utils/i18n';
+import { trackEvent, ErrorTyper } from 'utils';
 import navigator from 'state/navigator';
 import { getMasterAccount } from 'state/account';
 import { getKeypairFor } from 'state/auth';
@@ -70,11 +70,17 @@ function* run(args) {
 
     trackEvent('HackathonVote::Success');
   } catch (error) {
+    const et = new ErrorTyper(error);
+
+    const message = et.isInsufficientBalance
+      ? i18n.t('hackathonVote.insufficientXLMBalanceMessage')
+      : getMessageByErrorType(et);
+
     yield call(navigator.navigate, 'HackathonVote', 'Notice', {
       action: ({ dispatch }) => dispatch(hackathonVoteActions.sendHackathonVote(args)),
-      goBackAction: ({ navigate }) => navigate('Dashboard'),
+      goBackAction: ({ navigate }) => navigate('HackathonVote'),
       type: 'error',
-      message: i18n.t('notice.error.defaultMessage'),
+      message,
     });
 
     trackEvent('HackathonVote::Error');
