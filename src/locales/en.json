@@ -153,7 +153,7 @@
       "description": "Vote for your favorite DApp below. You need 5,000 MOBI to vote for the Global Hackathon Community Prize. You may only vote once. Press submit to cast your vote.",
       "submit": "Submit",
       "success": "You just voted! Votes will be counted on October 21, 2018, at 11:59:59pm PST. Your account must have at least 5000 MOBI that time or your vote will not be counted.",
-      "insufficientXLMBalanceMessage": "You do not have enough XLM to vote. Please deposit 0.1 XLM to vote.",
+      "insufficientXLMBalanceMessage": "You do not have enough XLM to vote. Please deposit 0.1 XLM to vote."
     },
     "payments": {
       "sent": "Sent",
