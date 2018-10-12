@@ -1,11 +1,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.3'
 
 plugin 'cocoapods-fix-react-native'
 
 inhibit_all_warnings!
 
 target 'MobiusMobileWallet' do
+  project 'MobiusMobileWallet', 'Staging' => :release
+  platform :ios, '9.3'
+
   pod 'Fabric'
   pod 'Crashlytics'
 

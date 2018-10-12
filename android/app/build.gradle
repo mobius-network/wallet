@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 project.ext.envConfigFiles = [
     debug: '.env.development',
+    staging: '.env.staging',
     release: '.env.production'
 ]
 apply from: './dotenv.gradle'
@@ -13,8 +14,21 @@ apply plugin: 'io.fabric'
  * https://github.com/facebook/react-native/blob/master/local-cli/templates/HelloWorld/android/app/build.gradle#L14
  */
 project.ext.react = [
+    entryFile: 'index.js',
     inputExcludes: ['android/**', 'ios/**', '.buckd/**'],
-    entryFile: 'index.js'
+    bundleInDebug: false,
+    bundleInStaging: true,
+    bundleInRelease: true,
+    devDisabledInDebug: false,
+    devDisabledInStaging: true,
+    devDisabledInRelease: true,
+    jsBundleDirDebug: "$buildDir/intermediates/assets/debug",
+    resourcesDirDebug: "$buildDir/intermediates/res/merged/debug",
+    jsBundleDirStaging: "$buildDir/intermediates/assets/staging",
+    resourcesDirStaging: "$buildDir/intermediates/res/merged/staging",
+    jsBundleDirRelease: "$buildDir/intermediates/assets/release",
+    resourcesDirRelease: "$buildDir/intermediates/res/merged/release"
+
 ]
 apply from: '../../node_modules/react-native/react.gradle'
 apply from: '../../node_modules/react-native-code-push/android/codepush.gradle'
@@ -59,6 +73,11 @@ android {
         debug {
             applicationIdSuffix '.debug'
             versionNameSuffix '-DEV'
+        }
+        staging {
+            initWith release
+            matchingFallbacks = ['release']
+            applicationIdSuffix '.staging'
         }
         release {
             minifyEnabled enableProguardInReleaseBuilds

@@ -72,12 +72,17 @@
 		709DA827214177B900AF344D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70C1AF0D2149D8B600AD6840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		70C1AF162149DD4000AD6840 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
+		70EDC64A2170189D00D34359 /* Project.staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.staging.xcconfig; sourceTree = "<group>"; };
+		70EDC64B2170189D00D34359 /* MobiusMobileWalletTests.staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MobiusMobileWalletTests.staging.xcconfig; sourceTree = "<group>"; };
+		70EDC64C2170189E00D34359 /* MobiusMobileWallet.staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MobiusMobileWallet.staging.xcconfig; sourceTree = "<group>"; };
 		7C330E7A8E8F01E31A1A56C6 /* Pods-MobiusMobileWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiusMobileWalletTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobiusMobileWalletTests/Pods-MobiusMobileWalletTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DD017C94262423A9EF12F88 /* Nunito Sans Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito Sans Bold.ttf"; path = "../assets/fonts/Nunito Sans Bold.ttf"; sourceTree = "<group>"; };
 		89F9404328D54B39B885FE8B /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = ../assets/fonts/Roboto.ttf; sourceTree = "<group>"; };
 		97DB4B87A3CE4721975E2AB5 /* Helvetica Neue.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Helvetica Neue.ttf"; path = "../assets/fonts/Helvetica Neue.ttf"; sourceTree = "<group>"; };
 		A3AC44DB6C3609ADE72548AA /* Pods-MobiusMobileWalletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiusMobileWalletTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobiusMobileWalletTests/Pods-MobiusMobileWalletTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A910F4465F4C4286EA75878C /* Pods-MobiusMobileWallet.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiusMobileWallet.staging.xcconfig"; path = "Pods/Target Support Files/Pods-MobiusMobileWallet/Pods-MobiusMobileWallet.staging.xcconfig"; sourceTree = "<group>"; };
 		D1A4434F98F742D9B1FA9409 /* Helvetica Neue Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Helvetica Neue Italic.ttf"; path = "../assets/fonts/Helvetica Neue Italic.ttf"; sourceTree = "<group>"; };
+		DDDDC18FDCA05CC940E97688 /* Pods-MobiusMobileWalletTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiusMobileWalletTests.staging.xcconfig"; path = "Pods/Target Support Files/Pods-MobiusMobileWalletTests/Pods-MobiusMobileWalletTests.staging.xcconfig"; sourceTree = "<group>"; };
 		ED08AF5F7FD3026E76E207DF /* Pods-MobiusMobileWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiusMobileWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobiusMobileWallet/Pods-MobiusMobileWallet.release.xcconfig"; sourceTree = "<group>"; };
 		FBC2CADE496F458B1E2C8672 /* libPods-MobiusMobileWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobiusMobileWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD55B8DD1FCD19B8DEFA52B /* libPods-MobiusMobileWalletTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobiusMobileWalletTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,12 +164,15 @@
 				7098ED54213DA7C80068DB08 /* MobiusMobileWalletTests.base.xcconfig */,
 				7098ED55213DA7C80068DB08 /* MobiusMobileWalletTests.debug.xcconfig */,
 				7098ED53213DA7C80068DB08 /* MobiusMobileWalletTests.release.xcconfig */,
+				70EDC64B2170189D00D34359 /* MobiusMobileWalletTests.staging.xcconfig */,
 				7098ED4C213DA6BA0068DB08 /* MobiusMobileWallet.base.xcconfig */,
 				7098ED4D213DA6BA0068DB08 /* MobiusMobileWallet.debug.xcconfig */,
 				7098ED4E213DA6BB0068DB08 /* MobiusMobileWallet.release.xcconfig */,
+				70EDC64C2170189E00D34359 /* MobiusMobileWallet.staging.xcconfig */,
+				7098ED48213DA4870068DB08 /* Project.base.xcconfig */,
 				7098ED46213DA4870068DB08 /* Project.debug.xcconfig */,
 				7098ED47213DA4870068DB08 /* Project.release.xcconfig */,
-				7098ED48213DA4870068DB08 /* Project.base.xcconfig */,
+				70EDC64A2170189D00D34359 /* Project.staging.xcconfig */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -201,6 +209,8 @@
 				ED08AF5F7FD3026E76E207DF /* Pods-MobiusMobileWallet.release.xcconfig */,
 				A3AC44DB6C3609ADE72548AA /* Pods-MobiusMobileWalletTests.debug.xcconfig */,
 				7C330E7A8E8F01E31A1A56C6 /* Pods-MobiusMobileWalletTests.release.xcconfig */,
+				A910F4465F4C4286EA75878C /* Pods-MobiusMobileWallet.staging.xcconfig */,
+				DDDDC18FDCA05CC940E97688 /* Pods-MobiusMobileWalletTests.staging.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -508,6 +518,32 @@
 			};
 			name = Release;
 		};
+		70EDC6472170187800D34359 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70EDC64A2170189D00D34359 /* Project.staging.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 21;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Staging;
+		};
+		70EDC6482170187800D34359 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70EDC64C2170189E00D34359 /* MobiusMobileWallet.staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MobiusMobileWallet/Info.plist;
+			};
+			name = Staging;
+		};
+		70EDC6492170187800D34359 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70EDC64B2170189D00D34359 /* MobiusMobileWalletTests.staging.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = MobiusMobileWalletTests/Info.plist;
+			};
+			name = Staging;
+		};
 		83CBBA201A601CBA00E9B192 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7098ED46213DA4870068DB08 /* Project.debug.xcconfig */;
@@ -534,6 +570,7 @@
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
 				00E356F71AD99517003FC87E /* Release */,
+				70EDC6492170187800D34359 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -543,6 +580,7 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+				70EDC6482170187800D34359 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -552,6 +590,7 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+				70EDC6472170187800D34359 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

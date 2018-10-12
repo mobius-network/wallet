@@ -1,0 +1,4 @@
+#include "MobiusMobileWalletTests.base.xcconfig"
+#include "Pods/Target Support Files/Pods-MobiusMobileWalletTests/Pods-MobiusMobileWalletTests.staging.xcconfig"
+
+COPY_PHASE_STRIP = NO

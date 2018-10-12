@@ -1,0 +1,8 @@
+#include "Project.base.xcconfig"
+
+CODE_SIGN_IDENTITY = iPhone Distribution
+RUN_CLANG_STATIC_ANALYZER = YES
+VALIDATE_PRODUCT = YES
+
+#include? "../../.env.staging"
+
