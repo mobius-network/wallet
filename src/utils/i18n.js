@@ -36,8 +36,8 @@ i18n.init({
 export function getMessageByErrorType(et) {
   let key = 'defaultMessage';
 
-  if (et.isInsufficientBalance) key = 'insufficientBalanceMessage';
-  else if (et.isNetworkError) key = 'networkErrorMessage';
+  if (et.isNetworkError) key = 'networkErrorMessage';
+  else if (et.isInsufficientBalance) key = 'insufficientBalanceMessage';
 
   return i18n.t(`notice.error.${key}`);
 }

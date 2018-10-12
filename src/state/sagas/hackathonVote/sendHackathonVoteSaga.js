@@ -70,11 +70,17 @@ function* run(args) {
 
     trackEvent('HackathonVote::Success');
   } catch (error) {
+    const et = new ErrorTyper(error);
+
+    const message = et.isInsufficientBalance
+      ? i18n.t('hackathonVote.insufficientXLMBalanceMessage')
+      : getMessageByErrorType(et);
+
     yield call(navigator.navigate, 'HackathonVote', 'Notice', {
       action: ({ dispatch }) => dispatch(hackathonVoteActions.sendHackathonVote(args)),
       goBackAction: ({ navigate }) => navigate('HackathonVote'),
       type: 'error',
-      message: getMessageByErrorType(new ErrorTyper(error)),
+      message,
     });
 
     trackEvent('HackathonVote::Error');
