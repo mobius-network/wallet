@@ -1,7 +1,9 @@
 source "https://rubygems.org"
 
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
 gem "cocoapods", "1.6.0.beta.1"
-gem "cocoapods-fix-react-native"
+gem "cocoapods-fix-react-native", github: "nebolsin/cocoapods-fix-react-native"
 gem "fastlane"
 gem "dotgpg-environment"
 
