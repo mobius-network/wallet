@@ -92,7 +92,8 @@
       "copySecretKey": "复制密钥",
       "secretKeyCopied": "密钥被复制了",
       "support": "支持",
-      "hackathonVote": "全球黑客马拉松投票"
+      "hackathonVote": "全球黑客马拉松投票",
+      "payments": "付款"
     },
     "send": {
       "amountForm": {
@@ -120,7 +121,9 @@
       "error": {
         "title": "失败!",
         "defaultMessage": "发生错误，请再试一次",
-        "defaultActionLabel": "再试一次"
+        "defaultActionLabel": "再试一次",
+        "networkErrorMessage": "网络错误。检查你的连接。",
+        "insufficientBalanceMessage": "你没有足够的钱来进行这项行动。检查你的余额。"
       },
       "success": {
         "title": "完成！",
@@ -149,7 +152,14 @@
       "title": "全球黑客马拉松投票",
       "description": "投票给你最喜欢的DApp。您需要5,000 MOBI才能投票获得全球黑客马拉松社区奖。你只能投一次票。按提交投票。",
       "submit": "提交",
-      "success": "你刚投票！投票将于2018年10月21日太平洋标准时间晚上11:59:59计算。您的帐户当时必须至少有5000 MOBI，否则您的投票将不会被计算在内。"
+      "success": "你刚投票！投票将于2018年10月21日太平洋标准时间晚上11:59:59计算。您的帐户当时必须至少有5000 MOBI，否则您的投票将不会被计算在内。",
+      "insufficientXLMBalanceMessage": "您没有足够的XLM投票。请存入0.1 XLM投票。"
+    },
+    "payments": {
+      "sent": "发送",
+      "received": "收到",
+      "account": "帐户已创建",
+      "headerTitle": "付款"
     }
   }
 }
