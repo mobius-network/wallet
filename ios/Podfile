@@ -2,7 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 plugin 'cocoapods-fix-react-native'
 
-# inhibit_all_warnings!
+inhibit_all_warnings!
 
 target 'MobiusMobileWallet' do
   project 'MobiusMobileWallet', 'Debug' => :debug, 'Release' => :release

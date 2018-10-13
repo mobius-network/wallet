@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/nebolsin/cocoapods-fix-react-native.git
+  revision: 654326e5b192d18e3743b833033f146b64955155
+  specs:
+    cocoapods-fix-react-native (2018.10.13.12)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,7 +58,6 @@ GEM
       nap (~> 1.0)
     cocoapods-deintegrate (1.0.2)
     cocoapods-downloader (1.2.1)
-    cocoapods-fix-react-native (2018.10.12.20)
     cocoapods-plugins (1.0.0)
       nap
     cocoapods-search (1.0.0)
@@ -236,7 +241,7 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods (= 1.6.0.beta.1)
-  cocoapods-fix-react-native
+  cocoapods-fix-react-native!
   dotgpg-environment
   fastlane
   fastlane-plugin-appicon
