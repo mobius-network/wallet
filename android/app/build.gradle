@@ -49,7 +49,7 @@ android {
         applicationId 'network.mobius.wallet'
         applicationIdSuffix ''
 
-        versionCode 26
+        versionCode 27
         versionName '1.1.0'
         versionNameSuffix ''
 
