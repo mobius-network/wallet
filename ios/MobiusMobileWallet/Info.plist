@@ -21,7 +21,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>27</string>
+	<string>28</string>
 	<key>CodePushDeploymentKey</key>
 	<string>$(CODE_PUSH_IOS_KEY)</string>
 	<key>CodePushPublicKey</key>
@@ -79,6 +79,8 @@ dIuuaeHevKbkp5GFMc09r9kCAwEAAQ==
 	<string>Mobius Wallet shouldn&apos;t request access to the bluetooth devices. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Mobius Wallet shouldn&apos;t request access to your calendars. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Mobius Wallet shouldn&apos;t request access to your contacts. If you see this, please respond &apos;NO&apos; and contact support@mobius.network</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Mobius Wallet needs access to your device camera to scan QR codes</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
