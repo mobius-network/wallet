@@ -1,11 +1,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.3'
 
 plugin 'cocoapods-fix-react-native'
 
-inhibit_all_warnings!
+# inhibit_all_warnings!
 
 target 'MobiusMobileWallet' do
+  project 'MobiusMobileWallet', 'Debug' => :debug, 'Release' => :release
+  platform :ios, '9.3'
+
   pod 'Fabric'
   pod 'Crashlytics'
 
@@ -61,31 +63,15 @@ target 'MobiusMobileWallet' do
   end
 end
 
-post_install do |installer|
-    # Pod project template has some overly strict build settings by default,
-    # which don't play nicely with react-native core components and libs.
-
-    extra_settings = %W[
-      CLANG_ANALYZER_NONNULL
-      CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION
-      CLANG_ENABLE_OBJC_WEAK
-      CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING
-      CLANG_WARN_COMMA
-      CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS
-      CLANG_WARN_DOCUMENTATION_COMMENTS
-      CLANG_WARN_INFINITE_RECURSION
-      CLANG_WARN_NON_LITERAL_NULL_CONVERSION
-      CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF
-      CLANG_WARN_OBJC_LITERAL_CONVERSION
-      CLANG_WARN_RANGE_LOOP_ANALYSIS
-      CLANG_WARN_STRICT_PROTOTYPES
-      CLANG_WARN_SUSPICIOUS_MOVE
-      CLANG_WARN_UNGUARDED_AVAILABILITY
-      GCC_NO_COMMON_BLOCKS
-    ]
-    installer.pods_project.build_configurations.each do |config|
-      extra_settings.each do |setting|
-        config.build_settings.delete(setting)
-      end
+# Some react-native-* deps have their deployment target set to < 8.0 which
+# generates some warning in Xcode 9+. Since the Pod project itself will
+# have deployment target specified (we control it with `platform` setting
+# above), the easiest solution is to delete deployment target configuration
+# from all its targets, so that they inherit configuration from a project.
+post_install do |lib|
+  lib.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
     end
+  end
 end

@@ -1,8 +1,17 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.26.1'
+    }
+}
+
 apply plugin: 'com.android.application'
 
 project.ext.envConfigFiles = [
-    debug: '.env.debug',
-    release: '.env.production'
+    debug: '.env.build.debug',
+    release: '.env.build.production'
 ]
 apply from: './dotenv.gradle'
 
@@ -28,9 +37,6 @@ project.ext.vectoricons = [
 ]
 apply from: '../../node_modules/react-native-vector-icons/fonts.gradle'
 
-// Fix build for react-native-device-info
-project.ext.googlePlayServicesVersion = '16.0.1'
-
 def enableProguardInReleaseBuilds = false
 
 android {
@@ -50,7 +56,8 @@ android {
         versionNameSuffix ''
 
         manifestPlaceholders = [
-            fabricApiKey:project.env.get('CRASHLYTICS_API_TOKEN')
+            appName: project.env.get('APP_NAME', '@string/app_name'),
+            fabricApiKey: project.env.get('CRASHLYTICS_API_TOKEN', '')
         ]
 
         ndk {
@@ -67,6 +74,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
 }
 
 dependencies {

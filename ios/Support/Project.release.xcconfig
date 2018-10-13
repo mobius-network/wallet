@@ -7,4 +7,4 @@ VALIDATE_PRODUCT = YES
 
 RUN_CLANG_STATIC_ANALYZER = YES
 
-#include? "../../.env.production"
+#include? "../../.env.build.production"
