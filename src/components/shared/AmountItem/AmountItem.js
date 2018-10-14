@@ -1,25 +1,41 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {
   Container,
-  IconLogotype,
+  IconLogoType,
   Info,
   Title,
   Description,
   AmountInfo,
   MainAmount,
-  SecondartAmount,
+  SecondaryAmount,
+  Trend,
+  IconChangeType,
 } from './styles';
 
 class AmountItem extends Component {
   static propTypes = {
+    change: PropTypes.string,
     description: PropTypes.string,
     icon: PropTypes.string,
     mainAmount: PropTypes.string,
     secondaryAmount: PropTypes.string,
     title: PropTypes.string,
   };
+
+  renderChangeIcon() {
+    const { change } = this.props;
+
+    const changeIconName = change > 0
+      ? { color: '#69f0ae', name: 'caret-up' }
+      : { color: '#ff5252', name: 'caret-down' };
+
+    return (
+      <Icon color={changeIconName.color} name={changeIconName.name} size={14} />
+    );
+  }
 
   render() {
     const {
@@ -28,11 +44,12 @@ class AmountItem extends Component {
       description,
       mainAmount,
       secondaryAmount,
+      change,
     } = this.props;
 
     return (
       <Container>
-        <IconLogotype name={icon} size={40} />
+        <IconLogoType name={icon} size={40} />
 
         <Info>
           <Title>{title}</Title>
@@ -40,8 +57,13 @@ class AmountItem extends Component {
         </Info>
 
         <AmountInfo>
+          <Trend>
+            <SecondaryAmount>{change}</SecondaryAmount>
+            <IconChangeType>{this.renderChangeIcon()}</IconChangeType>
+          </Trend>
+
           <MainAmount>{mainAmount}</MainAmount>
-          <SecondartAmount>{secondaryAmount}</SecondartAmount>
+          <SecondaryAmount>{secondaryAmount}</SecondaryAmount>
         </AmountInfo>
       </Container>
     );

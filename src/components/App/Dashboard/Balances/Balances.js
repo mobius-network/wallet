@@ -10,10 +10,11 @@ import { Container } from './styles';
 class Balances extends Component {
   static propTypes = {
     balances: PropTypes.array,
+    change: PropTypes.object,
   };
 
   render() {
-    const { balances } = this.props;
+    const { balances, change } = this.props;
 
     return (
       <Container>
@@ -22,6 +23,7 @@ class Balances extends Component {
         }) => (
           <AmountItem
             key={asset}
+            change={change[asset]}
             description={`$${usdPrice.toFixed(6)}`}
             icon={`currency${capitalize(asset)}`}
             mainAmount={`$${usdAmount.toFixed(6)}`}
