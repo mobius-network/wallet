@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
+import { KeyboardAvoidingView, Text } from 'react-native';
 import { Field } from 'redux-form';
 import { hasError } from 'revalidate/assertions';
 
@@ -123,7 +123,7 @@ class Recovery extends Component {
             />
           </TitleContainer>
 
-          <View>
+          <KeyboardAvoidingView behavior="position">
             <Field
               autoFocus
               component={TextInput}
@@ -137,7 +137,7 @@ class Recovery extends Component {
             >
               <InfoIcon />
             </InfoButton>
-          </View>
+          </KeyboardAvoidingView>
 
           <ButtonRow>
             <Button
