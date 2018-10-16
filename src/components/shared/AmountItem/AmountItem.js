@@ -40,10 +40,10 @@ class AmountItem extends Component {
       secondaryAmount,
       history,
     } = this.props;
-
+    const { isOpened } = this.state;
     return (
       <TouchableOpacity onPress={this.clickHandler}>
-        <Container margin={this.isOpened && history !== null}>
+        <Container margin={isOpened && history !== null}>
           <IconLogotype name={icon} size={40} />
 
           <Info>
@@ -56,7 +56,7 @@ class AmountItem extends Component {
             <SecondartAmount>{secondaryAmount}</SecondartAmount>
           </AmountInfo>
         </Container>
-        {this.state.isOpened
+        {isOpened
           && history && <Chart asset={title.toUpperCase()} history={history} />}
       </TouchableOpacity>
     );
