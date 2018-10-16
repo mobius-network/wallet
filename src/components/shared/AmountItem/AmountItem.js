@@ -16,17 +16,7 @@ import {
 class AmountItem extends Component {
   static propTypes = {
     description: PropTypes.string,
-    history: PropTypes.arrayOf(
-      PropTypes.shape({
-        close: PropTypes.number.isRequired,
-        high: PropTypes.number.isRequired,
-        low: PropTypes.number.isRequired,
-        open: PropTypes.number.isRequired,
-        time: PropTypes.number.isRequired,
-        volumefrom: PropTypes.number.isRequired,
-        volumeto: PropTypes.number.isRequired,
-      })
-    ),
+    history: PropTypes.array,
     icon: PropTypes.string,
     mainAmount: PropTypes.string,
     secondaryAmount: PropTypes.string,
