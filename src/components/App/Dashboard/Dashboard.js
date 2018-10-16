@@ -1,31 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import CurrentBalance from 'components/shared/CurrentBalance';
+import BottomButtons from 'components/shared/BottomButtons';
+
 import Balances from './Balances';
 
 import {
-  ActionButton,
-  BalanceAmount,
-  BalanceContainer,
-  ButtonRow,
-  Container,
-  CurrencySymbol,
-  Gradient,
-  Menu,
-  MenuIcon,
-  Title,
+  Container, Gradient, Menu, MenuIcon,
 } from './styles';
 
 class Dashboard extends Component {
   static propTypes = {
     navigation: PropTypes.shape({
-      navigate: PropTypes.func.isRequired,
       openDrawer: PropTypes.func.isRequired,
     }).isRequired,
     stopWatchPrices: PropTypes.func.isRequired,
-    t: PropTypes.func.isRequired,
-    usdBalance: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-      .isRequired,
     watchPrices: PropTypes.func.isRequired,
   };
 
@@ -41,14 +31,10 @@ class Dashboard extends Component {
     this.props.stopWatchPrices();
   }
 
-  openReceiveScreen = () => this.props.navigation.navigate('AddFunds');
-
-  openSendScreen = () => this.props.navigation.navigate('AmountForm');
-
   handleMenuButtonClick = () => this.props.navigation.openDrawer();
 
   render() {
-    const { t, usdBalance } = this.props;
+    const { navigation } = this.props;
 
     return (
       <Container>
@@ -57,28 +43,12 @@ class Dashboard extends Component {
             <MenuIcon />
           </Menu>
 
-          <Title>{t('dashboard.title')}</Title>
-
-          <BalanceContainer>
-            <CurrencySymbol>$</CurrencySymbol>
-            <BalanceAmount>{usdBalance}</BalanceAmount>
-          </BalanceContainer>
+          <CurrentBalance />
         </Gradient>
 
         <Balances />
 
-        <ButtonRow>
-          <ActionButton
-            onPress={this.openReceiveScreen}
-            square
-            title={t('dashboard.receiveButton').toUpperCase()}
-          />
-          <ActionButton
-            onPress={this.openSendScreen}
-            square
-            title={t('dashboard.sendButton').toUpperCase()}
-          />
-        </ButtonRow>
+        <BottomButtons navigation={navigation} />
       </Container>
     );
   }

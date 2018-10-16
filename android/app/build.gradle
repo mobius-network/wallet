@@ -1,8 +1,17 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.26.1'
+    }
+}
+
 apply plugin: 'com.android.application'
 
 project.ext.envConfigFiles = [
-    debug: '.env.debug',
-    release: '.env.production'
+    debug: '.env.build.debug',
+    release: '.env.build.production'
 ]
 apply from: './dotenv.gradle'
 
@@ -17,6 +26,7 @@ project.ext.react = [
     entryFile: 'index.js'
 ]
 apply from: '../../node_modules/react-native/react.gradle'
+apply from: '../../node_modules/react-native-code-push/android/codepush.gradle'
 
 /**
  * Add only Material icons
@@ -27,13 +37,10 @@ project.ext.vectoricons = [
 ]
 apply from: '../../node_modules/react-native-vector-icons/fonts.gradle'
 
-
 def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
-
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
@@ -42,12 +49,13 @@ android {
         applicationId 'network.mobius.wallet'
         applicationIdSuffix ''
 
-        versionCode 23
-        versionName '1.0.1'
+        versionCode 28
+        versionName '1.1.0'
         versionNameSuffix ''
 
         manifestPlaceholders = [
-            fabricApiKey:project.env.get('CRASHLYTICS_API_TOKEN')
+            appName: project.env.get('APP_NAME', '@string/app_name'),
+            fabricApiKey: project.env.get('CRASHLYTICS_API_TOKEN', '')
         ]
 
         ndk {
@@ -58,7 +66,6 @@ android {
         debug {
             applicationIdSuffix '.debug'
             versionNameSuffix '-DEBUG'
-            resValue 'string', 'app_name', 'δ-Wallet'
         }
         release {
             minifyEnabled enableProguardInReleaseBuilds
@@ -67,16 +74,21 @@ android {
     }
 }
 
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    implementation('com.crashlytics.sdk.android:crashlytics:2.9.2@aar') {
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
       transitive = true;
     }
 
     // From node_modules
     implementation project(':react-native-camera')
+    implementation project(':react-native-code-push')
     implementation project(':react-native-device-info')
     implementation project(':react-native-fabric')
     implementation project(':react-native-keychain')

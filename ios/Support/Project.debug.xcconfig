@@ -1,6 +1,8 @@
 #include "Project.base.xcconfig"
+
 CODE_SIGN_IDENTITY = iPhone Developer
 COPY_PHASE_STRIP = NO
+DEAD_CODE_STRIPPING = NO
 ENABLE_TESTABILITY = YES
 GCC_DYNAMIC_NO_PIC = NO
 GCC_OPTIMIZATION_LEVEL = 0
@@ -9,4 +11,4 @@ GCC_SYMBOLS_PRIVATE_EXTERN = NO
 MTL_ENABLE_DEBUG_INFO = YES
 ONLY_ACTIVE_ARCH = YES
 
-#include? "../../.env.debug"
+#include? "../../.env.build.debug"

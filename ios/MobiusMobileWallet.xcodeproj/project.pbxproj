@@ -162,9 +162,9 @@
 				7098ED4C213DA6BA0068DB08 /* MobiusMobileWallet.base.xcconfig */,
 				7098ED4D213DA6BA0068DB08 /* MobiusMobileWallet.debug.xcconfig */,
 				7098ED4E213DA6BB0068DB08 /* MobiusMobileWallet.release.xcconfig */,
+				7098ED48213DA4870068DB08 /* Project.base.xcconfig */,
 				7098ED46213DA4870068DB08 /* Project.debug.xcconfig */,
 				7098ED47213DA4870068DB08 /* Project.release.xcconfig */,
-				7098ED48213DA4870068DB08 /* Project.base.xcconfig */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -236,8 +236,8 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				70CA992E212B7F7B0082B8FB /* Submit to Crashlytics */,
 				4141A9C557F6DDB73A89B68D /* [CP] Copy Pods Resources */,
+				70CA992E212B7F7B0082B8FB /* Submit to Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -495,6 +495,7 @@
 			baseConfigurationReference = 7098ED4D213DA6BA0068DB08 /* MobiusMobileWallet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 28;
 				INFOPLIST_FILE = MobiusMobileWallet/Info.plist;
 			};
 			name = Debug;
@@ -504,6 +505,7 @@
 			baseConfigurationReference = 7098ED4E213DA6BB0068DB08 /* MobiusMobileWallet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 28;
 				INFOPLIST_FILE = MobiusMobileWallet/Info.plist;
 			};
 			name = Release;
@@ -512,8 +514,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7098ED46213DA4870068DB08 /* Project.debug.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 21;
-				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -521,8 +521,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7098ED47213DA4870068DB08 /* Project.release.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 21;
-				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

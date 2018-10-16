@@ -4,8 +4,8 @@ import {
 } from 'stellar-sdk';
 import { assets, safeLoadAccount, submitTransaction } from 'core';
 
-import i18n from 'utils/i18n';
-import { trackEvent } from 'utils';
+import i18n, { getMessageByErrorType } from 'utils/i18n';
+import { trackEvent, ErrorTyper } from 'utils';
 import navigator from 'state/navigator';
 import { getMasterAccount } from 'state/account';
 import { getKeypairFor } from 'state/auth';
@@ -78,7 +78,7 @@ function* run() {
       action: ({ dispatch }) => dispatch(sendActions.sendStart()),
       goBackAction: ({ navigate }) => navigate('Dashboard'),
       type: 'error',
-      message: i18n.t('notice.error.defaultMessage'),
+      message: getMessageByErrorType(new ErrorTyper(error)),
     });
 
     trackEvent('Send::Error');

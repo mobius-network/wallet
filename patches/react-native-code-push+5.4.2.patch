@@ -1,0 +1,12 @@
+patch-package
+--- a/node_modules/react-native-code-push/android/app/build.gradle
++++ b/node_modules/react-native-code-push/android/app/build.gradle
+@@ -26,6 +26,6 @@ android {
+ }
+ 
+ dependencies {
+-    compile "com.facebook.react:react-native:+"
+-    compile 'com.nimbusds:nimbus-jose-jwt:5.1'
++    implementation 'com.facebook.react:react-native:+'
++    implementation 'com.nimbusds:nimbus-jose-jwt:5.1'
+ }

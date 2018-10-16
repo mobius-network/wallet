@@ -71,7 +71,7 @@ class DrawerContent extends Component {
     const { t, isVotedForHackathon } = this.props;
 
     const isHackatonEnded = moment().isAfter(
-      moment.tz('2018-10-14 23:59:59', 'America/Los_Angeles')
+      moment.tz('2018-10-21 23:59:59', 'America/Los_Angeles')
     );
 
     const isNeedToShowHackathonLink = !(isVotedForHackathon || isHackatonEnded);
@@ -87,6 +87,9 @@ class DrawerContent extends Component {
               <Link onPress={this.handleLinkPress('AmountForm')}>
                 {t('sidebarNavigation.withdrawFunds')}
               </Link>
+              {/* <Link onPress={this.handleLinkPress('Payments')}>
+                {t('sidebarNavigation.payments')}
+              </Link> */}
               <Link onPress={this.handleSupportPress}>
                 {t('sidebarNavigation.support')}
               </Link>
@@ -95,7 +98,7 @@ class DrawerContent extends Component {
             <Buttons>
               {isNeedToShowHackathonLink && (
                 <Link onPress={this.handleLinkPress('HackathonVote')}>
-                  {t('sidebarNavigation.HackathonVote')}
+                  {t('sidebarNavigation.hackathonVote')}
                 </Link>
               )}
 

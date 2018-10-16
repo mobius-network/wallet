@@ -3,13 +3,11 @@ import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 import { createStructuredSelector } from 'reselect';
 
-import { getUsdBalance, pricesActions } from 'state/prices';
+import { pricesActions } from 'state/prices';
 
 import Dashboard from './Dashboard';
 
-const mapStateToProps = createStructuredSelector({
-  usdBalance: getUsdBalance,
-});
+const mapStateToProps = createStructuredSelector({});
 
 const actions = {
   ...pricesActions,

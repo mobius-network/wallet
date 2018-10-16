@@ -1,0 +1,23 @@
+patch-package
+--- a/node_modules/react-native-fabric/android/build.gradle
++++ b/node_modules/react-native-fabric/android/build.gradle
+@@ -12,7 +12,7 @@ buildscript {
+     }
+ 
+     dependencies {
+-        classpath 'com.android.tools.build:gradle:3.1.2'
++        classpath 'com.android.tools.build:gradle:3.1.4'
+     }
+ }
+ 
+@@ -42,8 +42,8 @@ repositories {
+ }
+ 
+ dependencies {
+-    compile "com.facebook.react:react-native:${safeExtGet('reactNative', '+')}"
+-    compile('com.crashlytics.sdk.android:crashlytics:2.9.2@aar') {
++    implementation "com.facebook.react:react-native:${safeExtGet('reactNative', '+')}"
++    implementation('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
+         transitive = true;
+     }
+ }

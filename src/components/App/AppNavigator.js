@@ -11,6 +11,7 @@ import NavHeader from 'components/shared/NavHeader';
 
 import AddFunds from './AddFunds';
 import Dashboard from './Dashboard';
+import Payments from './Payments';
 
 import HackathonVoteStack from './HackathonVote';
 import SendStack from './Send';
@@ -39,6 +40,12 @@ export const StackNavigator = createStackNavigator(
       navigationOptions: () => ({
         /* eslint-disable-next-line react/display-name */
         header: props => <NavHeader {...props} title="addFunds.headerTitle" />,
+      }),
+    },
+    Payments: {
+      screen: Payments,
+      navigationOptions: () => ({
+        header: null,
       }),
     },
     DrawerNavigator,

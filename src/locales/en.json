@@ -10,10 +10,10 @@
       "ok": "OK"
     },
     "welcome": {
+      "title": "Welcome",
       "description": "Create a wallet to send and receive money with friends using cryptocurrency.",
-      "recoverWalletButton": "Recover Existing Account",
       "setupWalletButton": "Setup Wallet",
-      "title": "Welcome"
+      "recoverWalletButton": "Recover Existing Account"
     },
     "pinSetup": {
       "chooseSubtitle": "Enter a 6-digit PIN to access your mobile wallet",
@@ -88,11 +88,12 @@
     "sidebarNavigation": {
       "addFunds": "Add Funds",
       "withdrawFunds": "Withdraw Funds",
+      "version": "Version: {{appVersion}}-{{buildVersion}}",
       "copySecretKey": "Copy Secret Key",
-      "HackathonVote": "Global Hackathon Vote",
       "secretKeyCopied": "Secret Key was copied",
       "support": "Support",
-      "version": "Version: {{appVersion}}-{{buildVersion}}"
+      "hackathonVote": "Global Hackathon Vote",
+      "payments": "Payments"
     },
     "send": {
       "amountForm": {
@@ -120,7 +121,9 @@
       "error": {
         "title": "Failed!",
         "defaultMessage": "Something went wrong. Please try again.",
-        "defaultActionLabel": "Try Again"
+        "defaultActionLabel": "Try Again",
+        "networkErrorMessage": "Network error. Check your connection.",
+        "insufficientBalanceMessage": "You don't have enough money for this operation. Check your balance."
       },
       "success": {
         "title": "Success!",
@@ -130,7 +133,7 @@
     },
     "validations": {
       "isRequired": "is required",
-      "isValidPublicKey": "is not valid address",
+      "isValidPublicKey": "is not a valid address",
       "isValidMnemonic": "is not valid mnemonic phrase"
     },
     "auth": {
@@ -149,7 +152,14 @@
       "title": "Global Hackathon Vote",
       "description": "Vote for your favorite DApp below. You need 5,000 MOBI to vote for the Global Hackathon Community Prize. You may only vote once. Press submit to cast your vote.",
       "submit": "Submit",
-      "success": "You've just vote! Votes will be counted on October 14, 2018 at 11:59:59pm PST. Your account must have at least 5,000 MOBI that time or your vote will not be counted."
+      "success": "You just voted! Votes will be counted on October 21, 2018, at 11:59:59pm PST. Your account must have at least 5000 MOBI that time or your vote will not be counted.",
+      "insufficientXLMBalanceMessage": "You do not have enough XLM to vote. Please deposit 0.1 XLM to vote."
+    },
+    "payments": {
+      "sent": "Sent",
+      "received": "Received",
+      "account": "Created Account",
+      "headerTitle": "Payments"
     }
   }
 }

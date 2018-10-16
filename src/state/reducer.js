@@ -9,6 +9,7 @@ import { pricesReducer } from './prices';
 import { sendReducer } from './send';
 import { transfersReducer } from './transfers';
 import { hackathonVoteReducer } from './hackathonVote';
+import { paymentsReducer } from './payments';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   send: sendReducer,
   transfers: transfersReducer,
   hackathonVote: hackathonVoteReducer,
+  payments: paymentsReducer,
 });
 
 export default () => rootReducer;
