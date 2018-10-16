@@ -9,7 +9,7 @@ export const Container = styled.View`
   display: flex;
   flex-direction: row;
   margin-top: 16;
-  margin-bottom: 16;
+  margin-bottom: ${props => (props.margin ? 5 : 31)};
   margin-left: 16;
   margin-right: 16;
 `;

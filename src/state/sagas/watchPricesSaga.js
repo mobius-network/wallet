@@ -9,12 +9,15 @@ import {
 } from 'react-native-dotenv';
 
 import CoinMarketCap from 'core/services/coinmarketcap';
+import HistoricalPriceAPI from 'core/services/historical';
 import { pricesActions } from 'state/prices/actions';
 
 const cmcClient = new CoinMarketCap(
   COINMARKETCAP_API_URL,
   COINMARKETCAP_API_KEY
 );
+
+const historicalClient = new HistoricalPriceAPI();
 
 let watcher;
 
@@ -30,8 +33,19 @@ function* getPrices() {
   }
 }
 
+function* getHistoricalData() {
+  try {
+    const mobiData = yield call(historicalClient.getHistoricalData, 'MOBI');
+    const xlmData = yield call(historicalClient.getHistoricalData, 'XLM');
+    yield put(pricesActions.setHistory(mobiData.data, xlmData.data));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 function* watch(delayDuration = 60000) {
   while (true) {
+    yield call(getHistoricalData);
     yield call(getPrices);
     yield call(delay, delayDuration);
   }
