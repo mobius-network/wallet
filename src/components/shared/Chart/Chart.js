@@ -6,6 +6,7 @@ import {
   VictoryChart,
   VictoryTheme,
 } from 'victory-native';
+import { colors } from 'components/shared/Styleguide';
 import { LoadingIconView, LoadingIcon, Container } from './styles';
 
 class Chart extends Component {
@@ -21,30 +22,41 @@ class Chart extends Component {
         volumefrom: PropTypes.number.isRequired,
         volumeto: PropTypes.number.isRequired,
       })
-    ).isRequired,
+    ),
   };
 
   render() {
+    const { history } = this.props;
     return (
       <Container>
-        {this.props.history ? (
+        {history ? (
           <VictoryChart
             domainPadding={{ x: 50 }}
             height={275}
             padding={{
               top: 20,
               bottom: 30,
-              left: 60,
+              left: 65,
               right: 45,
             }}
             scale={{ x: 'time' }}
             theme={VictoryTheme.material}
           >
-            <VictoryAxis tickFormat={t => t.labelDate} />
-            <VictoryAxis dependentAxis tickFormat={t => `${t.toFixed(3)}`} />
+            <VictoryAxis
+              style={{ tickLabels: { fontSize: 11 } }}
+              tickFormat={history.map(el => el.labelDate)}
+            />
+            <VictoryAxis
+              dependentAxis
+              style={{ tickLabels: { fontSize: 11 } }}
+              tickFormat={t => `${t.toFixed(3)}`}
+            />
             <VictoryCandlestick
-              candleColors={{ positive: '#27ae60', negative: '#e74c3c' }}
-              data={this.props.history}
+              candleColors={{
+                positive: colors.chartGreen,
+                negative: colors.error,
+              }}
+              data={history}
             />
           </VictoryChart>
         ) : (

@@ -8,8 +8,7 @@ export const Container = styled.View`
   align-items: center;
   display: flex;
   flex-direction: row;
-  margin-top: 16;
-  margin-bottom: ${props => (props.margin ? 5 : 31)};
+  margin-bottom: ${props => (props.margin ? 0 : 31)};
   margin-left: 16;
   margin-right: 16;
 `;
