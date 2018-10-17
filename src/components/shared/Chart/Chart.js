@@ -11,25 +11,19 @@ import { LoadingIconView, LoadingIcon, Container } from './styles';
 
 class Chart extends Component {
   static propTypes = {
-    asset: PropTypes.string,
-    history: PropTypes.arrayOf(
-      PropTypes.shape({
-        close: PropTypes.number.isRequired,
-        high: PropTypes.number.isRequired,
-        low: PropTypes.number.isRequired,
-        open: PropTypes.number.isRequired,
-        time: PropTypes.number.isRequired,
-        volumefrom: PropTypes.number.isRequired,
-        volumeto: PropTypes.number.isRequired,
-      })
-    ),
+    asset: PropTypes.string.isRequired,
+    history: PropTypes.shape({
+      mobi: PropTypes.array,
+      xlm: PropTypes.array,
+    }),
   };
 
   render() {
-    const { history } = this.props;
+    const { history, asset } = this.props;
+    const tokenHistory = history[asset];
     return (
       <Container>
-        {history ? (
+        {tokenHistory ? (
           <VictoryChart
             domainPadding={{ x: 50 }}
             height={275}
@@ -44,7 +38,7 @@ class Chart extends Component {
           >
             <VictoryAxis
               style={{ tickLabels: { fontSize: 11 } }}
-              tickFormat={history.map(el => el.labelDate)}
+              tickFormat={tokenHistory.map(el => el.labelDate)}
             />
             <VictoryAxis
               dependentAxis
@@ -56,7 +50,7 @@ class Chart extends Component {
                 positive: colors.chartGreen,
                 negative: colors.error,
               }}
-              data={history}
+              data={tokenHistory}
             />
           </VictoryChart>
         ) : (

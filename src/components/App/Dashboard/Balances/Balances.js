@@ -10,32 +10,24 @@ import { Container } from './styles';
 class Balances extends Component {
   static propTypes = {
     balances: PropTypes.array,
-    history: PropTypes.shape({
-      mobi: PropTypes.array,
-      xlm: PropTypes.array,
-    }),
   };
 
   render() {
-    const { balances, history } = this.props;
+    const { balances } = this.props;
     return (
       <ScrollView contentContainerStyle={Container}>
         {balances.map(({
           asset, usdPrice, usdAmount, amount,
-        }) => {
-          const historicalData = history ? history[asset] : null;
-          return (
-            <AmountItem
-              key={asset}
-              description={`$${usdPrice.toFixed(6)}`}
-              history={historicalData}
-              icon={`currency${capitalize(asset)}`}
-              mainAmount={`$${usdAmount.toFixed(6)}`}
-              secondaryAmount={`${toFixed(amount)} ${asset.toUpperCase()}`}
-              title={asset.toUpperCase()}
-            />
-          );
-        })}
+        }) => (
+          <AmountItem
+            key={asset}
+            description={`$${usdPrice.toFixed(6)}`}
+            icon={`currency${capitalize(asset)}`}
+            mainAmount={`$${usdAmount.toFixed(6)}`}
+            secondaryAmount={`${toFixed(amount)} ${asset.toUpperCase()}`}
+            title={asset.toUpperCase()}
+          />
+        ))}
       </ScrollView>
     );
   }

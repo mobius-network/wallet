@@ -16,7 +16,6 @@ import {
 class AmountItem extends Component {
   static propTypes = {
     description: PropTypes.string,
-    history: PropTypes.array,
     icon: PropTypes.string,
     mainAmount: PropTypes.string,
     secondaryAmount: PropTypes.string,
@@ -32,18 +31,17 @@ class AmountItem extends Component {
   };
 
   render() {
+    const { isOpened } = this.state;
     const {
       icon,
       title,
       description,
       mainAmount,
       secondaryAmount,
-      history,
     } = this.props;
-    const { isOpened } = this.state;
     return (
       <TouchableOpacity onPress={this.clickHandler}>
-        <Container margin={isOpened && history !== null}>
+        <Container margin={isOpened}>
           <IconLogotype name={icon} size={40} />
 
           <Info>
@@ -56,8 +54,7 @@ class AmountItem extends Component {
             <SecondartAmount>{secondaryAmount}</SecondartAmount>
           </AmountInfo>
         </Container>
-        {isOpened
-          && history && <Chart asset={title.toUpperCase()} history={history} />}
+        {isOpened && <Chart asset={title.toLowerCase()} />}
       </TouchableOpacity>
     );
   }

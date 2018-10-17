@@ -11,6 +11,7 @@ import {
 import CoinMarketCap from 'core/services/coinmarketcap';
 import HistoricalPriceAPI from 'core/services/historical';
 import { pricesActions } from 'state/prices/actions';
+import { historyActions } from 'state/history/actions';
 
 const cmcClient = new CoinMarketCap(
   COINMARKETCAP_API_URL,
@@ -37,7 +38,7 @@ function* getHistoricalData() {
   try {
     const mobiData = yield call(historicalClient.getHistoricalData, 'MOBI');
     const xlmData = yield call(historicalClient.getHistoricalData, 'XLM');
-    yield put(pricesActions.setHistory(mobiData.data, xlmData.data));
+    yield put(historyActions.setHistory(mobiData.data, xlmData.data));
   } catch (error) {
     console.log(error);
   }

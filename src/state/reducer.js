@@ -6,6 +6,7 @@ import { accountReducer } from './account';
 import { authReducer } from './auth';
 import { notificationsReducer } from './notifications';
 import { pricesReducer } from './prices';
+import { historyReducer } from './history';
 import { sendReducer } from './send';
 import { transfersReducer } from './transfers';
 import { hackathonVoteReducer } from './hackathonVote';
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   masterAccount: accountReducer,
   notifications: notificationsReducer,
   prices: pricesReducer,
+  history: historyReducer,
   requests: requestsReducer,
   send: sendReducer,
   transfers: transfersReducer,
