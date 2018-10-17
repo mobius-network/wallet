@@ -1,1 +1,1 @@
-export { default } from './BalancesContainer';
+export { default } from './CurrenciesContainer';
