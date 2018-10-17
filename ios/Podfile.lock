@@ -93,7 +93,7 @@ PODS:
     - React
   - RNKeychain (3.0.0):
     - React
-  - RNLanguages (3.0.0):
+  - RNLanguages (3.0.1):
     - React
   - RNSVG (6.5.2):
     - React
