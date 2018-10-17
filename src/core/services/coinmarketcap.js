@@ -48,6 +48,21 @@ class CoinMarketCap {
   };
 
   /**
+   * List all cryptocurrencies
+   * @returns {Promise}
+   */
+  getCurrencies = () => {
+    const config = {
+      url: '/cryptocurrency/listings/latest',
+      params: {
+        convert: 'USD',
+      },
+    };
+
+    return this.call(config);
+  };
+
+  /**
    * Validate constructor params. Raise if required params are missing.
    * @param {string} apiUrl - Coinmarketcap API url
    * @param {string} apiKey - Coinmarketcap API key

@@ -10,6 +10,7 @@ import { sendReducer } from './send';
 import { transfersReducer } from './transfers';
 import { hackathonVoteReducer } from './hackathonVote';
 import { paymentsReducer } from './payments';
+import { currenciesReducer } from './currencies';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   masterAccount: accountReducer,
   notifications: notificationsReducer,
   prices: pricesReducer,
+  currencies: currenciesReducer,
   requests: requestsReducer,
   send: sendReducer,
   transfers: transfersReducer,
