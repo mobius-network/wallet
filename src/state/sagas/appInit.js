@@ -9,7 +9,10 @@ import { appActions } from 'state/app';
 import { authActions } from 'state/auth';
 
 function* getCodePushLabel() {
-  const update = yield call(codePush.getUpdateMetadata);
+  const update = yield call(
+    codePush.getUpdateMetadata,
+    codePush.UpdateState.RUNNING
+  );
 
   if (update) return update.label;
   return undefined;
