@@ -160,6 +160,9 @@
       "received": "收到",
       "account": "帐户已创建",
       "headerTitle": "付款"
+    },
+    "currencies": {
+      "searchFieldPlaceholder": "硬币名称"
     }
   }
 }

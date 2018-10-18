@@ -160,6 +160,9 @@
       "received": "Получено",
       "account": "Создание аккаунта",
       "headerTitle": "Платежи"
+    },
+    "currencies": {
+      "searchFieldPlaceholder": "Название монеты"
     }
   }
 }

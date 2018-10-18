@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Balances from './Balances';
+import CurrenciesList from './CurrenciesList';
 import Header from './Header';
 
 import { Container } from './styles';
@@ -21,6 +21,11 @@ class Currencies extends Component {
     balanceAmount: 0,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = { coinName: '' };
+  }
+
   componentDidMount() {
     this.props.watchPrices();
   }
@@ -29,17 +34,19 @@ class Currencies extends Component {
     this.props.stopWatchPrices();
   }
 
-  handleMenuButtonClick = () => this.props.navigation.openDrawer();
-
   handleBack = () => this.props.navigation.pop();
 
   render() {
     const { t } = this.props;
-
     return (
       <Container>
-        <Header onBackButtonClick={this.handleBack} t={t} />
-        <Balances />
+        <Header
+          onBackButtonClick={this.handleBack}
+          onSearchTextChange={coinName => this.setState({ coinName })}
+          t={t}
+          text={this.state.coinName}
+        />
+        <CurrenciesList filterSubstring={this.state.coinName} />
       </Container>
     );
   }

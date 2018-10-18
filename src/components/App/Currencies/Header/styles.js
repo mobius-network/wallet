@@ -7,6 +7,7 @@ import {
   helpers,
   HeaderGradient,
 } from 'components/shared/Styleguide';
+import { TextInput } from 'react-native';
 
 export const Gradient = styled(HeaderGradient)`
   padding-bottom: 16;
@@ -39,6 +40,8 @@ export const BackIcon = styled(Icon).attrs({
 export const BackButton = styled.TouchableHighlight.attrs({
   underlayColor: 'transparent',
 })``;
+
+export const SearchInput = styled(TextInput)``;
 
 export const Amount = styled.Text`
   color: white;

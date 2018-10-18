@@ -160,6 +160,9 @@
       "received": "Received",
       "account": "Created Account",
       "headerTitle": "Payments"
+    },
+    "currencies": {
+      "searchFieldPlaceholder": "Coin name"
     }
   }
 }
