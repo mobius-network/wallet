@@ -1,6 +1,7 @@
 /* eslint-disable react-native/no-raw-text */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { TouchableOpacity } from 'react-native';
 
 import {
   Container,
@@ -18,6 +19,7 @@ import {
 class CurrencyItem extends Component {
   static propTypes = {
     icon: PropTypes.any,
+    onPress: PropTypes.func,
     percentChangeIn24Hours: PropTypes.number,
     price: PropTypes.string,
     symbol: PropTypes.string,
@@ -30,23 +32,25 @@ class CurrencyItem extends Component {
     } = this.props;
     const positiveChange = percentChangeIn24Hours > 0;
     return (
-      <Container>
-        <Image size={40} source={icon} />
-        <Info>
-          <Title>{title}</Title>
-          <Description>{symbol}</Description>
-        </Info>
+      <TouchableOpacity onPress={this.props.onPress}>
+        <Container>
+          <Image size={40} source={icon} />
+          <Info>
+            <Title>{title}</Title>
+            <Description>{symbol}</Description>
+          </Info>
 
-        <AmountInfo>
-          <Price>{price}</Price>
-          <ChangeInfo>
-            <Change positive={positiveChange}>
-              {`${percentChangeIn24Hours}% `}
-            </Change>
-            <ChangeTime>in 24h</ChangeTime>
-          </ChangeInfo>
-        </AmountInfo>
-      </Container>
+          <AmountInfo>
+            <Price>{price}</Price>
+            <ChangeInfo>
+              <Change positive={positiveChange}>
+                {`${percentChangeIn24Hours}% `}
+              </Change>
+              <ChangeTime>in 24h</ChangeTime>
+            </ChangeInfo>
+          </AmountInfo>
+        </Container>
+      </TouchableOpacity>
     );
   }
 }

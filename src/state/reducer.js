@@ -11,6 +11,7 @@ import { transfersReducer } from './transfers';
 import { hackathonVoteReducer } from './hackathonVote';
 import { paymentsReducer } from './payments';
 import { currenciesReducer } from './currencies';
+import { userCurrenciesReducer } from './userCurrencies';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
   send: sendReducer,
   transfers: transfersReducer,
   hackathonVote: hackathonVoteReducer,
+  userCurrencies: userCurrenciesReducer,
   payments: paymentsReducer,
 });
 

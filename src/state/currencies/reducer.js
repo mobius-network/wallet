@@ -10,17 +10,17 @@ export const currenciesReducer = createReducer(
     [currenciesActions.setQuotes]: (state, quotes) => {
       const updates = quotes.reduce((acc, quote) => {
         acc[quote.id] = {
-          quote: quote.quote,
-          id: quote.id,
-          symbol: quote.symbol,
-          name: quote.name,
+          $set: {
+            quote: quote.quote,
+            id: quote.id,
+            symbol: quote.symbol,
+            name: quote.name,
+          },
         };
         return acc;
       }, {});
 
-      return updateSource(state, {
-        $merge: updates,
-      });
+      return updateSource(state, updates);
     },
   },
   initialState

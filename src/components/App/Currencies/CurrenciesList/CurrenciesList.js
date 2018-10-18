@@ -20,7 +20,10 @@ class CurrenciesList extends Component {
 
   render() {
     const { currencies, onCurrencySelected, filterSubstring } = this.props;
-    const filteredCurrencies = currencies.filter(currency => currency.name.toLowerCase().includes(filterSubstring.toLowerCase()));
+    const filteredCurrencies = currencies.filter(
+      ({ name, symbol }) => name.toLowerCase().includes(filterSubstring.toLowerCase())
+        || symbol.toLowerCase().includes(filterSubstring.toLowerCase())
+    );
 
     return (
       <FlatList

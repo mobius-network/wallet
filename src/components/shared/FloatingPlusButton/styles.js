@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import Button from 'components/shared/Button';
 
 export const FloatingButtonPosition = styled.View`
-  alignitems: center;
-  justifycontent: center;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   bottom: 50;
   right: 10;

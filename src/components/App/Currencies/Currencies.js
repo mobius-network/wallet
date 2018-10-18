@@ -8,13 +8,12 @@ import { Container } from './styles';
 
 class Currencies extends Component {
   static propTypes = {
+    addUserCurrency: PropTypes.func,
     navigation: PropTypes.shape({
       openDrawer: PropTypes.func.isRequired,
       pop: PropTypes.func.isRequired,
     }).isRequired,
-    stopWatchPrices: PropTypes.func.isRequired,
     t: PropTypes.func.isRequired,
-    watchPrices: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -26,13 +25,10 @@ class Currencies extends Component {
     this.state = { coinName: '' };
   }
 
-  componentDidMount() {
-    this.props.watchPrices();
-  }
-
-  componentWillUnmount() {
-    this.props.stopWatchPrices();
-  }
+  selectCurrency = (currencyId) => {
+    this.props.addUserCurrency(currencyId);
+    this.handleBack();
+  };
 
   handleBack = () => this.props.navigation.pop();
 
@@ -46,7 +42,10 @@ class Currencies extends Component {
           t={t}
           text={this.state.coinName}
         />
-        <CurrenciesList filterSubstring={this.state.coinName} />
+        <CurrenciesList
+          filterSubstring={this.state.coinName}
+          onCurrencySelected={this.selectCurrency}
+        />
       </Container>
     );
   }
