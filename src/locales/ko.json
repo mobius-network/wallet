@@ -88,7 +88,7 @@
     "sidebarNavigation": {
       "addFunds": "자금을 더하다",
       "withdrawFunds": "자금을 빼다",
-      "version": "번역: {{appVersion}}-{{buildVersion}}",
+      "version": "번역: {{appVersion}} {{codePushVersion}} ({{buildVersion}})",
       "copySecretKey": "비밀 키 복사",
       "secretKeyCopied": "비밀 키가 복사되었습니다.",
       "support": "지원하다",

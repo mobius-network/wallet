@@ -88,7 +88,7 @@
     "sidebarNavigation": {
       "addFunds": "添加资产",
       "withdrawFunds": "提现资产",
-      "version": "版: {{appVersion}}-{{buildVersion}}",
+      "version": "版: {{appVersion}} {{codePushVersion}} ({{buildVersion}})",
       "copySecretKey": "复制密钥",
       "secretKeyCopied": "密钥被复制了",
       "support": "支持",

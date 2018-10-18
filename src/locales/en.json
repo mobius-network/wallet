@@ -88,7 +88,7 @@
     "sidebarNavigation": {
       "addFunds": "Add Funds",
       "withdrawFunds": "Withdraw Funds",
-      "version": "Version: {{appVersion}}-{{buildVersion}}",
+      "version": "Version: {{appVersion}} {{codePushVersion}} ({{buildVersion}})",
       "copySecretKey": "Copy Secret Key",
       "secretKeyCopied": "Secret Key was copied",
       "support": "Support",

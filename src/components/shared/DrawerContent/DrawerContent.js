@@ -13,6 +13,7 @@ import {
 
 class DrawerContent extends Component {
   static propTypes = {
+    codePushLabel: PropTypes.string,
     isVotedForHackathon: PropTypes.bool.isRequired,
     navigation: PropTypes.shape({
       closeDrawer: PropTypes.func.isRequired,
@@ -68,7 +69,7 @@ class DrawerContent extends Component {
 
   render() {
     const { isSecretCopied } = this.state;
-    const { t, isVotedForHackathon } = this.props;
+    const { t, isVotedForHackathon, codePushLabel } = this.props;
 
     const isHackatonEnded = moment().isAfter(
       moment.tz('2018-10-21 23:59:59', 'America/Los_Angeles')
@@ -117,6 +118,7 @@ class DrawerContent extends Component {
             <Version>
               {t('sidebarNavigation.version', {
                 appVersion: VersionNumber.appVersion,
+                codePushVersion: codePushLabel,
                 buildVersion: VersionNumber.buildVersion,
               })}
             </Version>
