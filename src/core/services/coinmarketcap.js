@@ -32,7 +32,7 @@ class CoinMarketCap {
   call = (config = {}) => axios({ ...this.config, ...config });
 
   /**
-   * Get latest market quotes for all available currencies
+   * Get latest market quotes for all available userCurrencies
    * @returns {Promise}
    */
   getMarketQuotes = () => {
@@ -56,6 +56,9 @@ class CoinMarketCap {
       url: '/cryptocurrency/listings/latest',
       params: {
         convert: 'USD',
+        limit: 500,
+        sort: 'market_cap',
+        sort_dir: 'desc',
       },
     };
 
