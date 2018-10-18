@@ -7,7 +7,7 @@ const initialState = [];
 
 export const userCurrenciesReducer = createReducer(
   {
-    [userCurrenciesActions.setCurrencies]: (state, currenciesIds) => updateSource(state, {
+    [userCurrenciesActions.setUserCurrencies]: (state, currenciesIds) => updateSource(state, {
       $set: currenciesIds,
     }),
     [userCurrenciesActions.addUserCurrency]: (state, currencyId) => updateSource(state, {

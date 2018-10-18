@@ -13,6 +13,7 @@ import watchAccountSaga from './sagas/watchAccount';
 import watchPricesSaga from './sagas/watchCoinMarketCapSaga';
 import { sendHackathonVoteSaga } from './sagas/hackathonVote';
 import watchPaymentsSaga from './sagas/watchPayments';
+import { storeUsersCurrenciesSaga } from './sagas/userCurrencies';
 
 export default function* rootSaga() {
   yield all([
@@ -27,5 +28,6 @@ export default function* rootSaga() {
     watchPricesSaga,
     sendHackathonVoteSaga,
     watchPaymentsSaga,
+    storeUsersCurrenciesSaga,
   ]);
 }
