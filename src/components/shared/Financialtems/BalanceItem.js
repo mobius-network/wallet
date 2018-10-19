@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
+import { toFixed } from 'utils';
 
 import {
   Container,
@@ -35,14 +36,12 @@ class BalanceItem extends Component {
           <Image size={40} source={icon} />
           <Info>
             <Title>{title}</Title>
-            <Description>{`$${price.toFixed(6)}`}</Description>
+            <Description>{`$${toFixed(price)}`}</Description>
           </Info>
 
           <AmountInfo>
-            <MainAmount>{`$${usdBalance.toFixed(6)}`}</MainAmount>
-            <SecondaryAmount>{`${balance.toFixed(
-              6
-            )} ${symbol}`}</SecondaryAmount>
+            <MainAmount>{`$${toFixed(usdBalance)}`}</MainAmount>
+            <SecondaryAmount>{`${toFixed(balance)} ${symbol}`}</SecondaryAmount>
           </AmountInfo>
         </Container>
       </TouchableOpacity>
