@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { FlatList } from 'react-native';
-import CurrencyItem from '../../../shared/CurrencyItem/CurrencyItem';
+import BalanceItem from '../../../shared/BalanceItem/BalanceItem';
 
 class Balances extends Component {
   static propTypes = {
@@ -16,14 +16,19 @@ class Balances extends Component {
     return (
       <FlatList
         data={balances}
-        renderItem={({ item: { id, symbol, name } }) => (
-          <CurrencyItem
+        renderItem={({
+          item: {
+            id, symbol, name, usdBalance, balance, price,
+          },
+        }) => (
+          <BalanceItem
             key={id}
-            description={symbol}
+            balance={balance}
             icon={{ uri: this.genIconUri(id) }}
-            percentChangeIn24Hours={0}
-            price={'$0'}
+            price={price}
+            symbol={symbol}
             title={name}
+            usdBalance={usdBalance}
           />
         )}
       />

@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 
 import { authActions } from 'state/auth';
-import { getUserAssets } from 'state/userCurrencies';
+import { getUserCurrenciesBalances } from 'state/userCurrencies';
 
 import Balances from './Balances';
 
 const mapStateToProps = state => ({
-  balances: getUserAssets(state, {
+  balances: getUserCurrenciesBalances(state, {
     buyAsset: 'USD',
   }),
 });
