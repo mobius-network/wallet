@@ -9,7 +9,7 @@ import {
   Description,
   AmountInfo,
   MainAmount,
-  SecondartAmount,
+  SecondaryAmount,
 } from './styles';
 
 class AmountItem extends Component {
@@ -41,7 +41,7 @@ class AmountItem extends Component {
 
         <AmountInfo>
           <MainAmount>{mainAmount}</MainAmount>
-          <SecondartAmount>{secondaryAmount}</SecondartAmount>
+          <SecondaryAmount>{secondaryAmount}</SecondaryAmount>
         </AmountInfo>
       </Container>
     );

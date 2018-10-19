@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FlatList } from 'react-native';
 
-import CurrencyItem from '../../../shared/CurrencyItem/CurrencyItem';
+import { CurrencyItem } from 'components/shared/Financialtems';
 
 class CurrenciesList extends Component {
   static propTypes = {

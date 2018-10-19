@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { FlatList } from 'react-native';
-import BalanceItem from '../../../shared/BalanceItem/BalanceItem';
+import { BalanceItem } from 'components/shared/Financialtems';
 
 class Balances extends Component {
   static propTypes = {
@@ -35,21 +35,5 @@ class Balances extends Component {
     );
   }
 }
-/*
-      <Container>
-        {balances.map(({
-          asset, usdPrice, usdAmount, amount,
-        }) => (
-          <AmountItem
-            key={asset}
-            description={`$${usdPrice.toFixed(6)}`}
-            icon={`currency${capitalize(asset)}`}
-            mainAmount={`$${usdAmount.toFixed(6)}`}
-            secondaryAmount={`${toFixed(amount)} ${asset.toUpperCase()}`}
-            title={asset.toUpperCase()}
-          />
-        ))}
-      </Container>
- */
 
 export default Balances;
