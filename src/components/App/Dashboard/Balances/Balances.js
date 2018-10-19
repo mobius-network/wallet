@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 
 import { FlatList } from 'react-native';
 import { BalanceItem } from 'components/shared/Financialtems';
+import { getCurrencyIconUri } from 'utils/currency-icon-uri';
 
 class Balances extends Component {
   static propTypes = {
     balances: PropTypes.array,
   };
-
-  genIconUri = id => `https://s2.coinmarketcap.com/static/img/coins/64x64/${id}.png`;
 
   render() {
     const { balances } = this.props;
@@ -24,7 +23,7 @@ class Balances extends Component {
           <BalanceItem
             key={id}
             balance={balance}
-            icon={{ uri: this.genIconUri(id) }}
+            icon={{ uri: getCurrencyIconUri(id) }}
             price={price}
             symbol={symbol}
             title={name}

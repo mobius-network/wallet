@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FlatList } from 'react-native';
 
 import { CurrencyItem } from 'components/shared/Financialtems';
+import { getCurrencyIconUri } from 'utils/currency-icon-uri';
 
 class CurrenciesList extends Component {
   static propTypes = {
@@ -10,8 +11,6 @@ class CurrenciesList extends Component {
     filterSubstring: PropTypes.string,
     onCurrencySelected: PropTypes.func,
   };
-
-  genIconUri = id => `https://s2.coinmarketcap.com/static/img/coins/64x64/${id}.png`;
 
   getUSDPrice = ({ USD: { price } }) => price.toFixed(6);
 
@@ -36,7 +35,7 @@ class CurrenciesList extends Component {
           <CurrencyItem
             key={id}
             description={symbol}
-            icon={{ uri: this.genIconUri(id) }}
+            icon={{ uri: getCurrencyIconUri(id) }}
             onPress={() => onCurrencySelected(id)}
             percentChangeIn24Hours={this.getUSDChange(quote)}
             price={`$${this.getUSDPrice(quote)}`}

@@ -6,3 +6,4 @@ export * from './jwt';
 export * from './analytics';
 export * from './numbers';
 export * from './errortyper';
+export * from './currency-icon-uri';
