@@ -15,7 +15,7 @@ export const pricesReducer = createReducer(
           quote: { USD },
         } = quotes[key];
 
-        acc[assetName] = { usd: USD.price };
+        acc[assetName] = { usd: USD.price, change: USD.percent_change_24h };
 
         return acc;
       }, {});
