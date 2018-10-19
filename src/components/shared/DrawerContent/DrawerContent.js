@@ -14,7 +14,6 @@ import {
 class DrawerContent extends Component {
   static propTypes = {
     codePushLabel: PropTypes.string,
-    isVotedForHackathon: PropTypes.bool.isRequired,
     navigation: PropTypes.shape({
       closeDrawer: PropTypes.func.isRequired,
       navigate: PropTypes.func.isRequired,
@@ -69,13 +68,11 @@ class DrawerContent extends Component {
 
   render() {
     const { isSecretCopied } = this.state;
-    const { t, isVotedForHackathon, codePushLabel } = this.props;
+    const { t, codePushLabel } = this.props;
 
     const isHackatonEnded = moment().isAfter(
       moment.tz('2018-10-21 23:59:59', 'America/Los_Angeles')
     );
-
-    const isNeedToShowHackathonLink = !(isVotedForHackathon || isHackatonEnded);
 
     return (
       <ScrollView>
@@ -97,7 +94,7 @@ class DrawerContent extends Component {
             </Buttons>
 
             <Buttons>
-              {isNeedToShowHackathonLink && (
+              {!isHackatonEnded && (
                 <Link onPress={this.handleLinkPress('HackathonVote')}>
                   {t('sidebarNavigation.hackathonVote')}
                 </Link>
