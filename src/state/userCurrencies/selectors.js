@@ -16,7 +16,9 @@ export const getUserCurrenciesBalances = createSelector(
       symbol, id, name, quote: { USD: { price } },
     }) => {
       const balanceSymbol = symbol === 'XLM' ? 'native' : symbol.toLowerCase();
-      const currencyBalance = accountBalance[balanceSymbol];
+      const currencyBalance = accountBalance
+        ? accountBalance[balanceSymbol]
+        : undefined;
       const balance = currencyBalance
         ? parseFloat(currencyBalance.balance)
         : 0;
