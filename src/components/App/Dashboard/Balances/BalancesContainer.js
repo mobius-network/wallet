@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { authActions } from 'state/auth';
-import { getAssetInfo } from 'state/prices';
+import { getAssetInfo, getAssetChange } from 'state/prices';
 
 import Balances from './Balances';
 
@@ -19,6 +19,7 @@ const mapStateToProps = state => ({
       buyAsset: 'usd',
     }),
   ],
+  change: getAssetChange(state),
 });
 
 const actions = {

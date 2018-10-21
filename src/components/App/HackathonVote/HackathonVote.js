@@ -13,6 +13,7 @@ import Apps from './apps';
 
 class HackathonVote extends Component {
   static propTypes = {
+    isVotedForHackathon: PropTypes.bool.isRequired,
     mobiBalance: PropTypes.number.isRequired,
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
@@ -72,22 +73,23 @@ class HackathonVote extends Component {
     );
   }
 
-  renderNotice() {
+  renderNotice(key) {
     const { t } = this.props;
 
     return (
       <Container>
-        <Description>{t('hackathonVote.notice')}</Description>
+        <Description>{t(key)}</Description>
       </Container>
     );
   }
 
   render() {
-    const { mobiBalance } = this.props;
+    const { isVotedForHackathon, mobiBalance } = this.props;
 
-    if (mobiBalance >= 5000) return this.renderPoll();
+    if (isVotedForHackathon) return this.renderNotice('hackathonVote.alreadyVotedNotice');
+    if (mobiBalance < 5000) return this.renderNotice('hackathonVote.amountNotice');
 
-    return this.renderNotice();
+    return this.renderPoll();
   }
 }
 

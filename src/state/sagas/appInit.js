@@ -1,10 +1,22 @@
 import * as Keychain from 'react-native-keychain';
 import { AsyncStorage } from 'react-native';
-import { call } from 'redux-saga/effects';
+import codePush from 'react-native-code-push';
+import { call, put } from 'redux-saga/effects';
 import { isNil } from 'lodash';
 
 import { navigators } from 'state/navigator';
+import { appActions } from 'state/app';
 import { authActions } from 'state/auth';
+
+function* getCodePushLabel() {
+  const update = yield call(
+    codePush.getUpdateMetadata,
+    codePush.UpdateState.RUNNING
+  );
+
+  if (update) return update.label;
+  return undefined;
+}
 
 function* isHasLaunched() {
   const HAS_LAUNCHED = 'hasLaunched';
@@ -31,6 +43,9 @@ function* resetKeychainCredentials() {
 }
 
 export default function* appInit() {
+  const codePushLabel = yield call(getCodePushLabel);
+  yield put(appActions.setCodePushLabel(codePushLabel));
+
   const hasLaunched = yield call(isHasLaunched);
 
   if (!hasLaunched) {
