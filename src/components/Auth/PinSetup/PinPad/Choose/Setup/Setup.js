@@ -6,6 +6,10 @@ import Header from '../../Header';
 
 class Setup extends Component {
   static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func.isRequired,
+      pop: PropTypes.func.isRequired,
+    }).isRequired,
     onComplete: PropTypes.func.isRequired,
     pinLength: PropTypes.number.isRequired,
     subtitle: PropTypes.string,
@@ -28,6 +32,8 @@ class Setup extends Component {
 
   handleKeyboardChange = pin => this.setState({ pin }, this.validate);
 
+  handleBack = () => this.props.navigation.pop();
+
   render() {
     const { pinLength, subtitle, title } = this.props;
     const { pin } = this.state;
@@ -35,8 +41,10 @@ class Setup extends Component {
     return (
       <Fragment>
         <Header
+          handleBack={this.handleBack}
           pin={pin}
           pinLength={pinLength}
+          showBack={true}
           subtitle={subtitle}
           title={title}
         />

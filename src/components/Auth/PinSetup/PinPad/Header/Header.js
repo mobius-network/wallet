@@ -8,7 +8,9 @@ import { easeLinear } from 'd3-ease';
 import PropTypes from 'prop-types';
 import { noop, range } from 'lodash';
 
-import styles from './styles';
+import styles, {
+  NavRow, BackButton, BackIcon, Head,
+} from './styles';
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -16,9 +18,11 @@ class Header extends Component {
   static propTypes = {
     errorSubtitle: PropTypes.string,
     errorTitle: PropTypes.string,
+    handleBack: PropTypes.func,
     onErrorShown: PropTypes.func,
     pin: PropTypes.string.isRequired,
     pinLength: PropTypes.number.isRequired,
+    showBack: PropTypes.bool,
     showError: PropTypes.bool,
     subtitle: PropTypes.string,
     title: PropTypes.string.isRequired,
@@ -29,6 +33,7 @@ class Header extends Component {
     onErrorShow: noop,
     showError: false,
     subtitle: null,
+    showBack: false,
   };
 
   state = {
@@ -133,11 +138,20 @@ class Header extends Component {
   };
 
   render() {
-    const { pinLength } = this.props;
+    const { pinLength, showBack, handleBack } = this.props;
     const { moveData } = this.state;
 
     return (
       <View style={styles.container}>
+        {showBack && (
+          <Head>
+            <NavRow>
+              <BackButton onPress={handleBack}>
+                <BackIcon />
+              </BackButton>
+            </NavRow>
+          </Head>
+        )}
         <Animate
           enter={{
             opacity: [1],

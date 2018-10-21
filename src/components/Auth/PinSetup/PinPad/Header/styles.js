@@ -1,4 +1,6 @@
 import { StyleSheet } from 'react-native';
+import styled from 'styled-components';
+import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 
 import {
   colors,
@@ -87,3 +89,28 @@ export default StyleSheet.create({
     borderWidth: 1,
   },
 });
+
+export const Head = styled.View`
+  padding-bottom: 16;
+  padding-left: 16;
+  padding-right: 16;
+  padding-top: 16;
+  width: ${helpers.vw};
+`;
+
+export const NavRow = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+`;
+
+export const BackIcon = styled(MaterialIcon).attrs({
+  name: 'arrow-back',
+})`
+  color: ${colors.textPrimary};
+  font-size: 26;
+`;
+
+export const BackButton = styled.TouchableHighlight.attrs({
+  underlayColor: 'transparent',
+})``;

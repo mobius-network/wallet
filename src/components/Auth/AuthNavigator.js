@@ -5,8 +5,8 @@ import wrapNavigator, { routeKeys } from 'components/shared/wrapNavigator';
 import Loading from './Loading';
 import Mnemonic from './Mnemonic';
 import PinSetup from './PinSetup';
-import Ready from './Ready';
 import Recovery from './Recovery';
+import Choose from './PinSetup/PinPad/Choose';
 import Splash from './Splash';
 import Welcome from './Welcome';
 
@@ -15,7 +15,7 @@ export const AuthNavigator = createStackNavigator(
     Loading,
     Mnemonic,
     PinSetup,
-    Ready,
+    Choose,
     Recovery,
     Splash,
     Welcome,

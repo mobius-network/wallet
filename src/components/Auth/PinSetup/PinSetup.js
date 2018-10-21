@@ -9,11 +9,8 @@ class PinSetup extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     navigation: PropTypes.shape({
-      state: PropTypes.shape({
-        params: PropTypes.shape({
-          action: PropTypes.func.isRequired,
-        }).isRequired,
-      }).isRequired,
+      navigate: PropTypes.func.isRequired,
+      pop: PropTypes.func.isRequired,
     }).isRequired,
     t: PropTypes.func.isRequired,
   };
@@ -52,7 +49,7 @@ class PinSetup extends Component {
   };
 
   render() {
-    const { t } = this.props;
+    const { t, navigation } = this.props;
     const { isPinRetreived, pin, step } = this.state;
 
     if (isPinRetreived) {
@@ -64,6 +61,7 @@ class PinSetup extends Component {
           confirmTitle={t('pinSetup.confirmTitle')}
           lockedSubtitle={t('pinSetup.lockedSubtitle')}
           lockedTitle={t('pinSetup.lockedTitle')}
+          navigation={navigation}
           onComplete={this.handlePinPadComplete}
           pin={pin}
           step={step}
