@@ -37,10 +37,13 @@ const dotStyles = {
 
 export default StyleSheet.create({
   container: {
+    flex: 2,
+  },
+  content: {
     alignItems: 'center',
-    flex: 1,
-    flexDirection: 'column',
+    flex: 2,
     justifyContent: 'space-evenly',
+    flexDirection: 'column',
   },
   textContainer: {
     alignItems: 'stretch',
@@ -91,10 +94,10 @@ export default StyleSheet.create({
 });
 
 export const Head = styled.View`
+  padding-top: 16;
   padding-bottom: 16;
   padding-left: 16;
   padding-right: 16;
-  padding-top: 16;
   width: ${helpers.vw};
 `;
 

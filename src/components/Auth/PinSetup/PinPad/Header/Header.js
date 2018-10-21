@@ -152,39 +152,41 @@ class Header extends Component {
             </NavRow>
           </Head>
         )}
-        <Animate
-          enter={{
-            opacity: [1],
-            timing: { duration: 200, ease: easeLinear },
-          }}
-          show={true}
-          start={{
-            opacity: 0,
-          }}
-        >
-          {({ opacity }) => (
-            <View style={styles.textContainer}>
-              {this.renderTitle(opacity)}
-              {this.renderSubtitle(opacity)}
-            </View>
-          )}
-        </Animate>
-        <Animate
-          show={true}
-          start={{
-            x: 0,
-          }}
-          update={{
-            x: [moveData.x],
-            timing: { duration: 200, ease: easeLinear },
-          }}
-        >
-          {({ x }) => (
-            <View style={styles.dotsContainer}>
-              {range(pinLength).map(index => this.renderDot(index, x))}
-            </View>
-          )}
-        </Animate>
+        <View style={styles.content}>
+          <Animate
+            enter={{
+              opacity: [1],
+              timing: { duration: 200, ease: easeLinear },
+            }}
+            show={true}
+            start={{
+              opacity: 0,
+            }}
+          >
+            {({ opacity }) => (
+              <View style={styles.textContainer}>
+                {this.renderTitle(opacity)}
+                {this.renderSubtitle(opacity)}
+              </View>
+            )}
+          </Animate>
+          <Animate
+            show={true}
+            start={{
+              x: 0,
+            }}
+            update={{
+              x: [moveData.x],
+              timing: { duration: 200, ease: easeLinear },
+            }}
+          >
+            {({ x }) => (
+              <View style={styles.dotsContainer}>
+                {range(pinLength).map(index => this.renderDot(index, x))}
+              </View>
+            )}
+          </Animate>
+        </View>
       </View>
     );
   }
