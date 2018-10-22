@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 
-import { authActions } from 'state/auth';
 import { getUserCurrenciesBalances } from 'state/userCurrencies';
 
 import Balances from './Balances';
@@ -11,11 +10,4 @@ const mapStateToProps = state => ({
   }),
 });
 
-const actions = {
-  ...authActions,
-};
-
-export default connect(
-  mapStateToProps,
-  actions
-)(Balances);
+export default connect(mapStateToProps)(Balances);
