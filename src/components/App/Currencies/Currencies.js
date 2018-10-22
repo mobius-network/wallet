@@ -10,7 +10,6 @@ class Currencies extends Component {
   static propTypes = {
     addUserCurrency: PropTypes.func,
     navigation: PropTypes.shape({
-      openDrawer: PropTypes.func.isRequired,
       pop: PropTypes.func.isRequired,
     }).isRequired,
     t: PropTypes.func.isRequired,
@@ -34,16 +33,20 @@ class Currencies extends Component {
 
   render() {
     const { t } = this.props;
+    const { coinName } = this.state;
     return (
       <Container>
         <Header
           onBackButtonClick={this.handleBack}
-          onSearchTextChange={coinName => this.setState({ coinName })}
+          onSearchTextChange={typedCoinName => this.setState({
+            coinName: typedCoinName,
+          })
+          }
           t={t}
-          text={this.state.coinName}
+          text={coinName}
         />
         <CurrenciesList
-          filterSubstring={this.state.coinName}
+          filterSubstring={coinName}
           onCurrencySelected={this.selectCurrency}
         />
       </Container>
