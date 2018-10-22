@@ -58,7 +58,7 @@ export const ChangeInfo = styled.Text`
 `;
 
 export const Change = styled.Text`
-  color: ${props => (props.positive ? colors.growth : colors.loss)};
+  color: ${props => (props.positive ? colors.growth : colors.error)};
   font-family: ${fonts.roboto.regular};
   font-size: ${fontSizes.small};
   line-height: 14;
