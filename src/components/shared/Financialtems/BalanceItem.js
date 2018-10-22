@@ -17,14 +17,22 @@ import {
 
 class BalanceItem extends Component {
   static propTypes = {
-    balance: PropTypes.string,
+    balance: PropTypes.number,
     icon: PropTypes.any,
     onPress: PropTypes.func,
-    price: PropTypes.string,
+    price: PropTypes.number,
     symbol: PropTypes.string,
     title: PropTypes.string,
-    usdBalance: PropTypes.string,
+    usdBalance: PropTypes.number,
   };
+
+  shouldComponentUpdate(nextProps) {
+    return (
+      nextProps.price !== this.props.price
+      || nextProps.usdBalance !== this.props.usdBalance
+      || nextProps.balance !== this.props.balance
+    );
+  }
 
   render() {
     const {

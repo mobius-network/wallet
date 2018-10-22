@@ -26,6 +26,13 @@ class CurrencyItem extends Component {
     title: PropTypes.string,
   };
 
+  shouldComponentUpdate(nextProps) {
+    return (
+      nextProps.price !== this.props.price
+      || nextProps.percentChangeIn24Hours !== this.props.percentChangeIn24Hours
+    );
+  }
+
   render() {
     const {
       icon, title, symbol, price, percentChangeIn24Hours,

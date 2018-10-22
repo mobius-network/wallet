@@ -21,6 +21,13 @@ class AmountItem extends Component {
     title: PropTypes.string,
   };
 
+  shouldComponentUpdate(nextProps) {
+    return (
+      nextProps.mainAmount !== this.props.mainAmount
+      || nextProps.secondaryAmount !== this.props.secondaryAmount
+    );
+  }
+
   render() {
     const {
       icon,
