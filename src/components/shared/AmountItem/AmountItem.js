@@ -25,15 +25,24 @@ class AmountItem extends Component {
     title: PropTypes.string,
   };
 
-  renderChangeIcon() {
+  renderTrend() {
     const { change } = this.props;
 
     const changeIconName = change > 0
       ? { color: '#69f0ae', name: 'caret-up' }
       : { color: '#ff5252', name: 'caret-down' };
-
+    const changeAmount = `${change} %`;
     return (
-      <Icon color={changeIconName.color} name={changeIconName.name} size={14} />
+      <Trend>
+        <SecondaryAmount>{changeAmount}</SecondaryAmount>
+        <IconChangeType>
+          <Icon
+            color={changeIconName.color}
+            name={changeIconName.name}
+            size={14}
+          />
+        </IconChangeType>
+      </Trend>
     );
   }
 
@@ -44,7 +53,6 @@ class AmountItem extends Component {
       description,
       mainAmount,
       secondaryAmount,
-      change,
     } = this.props;
 
     return (
@@ -57,10 +65,7 @@ class AmountItem extends Component {
         </Info>
 
         <AmountInfo>
-          <Trend>
-            <SecondaryAmount>{change}</SecondaryAmount>
-            <IconChangeType>{this.renderChangeIcon()}</IconChangeType>
-          </Trend>
+          {this.renderTrend()}
 
           <MainAmount>{mainAmount}</MainAmount>
           <SecondaryAmount>{secondaryAmount}</SecondaryAmount>
