@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { TextInput } from 'react-native';
 
 import {
-  BackButton, BackIcon, Gradient, NavRow, SearchInput,
+  BackButton, BackIcon, Gradient, NavRow,
 } from './styles';
 
 class Header extends PureComponent {
@@ -24,7 +25,7 @@ class Header extends PureComponent {
           <BackButton onPress={onBackButtonClick}>
             <BackIcon />
           </BackButton>
-          <SearchInput
+          <TextInput
             label="Coin Name"
             name="coin_name"
             onChangeText={newText => onSearchTextChange(newText)}
