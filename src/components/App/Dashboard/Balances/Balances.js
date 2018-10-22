@@ -12,16 +12,31 @@ class Balances extends Component {
 
   render() {
     const { balances } = this.props;
+
+    const keyedBalances = balances
+      .map(balance => ({
+        ...balance,
+        key: balance.id,
+      }))
+      // Put supported currencies on the top
+      .sort((a, b) => {
+        if (a.usdBalance === undefined) return 1;
+        if (b.usdBalance === undefined) return -1;
+        if (a.usdBalance > b.usdBalance) return 1;
+        if (a.usdBalance === b.usdBalance) return 0;
+        return -1;
+      });
+
     return (
       <FlatList
-        data={balances}
+        data={keyedBalances}
         renderItem={({
           item: {
-            id, symbol, name, usdBalance, balance, price,
+            id, key, symbol, name, usdBalance, balance, price,
           },
         }) => (
           <BalanceItem
-            key={id}
+            key={key}
             balance={balance}
             icon={{ uri: getCurrencyIconUri(id) }}
             price={price}

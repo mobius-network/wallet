@@ -1,27 +1,51 @@
+/* eslint-disable operator-linebreak */
 import updateSource from 'immutability-helper';
 import { createReducer } from 'redux-yo';
 
+import { currencies } from 'core/services/coinmarketcap';
 import { userCurrenciesActions } from './actions';
 
-const initialState = new Set([]);
-
-updateSource.extend('$toggleId', (value, set) => {
-  if (set.has(value)) {
-    set.delete(value);
-  } else {
-    set.add(value);
-  }
-  return new Set([...set]);
+const genCurrency = (supported = false) => ({
+  supported,
 });
+
+const genCurrencies = (ids, supported = false) => ids.reduce(
+  (obj, id) => ({
+    ...obj,
+    [id]: genCurrency(supported),
+  }),
+  {}
+);
+
+const defaultCurrencies = genCurrencies(Object.keys(currencies), true);
+
+const initialState = {
+  ...defaultCurrencies,
+};
 
 export const userCurrenciesReducer = createReducer(
   {
-    [userCurrenciesActions.setUserCurrencies]: (state, currenciesIds) => updateSource(state, {
-      $set: new Set(currenciesIds),
-    }),
-    [userCurrenciesActions.addUserCurrency]: (state, currencyId) => updateSource(state, {
-      $toggleId: currencyId,
-    }),
+    [userCurrenciesActions.setUserCurrencies]: (state, currenciesIds) => {
+      const userCurrencies = genCurrencies(currenciesIds);
+      return updateSource(state, {
+        $set: {
+          ...userCurrencies,
+          ...defaultCurrencies,
+        },
+      });
+    },
+    [userCurrenciesActions.addUserCurrency]: (state, currencyId) => (currencyId in state
+      ? // Remove selected currency, but preserve default currencies.
+      updateSource(state, {
+        $unset: [currencyId],
+        $merge: defaultCurrencies,
+      })
+      : // add new currency
+      updateSource(state, {
+        $merge: {
+          [currencyId]: genCurrency(),
+        },
+      })),
   },
   initialState
 );

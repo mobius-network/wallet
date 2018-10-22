@@ -18,11 +18,11 @@ import {
 class BalanceItem extends Component {
   static propTypes = {
     balance: PropTypes.number,
-    icon: PropTypes.any,
+    icon: PropTypes.any.isRequired,
     onPress: PropTypes.func,
     price: PropTypes.number,
-    symbol: PropTypes.string,
-    title: PropTypes.string,
+    symbol: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     usdBalance: PropTypes.number,
   };
 
@@ -38,6 +38,22 @@ class BalanceItem extends Component {
     const {
       icon, title, price, balance, usdBalance, symbol,
     } = this.props;
+
+    const maybeUsdBalance = usdBalance !== undefined ? (
+        <MainAmount>{`$${toFixed(usdBalance)}`}</MainAmount>
+    ) : null;
+
+    const maybeBalance = balance !== undefined ? (
+        <SecondaryAmount>{`${toFixed(balance)} ${symbol}`}</SecondaryAmount>
+    ) : null;
+
+    const maybeAmountInfo = usdBalance !== undefined && balance !== undefined ? (
+        <AmountInfo>
+          {maybeUsdBalance}
+          {maybeBalance}
+        </AmountInfo>
+    ) : null;
+
     return (
       <TouchableOpacity onPress={this.props.onPress}>
         <Container>
@@ -46,11 +62,7 @@ class BalanceItem extends Component {
             <Title>{title}</Title>
             <Description>{`$${toFixed(price)}`}</Description>
           </Info>
-
-          <AmountInfo>
-            <MainAmount>{`$${toFixed(usdBalance)}`}</MainAmount>
-            <SecondaryAmount>{`${toFixed(balance)} ${symbol}`}</SecondaryAmount>
-          </AmountInfo>
+          {maybeAmountInfo}
         </Container>
       </TouchableOpacity>
     );
