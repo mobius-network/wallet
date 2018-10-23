@@ -37,7 +37,7 @@ function* getCurrencies() {
       data: { data },
     } = yield call(cmcClient.getCurrencies);
 
-    yield put(currenciesActions.setQuotes(data));
+    yield put(currenciesActions.setCurrencies(data));
   } catch (error) {
     console.log(error);
   }

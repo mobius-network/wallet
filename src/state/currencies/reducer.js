@@ -7,14 +7,15 @@ const initialState = {};
 
 export const currenciesReducer = createReducer(
   {
-    [currenciesActions.setQuotes]: (state, quotes) => {
-      const updates = quotes.reduce((acc, quote) => {
-        acc[quote.id] = {
+    [currenciesActions.setCurrencies]: (state, currencies) => {
+      const updates = currencies.reduce((acc, currency) => {
+        const id = currency.id.toString();
+        acc[id] = {
           $set: {
-            quote: quote.quote,
-            id: quote.id,
-            symbol: quote.symbol,
-            name: quote.name,
+            quote: currency.quote,
+            id,
+            symbol: currency.symbol,
+            name: currency.name,
           },
         };
         return acc;

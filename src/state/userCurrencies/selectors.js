@@ -17,7 +17,6 @@ export const getUserCurrenciesBalances = createSelector(
         symbol, id, name, quote: { USD: { price } },
       }) => {
         const currencySupported = userCurrencies[id].supported;
-
         if (currencySupported) {
           const balanceSymbol = symbol === 'XLM' ? 'native' : symbol.toLowerCase();
           const currencyBalance = accountBalance
