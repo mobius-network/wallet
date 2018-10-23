@@ -20,7 +20,7 @@ class Button extends Component {
     padding: PropTypes.bool,
     shape: PropTypes.oneOf(['square', 'circle', 'rounded']),
     style: ViewPropTypes.style,
-    title: PropTypes.any.isRequired,
+    title: PropTypes.any,
     variant: PropTypes.oneOf([
       'primary',
       'text',

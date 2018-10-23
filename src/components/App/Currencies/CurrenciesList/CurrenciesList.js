@@ -7,7 +7,7 @@ import { getCurrencyIconUri } from 'utils/currency-icon-uri';
 
 class CurrenciesList extends Component {
   static propTypes = {
-    currencies: PropTypes.object.isRequired,
+    currencies: PropTypes.array.isRequired,
     filterSubstring: PropTypes.string,
     onCurrencySelected: PropTypes.func,
   };
@@ -19,21 +19,26 @@ class CurrenciesList extends Component {
 
   render() {
     const { currencies, onCurrencySelected, filterSubstring } = this.props;
-    const filteredCurrencies = currencies.filter(
-      ({ name, symbol }) => name.toLowerCase().includes(filterSubstring.toLowerCase())
-        || symbol.toLowerCase().includes(filterSubstring.toLowerCase())
-    );
+    const filteredCurrencies = currencies
+      .filter(
+        ({ name, symbol }) => name.toLowerCase().includes(filterSubstring.toLowerCase())
+          || symbol.toLowerCase().includes(filterSubstring.toLowerCase())
+      )
+      .map(currency => ({
+        ...currency,
+        key: currency.id,
+      }));
 
     return (
       <FlatList
         data={filteredCurrencies}
         renderItem={({
           item: {
-            id, symbol, quote, name,
+            id, key, symbol, quote, name,
           },
         }) => (
           <CurrencyItem
-            key={id}
+            key={key}
             description={symbol}
             icon={{ uri: getCurrencyIconUri(id) }}
             onPress={() => onCurrencySelected(id)}

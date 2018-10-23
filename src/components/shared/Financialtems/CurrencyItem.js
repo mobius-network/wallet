@@ -20,7 +20,7 @@ class CurrencyItem extends Component {
   static propTypes = {
     icon: PropTypes.any,
     onPress: PropTypes.func,
-    percentChangeIn24Hours: PropTypes.number,
+    percentChangeIn24Hours: PropTypes.string,
     price: PropTypes.string,
     symbol: PropTypes.string,
     title: PropTypes.string,
