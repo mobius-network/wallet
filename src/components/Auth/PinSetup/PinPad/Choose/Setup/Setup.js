@@ -44,7 +44,7 @@ class Setup extends Component {
           handleBack={this.handleBack}
           pin={pin}
           pinLength={pinLength}
-          showBack={true}
+          showBack
           subtitle={subtitle}
           title={title}
         />
