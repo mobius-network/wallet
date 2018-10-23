@@ -2,19 +2,23 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
 import Chart from 'components/shared/Chart';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import {
   Container,
-  IconLogotype,
+  IconLogoType,
   Info,
   Title,
   Description,
   AmountInfo,
   MainAmount,
-  SecondartAmount,
+  SecondaryAmount,
+  Trend,
+  IconChangeType,
 } from './styles';
 
 class AmountItem extends Component {
   static propTypes = {
+    change: PropTypes.string,
     description: PropTypes.string,
     icon: PropTypes.string,
     mainAmount: PropTypes.string,
@@ -30,6 +34,27 @@ class AmountItem extends Component {
     this.setState({ isOpened: !this.state.isOpened });
   };
 
+  renderTrend() {
+    const { change } = this.props;
+
+    const changeIconName = change > 0
+      ? { color: '#69f0ae', name: 'caret-up' }
+      : { color: '#ff5252', name: 'caret-down' };
+    const changeAmount = `${change} %`;
+    return (
+      <Trend>
+        <SecondaryAmount>{changeAmount}</SecondaryAmount>
+        <IconChangeType>
+          <Icon
+            color={changeIconName.color}
+            name={changeIconName.name}
+            size={14}
+          />
+        </IconChangeType>
+      </Trend>
+    );
+  }
+
   render() {
     const { isOpened } = this.state;
     const {
@@ -42,7 +67,7 @@ class AmountItem extends Component {
     return (
       <TouchableOpacity onPress={this.clickHandler}>
         <Container margin={isOpened}>
-          <IconLogotype name={icon} size={40} />
+          <IconLogoType name={icon} size={40} />
 
           <Info>
             <Title>{title}</Title>
@@ -50,8 +75,10 @@ class AmountItem extends Component {
           </Info>
 
           <AmountInfo>
+            {this.renderTrend()}
+
             <MainAmount>{mainAmount}</MainAmount>
-            <SecondartAmount>{secondaryAmount}</SecondartAmount>
+            <SecondaryAmount>{secondaryAmount}</SecondaryAmount>
           </AmountInfo>
         </Container>
         {isOpened && <Chart asset={title.toLowerCase()} />}

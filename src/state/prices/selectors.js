@@ -54,3 +54,8 @@ export const getUsdBalance = createSelector(
     return total.toFixed(2);
   }
 );
+
+export const getAssetChange = createSelector(getPrices, prices => Object.keys(prices).reduce((acc, asset) => {
+  acc[asset] = prices[asset].change.toFixed(2);
+  return acc;
+}, {}));

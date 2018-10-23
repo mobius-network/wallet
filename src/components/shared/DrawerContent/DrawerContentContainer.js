@@ -4,13 +4,14 @@ import { translate } from 'react-i18next';
 import { createStructuredSelector } from 'reselect';
 
 import { getSecretKeyFor } from 'state/auth';
-import { getIsVotedForHackathon } from 'state/hackathonVote';
+import { getCodePushLabel } from 'state/app';
 
 import DrawerContent from './DrawerContent';
 
 const mapStateToProps = createStructuredSelector({
   secretKey: getSecretKeyFor,
-  isVotedForHackathon: getIsVotedForHackathon,
+
+  codePushLabel: getCodePushLabel,
 });
 
 const actions = {};

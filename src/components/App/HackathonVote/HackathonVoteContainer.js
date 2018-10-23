@@ -4,16 +4,18 @@ import { translate } from 'react-i18next';
 import { createStructuredSelector } from 'reselect';
 
 import { getMobiBalance } from 'state/account';
-import { hackathonVoteActions } from 'state/hackathonVote';
+import { appActions, getIsVotedForHackathon } from 'state/app';
 
 import HackathonVote from './HackathonVote';
 
 const mapStateToProps = createStructuredSelector({
   mobiBalance: getMobiBalance,
+
+  isVotedForHackathon: getIsVotedForHackathon,
 });
 
 const actions = {
-  ...hackathonVoteActions,
+  ...appActions,
 };
 
 export default compose(
