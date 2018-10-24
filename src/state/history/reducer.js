@@ -9,8 +9,7 @@ export const historyReducer = createReducer(
     [historyActions.setHistory]: (state, mobiHistory = [], xlmHistory = []) => {
       const formatData = ({ Data }) => Data.sort((a, b) => a.time - b.time).map((el, idx) => {
         const elCopy = el;
-        const d = moment.unix(el.time);
-        elCopy.labelDate = `${d.month() + 1}/${d.date() + 1}`;
+        elCopy.d = moment.unix(el.time);
         elCopy.x = idx + 1;
         return elCopy;
       });

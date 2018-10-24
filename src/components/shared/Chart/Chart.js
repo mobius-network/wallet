@@ -38,7 +38,7 @@ class Chart extends Component {
           >
             <VictoryAxis
               style={{ tickLabels: { fontSize: 11 } }}
-              tickFormat={tokenHistory.map(el => el.labelDate)}
+              tickFormat={tokenHistory.map(el => `${el.d.format('MM/DD')}`)}
             />
             <VictoryAxis
               dependentAxis
