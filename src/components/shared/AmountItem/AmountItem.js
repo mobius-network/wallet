@@ -36,21 +36,23 @@ class AmountItem extends Component {
 
   renderTrend() {
     const { change } = this.props;
-
+    const icon = change && change !== 0;
     const changeIconName = change > 0
       ? { color: '#69f0ae', name: 'caret-up' }
       : { color: '#ff5252', name: 'caret-down' };
-    const changeAmount = `${change} %`;
+    const changeAmount = change !== undefined ? `${change} %` : '-- %';
     return (
       <Trend>
         <SecondaryAmount>{changeAmount}</SecondaryAmount>
-        <IconChangeType>
-          <Icon
-            color={changeIconName.color}
-            name={changeIconName.name}
-            size={14}
-          />
-        </IconChangeType>
+        {icon && (
+          <IconChangeType>
+            <Icon
+              color={changeIconName.color}
+              name={changeIconName.name}
+              size={14}
+            />
+          </IconChangeType>
+        )}
       </Trend>
     );
   }
