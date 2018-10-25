@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { TouchableOpacity } from 'react-native';
+import Chart from 'components/shared/Chart';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
 import {
   Container,
   IconLogoType,
@@ -23,6 +24,14 @@ class AmountItem extends Component {
     mainAmount: PropTypes.string,
     secondaryAmount: PropTypes.string,
     title: PropTypes.string,
+  };
+
+  state = {
+    isOpened: false,
+  };
+
+  clickHandler = () => {
+    this.setState({ isOpened: !this.state.isOpened });
   };
 
   renderTrend() {
@@ -47,6 +56,7 @@ class AmountItem extends Component {
   }
 
   render() {
+    const { isOpened } = this.state;
     const {
       icon,
       title,
@@ -54,23 +64,25 @@ class AmountItem extends Component {
       mainAmount,
       secondaryAmount,
     } = this.props;
-
     return (
-      <Container>
-        <IconLogoType name={icon} size={40} />
+      <TouchableOpacity onPress={this.clickHandler}>
+        <Container margin={isOpened}>
+          <IconLogoType name={icon} size={40} />
 
-        <Info>
-          <Title>{title}</Title>
-          <Description>{description}</Description>
-        </Info>
+          <Info>
+            <Title>{title}</Title>
+            <Description>{description}</Description>
+          </Info>
 
-        <AmountInfo>
-          {this.renderTrend()}
+          <AmountInfo>
+            {this.renderTrend()}
 
-          <MainAmount>{mainAmount}</MainAmount>
-          <SecondaryAmount>{secondaryAmount}</SecondaryAmount>
-        </AmountInfo>
-      </Container>
+            <MainAmount>{mainAmount}</MainAmount>
+            <SecondaryAmount>{secondaryAmount}</SecondaryAmount>
+          </AmountInfo>
+        </Container>
+        {isOpened && <Chart asset={title.toLowerCase()} />}
+      </TouchableOpacity>
     );
   }
 }

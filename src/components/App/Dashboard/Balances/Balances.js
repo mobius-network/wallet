@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { capitalize } from 'lodash';
-
+import { ScrollView } from 'react-native';
 import AmountItem from 'components/shared/AmountItem';
 import { toFixed } from 'utils';
 
@@ -17,7 +17,7 @@ class Balances extends Component {
     const { balances, change } = this.props;
 
     return (
-      <Container>
+      <ScrollView contentContainerStyle={Container}>
         {balances.map(({
           asset, usdPrice, usdAmount, amount,
         }) => (
@@ -31,7 +31,7 @@ class Balances extends Component {
             title={asset.toUpperCase()}
           />
         ))}
-      </Container>
+      </ScrollView>
     );
   }
 }

@@ -12,6 +12,7 @@ export const colors = {
   darkBlue: '#0E497D',
   darkPurple: '#3A4372',
   error: '#EB506A',
+  chartGreen: '#27AE60',
 };
 
 // It's important to know the exact name of the font to be able to use it
