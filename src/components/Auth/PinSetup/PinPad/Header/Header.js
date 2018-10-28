@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
-import {
-  Dimensions, Text, Vibration, View,
-} from 'react-native';
+import { Dimensions, Vibration } from 'react-native';
 import Animate from 'react-move/Animate';
 import LinearGradient from 'react-native-linear-gradient';
 import { easeLinear } from 'd3-ease';
 import PropTypes from 'prop-types';
 import { noop, range } from 'lodash';
 
-import styles, {
-  NavRow, BackButton, BackIcon, Head,
+import {
+  NavRow,
+  BackButton,
+  BackIcon,
+  Head,
+  Container,
+  StyledDot,
+  dotStyles,
+  Content,
+  TextContainer,
+  TitleContainer,
+  Title,
+  Subtitle,
+  DotsContainer,
 } from './styles';
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -88,14 +98,11 @@ class Header extends Component {
     const { title, errorTitle, showError } = this.props;
 
     return (
-      <View style={styles.titleContainer}>
-        <Text
-          selectable={false}
-          style={[showError ? styles.errorTitle : styles.title, { opacity }]}
-        >
+      <TitleContainer>
+        <Title selectable={false} showError={showError} style={opacity}>
           {showError ? errorTitle : title}
-        </Text>
-      </View>
+        </Title>
+      </TitleContainer>
     );
   };
 
@@ -103,15 +110,9 @@ class Header extends Component {
     const { subtitle, errorSubtitle, showError } = this.props;
 
     return (
-      <Text
-        selectable={false}
-        style={[
-          showError ? styles.errorSubtitle : styles.subtitle,
-          { opacity },
-        ]}
-      >
+      <Subtitle selectable={false} showError={showError} style={opacity}>
         {showError ? errorSubtitle : subtitle}
-      </Text>
+      </Subtitle>
     );
   };
 
@@ -119,7 +120,7 @@ class Header extends Component {
     const { pin, showError } = this.props;
 
     if (showError) {
-      return <View key={index} style={[styles.errorDot, { left: x }]} />;
+      return <StyledDot key={index} showError style={{ left: x }} />;
     }
 
     if (pin.length >= index + 1) {
@@ -129,12 +130,12 @@ class Header extends Component {
           colors={['#4637E6', '#8C2DFD']}
           end={{ x: 1, y: 1 }}
           start={{ x: 0, y: 1 }}
-          style={[styles.dot, { left: x }]}
+          style={[dotStyles, { left: x }]}
         />
       );
     }
 
-    return <View key={index} style={[styles.emptyDot, { left: x }]} />;
+    return <StyledDot key={index} style={{ left: x }} />;
   };
 
   render() {
@@ -142,7 +143,7 @@ class Header extends Component {
     const { moveData } = this.state;
 
     return (
-      <View style={styles.container}>
+      <Container>
         {showBack && (
           <Head>
             <NavRow>
@@ -152,7 +153,7 @@ class Header extends Component {
             </NavRow>
           </Head>
         )}
-        <View style={styles.content}>
+        <Content>
           <Animate
             enter={{
               opacity: [1],
@@ -164,10 +165,10 @@ class Header extends Component {
             }}
           >
             {({ opacity }) => (
-              <View style={styles.textContainer}>
+              <TextContainer>
                 {this.renderTitle(opacity)}
                 {this.renderSubtitle(opacity)}
-              </View>
+              </TextContainer>
             )}
           </Animate>
           <Animate
@@ -181,13 +182,13 @@ class Header extends Component {
             }}
           >
             {({ x }) => (
-              <View style={styles.dotsContainer}>
+              <DotsContainer>
                 {range(pinLength).map(index => this.renderDot(index, x))}
-              </View>
+              </DotsContainer>
             )}
           </Animate>
-        </View>
-      </View>
+        </Content>
+      </Container>
     );
   }
 }
