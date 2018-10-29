@@ -34,6 +34,7 @@ export const getUserCurrenciesBalances = createSelector(
             balance,
             usdBalance,
             price,
+            removable: false,
           };
         }
 
@@ -42,6 +43,7 @@ export const getUserCurrenciesBalances = createSelector(
           id,
           name,
           price,
+          removable: true,
         };
       });
   }

@@ -22,6 +22,7 @@ class BalanceItem extends Component {
     onPress: PropTypes.func,
     onRemove: PropTypes.func.isRequired,
     price: PropTypes.number,
+    removable: PropTypes.bool,
     symbol: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     usdBalance: PropTypes.number,
@@ -45,7 +46,13 @@ class BalanceItem extends Component {
 
   render() {
     const {
-      icon, title, price, balance, usdBalance, symbol,
+      icon,
+      title,
+      price,
+      balance,
+      usdBalance,
+      symbol,
+      removable,
     } = this.props;
 
     const maybeUsdBalance = usdBalance !== undefined ? (
@@ -63,17 +70,23 @@ class BalanceItem extends Component {
         </AmountInfo>
     ) : null;
 
-    return (
+    const balanceContainer = (
+      <Container>
+        <Image size={40} source={icon} />
+        <Info>
+          <Title>{title}</Title>
+          <Description>{`$${toFixed(price)}`}</Description>
+        </Info>
+        {maybeAmountInfo}
+      </Container>
+    );
+
+    return removable ? (
       <BalanceSwiper ref={this.swiper} right={this.swipeoutBtns}>
-        <Container>
-          <Image size={40} source={icon} />
-          <Info>
-            <Title>{title}</Title>
-            <Description>{`$${toFixed(price)}`}</Description>
-          </Info>
-          {maybeAmountInfo}
-        </Container>
+        {balanceContainer}
       </BalanceSwiper>
+    ) : (
+      balanceContainer
     );
   }
 }

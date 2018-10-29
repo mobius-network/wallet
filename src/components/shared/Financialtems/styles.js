@@ -94,5 +94,5 @@ export const SecondaryAmount = styled.Text`
 export const BalanceSwiper = styled(Swipeout).attrs({
   autoClose: true,
 })`
-  background-color: white;
+  background-color: transparent;
 `;

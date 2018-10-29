@@ -4,7 +4,6 @@ import { userCurrenciesActions } from 'state/userCurrencies';
 
 function* remoteUserCurrency(action) {
   const currencyId = action.payload;
-  console.log(action.payload);
   const userCurrenciesEntry = yield call(
     AsyncStorage.getItem,
     'userCurrencies'
