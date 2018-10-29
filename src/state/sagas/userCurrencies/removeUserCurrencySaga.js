@@ -2,8 +2,9 @@ import { AsyncStorage } from 'react-native';
 import { takeLatest, call } from 'redux-saga/effects';
 import { userCurrenciesActions } from 'state/userCurrencies';
 
-function* toggleUserCurrency(action) {
+function* remoteUserCurrency(action) {
   const currencyId = action.payload;
+  console.log(action.payload);
   const userCurrenciesEntry = yield call(
     AsyncStorage.getItem,
     'userCurrencies'
@@ -12,9 +13,7 @@ function* toggleUserCurrency(action) {
     ? JSON.parse(userCurrenciesEntry)
     : [];
   const currencyIdx = userCurrencies.indexOf(currencyId);
-  if (currencyIdx < 0) {
-    userCurrencies.push(currencyId);
-  } else {
+  if (currencyIdx >= 0) {
     userCurrencies.splice(currencyIdx, 1);
   }
   const newUserCurrenciesEntry = JSON.stringify(userCurrencies);
@@ -26,6 +25,6 @@ function* toggleUserCurrency(action) {
 }
 
 export default takeLatest(
-  userCurrenciesActions.addUserCurrency,
-  toggleUserCurrency
+  userCurrenciesActions.removeUserCurrency,
+  remoteUserCurrency
 );

@@ -7,7 +7,8 @@ import { getCurrencyIconUri } from 'utils/currency-icon-uri';
 
 class Balances extends Component {
   static propTypes = {
-    balances: PropTypes.array,
+    balances: PropTypes.array.isRequired,
+    removeUserCurrency: PropTypes.func.isRequired,
   };
 
   render() {
@@ -39,6 +40,7 @@ class Balances extends Component {
             key={key}
             balance={balance}
             icon={{ uri: getCurrencyIconUri(id) }}
+            onRemove={() => this.props.removeUserCurrency(id)}
             price={price}
             symbol={symbol}
             title={name}

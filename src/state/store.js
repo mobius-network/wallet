@@ -2,7 +2,7 @@ import store from './configureStore';
 
 import appInitSaga from './sagas/appInit';
 import hackathonVoteInitSaga from './sagas/hackathonVote/hackathonVoteInitSaga';
-import initCurrenciesSaga from './sagas/userCurrencies/initUserCurrenciesSaga';
+import { initCurrenciesSaga } from './sagas/userCurrencies';
 import rootSaga from './saga';
 
 store.runSaga(rootSaga);

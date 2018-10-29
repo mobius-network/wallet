@@ -34,18 +34,15 @@ export const userCurrenciesReducer = createReducer(
         },
       });
     },
-    [userCurrenciesActions.addUserCurrency]: (state, currencyId) => (currencyId in state
-      ? // Remove selected currency, but preserve default currencies.
-      updateSource(state, {
-        $unset: [currencyId],
-        $merge: defaultCurrencies,
-      })
-      : // add new currency
-      updateSource(state, {
-        $merge: {
-          [currencyId]: genCurrency(),
-        },
-      })),
+    [userCurrenciesActions.addUserCurrency]: (state, currencyId) => updateSource(state, {
+      $merge: {
+        [currencyId]: genCurrency(),
+      },
+    }),
+    [userCurrenciesActions.removeUserCurrency]: (state, currencyId) => updateSource(state, {
+      $unset: [currencyId],
+      $merge: defaultCurrencies,
+    }),
   },
   initialState
 );

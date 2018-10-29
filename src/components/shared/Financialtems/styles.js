@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { colors, fonts, fontSizes } from 'components/shared/Styleguide';
 
 import Icon from 'components/shared/Icon';
+import Swipeout from 'react-native-swipeout';
 
 export const Container = styled.View`
   align-items: center;
@@ -88,4 +89,10 @@ export const SecondaryAmount = styled.Text`
   font-family: ${fonts.roboto.regular};
   font-size: ${fontSizes.small};
   line-height: 14;
+`;
+
+export const BalanceSwiper = styled(Swipeout).attrs({
+  autoClose: true,
+})`
+  background-color: white;
 `;

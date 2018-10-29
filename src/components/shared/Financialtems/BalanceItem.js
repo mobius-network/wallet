@@ -1,7 +1,6 @@
 /* eslint-disable react-native/no-raw-text */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableOpacity } from 'react-native';
 import { toFixed } from 'utils';
 
 import {
@@ -13,6 +12,7 @@ import {
   AmountInfo,
   MainAmount,
   SecondaryAmount,
+  BalanceSwiper,
 } from './styles';
 
 class BalanceItem extends Component {
@@ -20,6 +20,7 @@ class BalanceItem extends Component {
     balance: PropTypes.number,
     icon: PropTypes.any.isRequired,
     onPress: PropTypes.func,
+    onRemove: PropTypes.func.isRequired,
     price: PropTypes.number,
     symbol: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -33,6 +34,14 @@ class BalanceItem extends Component {
       || nextProps.balance !== this.props.balance
     );
   }
+
+  swipeoutBtns = [
+    {
+      text: 'Remove',
+      backgroundColor: '#F00',
+      onPress: this.props.onRemove,
+    },
+  ];
 
   render() {
     const {
@@ -55,7 +64,7 @@ class BalanceItem extends Component {
     ) : null;
 
     return (
-      <TouchableOpacity onPress={this.props.onPress}>
+      <BalanceSwiper ref={this.swiper} right={this.swipeoutBtns}>
         <Container>
           <Image size={40} source={icon} />
           <Info>
@@ -64,7 +73,7 @@ class BalanceItem extends Component {
           </Info>
           {maybeAmountInfo}
         </Container>
-      </TouchableOpacity>
+      </BalanceSwiper>
     );
   }
 }
