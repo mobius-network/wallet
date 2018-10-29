@@ -26,7 +26,11 @@
     "start:fresh": "yarn run start -- --reset-cache",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "node node_modules/jest/bin/jest.js",
-    "test:watch": "node node_modules/jest/bin/jest.js --watch"
+    "test:watch": "node node_modules/jest/bin/jest.js --watch",
+    "test:e2e:release": "detox test --configuration ios.sim.release --cleanup",
+    "test:e2e:release:build": "detox build --configuration ios.sim.release",
+    "test:e2e": "detox test --configuration ios.sim.debug --cleanup",
+    "test:e2e:build": "detox build --configuration ios.sim.debug"
   },
   "dependencies": {
     "@tradle/react-native-http": "^2.0.1",
@@ -102,6 +106,7 @@
     "babel-eslint": "9.0.0",
     "babel-jest": "^23.4.2",
     "babel-plugin-module-resolver": "^3.1.1",
+    "detox": "^9.0.5",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-babel": "^5.1.0",
@@ -153,5 +158,22 @@
       "eslint --fix",
       "git add"
     ]
+  },
+  "detox": {
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/MobiusMobileWallet.app",
+        "build": "xcodebuild -workspace ios/MobiusMobileWallet.xcworkspace -scheme MobiusMobileWallet -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 7"
+      },
+      "ios.sim.release": {
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/MobiusMobileWallet.app",
+        "build": "xcodebuild -workspace ios/MobiusMobileWallet.xcworkspace -scheme MobiusMobileWallet -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 7"
+      }
+    },
+    "test-runner": "jest"
   }
 }
