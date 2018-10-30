@@ -4,6 +4,7 @@
 
 # Xcode
 #
+GoogleService-Info.plist
 build/
 *.pbxuser
 !default.pbxuser
@@ -24,6 +25,7 @@ project.xcworkspace
 
 # Android/IntelliJ
 #
+google-services.json
 build/
 .idea
 .gradle

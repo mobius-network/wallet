@@ -16,7 +16,7 @@ import { trackEvent, ErrorTyper } from 'utils';
 import navigator from 'state/navigator';
 import { getMasterAccount } from 'state/account';
 import { getKeypairFor } from 'state/auth';
-import { hackathonVoteActions } from 'state/hackathonVote';
+import { appActions } from 'state/app';
 
 export function createMemoHash(number, pubkey) {
   const value = `${number}${pubkey}${HACKATHON_VOTING_SECRET}`;
@@ -28,7 +28,7 @@ export function createMemoHash(number, pubkey) {
 }
 
 function* saveHackatonVote() {
-  yield put(hackathonVoteActions.setHackathonVote());
+  yield put(appActions.setHackathonVote());
   yield call(AsyncStorage.setItem, 'isVotedForHackathon', 'true');
 }
 
@@ -77,7 +77,7 @@ function* run(args) {
       : getMessageByErrorType(et);
 
     yield call(navigator.navigate, 'HackathonVote', 'Notice', {
-      action: ({ dispatch }) => dispatch(hackathonVoteActions.sendHackathonVote(args)),
+      action: ({ dispatch }) => dispatch(appActions.sendHackathonVote(args)),
       goBackAction: ({ navigate }) => navigate('HackathonVote'),
       type: 'error',
       message,
@@ -87,4 +87,4 @@ function* run(args) {
   }
 }
 
-export default takeLatest(hackathonVoteActions.sendHackathonVote, run);
+export default takeLatest(appActions.sendHackathonVote, run);

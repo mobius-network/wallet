@@ -2,7 +2,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { toFixed } from 'utils';
-
+import { TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Chart from 'components/shared/Chart';
 import {
   Container,
   Image,
@@ -13,11 +15,14 @@ import {
   MainAmount,
   SecondaryAmount,
   BalanceSwiper,
+  Trend,
+  IconChangeType,
 } from './styles';
 
 class BalanceItem extends Component {
   static propTypes = {
     balance: PropTypes.number,
+    change: PropTypes.string,
     icon: PropTypes.any.isRequired,
     onPress: PropTypes.func,
     onRemove: PropTypes.func.isRequired,
@@ -28,11 +33,16 @@ class BalanceItem extends Component {
     usdBalance: PropTypes.number,
   };
 
-  shouldComponentUpdate(nextProps) {
+  state = {
+    isOpened: false,
+  };
+
+  shouldComponentUpdate(nextProps, nextState) {
     return (
       nextProps.price !== this.props.price
       || nextProps.usdBalance !== this.props.usdBalance
       || nextProps.balance !== this.props.balance
+      || nextState.isOpened !== this.state.isOpened
     );
   }
 
@@ -44,16 +54,50 @@ class BalanceItem extends Component {
     },
   ];
 
+  clickHandler = () => {
+    this.setState({ isOpened: !this.state.isOpened });
+  };
+
+  renderTrend(change) {
+    const icon = change && change !== '0';
+    const changeIconName = change > 0
+      ? {
+        color: '#69f0ae',
+        name: 'caret-up',
+      }
+      : {
+        color: '#ff5252',
+        name: 'caret-down',
+      };
+    const changeAmount = change !== undefined ? `${change} %` : '-- %';
+    return (
+      <Trend>
+        <SecondaryAmount>{changeAmount}</SecondaryAmount>
+        {icon && (
+          <IconChangeType>
+            <Icon
+              color={changeIconName.color}
+              name={changeIconName.name}
+              size={14}
+            />
+          </IconChangeType>
+        )}
+      </Trend>
+    );
+  }
+
   render() {
     const {
       icon,
       title,
       price,
       balance,
+      change,
       usdBalance,
       symbol,
       removable,
     } = this.props;
+    const { isOpened } = this.state;
 
     const maybeUsdBalance = usdBalance !== undefined ? (
         <MainAmount>{`$${toFixed(usdBalance)}`}</MainAmount>
@@ -63,22 +107,26 @@ class BalanceItem extends Component {
         <SecondaryAmount>{`${toFixed(balance)} ${symbol}`}</SecondaryAmount>
     ) : null;
 
-    const maybeAmountInfo = usdBalance !== undefined && balance !== undefined ? (
-        <AmountInfo>
-          {maybeUsdBalance}
-          {maybeBalance}
-        </AmountInfo>
-    ) : null;
+    const maybeAmountInfo = (
+      <AmountInfo>
+        {this.renderTrend(change)}
+        {maybeUsdBalance}
+        {maybeBalance}
+      </AmountInfo>
+    );
 
     const balanceContainer = (
-      <Container>
-        <Image size={40} source={icon} />
-        <Info>
-          <Title>{title}</Title>
-          <Description>{`$${toFixed(price)}`}</Description>
-        </Info>
-        {maybeAmountInfo}
-      </Container>
+      <TouchableOpacity onPress={this.clickHandler}>
+        <Container>
+          <Image size={40} source={icon} />
+          <Info>
+            <Title>{title}</Title>
+            <Description>{`$${toFixed(price)}`}</Description>
+          </Info>
+          {maybeAmountInfo}
+        </Container>
+        {isOpened && <Chart asset={symbol.toLowerCase()} />}
+      </TouchableOpacity>
     );
 
     return removable ? (

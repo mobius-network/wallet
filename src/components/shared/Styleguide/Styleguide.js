@@ -13,6 +13,7 @@ export const colors = {
   darkPurple: '#3A4372',
   error: '#EB506A',
   growth: '#53eb4f',
+  chartGreen: '#27AE60',
 };
 
 export const gradients = {

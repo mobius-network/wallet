@@ -14,7 +14,9 @@ export const getUserCurrenciesBalances = createSelector(
       .filter(currencyId => currencyId in currencies)
       .map(currencyId => currencies[currencyId])
       .map(({
-        symbol, id, name, quote: { USD: { price } },
+        symbol, id, name, quote: { // eslint-disable-next-line camelcase
+          USD: { price, percent_change_24h },
+        },
       }) => {
         const currencySupported = userCurrencies[id].supported;
         if (currencySupported) {
@@ -34,6 +36,7 @@ export const getUserCurrenciesBalances = createSelector(
             balance,
             usdBalance,
             price,
+            change: percent_change_24h,
             removable: false,
           };
         }
@@ -43,6 +46,7 @@ export const getUserCurrenciesBalances = createSelector(
           id,
           name,
           price,
+          change: percent_change_24h,
           removable: true,
         };
       });

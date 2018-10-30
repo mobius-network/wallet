@@ -6,16 +6,15 @@ import Icon from 'components/shared/Icon';
 import Swipeout from 'react-native-swipeout';
 
 export const Container = styled.View`
-  align-items: center;
+  align-items: flex-end;
   display: flex;
   flex-direction: row;
-  margin-top: 16;
-  margin-bottom: 16;
+  margin-bottom: ${props => (props.margin ? 5 : 31)};
   margin-left: 16;
   margin-right: 16;
 `;
 
-export const IconLogotype = styled(Icon)`
+export const IconLogoType = styled(Icon)`
   margin-right: 16.5;
 `;
 
@@ -95,4 +94,14 @@ export const BalanceSwiper = styled(Swipeout).attrs({
   autoClose: true,
 })`
   background-color: transparent;
+`;
+
+export const Trend = styled.View`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const IconChangeType = styled.View`
+  margin-left: 5;
+  margin-right: 5;
 `;

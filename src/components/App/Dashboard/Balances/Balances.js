@@ -33,6 +33,7 @@ class Balances extends Component {
         data={keyedBalances}
         renderItem={({
           item: {
+            change,
             id,
             key,
             symbol,
@@ -46,6 +47,7 @@ class Balances extends Component {
           <BalanceItem
             key={key}
             balance={balance}
+            change={change}
             icon={{ uri: getCurrencyIconUri(id) }}
             onRemove={() => this.props.removeUserCurrency(id)}
             price={price}

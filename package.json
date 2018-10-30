@@ -25,7 +25,8 @@
     "secrets": "bundle exec dotgpg cat .env.gpg > .env && bundle exec dotgpg cat .env.production.gpg > .env.production",
     "start:fresh": "yarn run start -- --reset-cache",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "node node_modules/jest/bin/jest.js --watch"
+    "test": "node node_modules/jest/bin/jest.js",
+    "test:watch": "node node_modules/jest/bin/jest.js --watch"
   },
   "dependencies": {
     "@tradle/react-native-http": "^2.0.1",
@@ -91,6 +92,7 @@
     "styled-components": "^3.4.1",
     "tweetnacl": "^1.0.0",
     "url": "^0.11.0",
+    "victory-native": "^30.4.0",
     "vm-browserify": "^1.1.0"
   },
   "devDependencies": {
@@ -140,7 +142,10 @@
     "preset": "react-native",
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
-    }
+    },
+    "setupFiles": [
+      "./jestmocks.js"
+    ]
   },
   "lint-staged": {
     "src/**/*.js": [
