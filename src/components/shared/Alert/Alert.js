@@ -36,11 +36,11 @@ class Alert extends Component {
 
   render() {
     const {
-      isVisible, title, text, children,
+      buttons, isVisible, title, text, children, ...rest
     } = this.props;
 
     return (
-      <Container>
+      <Container {...rest}>
         <Modal
           animationIn="slideInDown"
           animationOut="slideOutUp"

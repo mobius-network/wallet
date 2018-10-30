@@ -74,7 +74,13 @@ class Button extends Component {
 
   render() {
     const {
-      disabled, onPress, shape, variant, padding, style,
+      disabled,
+      onPress,
+      shape,
+      variant,
+      padding,
+      style,
+      ...rest
     } = this.props;
 
     return (
@@ -85,7 +91,7 @@ class Button extends Component {
           padding,
         }}
       >
-        <Container style={[variant !== 'text' && shadow, style]}>
+        <Container style={[variant !== 'text' && shadow, style]} {...rest}>
           <TouchableOpacity
             accessibilityComponentType="button"
             disabled={disabled}

@@ -37,7 +37,7 @@ class Dashboard extends Component {
     const { navigation } = this.props;
 
     return (
-      <Container>
+      <Container testID="DASHBOARD_VIEW">
         <Gradient>
           <Menu onPress={this.handleMenuButtonClick}>
             <MenuIcon />

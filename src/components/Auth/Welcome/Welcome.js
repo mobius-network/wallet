@@ -26,6 +26,7 @@ class Welcome extends Component {
             onPress={this.handleNavigationClick('PinSetup', {
               action: ({ dispatch }) => dispatch(signupStart()),
             })}
+            testID="SETUP_WALLET_BUTTON"
             title={t('welcome.setupWalletButton')}
           />
         }
@@ -38,10 +39,12 @@ class Welcome extends Component {
         secondaryAction={
           <Button
             onPress={this.handleNavigationClick('Recovery')}
+            testID="RECOVER_WALLET_BUTTON"
             title={t('welcome.recoverWalletButton')}
             variant="text"
           />
         }
+        testID="WELCOME_VIEW"
         variant="bottom"
       />
     );

@@ -32,6 +32,7 @@ class Ready extends Component {
             title={t('ready.title')}
           />
         }
+        testID="READY_VIEW"
         variant="bottom"
       />
     );

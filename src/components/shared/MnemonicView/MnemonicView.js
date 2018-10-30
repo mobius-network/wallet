@@ -39,13 +39,16 @@ class MnemonicView extends Component {
   };
 
   render() {
-    const { mnemonic, onPress, withCopyButton } = this.props;
+    const {
+      mnemonic, onPress, onCopy, withCopyButton, ...rest
+    } = this.props;
 
     if (onPress) {
       return (
         <TouchableOpacity
           accessibilityComponentType="button"
           onPress={this.handleContainerClick}
+          {...rest}
         >
           <Container style={shadow}>
             <Text selectable>{mnemonic}</Text>

@@ -161,20 +161,20 @@
     ]
   },
   "detox": {
+    "test-runner": "jest",
     "configurations": {
       "ios.sim.debug": {
         "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/MobiusMobileWallet.app",
-        "build": "xcodebuild -workspace ios/MobiusMobileWallet.xcworkspace -scheme MobiusMobileWallet -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "build": "xcodebuild -workspace ios/MobiusMobileWallet.xcworkspace -scheme MobiusMobileWallet -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -quiet",
         "type": "ios.simulator",
-        "name": "iPhone 7"
+        "name": "iPhone 7 Plus"
       },
       "ios.sim.release": {
         "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/MobiusMobileWallet.app",
-        "build": "xcodebuild -workspace ios/MobiusMobileWallet.xcworkspace -scheme MobiusMobileWallet -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
+        "build": "xcodebuild -workspace ios/MobiusMobileWallet.xcworkspace -scheme MobiusMobileWallet -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -quiet",
         "type": "ios.simulator",
-        "name": "iPhone 7"
+        "name": "iPhone 7 Plus"
       }
-    },
-    "test-runner": "jest"
+    }
   }
 }

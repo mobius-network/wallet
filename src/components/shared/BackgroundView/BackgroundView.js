@@ -18,12 +18,12 @@ class BackgroundView extends Component {
 
   render() {
     const {
-      variant, content, action, secondaryAction,
+      variant, content, action, secondaryAction, ...rest
     } = this.props;
 
     return (
       <ThemeProvider theme={{ variant }}>
-        <Container source={background}>
+        <Container source={background} {...rest}>
           <Content>{content}</Content>
           {action && <Action>{action}</Action>}
 

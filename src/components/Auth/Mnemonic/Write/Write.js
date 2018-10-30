@@ -47,7 +47,7 @@ class Write extends Component {
     const { t, mnemonic } = this.props;
 
     return (
-      <Container>
+      <Container testID="WRITE_MNEMONIC_VIEW">
         <Alert
           buttons={[
             <Button
@@ -65,11 +65,13 @@ class Write extends Component {
               onPress={this.onComplete}
               padding={false}
               shape="square"
+              testID="WRITE_MNEMONIC_ALERT_CONFIRM_BUTTON"
               title={t('mnemonic.write.alertButtonConfirm').toUpperCase()}
               variant="text"
             />,
           ]}
           isVisible={isAlertVisisble}
+          testID="WRITE_MNEMONIC_ALERT_CONFIRM"
           text={t('mnemonic.write.alertMessage')}
           title={t('mnemonic.write.alertTitle')}
         >
@@ -77,6 +79,7 @@ class Write extends Component {
             isChecked={isAlertChecked}
             label={t('mnemonic.write.alertUnderstand')}
             onPress={this.toggleCheckbox}
+            testID="WRITE_MNEMONIC_ALERT_CONFIRM_CHECKBOX"
           />
         </Alert>
 
@@ -91,6 +94,7 @@ class Write extends Component {
 
         <Button
           onPress={this.showAlert}
+          testID="WRITE_MNEMONIC_CONTINUE_BUTTON"
           title={t('mnemonic.write.continueButton')}
         />
       </Container>

@@ -10,7 +10,6 @@ class AlertCheckbox extends Component {
   static propTypes = {
     isChecked: PropTypes.bool,
     label: PropTypes.string.isRequired,
-
     onPress: PropTypes.func.isRequired,
   };
 
@@ -19,10 +18,12 @@ class AlertCheckbox extends Component {
   };
 
   render() {
-    const { isChecked, label, onPress } = this.props;
+    const {
+      isChecked, label, onPress, ...rest
+    } = this.props;
 
     return (
-      <Container>
+      <Container {...rest}>
         <CheckBox
           checkBoxColor={colors.textPrimary}
           isChecked={isChecked}
