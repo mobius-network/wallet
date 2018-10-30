@@ -135,7 +135,7 @@ class Header extends Component {
       );
     }
 
-    return <StyledDot key={index} style={{ left: x }} />;
+    return <StyledDot key={index} showError={false} style={{ left: x }} />;
   };
 
   render() {

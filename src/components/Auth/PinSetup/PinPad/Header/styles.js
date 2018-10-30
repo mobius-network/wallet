@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import React from 'react';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
-
+import { View, Text } from 'react-native';
 import {
   colors,
   fonts,
@@ -41,16 +42,16 @@ export const TitleContainer = styled.View`
   width: ${helpers.vw - 48};
 `;
 
-export const Title = styled.Text`
+export const Title = styled(({ showError, ...rest }) => <Text {...rest} />)`
   flex: 1;
   flex-wrap: wrap;
   font-family: ${fonts.helveticaNeue.bold};
   font-size: ${fontSizes.secondaryTitle};
   text-align: center;
-  color: ${props => (props.showError ? colors.error : colors.textDefault)};
+  color: ${({ showError }) => (showError ? colors.error : colors.textSecondary)};
 `;
 
-export const Subtitle = styled.Text`
+export const Subtitle = styled(({ showError, ...rest }) => <Text {...rest} />)`
   font-size: ${fontSizes.default};
   line-height: ${helpers.calculateLineHeight(fontSizes.default)};
   padding-top: 10;
@@ -58,7 +59,7 @@ export const Subtitle = styled.Text`
   text-align: center;
   top: 100%;
   width: ${helpers.vw - 48};
-  color: ${props => (props.showError ? colors.error : colors.textSecondary)};
+  color: ${({ showError }) => (showError ? colors.error : colors.textSecondary)};
 `;
 
 export const DotsContainer = styled.View`
@@ -101,12 +102,12 @@ export const BackButton = styled.TouchableHighlight.attrs({
   underlayColor: 'transparent',
 })``;
 
-export const StyledDot = styled.View`
+export const StyledDot = styled(({ showError, ...rest }) => <View {...rest} />)`
   border-radius: 10;
   height: 20;
   margin-left: 9;
   margin-right: 9;
   width: 20;
-  border-color: ${props => (props.showError ? colors.error : '#BEBEBE')};
+  border-color: ${({ showError }) => (showError ? colors.error : '#BEBEBE')}
   border-width: 1;
 `;
