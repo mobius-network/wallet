@@ -150,7 +150,8 @@
     },
     "setupFiles": [
       "./jestmocks.js"
-    ]
+    ],
+    "testPathIgnorePatterns": ["node_modules", "e2e"]
   },
   "lint-staged": {
     "src/**/*.js": [
