@@ -18,6 +18,10 @@ class Choose extends PureComponent {
     confirmErrorTitle: PropTypes.string,
     confirmSubtitle: PropTypes.string,
     confirmTitle: PropTypes.string,
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func.isRequired,
+      pop: PropTypes.func.isRequired,
+    }).isRequired,
     onComplete: PropTypes.func.isRequired,
     pinLength: PropTypes.number.isRequired,
   };
@@ -49,12 +53,14 @@ class Choose extends PureComponent {
       confirmSubtitle,
       confirmTitle,
       pinLength,
+      navigation,
     } = this.props;
 
     switch (step) {
       case chooseSteps.setup:
         return (
           <Setup
+            navigation={navigation}
             onComplete={this.handleSetupComplete}
             pinLength={pinLength}
             subtitle={chooseSubtitle}
