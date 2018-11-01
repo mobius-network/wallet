@@ -22,5 +22,6 @@ module.exports = {
       stream: modulePath('readable-stream'),
       vm: modulePath('vm-browserify'),
     },
+    resolverMainFields: ['react-native', 'browser', 'main'],
   },
 };
