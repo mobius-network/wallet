@@ -72,6 +72,7 @@
     }],
     "react/jsx-sort-props": [2, {
       "reservedFirst": true
-    }]
+    }],
+    "react-native/no-raw-text": 1
   }
 }
