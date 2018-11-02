@@ -16,6 +16,9 @@ import watchPaymentsSaga from './sagas/watchPayments';
 import {
   addUserCurrencySaga,
   removeUsersCurrenciesSaga,
+  refreshHistoryWhenCurrencySetSaga,
+  refreshHistoryWhenUserCurrenciesSetSaga,
+  refreshHistoryWhenUserCurrencyAddedSaga,
 } from './sagas/userCurrencies';
 
 export default function* rootSaga() {
@@ -33,5 +36,8 @@ export default function* rootSaga() {
     watchPaymentsSaga,
     addUserCurrencySaga,
     removeUsersCurrenciesSaga,
+    refreshHistoryWhenCurrencySetSaga,
+    refreshHistoryWhenUserCurrenciesSetSaga,
+    refreshHistoryWhenUserCurrencyAddedSaga,
   ]);
 }
