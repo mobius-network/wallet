@@ -84,6 +84,7 @@ class Recovery extends Component {
             />,
           ]}
           isVisible={isInfoAlertVisible}
+          testID="RECOVER_WALLET_INFO"
           text={t('auth.recovery.infoAlertText')}
           title={t('auth.recovery.infoAlertTitle')}
         />
@@ -95,11 +96,13 @@ class Recovery extends Component {
               onPress={this.hideValidationAlert}
               padding={false}
               shape="square"
+              testID="RECOVER_WALLET_ALERT_CONFIRM_BUTTON"
               title={t('shared.ok').toUpperCase()}
               variant="text"
             />,
           ]}
           isVisible={isValidationAlertVisible}
+          testID="RECOVER_WALLET_ALERT"
           title={t('auth.recovery.validationAlertTitle')}
         >
           {Object.keys(validation).map(key => (
@@ -107,7 +110,7 @@ class Recovery extends Component {
           ))}
         </AlertShared>
 
-        <Container>
+        <Container testID="RECOVER_WALLET_VIEW">
           <Header>
             <NavRow>
               <BackButton onPress={this.handleBack}>
@@ -125,14 +128,15 @@ class Recovery extends Component {
 
           <KeyboardAvoidingView behavior="position">
             <Field
-              autoFocus
               component={TextInput}
               label={t('auth.recovery.mnemonicFieldLabel')}
               name="mnemonic"
               placeholder={t('auth.recovery.mnemonicFieldPlaceholder')}
+              testID="RECOVER_WALLET_FIELD"
             />
             <InfoButton
               onPress={this.toggleInfoAlert}
+              testID="RECOVER_WALLET_INFO_BUTTON"
               underlayColor="transparent"
             >
               <InfoIcon />
@@ -142,6 +146,7 @@ class Recovery extends Component {
           <ButtonRow>
             <Button
               onPress={this.handleSubmitButtonPress}
+              testID="RECOVER_WALLET_SUBMIT_BUTTON"
               title={t('shared.continue')}
             />
           </ButtonRow>

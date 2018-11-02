@@ -17,6 +17,7 @@ class Alert extends Component {
     buttons: PropTypes.arrayOf(PropTypes.any),
     children: PropTypes.any,
     isVisible: PropTypes.bool,
+    testID: PropTypes.string,
     text: PropTypes.string,
     title: PropTypes.string.isRequired,
   };
@@ -36,17 +37,17 @@ class Alert extends Component {
 
   render() {
     const {
-      buttons, isVisible, title, text, children, ...rest
+      isVisible, title, text, children, testID,
     } = this.props;
 
     return (
-      <Container {...rest}>
+      <Container>
         <Modal
           animationIn="slideInDown"
           animationOut="slideOutUp"
           isVisible={isVisible}
         >
-          <Window>
+          <Window testID={testID}>
             <Title>{title}</Title>
             {text && <Text>{text}</Text>}
 
