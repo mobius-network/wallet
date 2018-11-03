@@ -34,11 +34,13 @@ export const userCurrenciesReducer = createReducer(
         },
       });
     },
-    [userCurrenciesActions.addUserCurrency]: (state, currencyId) => updateSource(state, {
-      $merge: {
-        [currencyId]: genCurrency(),
-      },
-    }),
+    [userCurrenciesActions.addUserCurrency]: (state, currencyId) => (!(currencyId in state)
+      ? updateSource(state, {
+        $merge: {
+          [currencyId]: genCurrency(),
+        },
+      })
+      : state),
     [userCurrenciesActions.removeUserCurrency]: (state, currencyId) => updateSource(state, {
       $unset: [currencyId],
       $merge: defaultCurrencies,
