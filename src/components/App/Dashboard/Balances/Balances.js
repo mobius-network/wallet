@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { FlatList } from 'react-native';
 import { BalanceItem } from 'components/shared/Financialtems';
 import { getCurrencyIconUri } from 'utils/currency-icon-uri';
+import { BalancesList } from './styles';
 
 class Balances extends Component {
   static propTypes = {
@@ -29,7 +29,7 @@ class Balances extends Component {
         return -1;
       });
     return (
-      <FlatList
+      <BalancesList
         data={keyedBalances}
         renderItem={({
           item: {
