@@ -26,7 +26,6 @@ class Header extends PureComponent {
             <BackIcon />
           </BackButton>
           <TextInput
-            label="Coin Name"
             name="coin_name"
             onChangeText={newText => onSearchTextChange(newText)}
             placeholder={t('currencies.searchFieldPlaceholder')}

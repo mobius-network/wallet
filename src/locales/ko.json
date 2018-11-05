@@ -163,7 +163,9 @@
       "headerTitle": "지불"
     },
     "currencies": {
-      "searchFieldPlaceholder": "동전 이름"
+      "searchFieldPlaceholder": "동전 이름",
+      "removeCurrency": "풀다",
+      "changeIn24h": "24 시간 후"
     }
   }
 }

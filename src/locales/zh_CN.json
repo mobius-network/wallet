@@ -163,7 +163,9 @@
       "headerTitle": "付款"
     },
     "currencies": {
-      "searchFieldPlaceholder": "硬币名称"
+      "searchFieldPlaceholder": "硬币名称",
+      "removeCurrency": "去掉",
+      "changeIn24h": "在24小时内"
     }
   }
 }

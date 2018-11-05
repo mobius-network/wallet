@@ -163,7 +163,9 @@
       "headerTitle": "Payments"
     },
     "currencies": {
-      "searchFieldPlaceholder": "Coin name"
+      "searchFieldPlaceholder": "Coin name",
+      "removeCurrency": "Remove",
+      "changeIn24h": "in 24h"
     }
   }
 }

@@ -10,6 +10,7 @@ class CurrenciesList extends Component {
   static propTypes = {
     currencies: PropTypes.array.isRequired,
     onCurrencySelected: PropTypes.func,
+    t: PropTypes.func.isRequired,
   };
 
   getUSDPrice = ({ USD: { price } }) => toFixed(price);
@@ -18,7 +19,7 @@ class CurrenciesList extends Component {
   getUSDChange = ({ USD: { percent_change_24h } }) => (percent_change_24h != null ? toFixed(percent_change_24h, 3) : 0);
 
   render() {
-    const { currencies, onCurrencySelected } = this.props;
+    const { currencies, onCurrencySelected, t } = this.props;
     const keyedCurrencies = currencies.map(currency => ({
       ...currency,
       key: currency.id,
@@ -39,6 +40,7 @@ class CurrenciesList extends Component {
             onPress={() => onCurrencySelected(id)}
             percentChangeIn24Hours={this.getUSDChange(quote)}
             price={`$${this.getUSDPrice(quote)}`}
+            t={t}
             title={name}
           />
         )}

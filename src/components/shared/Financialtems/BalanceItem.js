@@ -29,6 +29,7 @@ class BalanceItem extends Component {
     price: PropTypes.number,
     removable: PropTypes.bool,
     symbol: PropTypes.string.isRequired,
+    t: PropTypes.func.isRequired,
     title: PropTypes.string.isRequired,
     usdBalance: PropTypes.number,
   };
@@ -48,7 +49,7 @@ class BalanceItem extends Component {
 
   swipeoutBtns = [
     {
-      text: 'Remove',
+      text: this.props.t('currencies.removeCurrency'),
       backgroundColor: '#F00',
       onPress: this.props.onRemove,
     },

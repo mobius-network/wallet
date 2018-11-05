@@ -23,6 +23,7 @@ class CurrencyItem extends Component {
     percentChangeIn24Hours: PropTypes.string,
     price: PropTypes.string,
     symbol: PropTypes.string,
+    t: PropTypes.func.isRequired,
     title: PropTypes.string,
   };
 
@@ -35,7 +36,12 @@ class CurrencyItem extends Component {
 
   render() {
     const {
-      icon, title, symbol, price, percentChangeIn24Hours,
+      icon,
+      title,
+      symbol,
+      price,
+      percentChangeIn24Hours,
+      t,
     } = this.props;
     const positiveChange = percentChangeIn24Hours > 0;
     return (
@@ -53,7 +59,7 @@ class CurrencyItem extends Component {
               <Change positive={positiveChange}>
                 {`${percentChangeIn24Hours}% `}
               </Change>
-              <ChangeTime>in 24h</ChangeTime>
+              <ChangeTime>{t('currencies.changeIn24h')}</ChangeTime>
             </ChangeInfo>
           </AmountInfo>
         </Container>

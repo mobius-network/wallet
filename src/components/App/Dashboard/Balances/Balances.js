@@ -9,10 +9,11 @@ class Balances extends Component {
   static propTypes = {
     balances: PropTypes.array.isRequired,
     removeUserCurrency: PropTypes.func.isRequired,
+    t: PropTypes.func.isRequired,
   };
 
   render() {
-    const { balances } = this.props;
+    const { balances, t } = this.props;
     const keyedBalances = balances.map(balance => ({
       ...balance,
       key: balance.id,
@@ -42,6 +43,7 @@ class Balances extends Component {
             price={price}
             removable={removable}
             symbol={symbol}
+            t={t}
             title={name}
             usdBalance={usdBalance}
           />
