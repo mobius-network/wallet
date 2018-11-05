@@ -4,6 +4,7 @@ import { FlatList } from 'react-native';
 
 import { CurrencyItem } from 'components/shared/Financialtems';
 import { getCurrencyIconUri } from 'utils/currency-icon-uri';
+import { toFixed } from 'utils';
 
 class CurrenciesList extends Component {
   static propTypes = {
@@ -11,10 +12,10 @@ class CurrenciesList extends Component {
     onCurrencySelected: PropTypes.func,
   };
 
-  getUSDPrice = ({ USD: { price } }) => price.toFixed(6);
+  getUSDPrice = ({ USD: { price } }) => toFixed(price);
 
   // eslint-disable-next-line camelcase
-  getUSDChange = ({ USD: { percent_change_24h } }) => (percent_change_24h != null ? percent_change_24h.toFixed(3) : 0);
+  getUSDChange = ({ USD: { percent_change_24h } }) => (percent_change_24h != null ? toFixed(percent_change_24h, 3) : 0);
 
   render() {
     const { currencies, onCurrencySelected } = this.props;
