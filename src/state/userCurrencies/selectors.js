@@ -26,49 +26,60 @@ export const getUserCurrenciesSymbols = createSelector(
 export const getUserCurrenciesBalances = createSelector(
   getUserCurrenciesData,
   getBalance,
-  (userCurrenciesData, accountBalance) => userCurrenciesData.map(
-    ({
-      data: {
-        symbol,
-        id,
-        name,
-        quote: {
-          // eslint-disable-next-line camelcase
-          USD: { price, percent_change_24h },
+  (userCurrenciesData, accountBalance) => userCurrenciesData
+    .map(
+      ({
+        data: {
+          symbol,
+          id,
+          name,
+          quote: {
+            // eslint-disable-next-line camelcase
+            USD: { price, percent_change_24h },
+          },
         },
-      },
-      supported,
-    }) => {
-      if (supported) {
-        const balanceSymbol = symbol === 'XLM' ? 'native' : symbol.toLowerCase();
-        const currencyBalance = accountBalance
-          ? accountBalance[balanceSymbol]
-          : undefined;
-        const balance = currencyBalance
-          ? parseFloat(currencyBalance.balance)
-          : 0;
-        const usdBalance = balance * price;
+        supported,
+      }) => {
+        if (supported) {
+          const balanceSymbol = symbol === 'XLM' ? 'native' : symbol.toLowerCase();
+          const currencyBalance = accountBalance
+            ? accountBalance[balanceSymbol]
+            : undefined;
+          const balance = currencyBalance
+            ? parseFloat(currencyBalance.balance)
+            : 0;
+          const usdBalance = balance * price;
+
+          return {
+            symbol,
+            id,
+            name,
+            balance,
+            usdBalance,
+            price,
+            change: percent_change_24h,
+            removable: false,
+          };
+        }
 
         return {
           symbol,
           id,
           name,
-          balance,
-          usdBalance,
           price,
           change: percent_change_24h,
-          removable: false,
+          removable: true,
         };
       }
-
-      return {
-        symbol,
-        id,
-        name,
-        price,
-        change: percent_change_24h,
-        removable: true,
-      };
-    }
-  )
+    )
+  // Put supported currencies on the top
+    .sort((a, b) => {
+      if (a.removable) return 1;
+      if (b.removable) return -1;
+      if (a.usdBalance === undefined) return 1;
+      if (b.usdBalance === undefined) return -1;
+      if (a.usdBalance > b.usdBalance) return 1;
+      if (a.usdBalance === b.usdBalance) return 0;
+      return -1;
+    })
 );

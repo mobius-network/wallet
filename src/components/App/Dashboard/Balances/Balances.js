@@ -13,21 +13,10 @@ class Balances extends Component {
 
   render() {
     const { balances } = this.props;
-    const keyedBalances = balances
-      .map(balance => ({
-        ...balance,
-        key: balance.id,
-      }))
-      // Put supported currencies on the top
-      .sort((a, b) => {
-        if (a.removable) return 1;
-        if (b.removable) return -1;
-        if (a.usdBalance === undefined) return 1;
-        if (b.usdBalance === undefined) return -1;
-        if (a.usdBalance > b.usdBalance) return 1;
-        if (a.usdBalance === b.usdBalance) return 0;
-        return -1;
-      });
+    const keyedBalances = balances.map(balance => ({
+      ...balance,
+      key: balance.id,
+    }));
     return (
       <BalancesList
         data={keyedBalances}
