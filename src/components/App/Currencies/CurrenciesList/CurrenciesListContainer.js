@@ -1,13 +1,10 @@
 import { connect } from 'react-redux';
 
+import { getSearchCurrenciesResults } from 'state/currencies/selectors';
 import CurrenciesList from './CurrenciesList';
 
 const mapStateToProps = state => ({
-  currencies: Object.keys(state.currencies)
-    .map(key => state.currencies[key])
-    .sort(
-      (currencyA, currencyB) => (currencyA.quote.USD.market_cap > currencyB.quote.USD.market_cap ? -1 : 1)
-    ),
+  currencies: getSearchCurrenciesResults(state),
 });
 
 export default connect(mapStateToProps)(CurrenciesList);

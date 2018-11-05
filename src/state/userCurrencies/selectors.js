@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 import { getBalance } from '../account';
 
-export const getCurrencies = state => state.currencies;
+export const getCurrencies = state => state.currencies.currenciesAvailable;
 export const getUserCurrencies = state => state.userCurrencies;
 
 export const getUserCurrenciesData = createSelector(

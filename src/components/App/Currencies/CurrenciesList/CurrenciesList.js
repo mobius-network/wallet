@@ -8,7 +8,6 @@ import { getCurrencyIconUri } from 'utils/currency-icon-uri';
 class CurrenciesList extends Component {
   static propTypes = {
     currencies: PropTypes.array.isRequired,
-    filterSubstring: PropTypes.string,
     onCurrencySelected: PropTypes.func,
   };
 
@@ -18,20 +17,15 @@ class CurrenciesList extends Component {
   getUSDChange = ({ USD: { percent_change_24h } }) => (percent_change_24h != null ? percent_change_24h.toFixed(3) : 0);
 
   render() {
-    const { currencies, onCurrencySelected, filterSubstring } = this.props;
-    const filteredCurrencies = currencies
-      .filter(
-        ({ name, symbol }) => name.toLowerCase().includes(filterSubstring.toLowerCase())
-          || symbol.toLowerCase().includes(filterSubstring.toLowerCase())
-      )
-      .map(currency => ({
-        ...currency,
-        key: currency.id,
-      }));
+    const { currencies, onCurrencySelected } = this.props;
+    const keyedCurrencies = currencies.map(currency => ({
+      ...currency,
+      key: currency.id,
+    }));
 
     return (
       <FlatList
-        data={filteredCurrencies}
+        data={keyedCurrencies}
         renderItem={({
           item: {
             id, key, symbol, quote, name,

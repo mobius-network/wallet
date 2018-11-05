@@ -9,9 +9,12 @@ import { Container } from './styles';
 class Currencies extends Component {
   static propTypes = {
     addUserCurrency: PropTypes.func,
+    clearSearchQuery: PropTypes.func,
     navigation: PropTypes.shape({
       pop: PropTypes.func.isRequired,
     }).isRequired,
+    searchQuery: PropTypes.string,
+    setSearchQuery: PropTypes.func,
     t: PropTypes.func.isRequired,
   };
 
@@ -19,9 +22,8 @@ class Currencies extends Component {
     balanceAmount: 0,
   };
 
-  constructor(props) {
-    super(props);
-    this.state = { coinName: '' };
+  componentWillUnmount() {
+    this.props.clearSearchQuery();
   }
 
   selectCurrency = (currencyId) => {
@@ -32,23 +34,16 @@ class Currencies extends Component {
   handleBack = () => this.props.navigation.pop();
 
   render() {
-    const { t } = this.props;
-    const { coinName } = this.state;
+    const { t, setSearchQuery, searchQuery } = this.props;
     return (
       <Container>
         <Header
           onBackButtonClick={this.handleBack}
-          onSearchTextChange={typedCoinName => this.setState({
-            coinName: typedCoinName,
-          })
-          }
+          onSearchTextChange={typedCoinName => setSearchQuery(typedCoinName)}
           t={t}
-          text={coinName}
+          text={searchQuery}
         />
-        <CurrenciesList
-          filterSubstring={coinName}
-          onCurrencySelected={this.selectCurrency}
-        />
+        <CurrenciesList onCurrencySelected={this.selectCurrency} />
       </Container>
     );
   }
