@@ -87,12 +87,18 @@ class AddFunds extends Component {
     selected: index || this.state.selected,
   });
 
+  renderFormattedPubKey = () => {
+    const { publicKey } = this.props;
+
+    return `${publicKey.slice(0, 11)}…${publicKey.slice(-11)}`;
+  };
+
   render() {
     const { t, publicKey } = this.props;
     const { selected } = this.state;
 
     return (
-      <Container>
+      <Container testID="ADD_FUNDS_VIEW">
         <Touchable onPress={this.showActionSheet}>
           <SelectorContainer>
             <SelectorTitle>{t('addFunds.selectWallet.label')}</SelectorTitle>
@@ -113,9 +119,7 @@ class AddFunds extends Component {
           />
 
           <KeyLabel>{t('addFunds.publicKey.title')}</KeyLabel>
-          <KeyValue>
-            {publicKey.slice(0, 11)}…{publicKey.slice(-11)}
-          </KeyValue>
+          <KeyValue>{this.renderFormattedPubKey()}</KeyValue>
 
           <ButtonRow>
             <ClipboardButton

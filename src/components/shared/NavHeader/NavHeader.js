@@ -27,7 +27,11 @@ class NavHeader extends Component {
 
     return (
       <Gradient>
-        <BackButton onPress={this.goBack} underlayColor="transparent">
+        <BackButton
+          onPress={this.goBack}
+          testID="BACK_BUTTON"
+          underlayColor="transparent"
+        >
           <BackIcon />
         </BackButton>
         <Title>{t(title)}</Title>

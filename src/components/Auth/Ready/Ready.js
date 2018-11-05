@@ -23,6 +23,7 @@ class Ready extends Component {
         action={
           <Button
             onPress={this.handleNavigationClick}
+            testID="READY_CONFIRM_BUTTON"
             title={t('shared.continue')}
           />
         }
