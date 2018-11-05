@@ -14,13 +14,10 @@ class Balances extends Component {
 
   render() {
     const { balances, t } = this.props;
-    const keyedBalances = balances.map(balance => ({
-      ...balance,
-      key: balance.id,
-    }));
     return (
       <BalancesList
-        data={keyedBalances}
+        data={balances}
+        keyExtractor={item => item.id}
         renderItem={({
           item: {
             change,

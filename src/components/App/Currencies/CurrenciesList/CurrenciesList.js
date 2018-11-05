@@ -20,21 +20,18 @@ class CurrenciesList extends Component {
 
   render() {
     const { currencies, onCurrencySelected, t } = this.props;
-    const keyedCurrencies = currencies.map(currency => ({
-      ...currency,
-      key: currency.id,
-    }));
 
     return (
       <FlatList
-        data={keyedCurrencies}
+        data={currencies}
+        keyExtractor={item => item.id}
         renderItem={({
           item: {
-            id, key, symbol, quote, name,
+            id, symbol, quote, name,
           },
         }) => (
           <CurrencyItem
-            key={key}
+            key={id}
             description={symbol}
             icon={{ uri: getCurrencyIconUri(id) }}
             onPress={() => onCurrencySelected(id)}
