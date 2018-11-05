@@ -22,7 +22,7 @@ import {
 class BalanceItem extends Component {
   static propTypes = {
     balance: PropTypes.number,
-    change: PropTypes.string,
+    change: PropTypes.number,
     icon: PropTypes.any.isRequired,
     onPress: PropTypes.func,
     onRemove: PropTypes.func.isRequired,
