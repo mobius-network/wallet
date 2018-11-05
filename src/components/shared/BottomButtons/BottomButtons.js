@@ -23,12 +23,12 @@ class BottomButtons extends Component {
         <ActionButton
           onPress={this.openReceiveScreen}
           square
-          title={t('dashboard.receiveButton').toUpperCase()}
+          title={t('dashboard.receiveButton')}
         />
         <ActionButton
           onPress={this.openSendScreen}
           square
-          title={t('dashboard.sendButton').toUpperCase()}
+          title={t('dashboard.sendButton')}
         />
       </ButtonRow>
     );

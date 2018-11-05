@@ -35,6 +35,7 @@ export const SelectedCurrency = styled.Text`
   font-family: ${fonts.roboto.regular};
   font-size: 15;
   line-height: 16;
+  text-transform: uppercase;
 `;
 
 export const ChevronIcon = styled(Icon).attrs({
@@ -99,6 +100,7 @@ export const KeyLabel = styled.Text`
   line-height: 14;
   margin-top: 12;
   opacity: 0.5;
+  text-transform: uppercase;
 `;
 
 export const KeyValue = styled.Text`

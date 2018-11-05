@@ -14,4 +14,5 @@ export const ActionButton = styled(Button).attrs({
   flex-grow: 1;
   margin-bottom: 0;
   margin-top: 0;
+  text-transform: uppercase;
 `;

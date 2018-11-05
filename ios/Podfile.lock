@@ -8,10 +8,10 @@ PODS:
     - JWT (~> 3.0.0-beta.7)
     - React
     - SSZipArchive (~> 2.1)
-  - Crashlytics (3.10.9):
-    - Fabric (~> 1.7.13)
+  - Crashlytics (3.11.1):
+    - Fabric (~> 1.8.1)
   - DoubleConversion (1.1.6)
-  - Fabric (1.7.13)
+  - Fabric (1.8.1)
   - Folly (2016.10.31.00):
     - boost-for-react-native
     - DoubleConversion
@@ -19,8 +19,8 @@ PODS:
   - glog (0.3.5)
   - JWT (3.0.0-beta.11):
     - Base64 (~> 1.1.2)
-  - React (0.57.3):
-    - React/Core (= 0.57.3)
+  - React (0.57.4):
+    - React/Core (= 0.57.4)
   - react-native-camera (1.3.0):
     - React
     - react-native-camera/RCT (= 1.3.0)
@@ -35,51 +35,51 @@ PODS:
     - React
   - react-native-version-number (0.3.4):
     - React
-  - React/Core (0.57.3):
-    - yoga (= 0.57.3.React)
-  - React/CxxBridge (0.57.3):
+  - React/Core (0.57.4):
+    - yoga (= 0.57.4.React)
+  - React/CxxBridge (0.57.4):
     - Folly (= 2016.10.31.00)
     - React/Core
     - React/cxxreact
-  - React/cxxreact (0.57.3):
+  - React/cxxreact (0.57.4):
     - boost-for-react-native (= 1.63.0)
     - Folly (= 2016.10.31.00)
     - React/jschelpers
     - React/jsinspector
-  - React/DevSupport (0.57.3):
+  - React/DevSupport (0.57.4):
     - React/Core
     - React/RCTWebSocket
-  - React/fishhook (0.57.3)
-  - React/jschelpers (0.57.3):
+  - React/fishhook (0.57.4)
+  - React/jschelpers (0.57.4):
     - Folly (= 2016.10.31.00)
     - React/PrivateDatabase
-  - React/jsinspector (0.57.3)
-  - React/PrivateDatabase (0.57.3)
-  - React/RCTActionSheet (0.57.3):
+  - React/jsinspector (0.57.4)
+  - React/PrivateDatabase (0.57.4)
+  - React/RCTActionSheet (0.57.4):
     - React/Core
-  - React/RCTAnimation (0.57.3):
+  - React/RCTAnimation (0.57.4):
     - React/Core
-  - React/RCTBlob (0.57.3):
+  - React/RCTBlob (0.57.4):
     - React/Core
-  - React/RCTCameraRoll (0.57.3):
+  - React/RCTCameraRoll (0.57.4):
     - React/Core
     - React/RCTImage
-  - React/RCTImage (0.57.3):
+  - React/RCTImage (0.57.4):
     - React/Core
     - React/RCTNetwork
-  - React/RCTLinkingIOS (0.57.3):
+  - React/RCTLinkingIOS (0.57.4):
     - React/Core
-  - React/RCTNetwork (0.57.3):
+  - React/RCTNetwork (0.57.4):
     - React/Core
-  - React/RCTSettings (0.57.3):
+  - React/RCTSettings (0.57.4):
     - React/Core
-  - React/RCTTest (0.57.3):
+  - React/RCTTest (0.57.4):
     - React/Core
-  - React/RCTText (0.57.3):
+  - React/RCTText (0.57.4):
     - React/Core
-  - React/RCTVibration (0.57.3):
+  - React/RCTVibration (0.57.4):
     - React/Core
-  - React/RCTWebSocket (0.57.3):
+  - React/RCTWebSocket (0.57.4):
     - React/Core
     - React/fishhook
     - React/RCTBlob
@@ -104,7 +104,7 @@ PODS:
   - RNVectorIcons/MaterialIcons (5.0.0):
     - React
   - SSZipArchive (2.1.4)
-  - yoga (0.57.3.React)
+  - yoga (0.57.4.React)
 
 DEPENDENCIES:
   - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
@@ -195,29 +195,29 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Base64: cecfb41a004124895a7bcee567a89bae5a89d49b
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
-  BVLinearGradient: 4b3f3bdf1ac1a52a5ef5e65c9585d793a7c3f825
-  CodePush: f6b348759cdc42c734d9c3a46ceb2997c270b12e
-  Crashlytics: 55e24fc23989680285a21cb1146578d9d18e432c
+  BVLinearGradient: 8913bd8fdc47b85abc801ae8bae007bbfb6b4ce5
+  CodePush: 73650f38e476f1a31757aaa9f6a732fd131f0be7
+  Crashlytics: ca7ab4bc304aa216bdc2e4c1a96389ee77252203
   DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
-  Fabric: 25d0963b691fc97be566392243ff0ecef5a68338
+  Fabric: 43ed7bac010f588f63ee23ab1a0276b296db5e17
   Folly: c89ac2d5c6ab169cd7397ef27485c44f35f742c7
   glog: e8acf0ebbf99759d3ff18c86c292a5898282dcde
   JWT: 05028b9624591bba9681bb57df2c5f95fa258bad
-  React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
-  react-native-camera: ec435a5b2498faa288b4574e005d5c1021f18608
-  react-native-randombytes: d3184d351604f78e019535178766590188bbc133
-  react-native-splash-screen: 8e3f866dc79bfe533baeffd0a38c33f7a7eae7f8
-  react-native-version-number: 36c0d8eb57a275a6239a860f8dbab3d18299b0e0
-  ReactNativeFabric: 01c1333f76fd4708a5833d71f0a4832a9266bf0f
-  ReactNativePermissions: 9f2d9c45c98800795e6c2ed330e25d11a66a8169
-  RNDeviceInfo: 568c5641057313b4912d08a7742ff0b2f753ed5c
-  RNKeychain: 627c6095cef215dd3d9804a9a9cf45ab96aa3997
-  RNLanguages: e3ae05ef105937645218272429dac0c3f7633451
-  RNSVG: 6252323c0312735f0af5f58b5adf2965b6a9ffbf
-  RNVectorIcons: 7e335c36ac85b04f966100980df6c438800fb179
+  React: 1f4ca35c4aeac2b47e42e8be98bb9188f48fba84
+  react-native-camera: 45a4c8159941783cf9d5d8ff9920d5d6962c7e7c
+  react-native-randombytes: 1b6091800f62c6c393c6bc850ac089ebf63d4c0a
+  react-native-splash-screen: 353334c5ae82d8c74501ea7cbb916cb7cb20c8bf
+  react-native-version-number: 05f7fa5643ae72674352bff7c67fc10d9d356b4b
+  ReactNativeFabric: d05320ff347d5c72567c115b97edeead111ac4d2
+  ReactNativePermissions: b64e084dff6a5cad51587d38c306f09246246384
+  RNDeviceInfo: e7c5fcde13d40e161d8a27f6c5dc69c638936002
+  RNKeychain: 3aa3cf891a09a0d18d306862ab2bb9e106079b24
+  RNLanguages: 69291ca9fea686ff96c66a519f92f7e5af1d08ae
+  RNSVG: 3c037ade1c42014de732e27e3879bf2b77ea78ea
+  RNVectorIcons: bc4936812e1768faca891acbd6308cb2fd22c810
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
-  yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
+  yoga: ac0f4c6ff31ac05bad1bd166fec5204c19de0277
 
 PODFILE CHECKSUM: 80c115f066b267731da3fecb4576929a2b1ce226
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.6.0.beta.2
