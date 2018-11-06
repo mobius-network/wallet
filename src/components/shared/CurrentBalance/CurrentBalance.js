@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-raw-text */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -12,7 +13,6 @@ import {
 class CurrentBalance extends Component {
   static propTypes = {
     t: PropTypes.func.isRequired,
-
     usdBalance: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
       .isRequired,
   };

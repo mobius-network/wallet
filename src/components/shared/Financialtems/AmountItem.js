@@ -30,16 +30,30 @@ class AmountItem extends Component {
     isOpened: false,
   };
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return (
+      nextProps.mainAmount !== this.props.mainAmount
+      || nextProps.secondaryAmount !== this.props.secondaryAmount
+      || nextState.isOpened !== this.state.isOpened
+    );
+  }
+
   clickHandler = () => {
     this.setState({ isOpened: !this.state.isOpened });
   };
 
   renderTrend() {
     const { change } = this.props;
-    const icon = change && change !== 0;
+    const icon = change && change !== '0';
     const changeIconName = change > 0
-      ? { color: '#69f0ae', name: 'caret-up' }
-      : { color: '#ff5252', name: 'caret-down' };
+      ? {
+        color: '#69f0ae',
+        name: 'caret-up',
+      }
+      : {
+        color: '#ff5252',
+        name: 'caret-down',
+      };
     const changeAmount = change !== undefined ? `${change} %` : '-- %';
     return (
       <Trend>

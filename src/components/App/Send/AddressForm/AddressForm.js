@@ -141,7 +141,7 @@ class AddressForm extends Component {
               key="confirm"
               onPress={this.hideAlert}
               padding={false}
-              square={true}
+              shape="square"
               title={t('shared.ok').toUpperCase()}
               variant="text"
             />,

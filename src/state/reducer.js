@@ -11,6 +11,8 @@ import { sendReducer } from './send';
 import { transfersReducer } from './transfers';
 import { appReducer } from './app';
 import { paymentsReducer } from './payments';
+import { currenciesReducer } from './currencies';
+import { userCurrenciesReducer } from './userCurrencies';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -19,10 +21,12 @@ const rootReducer = combineReducers({
   masterAccount: accountReducer,
   notifications: notificationsReducer,
   prices: pricesReducer,
-  history: historyReducer,
+  currencies: currenciesReducer,
   requests: requestsReducer,
   send: sendReducer,
   transfers: transfersReducer,
+  userCurrencies: userCurrenciesReducer,
+  history: historyReducer,
   app: appReducer,
   payments: paymentsReducer,
 });

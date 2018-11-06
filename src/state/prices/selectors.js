@@ -3,7 +3,7 @@ import { createSelector } from 'reselect';
 import { getSellAsset, getBuyAsset, getSellAmount } from 'state/utils';
 import { parsedBalanceValue } from 'core';
 
-import { getAssetBalance, getBalance } from 'state/account/selectors';
+import { getBalance } from 'state/account/selectors';
 
 export const getPrices = state => state.prices;
 
@@ -12,19 +12,6 @@ export const getAssetPrice = createSelector(
   getBuyAsset,
   getPrices,
   (sell, buy, prices) => get(prices, `${sell}.${buy}`) || 0
-);
-
-export const getAssetInfo = createSelector(
-  getSellAsset,
-  getBuyAsset,
-  getAssetBalance,
-  getAssetPrice,
-  (sellAsset, buyAsset, sellAmount = 0, price = 0) => ({
-    asset: sellAsset,
-    amount: sellAmount,
-    [`${buyAsset}Price`]: price,
-    [`${buyAsset}Amount`]: sellAmount * price,
-  })
 );
 
 const mapAssets = {

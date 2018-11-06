@@ -161,6 +161,11 @@
       "received": "Received",
       "account": "Created Account",
       "headerTitle": "Payments"
+    },
+    "currencies": {
+      "searchFieldPlaceholder": "Coin name",
+      "removeCurrency": "Remove",
+      "changeIn24h": "in 24h"
     }
   }
 }

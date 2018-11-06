@@ -161,6 +161,11 @@
       "received": "Получено",
       "account": "Создание аккаунта",
       "headerTitle": "Платежи"
+    },
+    "currencies": {
+      "searchFieldPlaceholder": "Название монеты",
+      "removeCurrency": "Удалить",
+      "changeIn24h": "через 24 часа"
     }
   }
 }

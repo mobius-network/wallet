@@ -1,7 +1,6 @@
 import {
   getPrices,
   getAssetPrice,
-  getAssetInfo,
   getUsdPrice,
   getUsdBalance,
 } from '../selectors';
@@ -17,15 +16,6 @@ test('test state/prices/selectors.getAssetPrice', () => {
       xlm: { usd: 2 },
     })
   ).toEqual(4);
-});
-
-test('test state/prices/selectors.getAssetInfo', () => {
-  expect(getAssetInfo.resultFunc('xlm', 'mobi', 42, 3)).toEqual({
-    amount: 42,
-    asset: 'xlm',
-    mobiAmount: 126,
-    mobiPrice: 3,
-  });
 });
 
 test('test state/prices/selectors.getUsdPrice', () => {

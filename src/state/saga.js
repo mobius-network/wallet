@@ -10,9 +10,16 @@ import {
 import { sendStartSaga } from './sagas/send';
 import submitTransactionSaga from './sagas/submitTransaction';
 import watchAccountSaga from './sagas/watchAccount';
-import watchPricesSaga from './sagas/watchPricesSaga';
+import watchPricesSaga from './sagas/watchCoinMarketCapSaga';
 import { sendHackathonVoteSaga } from './sagas/hackathonVote';
 import watchPaymentsSaga from './sagas/watchPayments';
+import {
+  addUserCurrencySaga,
+  removeUsersCurrenciesSaga,
+  refreshHistoryWhenCurrencySetSaga,
+  refreshHistoryWhenUserCurrenciesSetSaga,
+  refreshHistoryWhenUserCurrencyAddedSaga,
+} from './sagas/userCurrencies';
 
 export default function* rootSaga() {
   yield all([
@@ -27,5 +34,10 @@ export default function* rootSaga() {
     watchPricesSaga,
     sendHackathonVoteSaga,
     watchPaymentsSaga,
+    addUserCurrencySaga,
+    removeUsersCurrenciesSaga,
+    refreshHistoryWhenCurrencySetSaga,
+    refreshHistoryWhenUserCurrenciesSetSaga,
+    refreshHistoryWhenUserCurrencyAddedSaga,
   ]);
 }

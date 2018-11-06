@@ -5,7 +5,7 @@ import moment from 'moment-timezone';
 
 import CustomHeader from 'components/shared/CustomHeader';
 import CurrentBalance from 'components/shared/CurrentBalance';
-import AmountItem from 'components/shared/AmountItem';
+import { AmountItem } from 'components/shared/Financialtems';
 import BottomButtons from 'components/shared/BottomButtons';
 import LoadingIcon from 'components/shared/LoadingIcon';
 

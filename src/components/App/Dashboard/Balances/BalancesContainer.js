@@ -1,32 +1,24 @@
 import { connect } from 'react-redux';
-
-import { authActions } from 'state/auth';
-import { getAssetInfo, getAssetChange } from 'state/prices';
-
+import { compose } from 'redux';
+import {
+  getUserCurrenciesBalances,
+  userCurrenciesActions,
+} from 'state/userCurrencies';
+import { getAssetChange } from 'state/prices';
+import { translate } from 'react-i18next';
 import Balances from './Balances';
 
 const mapStateToProps = state => ({
-  balances: [
-    // TODO: simplify selectors
-    getAssetInfo(state, {
-      asset: 'mobi',
-      sellAsset: 'mobi',
-      buyAsset: 'usd',
-    }),
-    getAssetInfo(state, {
-      asset: 'native',
-      sellAsset: 'xlm',
-      buyAsset: 'usd',
-    }),
-  ],
+  balances: getUserCurrenciesBalances(state, {
+    buyAsset: 'USD',
+  }),
   change: getAssetChange(state),
 });
 
-const actions = {
-  ...authActions,
-};
-
-export default connect(
-  mapStateToProps,
-  actions
+export default compose(
+  connect(
+    mapStateToProps,
+    userCurrenciesActions
+  ),
+  translate('translation')
 )(Balances);

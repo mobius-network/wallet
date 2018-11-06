@@ -86,7 +86,7 @@ class Confirm extends Component {
               key="confirm"
               onPress={this.onError}
               padding={false}
-              square={true}
+              shape="square"
               title={t('mnemonic.confirm.alertErrorButton').toUpperCase()}
               variant="text"
             />,
@@ -103,7 +103,7 @@ class Confirm extends Component {
               disabled={!isConfirmAlertChecked}
               onPress={this.onComplete}
               padding={false}
-              square={true}
+              shape="square"
               title={t('mnemonic.confirm.alertConfirmButton').toUpperCase()}
               variant="text"
             />,
