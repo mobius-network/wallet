@@ -4,7 +4,12 @@ import { ThemeProvider } from 'styled-components';
 import { TouchableOpacity, ViewPropTypes } from 'react-native';
 
 import {
-  Container, Content, Gradient, Title, shadow,
+  Container,
+  Content,
+  Gradient,
+  Title,
+  shadow,
+  PlusIcon,
 } from './styles';
 
 class Button extends Component {
@@ -13,15 +18,20 @@ class Button extends Component {
     disabled: PropTypes.bool,
     onPress: PropTypes.func,
     padding: PropTypes.bool,
-    square: PropTypes.bool,
+    shape: PropTypes.oneOf(['square', 'circle', 'rounded']),
     style: ViewPropTypes.style,
-    title: PropTypes.any.isRequired,
-    variant: PropTypes.oneOf(['primary', 'text', 'secondary']),
+    title: PropTypes.any,
+    variant: PropTypes.oneOf([
+      'primary',
+      'text',
+      'secondary',
+      'floatingButton',
+    ]),
   };
 
   static defaultProps = {
     disabled: false,
-    square: false,
+    shape: 'rounded',
     variant: 'primary',
     padding: true,
   };
@@ -29,11 +39,11 @@ class Button extends Component {
   renderContent = () => {
     const { title, variant, disabled } = this.props;
 
-    if (typeof title !== 'string') {
+    if (typeof title !== 'string' && variant !== 'floatingButton') {
       return <Content>{title}</Content>;
     }
 
-    const text = variant === 'text' ? title : title.toUpperCase();
+    const text = variant === 'text' || title === undefined ? title : title.toUpperCase();
 
     switch (variant) {
       case 'primary':
@@ -41,6 +51,14 @@ class Button extends Component {
           <Gradient>
             <Content>
               <Title disabled={disabled}>{text}</Title>
+            </Content>
+          </Gradient>
+        );
+      case 'floatingButton':
+        return (
+          <Gradient>
+            <Content>
+              <PlusIcon />
             </Content>
           </Gradient>
         );
@@ -56,13 +74,13 @@ class Button extends Component {
 
   render() {
     const {
-      disabled, onPress, square, variant, padding, style,
+      disabled, onPress, shape, variant, padding, style,
     } = this.props;
 
     return (
       <ThemeProvider
         theme={{
-          square,
+          shape,
           variant,
           padding,
         }}

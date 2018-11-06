@@ -5,8 +5,8 @@ import wrapNavigator, { routeKeys } from 'components/shared/wrapNavigator';
 import Loading from './Loading';
 import Mnemonic from './Mnemonic';
 import PinSetup from './PinSetup';
-import Ready from './Ready';
 import Recovery from './Recovery';
+import Ready from './Ready';
 import Splash from './Splash';
 import Welcome from './Welcome';
 

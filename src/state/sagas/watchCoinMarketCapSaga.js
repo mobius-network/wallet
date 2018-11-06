@@ -9,6 +9,7 @@ import {
 } from 'react-native-dotenv';
 
 import CoinMarketCap from 'core/services/coinmarketcap';
+import { currenciesActions } from 'state/currencies/actions';
 import { pricesActions } from 'state/prices/actions';
 
 const cmcClient = new CoinMarketCap(
@@ -30,9 +31,22 @@ function* getPrices() {
   }
 }
 
+function* getCurrencies() {
+  try {
+    const {
+      data: { data },
+    } = yield call(cmcClient.getCurrencies);
+
+    yield put(currenciesActions.setCurrencies(data));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 function* watch(delayDuration = 60000) {
   while (true) {
     yield call(getPrices);
+    yield call(getCurrencies);
     yield call(delay, delayDuration);
   }
 }

@@ -1,6 +1,5 @@
 import updateSource from 'immutability-helper';
 import { createReducer } from 'redux-yo';
-
 import { currencies } from 'core/services/coinmarketcap';
 import { pricesActions } from './actions';
 
@@ -15,7 +14,7 @@ export const pricesReducer = createReducer(
           quote: { USD },
         } = quotes[key];
 
-        acc[assetName] = { usd: USD.price };
+        acc[assetName] = { usd: USD.price, change: USD.percent_change_24h };
 
         return acc;
       }, {});

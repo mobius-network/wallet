@@ -9,9 +9,10 @@ export const ButtonRow = styled.View`
 `;
 
 export const ActionButton = styled(Button).attrs({
-  square: true,
+  shape: 'square',
 })`
   flex-grow: 1;
   margin-bottom: 0;
   margin-top: 0;
+  text-transform: uppercase;
 `;

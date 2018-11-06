@@ -88,7 +88,7 @@
     "sidebarNavigation": {
       "addFunds": "자금을 더하다",
       "withdrawFunds": "자금을 빼다",
-      "version": "번역: {{appVersion}}-{{buildVersion}}",
+      "version": "번역: {{appVersion}}-{{codePushVersion}} ({{buildVersion}})",
       "copySecretKey": "비밀 키 복사",
       "secretKeyCopied": "비밀 키가 복사되었습니다.",
       "support": "지원하다",
@@ -148,18 +148,24 @@
       }
     },
     "hackathonVote": {
-      "notice": "Global Hackathon Community Prize에 투표하려면 적어도 5,000 명의 MOBI가 있어야합니다!",
+      "amountNotice": "Global Hackathon Community Prize에 투표하려면 적어도 5,000 명의 MOBI가 있어야합니다!",
       "title": "글로벌 Hackathon 투표",
       "description": "아래 좋아하는 DApp에 투표하십시오. Global Hackathon Community Prize에 투표하려면 5,000 명의 MOBI가 필요합니다. 한 번만 투표 할 수 있습니다. 투표를하려면 제출을 누르십시오.",
       "submit": "제출하다",
       "success": "방금 투표하셨습니다! 투표는 2018 년 10 월 21 일 오후 11:59:59 PST에 계산됩니다. 귀하의 계정에는 최소한 MOBI가 5 시간 이상 있어야합니다. 그렇지 않으면 귀하의 표결이 계산되지 않습니다.",
-      "insufficientXLMBalanceMessage": "투표하기에 충분한 XLM이 없습니다. 투표하려면 0.1 XLM을 입금하십시오."
+      "insufficientXLMBalanceMessage": "투표하기에 충분한 XLM이 없습니다. 투표하려면 0.1 XLM을 입금하십시오.",
+      "alreadyVotedNotice": "이미 Global Hackathon Community Prize에 투표하셨습니다. 우승자는 2018 년 10 월 26 일에 발표됩니다."
     },
     "payments": {
       "sent": "전송 됨",
       "received": "받은",
       "account": "생성 된 계정",
       "headerTitle": "지불"
+    },
+    "currencies": {
+      "searchFieldPlaceholder": "동전 이름",
+      "removeCurrency": "풀다",
+      "changeIn24h": "24 시간 후"
     }
   }
 }

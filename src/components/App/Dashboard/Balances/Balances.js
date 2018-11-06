@@ -1,35 +1,51 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { capitalize } from 'lodash';
 
-import AmountItem from 'components/shared/AmountItem';
-import { toFixed } from 'utils';
-
-import { Container } from './styles';
+import { BalanceItem } from 'components/shared/Financialtems';
+import { getCurrencyIconUri } from 'utils/currency-icon-uri';
+import { BalancesList } from './styles';
 
 class Balances extends Component {
   static propTypes = {
-    balances: PropTypes.array,
+    balances: PropTypes.array.isRequired,
+    removeUserCurrency: PropTypes.func.isRequired,
+    t: PropTypes.func.isRequired,
   };
 
   render() {
-    const { balances } = this.props;
-
+    const { balances, t } = this.props;
     return (
-      <Container>
-        {balances.map(({
-          asset, usdPrice, usdAmount, amount,
+      <BalancesList
+        data={balances}
+        keyExtractor={item => item.id}
+        renderItem={({
+          item: {
+            change,
+            id,
+            key,
+            symbol,
+            name,
+            usdBalance,
+            balance,
+            price,
+            removable,
+          },
         }) => (
-          <AmountItem
-            key={asset}
-            description={`$${usdPrice.toFixed(6)}`}
-            icon={`currency${capitalize(asset)}`}
-            mainAmount={`$${usdAmount.toFixed(6)}`}
-            secondaryAmount={`${toFixed(amount)} ${asset.toUpperCase()}`}
-            title={asset.toUpperCase()}
+          <BalanceItem
+            key={key}
+            balance={balance}
+            change={change}
+            icon={{ uri: getCurrencyIconUri(id) }}
+            onRemove={() => this.props.removeUserCurrency(id)}
+            price={price}
+            removable={removable}
+            symbol={symbol}
+            t={t}
+            title={name}
+            usdBalance={usdBalance}
           />
-        ))}
-      </Container>
+        )}
+      />
     );
   }
 }

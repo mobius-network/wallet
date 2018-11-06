@@ -54,7 +54,7 @@ class Write extends Component {
               key="cancel"
               onPress={this.onCancel}
               padding={false}
-              square={true}
+              shape="square"
               title={t('mnemonic.write.alertButtonCancel').toUpperCase()}
               variant="text"
             />,
@@ -64,7 +64,7 @@ class Write extends Component {
               disabled={!isAlertChecked}
               onPress={this.onComplete}
               padding={false}
-              square={true}
+              shape="square"
               title={t('mnemonic.write.alertButtonConfirm').toUpperCase()}
               variant="text"
             />,

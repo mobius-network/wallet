@@ -1,5 +1,5 @@
-export function toFixed(number) {
-  const value = number.toFixed(7);
+export function toFixed(number, places = 7) {
+  const value = number.toFixed(places);
 
   const [x, y] = value.split('.');
 
