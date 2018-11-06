@@ -12,7 +12,7 @@ export const Container = styled.View`
   margin-bottom: ${props => (props.margin ? 5 : 31)};
   margin-left: 16;
   margin-right: 16;
-  min-height: 60;
+  min-height: 50;
 `;
 
 export const IconLogoType = styled(Icon)`
