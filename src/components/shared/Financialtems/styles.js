@@ -12,7 +12,7 @@ export const Container = styled.View`
   margin-bottom: ${props => (props.margin ? 5 : 31)};
   margin-left: 16;
   margin-right: 16;
-  min-height: 60;
+  min-height: 50;
 `;
 
 export const IconLogoType = styled(Icon)`
@@ -51,22 +51,8 @@ export const Price = styled.Text`
   line-height: 24;
 `;
 
-export const ChangeInfo = styled.Text`
-  align-items: flex-end;
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-`;
-
 export const Change = styled.Text`
   color: ${props => (props.positive ? colors.growth : colors.error)};
-  font-family: ${fonts.roboto.regular};
-  font-size: ${fontSizes.small};
-  line-height: 14;
-`;
-
-export const ChangeTime = styled.Text`
-  color: ${colors.textLight};
   font-family: ${fonts.roboto.regular};
   font-size: ${fontSizes.small};
   line-height: 14;

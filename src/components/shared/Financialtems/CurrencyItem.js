@@ -11,10 +11,8 @@ import {
   Description,
   AmountInfo,
   Price,
-  Change,
-  ChangeTime,
-  ChangeInfo,
 } from './styles';
+import generateTrendElement from '../../../utils/generateTrendElement';
 
 class CurrencyItem extends Component {
   static propTypes = {
@@ -36,14 +34,8 @@ class CurrencyItem extends Component {
 
   render() {
     const {
-      icon,
-      title,
-      symbol,
-      price,
-      percentChangeIn24Hours,
-      t,
+      icon, title, symbol, price, percentChangeIn24Hours,
     } = this.props;
-    const positiveChange = percentChangeIn24Hours > 0;
     return (
       <TouchableOpacity onPress={this.props.onPress}>
         <Container>
@@ -55,12 +47,7 @@ class CurrencyItem extends Component {
 
           <AmountInfo>
             <Price>{price}</Price>
-            <ChangeInfo>
-              <Change positive={positiveChange}>
-                {`${percentChangeIn24Hours}% `}
-              </Change>
-              <ChangeTime>{t('currencies.changeIn24h')}</ChangeTime>
-            </ChangeInfo>
+            {generateTrendElement(percentChangeIn24Hours)}
           </AmountInfo>
         </Container>
       </TouchableOpacity>

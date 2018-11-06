@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { toFixed } from 'utils';
 import { TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import Chart from 'components/shared/Chart';
+import generateTrendElement from 'utils/generateTrendElement';
 import {
   Container,
   Image,
@@ -15,8 +15,6 @@ import {
   MainAmount,
   SecondaryAmount,
   BalanceSwiper,
-  Trend,
-  IconChangeType,
 } from './styles';
 
 class BalanceItem extends Component {
@@ -59,34 +57,6 @@ class BalanceItem extends Component {
     this.setState({ isOpened: !this.state.isOpened });
   };
 
-  renderTrend(change) {
-    const icon = change && change !== '0';
-    const changeIconName = change > 0
-      ? {
-        color: '#69f0ae',
-        name: 'caret-up',
-      }
-      : {
-        color: '#ff5252',
-        name: 'caret-down',
-      };
-    const changeAmount = change !== undefined ? `${change} %` : '-- %';
-    return (
-      <Trend>
-        <SecondaryAmount>{changeAmount}</SecondaryAmount>
-        {icon && (
-          <IconChangeType>
-            <Icon
-              color={changeIconName.color}
-              name={changeIconName.name}
-              size={14}
-            />
-          </IconChangeType>
-        )}
-      </Trend>
-    );
-  }
-
   render() {
     const {
       icon,
@@ -110,7 +80,6 @@ class BalanceItem extends Component {
 
     const maybeAmountInfo = (
       <AmountInfo>
-        {this.renderTrend(toFixed(change, 2))}
         {maybeUsdBalance}
         {maybeBalance}
       </AmountInfo>
@@ -123,6 +92,7 @@ class BalanceItem extends Component {
           <Info>
             <Title>{title}</Title>
             <Description>{`$${toFixed(price)}`}</Description>
+            {generateTrendElement(toFixed(change, 2))}
           </Info>
           {maybeAmountInfo}
         </Container>
