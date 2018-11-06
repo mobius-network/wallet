@@ -110,7 +110,6 @@ class BalanceItem extends Component {
 
     const maybeAmountInfo = (
       <AmountInfo>
-        {this.renderTrend(toFixed(change, 2))}
         {maybeUsdBalance}
         {maybeBalance}
       </AmountInfo>
@@ -123,6 +122,7 @@ class BalanceItem extends Component {
           <Info>
             <Title>{title}</Title>
             <Description>{`$${toFixed(price)}`}</Description>
+            {this.renderTrend(toFixed(change, 2))}
           </Info>
           {maybeAmountInfo}
         </Container>
