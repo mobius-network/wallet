@@ -43,7 +43,7 @@ class Header extends PureComponent {
       >
         <Content>
           <AmountContainer>
-            <Amount>{amount || 0}</Amount>
+            <Amount testID="SEND_AMOUNT_FORM_AMOUNT">{amount || 0}</Amount>
             <AssetButton onPress={onPress}>
               <AssetButtonContent>
                 <Asset>{asset}</Asset>

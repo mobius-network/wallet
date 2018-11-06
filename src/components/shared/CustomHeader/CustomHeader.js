@@ -23,7 +23,7 @@ class CustomHeader extends PureComponent {
     return (
       <Gradient>
         <NavRow>
-          <BackButton onPress={onBackButtonPress}>
+          <BackButton onPress={onBackButtonPress} testID="BACK_BUTTON">
             <BackIcon />
           </BackButton>
           <Title>{title}</Title>
