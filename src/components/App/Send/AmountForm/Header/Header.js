@@ -46,7 +46,7 @@ class Header extends PureComponent {
             <Amount>{amount || 0}</Amount>
             <AssetButton onPress={onPress}>
               <AssetButtonContent>
-                <Asset>{asset.toUpperCase()}</Asset>
+                <Asset>{asset}</Asset>
                 <AssetIcon />
               </AssetButtonContent>
             </AssetButton>

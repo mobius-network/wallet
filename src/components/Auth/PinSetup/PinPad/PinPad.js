@@ -32,12 +32,12 @@ class PinPad extends PureComponent {
   };
 
   render() {
-    const { step, ...rest } = this.props;
+    const { step, navigation, ...rest } = this.props;
     const StepComponent = pinPadComponents[step];
 
     return (
       <View style={styles.container}>
-        <StepComponent {...rest} />
+        <StepComponent {...rest} navigation={navigation} />
       </View>
     );
   }

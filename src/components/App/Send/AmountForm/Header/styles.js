@@ -42,6 +42,7 @@ export const Asset = styled.Text`
   font-family: ${fonts.roboto.bold};
   font-size: 14;
   line-height: ${helpers.calculateLineHeight(14, 1)};
+  text-transform: uppercase;
 `;
 
 export const AssetIcon = styled(Icon).attrs({
