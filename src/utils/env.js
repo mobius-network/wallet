@@ -1,5 +1,4 @@
 import {
-  API_URL,
   MOBI_ASSET,
   STELLAR_TESTNET,
   STELLAR_HORIZON_URL,
@@ -11,7 +10,6 @@ export const isDev = process.env.NODE_ENV === 'development';
 export const isBeta = process.env.NODE_ENV === 'beta';
 export const isProduction = process.env.NODE_ENV === 'production';
 
-export const apiUrl = API_URL || 'https://mobius.network/api';
 export const mobiAsset = new Asset(
   ...(
     MOBI_ASSET

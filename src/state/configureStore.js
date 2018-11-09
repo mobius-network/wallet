@@ -4,7 +4,6 @@ import { boostStore, createRequestMiddleware } from 'redux-boost';
 import createSagaMiddleware from 'redux-saga';
 import eventFilterMiddleware from 'event-filter-redux-middleware';
 
-import { apiUrl } from 'utils';
 import { isDev } from 'utils/env';
 import getReducer from './reducer';
 
@@ -45,9 +44,7 @@ function makeStore(initialState = {}) {
     sagaMiddleware,
     eventFilterMiddleware,
     createRequestMiddleware({
-      executor: axios.create({
-        baseURL: `${apiUrl}/`,
-      }),
+      executor: axios,
     }),
   ]);
 

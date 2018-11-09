@@ -89,8 +89,6 @@ PODS:
     - React
   - ReactNativePermissions (1.1.1):
     - React
-  - RNDeviceInfo (0.21.5):
-    - React
   - RNKeychain (3.0.0):
     - React
   - RNLanguages (3.0.1):
@@ -136,7 +134,6 @@ DEPENDENCIES:
   - React/RCTWebSocket (from `../node_modules/react-native`)
   - ReactNativeFabric (from `../node_modules/react-native-fabric`)
   - ReactNativePermissions (from `../node_modules/react-native-permissions`)
-  - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNKeychain (from `../node_modules/react-native-keychain`)
   - RNLanguages (from `../node_modules/react-native-languages`)
   - RNSVG (from `../node_modules/react-native-svg`)
@@ -179,8 +176,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-fabric"
   ReactNativePermissions:
     :path: "../node_modules/react-native-permissions"
-  RNDeviceInfo:
-    :path: "../node_modules/react-native-device-info"
   RNKeychain:
     :path: "../node_modules/react-native-keychain"
   RNLanguages:
@@ -210,7 +205,6 @@ SPEC CHECKSUMS:
   react-native-version-number: 05f7fa5643ae72674352bff7c67fc10d9d356b4b
   ReactNativeFabric: d05320ff347d5c72567c115b97edeead111ac4d2
   ReactNativePermissions: b64e084dff6a5cad51587d38c306f09246246384
-  RNDeviceInfo: e7c5fcde13d40e161d8a27f6c5dc69c638936002
   RNKeychain: 3aa3cf891a09a0d18d306862ab2bb9e106079b24
   RNLanguages: 69291ca9fea686ff96c66a519f92f7e5af1d08ae
   RNSVG: 3c037ade1c42014de732e27e3879bf2b77ea78ea
@@ -218,6 +212,6 @@ SPEC CHECKSUMS:
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   yoga: ac0f4c6ff31ac05bad1bd166fec5204c19de0277
 
-PODFILE CHECKSUM: 80c115f066b267731da3fecb4576929a2b1ce226
+PODFILE CHECKSUM: d2e723de4d2fecaf149a1534e123f4fb1e14f01a
 
 COCOAPODS: 1.6.0.beta.2

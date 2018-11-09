@@ -89,7 +89,6 @@ dependencies {
     // From node_modules
     implementation project(':react-native-camera')
     implementation project(':react-native-code-push')
-    implementation project(':react-native-device-info')
     implementation project(':react-native-fabric')
     implementation project(':react-native-keychain')
     implementation project(':react-native-languages')
