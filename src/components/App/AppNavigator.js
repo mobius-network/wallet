@@ -14,7 +14,6 @@ import Dashboard from './Dashboard';
 import Payments from './Payments';
 import Currencies from './Currencies';
 
-import HackathonVoteStack from './HackathonVote';
 import SendStack from './Send';
 
 export const DrawerNavigator = notifyDrawer(
@@ -53,7 +52,6 @@ export const StackNavigator = createStackNavigator(
       screen: Currencies,
     },
     DrawerNavigator,
-    HackathonVote: HackathonVoteStack,
     Send: SendStack,
   },
   {
