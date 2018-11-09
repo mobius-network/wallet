@@ -70,16 +70,15 @@ class Confirm extends Component {
 
   render() {
     const {
-      mnemonics,
-
-      isErrorAlertVisible,
-      isConfirmAlertVisible,
       isConfirmAlertChecked,
+      isConfirmAlertVisible,
+      isErrorAlertVisible,
+      mnemonics,
     } = this.state;
-    const { t } = this.props;
+    const { mnemonic, t } = this.props;
 
     return (
-      <Container>
+      <Container testID="CONFIRM_MNEMONIC_VIEW">
         <Alert
           buttons={[
             <Button
@@ -104,6 +103,7 @@ class Confirm extends Component {
               onPress={this.onComplete}
               padding={false}
               shape="square"
+              testID="CONFIRM_MNEMONIC_ALERT_CONFIRM_BUTTON"
               title={t('mnemonic.confirm.alertConfirmButton').toUpperCase()}
               variant="text"
             />,
@@ -116,6 +116,7 @@ class Confirm extends Component {
             isChecked={isConfirmAlertChecked}
             label={t('mnemonic.confirm.alertConfirmUnderstand')}
             onPress={this.toggleCheckbox}
+            testID="CONFIRM_MNEMONIC_ALERT_CONFIRM_CHECKBOX"
           />
         </Alert>
 
@@ -129,6 +130,9 @@ class Confirm extends Component {
             key={i}
             mnemonic={variant}
             onPress={this.handleMnemonicVariantClick}
+            testID={
+              variant === mnemonic ? 'CONFIRM_MNEMONIC_VARIANT' : undefined
+            }
           />
         ))}
       </Container>

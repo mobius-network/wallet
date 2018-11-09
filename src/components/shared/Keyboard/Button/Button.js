@@ -29,7 +29,9 @@ class Button extends Component {
   handleHideOverlay = () => this.setState({ color: colors.textPrimary });
 
   render() {
-    const { disabled, onPress, children } = this.props;
+    const {
+      disabled, onPress, children, ...rest
+    } = this.props;
     const { color } = this.state;
 
     return (
@@ -51,6 +53,7 @@ class Button extends Component {
             onShowUnderlay={this.handleShowOverlay}
             style={styles.button}
             underlayColor={colors.textPrimary}
+            {...rest}
           >
             {children({ color, opacity })}
           </TouchableHighlight>

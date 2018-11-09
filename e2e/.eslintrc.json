@@ -1,0 +1,8 @@
+{
+  "globals": {
+    "element": true,
+    "device": true,
+    "by": true,
+    "waitFor": true
+  }
+}

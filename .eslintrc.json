@@ -11,7 +11,8 @@
   ],
   "env": {
     "es6": true,
-    "jest": true
+    "jest": true,
+    "jasmine": true
   },
   "settings": {
     "import/resolver": {

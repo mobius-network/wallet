@@ -62,7 +62,11 @@ class Keyboard extends PureComponent {
     const { isDisabled } = this.state;
 
     return (
-      <Button disabled={isDisabled} onPress={this.handleButtonClick(text)}>
+      <Button
+        disabled={isDisabled}
+        onPress={this.handleButtonClick(text)}
+        testID={`KEYBOARD_BUTTON_${number}`}
+      >
         {({ color, opacity }) => (
           <Text
             selectable={false}
@@ -84,6 +88,7 @@ class Keyboard extends PureComponent {
       <Button
         disabled={isDelimeterButtonDisabled}
         onPress={this.handleButtonClick('.')}
+        testID="KEYBOARD_BUTTON_DELIMETER"
       >
         {({ color, opacity }) => (
           <Text
@@ -105,6 +110,7 @@ class Keyboard extends PureComponent {
       <Button
         disabled={isDeleteButtonDisabled}
         onPress={this.handleDeleteButtonClick}
+        testID="KEYBOARD_BUTTON_DELETE"
       >
         {({ color, opacity }) => (
           <Icon
@@ -120,7 +126,7 @@ class Keyboard extends PureComponent {
     const { withDecimals } = this.props;
 
     return (
-      <Grid style={styles.grid}>
+      <Grid style={styles.grid} testID="KEYBOARD">
         <Row style={styles.row}>
           {range(1, 4).map(i => (
             <Col key={i} style={styles.col}>

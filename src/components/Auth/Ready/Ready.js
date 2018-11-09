@@ -23,6 +23,7 @@ class Ready extends Component {
         action={
           <Button
             onPress={this.handleNavigationClick}
+            testID="READY_CONFIRM_BUTTON"
             title={t('shared.continue')}
           />
         }
@@ -32,6 +33,7 @@ class Ready extends Component {
             title={t('ready.title')}
           />
         }
+        testID="READY_VIEW"
         variant="bottom"
       />
     );

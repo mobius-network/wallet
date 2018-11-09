@@ -89,7 +89,7 @@ class AmountForm extends Component {
 
     return (
       <Fragment>
-        <Container>
+        <Container testID="SEND_AMOUNT_FORM">
           <Alert
             buttons={[
               <Button
@@ -102,6 +102,7 @@ class AmountForm extends Component {
               />,
             ]}
             isVisible={isAlertVisible}
+            testID="SEND_AMOUNT_FORM_ALERT"
             text={t('send.amountForm.alertText', {
               balance,
               asset: asset.toUpperCase(),
@@ -131,6 +132,7 @@ class AmountForm extends Component {
             <Button
               disabled={!isValidAmountEntered}
               onPress={this.handleSubmit}
+              testID="SEND_AMOUNT_FORM_SUBMIT_BUTTON"
               title={t('shared.continue')}
             />
           </ButtonContainer>
