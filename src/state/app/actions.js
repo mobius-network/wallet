@@ -1,6 +1,3 @@
 import { createActions } from 'redux-yo';
 
-export const appActions = createActions(
-  ['setCodePushLabel', 'setHackathonVote', 'sendHackathonVote'],
-  'app'
-);
+export const appActions = createActions(['setCodePushLabel'], 'app');

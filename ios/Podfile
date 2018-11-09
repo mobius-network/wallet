@@ -41,7 +41,6 @@ target 'MobiusMobileWallet' do
   pod 'CodePush', :path => '../node_modules/react-native-code-push'
   pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
   pod 'ReactNativeFabric', path: '../node_modules/react-native-fabric'
-  pod 'RNDeviceInfo', path: '../node_modules/react-native-device-info'
   pod 'RNKeychain', path: '../node_modules/react-native-keychain'
   pod 'RNLanguages', path: '../node_modules/react-native-languages'
   pod 'RNSVG', path: '../node_modules/react-native-svg'

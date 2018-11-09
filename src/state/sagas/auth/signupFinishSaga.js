@@ -4,14 +4,15 @@ import {
 import StellarHDWallet from 'stellar-hd-wallet';
 import * as Keychain from 'react-native-keychain';
 
-import { API_URL } from 'react-native-dotenv';
-
-import { encrypt, encodeFundToken, logSignUp } from 'utils';
+import { stellarTestnet } from 'utils/env';
+import { encrypt, logSignUp } from 'utils';
+import { stellarServer } from 'core';
 import navigator from 'state/navigator';
 import { authActions, getMnemonic } from 'state/auth';
-import Api from 'core/services/api';
 
-const apiClient = new Api(API_URL);
+function callFriendBot(address) {
+  return stellarServer.friendbot(address).call();
+}
 
 function* run() {
   yield call(navigator.navigate, 'Auth', 'Loading');
@@ -20,12 +21,12 @@ function* run() {
 
   const wallet = StellarHDWallet.fromMnemonic(mnemonic);
 
-  const token = encodeFundToken(wallet.getPublicKey(0));
-
-  try {
-    yield call(apiClient.fundWallet, token);
-  } catch (e) {
-    console.log(e);
+  if (stellarTestnet) {
+    try {
+      yield call(callFriendBot, wallet.getPublicKey(0));
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   yield put(authActions.set({ wallet }));

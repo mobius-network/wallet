@@ -12,10 +12,6 @@ jest.mock('react-native-fabric', () => ({
   },
 }));
 
-jest.mock('react-native-device-info', () => ({
-  getUniqueID: () => 4,
-}));
-
 jest.mock('react-native-randombytes', () => ({
   randomBytes: () => {},
 }));
