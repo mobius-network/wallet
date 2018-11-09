@@ -17,7 +17,7 @@ export const mobiAsset = new Asset(
   ).split('-')
 );
 export const stellarTestnet = STELLAR_TESTNET === 'true';
-export const stellarHorizonUrl = STELLAR_HORIZON_URL || 'https://horizon.stellar.mobius.network';
+export const stellarHorizonUrl = STELLAR_HORIZON_URL;
 
 if (isDev) {
   console.disableYellowBox = true;
