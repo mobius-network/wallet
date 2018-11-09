@@ -6,31 +6,28 @@
   "scripts": {
     "android": "react-native run-android --appIdSuffix=debug",
     "android:release": "react-native run-android --variant=release",
-    "clean:metro": "watchman watch-del-all && rm -rf $TMPDIR/{react,metro,haste}*",
+    "build:e2e:ios": "detox build --configuration ios.sim.release",
+    "build:e2e:android": "detox build --configuration android.emu.release",
     "clean": "yarn run clean:metro && rm -rf ./ios/build ./android/build",
+    "clean:metro": "watchman watch-del-all && rm -rf $TMPDIR/{react,metro,haste}*",
     "create:component": "plop component",
     "create:state": "plop state",
     "format": "prettier --write src/**/*.js *.js",
-    "install:gems": "bundle check || bundle install",
-    "install:hacks": "yarn run patch-package",
-    "install:pods": "diff ios/Podfile.lock ios/Pods/Manifest.lock || bundle exec pod install --project-directory=ios",
     "ios": "react-native run-ios",
     "ios:release": "react-native run-ios --configuration=Release",
     "link": "react-native link",
-    "lint-staged": "lint-staged",
     "lint": "eslint --quiet src --ext .js",
-    "postinstall": "yarn run install:gems && yarn run install:hacks && yarn run install:pods",
     "postversion": "react-native-version",
     "precommit": "lint-staged",
-    "secrets": "bundle exec dotgpg cat .env.gpg > .env && bundle exec dotgpg cat .env.production.gpg > .env.production",
+    "prepare": "patch-package && sh ./scripts/postinstall.sh",
+    "setup:secrets": "keybase fs cp /keybase/team/mobius_network.mobile/wallet/.env* ./",
     "start:fresh": "yarn run start --reset-cache",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "node node_modules/jest/bin/jest.js",
-    "test:watch": "node node_modules/jest/bin/jest.js --watch",
-    "test:e2e:release": "detox test --configuration ios.sim.release --cleanup",
-    "test:e2e:release:build": "detox build --configuration ios.sim.release",
-    "test:e2e": "detox test --configuration ios.sim.debug --cleanup",
-    "test:e2e:build": "detox build --configuration ios.sim.debug"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:e2e": "yarn build:e2e:ios && yarn test:e2e:ios",
+    "test:e2e:ios": "detox test --configuration ios.sim.release",
+    "test:e2e:android": "detox test --configuration android.emu.release"
   },
   "dependencies": {
     "@tradle/react-native-http": "^2.0.1",
@@ -149,8 +146,8 @@
       "./jestmocks.js"
     ],
     "testPathIgnorePatterns": [
-      "node_modules",
-      "e2e"
+      "<rootDir>/node_modules",
+      "<rootDir>/e2e"
     ]
   },
   "lint-staged": {
@@ -162,18 +159,19 @@
   },
   "detox": {
     "test-runner": "jest",
+    "specs": "e2e",
     "configurations": {
-      "ios.sim.debug": {
-        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/MobiusMobileWallet.app",
-        "build": "xcodebuild -workspace ios/MobiusMobileWallet.xcworkspace -scheme MobiusMobileWallet -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -quiet",
+      "ios.sim.release": {
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/MobiusMobileWallet.app",
+        "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/MobiusMobileWallet.xcworkspace -scheme MobiusMobileWallet -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -quiet",
         "type": "ios.simulator",
         "name": "iPhone 7 Plus"
       },
-      "ios.sim.release": {
-        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/MobiusMobileWallet.app",
-        "build": "xcodebuild -workspace ios/MobiusMobileWallet.xcworkspace -scheme MobiusMobileWallet -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -quiet",
-        "type": "ios.simulator",
-        "name": "iPhone 7 Plus"
+      "android.emu.release": {
+        "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
+        "build": "pushd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && popd",
+        "type": "android.emulator",
+        "name": "Nexus_5X_API_28"
       }
     }
   }

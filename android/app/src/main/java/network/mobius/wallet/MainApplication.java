@@ -47,7 +47,8 @@ public class MainApplication extends Application implements ReactApplication {
           new CodePush(
               BuildConfig.CODE_PUSH_ANDROID_KEY,
               getApplicationContext(),
-              getUseDeveloperSupport()
+              getUseDeveloperSupport(), 
+              R.string.CodePushPublicKey
           ),
           new FabricPackage(),
           new KeychainPackage(),
