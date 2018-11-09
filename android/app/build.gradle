@@ -47,14 +47,14 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
 
         applicationId 'network.mobius.wallet'
-        applicationIdSuffix ''
+        applicationIdSuffix project.env.get('APPLICATION_ID_SUFFIX', '')
 
         versionCode 28
         versionName '1.1.0'
-        versionNameSuffix ''
+        versionNameSuffix project.env.get('VERSION_ID_SUFFIX', '')
 
         manifestPlaceholders = [
-            appName: project.env.get('APP_NAME', '@string/app_name'),
+            appName: project.env.get('PRODUCT_DISPLAY_NAME', '@string/app_name'),
             fabricApiKey: project.env.get('CRASHLYTICS_API_TOKEN', '')
         ]
 

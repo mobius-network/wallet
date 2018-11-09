@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
   <string name="app_name">Mobius Wallet</string>
+  <string name="CodePushPublicKey">-----BEGIN PUBLIC KEY-----
+		MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAprJ75f4s/O9Iu7jjnOXj
+		vptB7l5O1q4QwuJcVyDISl3OmSlgYMzWnZd90h6D+/YYxX5+RlV1r5mXUssCnVjJ
+		205p4nEGS5utKr5NbGGz3IXXelfTRUJETufZmfqyKnQaXGxhaZaEzpHqXa7N1Cwu
+		kqiB2/2wjb714THXLZD5nzyjsm8UUC5R6HgTEw+W0aD7B34MvjzZWxAx71Xoluon
+		Ehvua73CLzqk0HT8cPIbd7ZZYeBAmTP+DtkHkClxrovQP+gr5IyKrVlj7wj67HUX
+		0N3AWbQCYnZBXJnubBWqNgE7iV0RoOJ1NUZxgq/jy6lWRsp8uoQWSMLOVzNkpaum
+		xa4J0JH9dhMXK4gpAXt+tsGd1YSyB2hixFOdqBANGND74hxq68kZPSZrdOTZSSPi
+		bNPAuo4zeJ+bD4REFi/Gi4p7pMhC43etdilVQgdo3hsUiRIplAbQR2Y0vC9MoZRB
+		TAIrlVjK1qx25VTnux5ybEhzDjwIyxbTaQXKMvD0oSPUlr85Jjb6OKtGdPsdBA+f
+		LvwwkkoSTIs1QSCXDyYMo3InEusPtj2Dc9K8EGfHMELJVRgCrZSqlWtL9WDZIJiL
+		y4rbHDP6ydMy2QesJlCoFnH54EiIqRVrTaNAvoervcCBK4BBC2q3ulRUdb2J0VJy
+		dIuuaeHevKbkp5GFMc09r9kCAwEAAQ==
+		-----END PUBLIC KEY-----
+  </string>
 </resources>

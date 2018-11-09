@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="network.mobius.wallet">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -10,7 +11,8 @@
       android:label="${appName}"
       android:icon="@mipmap/ic_launcher"
       android:allowBackup="false"
-      android:theme="@style/AppTheme">
+      android:theme="@style/AppTheme"
+      tools:replace="android:label">
       <meta-data android:name="io.fabric.ApiKey" android:value="${fabricApiKey}" />
       <activity
         android:name=".MainActivity"

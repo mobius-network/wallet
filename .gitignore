@@ -63,6 +63,7 @@ fastlane/devices.txt
 .env.*
 !.env.default
 !.env.*.gpg
+!.env*.sample
 
 # Bundle artifact
 *.jsbundle
