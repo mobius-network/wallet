@@ -15,7 +15,6 @@ import com.apsl.versionnumber.RNVersionNumberPackage;
 import com.bitgo.randombytes.RandomBytesPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.horcrux.svg.SvgPackage;
-import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.microsoft.codepush.react.CodePush;
 import com.oblador.keychain.KeychainPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -55,7 +54,6 @@ public class MainApplication extends Application implements ReactApplication {
           new LinearGradientPackage(),
           new RandomBytesPackage(),
           new RNCameraPackage(),
-          new RNDeviceInfo(),
           new RNLanguagesPackage(),
           new RNVersionNumberPackage(),
           new SplashScreenReactPackage(),
