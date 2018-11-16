@@ -1,6 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 ext {
-    reactNativeVersion = '0.57.4'
+    reactNativeVersion = '0.57.5'
     buildToolsVersion = '28.0.3'
     supportLibVersion = '27.1.1'
     googlePlayServicesVersion = '16.+'
