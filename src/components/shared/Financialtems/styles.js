@@ -9,7 +9,7 @@ export const Container = styled.View`
   align-items: flex-end;
   display: flex;
   flex-direction: row;
-  margin-bottom: ${props => (props.margin ? 5 : 31)};
+  margin-bottom: ${props => (props.isSmallMarginBottom ? 10 : 31)};
   margin-left: 16;
   margin-right: 16;
   min-height: 50;

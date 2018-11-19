@@ -1,10 +1,11 @@
 import { stellarServer } from './server';
 
-export async function fetchPayments(pubKey) {
+export async function fetchPayments(pubKey, cursorId) {
   const payments = await stellarServer
     .payments()
     .forAccount(pubKey)
-    .limit(100)
+    .cursor(cursorId)
+    .limit(10)
     .order('desc')
     .call();
 

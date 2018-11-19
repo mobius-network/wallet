@@ -24,6 +24,11 @@ class AmountItem extends Component {
     mainAmount: PropTypes.string,
     secondaryAmount: PropTypes.string,
     title: PropTypes.string,
+    variant: PropTypes.oneOf(['main', 'simple']),
+  };
+
+  static defaultProps = {
+    variant: 'main',
   };
 
   state = {
@@ -39,7 +44,9 @@ class AmountItem extends Component {
   }
 
   clickHandler = () => {
-    this.setState({ isOpened: !this.state.isOpened });
+    if (this.props.variant === 'main') {
+      this.setState({ isOpened: !this.state.isOpened });
+    }
   };
 
   renderTrend() {
@@ -79,10 +86,12 @@ class AmountItem extends Component {
       description,
       mainAmount,
       secondaryAmount,
+      variant,
     } = this.props;
+
     return (
       <TouchableOpacity onPress={this.clickHandler}>
-        <Container margin={isOpened}>
+        <Container isSmallMarginBottom={variant === 'simple' || isOpened}>
           <IconLogoType name={icon} size={40} />
 
           <Info>
@@ -91,7 +100,7 @@ class AmountItem extends Component {
           </Info>
 
           <AmountInfo>
-            {this.renderTrend()}
+            {variant === 'main' && this.renderTrend()}
 
             <MainAmount>{mainAmount}</MainAmount>
             <SecondaryAmount>{secondaryAmount}</SecondaryAmount>

@@ -43,4 +43,12 @@ export const getPayments = createSelector(
   }
 );
 
+export const getCursorId = createSelector(getPayments, (payments) => {
+  if (payments.length > 0) {
+    return payments[payments.length - 1].id;
+  }
+
+  return undefined;
+});
+
 export const isLoading = state => state.payments.isLoading;

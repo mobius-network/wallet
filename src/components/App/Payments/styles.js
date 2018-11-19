@@ -7,7 +7,7 @@ export const Container = styled.View`
   background-color: ${colors.bgLight};
 `;
 
-export const ScrollView = styled.ScrollView``;
+export const FlatList = styled.FlatList``;
 
 export const ItemContainer = styled.View`
   border-bottom-width: 1;
