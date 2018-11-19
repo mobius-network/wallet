@@ -1,6 +1,4 @@
-import axios from 'axios';
 import { createStore, applyMiddleware, compose } from 'redux';
-import { boostStore, createRequestMiddleware } from 'redux-boost';
 import createSagaMiddleware from 'redux-saga';
 import eventFilterMiddleware from 'event-filter-redux-middleware';
 
@@ -43,9 +41,6 @@ function makeStore(initialState = {}) {
   const createStoreWithMiddleware = enhance([
     sagaMiddleware,
     eventFilterMiddleware,
-    createRequestMiddleware({
-      executor: axios,
-    }),
   ]);
 
   const store = createStoreWithMiddleware(getReducer(), initialState);
@@ -56,7 +51,5 @@ function makeStore(initialState = {}) {
 }
 
 const store = makeStore();
-
-boostStore(store);
 
 export default store;
