@@ -1,4 +1,5 @@
-import { merge, createActions, createReducer } from 'redux-boost';
+import updateSource from 'immutability-helper';
+import { createReducer, createActions } from 'redux-yo';
 
 export const transfersActions = createActions(
   ['findBestPath', 'setBestPath', 'saveAmount', 'setAsset'],
@@ -13,14 +14,14 @@ const initialState = {
 
 export const transfersReducer = createReducer(
   {
-    [transfersActions.setBestPath]: (state, bestPath) => merge(state, {
-      bestPath,
+    [transfersActions.setBestPath]: (state, bestPath) => updateSource(state, {
+      $merge: { bestPath },
     }),
-    [transfersActions.saveAmount]: (state, amount) => merge(state, {
-      amount: Number(amount),
+    [transfersActions.saveAmount]: (state, amount) => updateSource(state, {
+      $merge: { amount: Number(amount) },
     }),
-    [transfersActions.setAsset]: (state, asset) => merge(state, {
-      asset,
+    [transfersActions.setAsset]: (state, asset) => updateSource(state, {
+      $merge: { asset },
     }),
   },
   initialState

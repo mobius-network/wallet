@@ -1,4 +1,5 @@
-import { createReducer, merge } from 'redux-boost';
+import updateSource from 'immutability-helper';
+import { createReducer } from 'redux-yo';
 
 import { authActions } from './actions';
 
@@ -13,10 +14,10 @@ const initialState = {
 
 export const authReducer = createReducer(
   {
-    [authActions.set]: (state, payload) => merge(state, payload),
+    [authActions.set]: (state, payload) => updateSource(state, { $merge: payload }),
 
-    [authActions.loginSuccess]: state => merge(state, {
-      loggedIn: true,
+    [authActions.loginSuccess]: state => updateSource(state, {
+      $merge: { loggedIn: true },
     }),
 
     [authActions.logout]: () => initialState,

@@ -1,4 +1,4 @@
-import { merge } from 'state/utils';
+import updateSource from 'immutability-helper';
 import { createActions, createReducer } from 'redux-yo';
 
 export const {{ camelCase name }}Actions = createActions(['dummy'], '{{ camelCase name }}');
@@ -10,8 +10,8 @@ const initialState = {
 export const {{ camelCase name }}Reducer = createReducer(
   {
     [{{ camelCase name }}Actions.dummy]: (state, value) =>
-      merge(state, {
-        value,
+      updateSource(state, {
+        $merge: value,
       }),
   },
   initialState

@@ -8,7 +8,6 @@ import {
   take,
   cancel,
 } from 'redux-saga/effects';
-import { requestActions } from 'redux-boost';
 import { safeLoadAccount } from 'core';
 
 import { authActions } from '../auth/reducer';
@@ -28,8 +27,6 @@ export function* loadAccount(publicKey) {
       yield put(accountActions.setMasterAccount(account));
     }
   } catch (error) {
-    // TODO: use fetchStart to `safeLoadAccount` and error handling
-    yield put(requestActions.fetchFail({ name: 'loadAccount', error }));
     yield put(
       notificationsActions.addNotification({
         type: 'error',
