@@ -11,7 +11,7 @@ import { sendStartSaga } from './sagas/send';
 import submitTransactionSaga from './sagas/submitTransaction';
 import watchAccountSaga from './sagas/watchAccount';
 import watchPricesSaga from './sagas/watchCoinMarketCapSaga';
-import watchPaymentsSaga from './sagas/watchPayments';
+import loadPayments from './sagas/loadPayments';
 import {
   addUserCurrencySaga,
   removeUsersCurrenciesSaga,
@@ -31,7 +31,7 @@ export default function* rootSaga() {
     submitTransactionSaga,
     watchAccountSaga,
     watchPricesSaga,
-    watchPaymentsSaga,
+    loadPayments,
     addUserCurrencySaga,
     removeUsersCurrenciesSaga,
     refreshHistoryWhenCurrencySetSaga,

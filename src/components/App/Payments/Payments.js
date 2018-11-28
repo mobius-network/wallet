@@ -11,27 +11,31 @@ import LoadingIcon from 'components/shared/LoadingIcon';
 
 import { toFixed } from 'utils';
 
-import { Container, ScrollView, ItemContainer } from './styles';
+import { Container, FlatList, ItemContainer } from './styles';
 
 class Payments extends Component {
   static propTypes = {
     isLoading: PropTypes.bool.isRequired,
+    loadPayments: PropTypes.func.isRequired,
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
     }).isRequired,
     payments: PropTypes.array,
-    stopWatchPayments: PropTypes.func.isRequired,
+    reset: PropTypes.func.isRequired,
     t: PropTypes.func.isRequired,
-    watchPayments: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
-    this.props.watchPayments();
+    this.props.loadPayments({ fresh: true });
   }
 
   componentWillUnmount() {
-    this.props.stopWatchPayments();
+    this.props.reset();
   }
+
+  updatePayments = () => {
+    this.props.loadPayments();
+  };
 
   handleBack = async () => {
     const { navigation } = this.props;
@@ -39,11 +43,11 @@ class Payments extends Component {
     await navigation.navigate('Dashboard');
   };
 
-  renderItem = (payment) => {
+  renderItem = ({ item }) => {
     const { t } = this.props;
     const {
       id, asset, usdAmount, amount, cretaedAt, type,
-    } = payment;
+    } = item;
 
     const title = t(`payments.${type}`);
     const description = moment(cretaedAt).format('MM/D/YY');
@@ -59,6 +63,7 @@ class Payments extends Component {
           mainAmount={mainAmount}
           secondaryAmount={secondaryAmount}
           title={title}
+          variant="simple"
         />
       </ItemContainer>
     );
@@ -80,7 +85,11 @@ class Payments extends Component {
 
         {isLoading && payments.length === 0 && <LoadingIcon />}
 
-        <ScrollView>{payments.map(this.renderItem)}</ScrollView>
+        <FlatList
+          data={payments}
+          onEndReached={this.updatePayments}
+          renderItem={this.renderItem}
+        />
 
         <BottomButtons navigation={navigation} />
       </Container>
