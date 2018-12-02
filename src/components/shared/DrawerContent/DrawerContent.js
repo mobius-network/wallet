@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-navigation';
 import VersionNumber from 'react-native-version-number';
 
 import Drawer from 'utils/drawer';
+import ExchangeCalculator from '../ExchangeCalculator';
 
 import {
   Container, Buttons, Link, DisabledLink, Version,
@@ -46,14 +47,10 @@ class DrawerContent extends Component {
     setTimeout(() => this.props.navigation.navigate(route), 0);
   };
 
-  handleLinkPress = route => () => {
-    this.route = route;
-    this.props.navigation.closeDrawer();
-  };
-
-  handleCopySecretKey = () => {
-    Clipboard.setString(this.props.secretKey);
-    this.setState({ isSecretCopied: true });
+  activeWidget = (menu) => {
+    this.props.navigation.navigate('Dashboard', {
+      lock: menu,
+    });
   };
 
   handleSupportPress = () => {
@@ -63,6 +60,16 @@ class DrawerContent extends Component {
     });
 
     Linking.openURL(`mailto:support@mobius.network?body=\n\n\n${version}`);
+  };
+
+  handleCopySecretKey = () => {
+    Clipboard.setString(this.props.secretKey);
+    this.setState({ isSecretCopied: true });
+  };
+
+  handleLinkPress = route => () => {
+    this.route = route;
+    this.props.navigation.closeDrawer();
   };
 
   render() {
@@ -83,6 +90,7 @@ class DrawerContent extends Component {
               <Link onPress={this.handleLinkPress('Payments')}>
                 {t('sidebarNavigation.payments')}
               </Link>
+              <ExchangeCalculator onActiveWidget={this.activeWidget} />
               <Link onPress={this.handleSupportPress}>
                 {t('sidebarNavigation.support')}
               </Link>
@@ -100,7 +108,6 @@ class DrawerContent extends Component {
                 </DisabledLink>
               )}
             </Buttons>
-
             <Version>
               {t('sidebarNavigation.version', {
                 appVersion: VersionNumber.appVersion,

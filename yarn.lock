@@ -4901,7 +4901,7 @@ js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
-js-xdr@^1.0.4:
+js-xdr@^1.0.4, js-xdr@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/js-xdr/-/js-xdr-1.0.5.tgz#c639f62e5988675e20dfe5fc51ede875e8989072"
   dependencies:
@@ -5878,7 +5878,7 @@ moment-timezone@^0.5.21:
   dependencies:
     moment ">= 2.9.0"
 
-"moment@>= 2.9.0", moment@^2.10.6:
+"moment@>= 2.9.0", moment@^2.10.6, moment@^2.22.2:
   version "2.22.2"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
 
@@ -8145,7 +8145,7 @@ stealthy-require@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
 
-stellar-base@^0.8.1, stellar-base@^0.8.3:
+stellar-base@^0.8.1:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/stellar-base/-/stellar-base-0.8.3.tgz#0403a538fdb5e7e247bb23e64eeabfa754323f72"
   dependencies:
@@ -8153,6 +8153,21 @@ stellar-base@^0.8.1, stellar-base@^0.8.3:
     bignumber.js "^4.0.0"
     crc "3.5.0"
     js-xdr "^1.0.4"
+    lodash "^4.17.10"
+    sha.js "^2.3.6"
+    tweetnacl "^1.0.0"
+  optionalDependencies:
+    ed25519 "0.0.4"
+
+stellar-base@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/stellar-base/-/stellar-base-0.9.0.tgz#03a4d71c9bfe49f0c54afd4a8f34517ed49c0924"
+  integrity sha512-4tyztbyNeLW3bGUMepMqdcywfLUmfAI1A/RSiMgNHRC7vK8Jueh5Dn8RmQPhmAlKsgXhDSmbvpCLwEr2i00Emg==
+  dependencies:
+    base32.js "~0.1.0"
+    bignumber.js "^4.0.0"
+    crc "3.5.0"
+    js-xdr "^1.0.5"
     lodash "^4.17.10"
     sha.js "^2.3.6"
     tweetnacl "^1.0.0"
@@ -8168,16 +8183,17 @@ stellar-hd-wallet@^0.0.7:
     lodash "4.17.10"
     stellar-base "^0.8.1"
 
-stellar-sdk@^0.10.2:
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/stellar-sdk/-/stellar-sdk-0.10.3.tgz#91ce5eba56bcde69f398dd95df63a137e2aea74c"
+stellar-sdk@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/stellar-sdk/-/stellar-sdk-0.11.0.tgz#d5415b1c535df188dbd3ab173f93bb24d18266d5"
+  integrity sha512-VNiJBea4eqZsuuNoqJu2WfBq0xhfaKex4soowJFQzYbLY0xVUe4qigetMO8dwlJrRevL4c/EDUd4ouKbT1lqAQ==
   dependencies:
     axios "^0.18.0"
     es6-promise "^4.2.4"
     event-source-polyfill "0.0.12"
     eventsource "^1.0.5"
     lodash "^4.17.10"
-    stellar-base "^0.8.3"
+    stellar-base "^0.9.0"
     toml "^2.3.0"
     urijs "1.19.1"
 

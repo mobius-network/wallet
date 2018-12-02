@@ -33,6 +33,16 @@ export const DrawerNavigator = notifyDrawer(
   )
 );
 
+Dashboard.navigationOptions = ({ navigation }) => {
+  let drawerLockMode = 'unlocked';
+  if (navigation.getParam('lock') === true) {
+    drawerLockMode = 'locked-open';
+  }
+  return {
+    drawerLockMode,
+  };
+};
+
 export const StackNavigator = createStackNavigator(
   {
     AddFunds: {
