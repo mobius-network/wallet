@@ -155,7 +155,7 @@
     "currencies": {
       "searchFieldPlaceholder": "Название монеты",
       "removeCurrency": "Удалить",
-      "changeIn24h": "через 24 часа"
+      "changeIn24h": "за 24 часа"
     }
   }
 }

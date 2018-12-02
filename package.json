@@ -23,7 +23,7 @@
     "postversion": "react-native-version",
     "precommit": "lint-staged",
     "secrets": "bundle exec dotgpg cat .env.gpg > .env && bundle exec dotgpg cat .env.production.gpg > .env.production",
-    "start:fresh": "yarn run start -- --reset-cache",
+    "start:fresh": "yarn run start --reset-cache",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "node node_modules/jest/bin/jest.js",
     "test:watch": "node node_modules/jest/bin/jest.js --watch",

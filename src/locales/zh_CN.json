@@ -17,7 +17,7 @@
     },
     "pinSetup": {
       "chooseSubtitle": "输入6个数字的密码解锁钱包",
-      "chooseTitle": "设置密码",
+      "chooseTitle": "设置PIN码",
       "confirmSubtitle": "请重新输入密码",
       "confirmTitle": "确认密码",
       "lockedSubtitle": "为了保护您的信息，锁定访问5分钟，请稍后再试",
@@ -140,7 +140,7 @@
         "description": "输入您的助记词短语以恢复您的钱包。",
         "mnemonicFieldLabel": "助记短语",
         "mnemonicFieldPlaceholder": "完全按照书面形式输入",
-        "title": "恢复您的帐户\n",
+        "title": "恢复您的帐户",
         "infoAlertText": "当您创建新钱包时，系统会要求您记下可用于恢复钱包的文字短语。",
         "infoAlertTitle": "什么是助记短语？",
         "validationAlertTitle": "发生以下错误："
