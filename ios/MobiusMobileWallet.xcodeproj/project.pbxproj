@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* MobiusMobileWalletTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MobiusMobileWalletTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -71,6 +72,8 @@
 		709DA827214177B900AF344D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70C1AF0D2149D8B600AD6840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		70C1AF162149DD4000AD6840 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
+		70E4696221B4C37600480202 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
+		70E4696321B4C39600480202 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		7C330E7A8E8F01E31A1A56C6 /* Pods-MobiusMobileWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiusMobileWalletTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobiusMobileWalletTests/Pods-MobiusMobileWalletTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DD017C94262423A9EF12F88 /* Nunito Sans Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito Sans Bold.ttf"; path = "../assets/fonts/Nunito Sans Bold.ttf"; sourceTree = "<group>"; };
 		89F9404328D54B39B885FE8B /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = ../assets/fonts/Roboto.ttf; sourceTree = "<group>"; };
@@ -287,6 +290,7 @@
 				ru,
 				"zh-Hans",
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
@@ -455,6 +459,7 @@
 				70112438214BE20000C0BDFE /* ko */,
 				70112439214BE20400C0BDFE /* ru */,
 				7011243A214BE20700C0BDFE /* zh-Hans */,
+				70E4696321B4C39600480202 /* pt-BR */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -466,6 +471,7 @@
 				70C1AF162149DD4000AD6840 /* zh-Hans */,
 				7011242C2149F7D700C0BDFE /* ru */,
 				7011242D214A7D1000C0BDFE /* ko */,
+				70E4696221B4C37600480202 /* pt-BR */,
 			);
 			name = "Launch Screen.storyboard";
 			sourceTree = "<group>";

@@ -1,0 +1,161 @@
+{
+  "translation": {
+    "shared": {
+      "cancel": "Cancelar",
+      "close": "Fechar",
+      "continue": "Continuar",
+      "done": "Feito",
+      "no": "Não",
+      "yes": "Sim",
+      "ok": "OK"
+    },
+    "welcome": {
+      "title": "Bem vindo(a)",
+      "description": "Crie uma carteira para enviar e receber dinheiro com amigos usando criptomoeda.",
+      "setupWalletButton": "Configurar carteira",
+      "recoverWalletButton": "Recuperar conta existente"
+    },
+    "pinSetup": {
+      "chooseSubtitle": "Digite um PIN de seis dígitos para acessar sua carteira móvel",
+      "chooseTitle": "Definir um PIN",
+      "confirmSubtitle": "Por favor, digite novamente o seu PIN.",
+      "confirmTitle": "Confirme o PIN",
+      "lockedSubtitle": "Para proteger suas informações, o acesso foi bloqueado por 5 minutos. Tente novamente mais tarde.",
+      "lockedTitle": "Máximo de tentativas atingidas",
+      "unlockTitle": "Digite seu código PIN"
+    },
+    "mnemonic": {
+      "confirm": {
+        "description": "Qual é a sua frase?",
+        "title": "Confirme sua frase mnemônica",
+        "alertErrorButton": "Mostre-me de novo",
+        "alertErrorTitle": "Frase incorreta",
+        "alertErrorMessage": "Você selecionou a frase mnemônica errada. Por favor, releia sua frase, escreva-a novamente e tente mais uma vez.",
+        "alertConfirmTitle": "Não perca sua frase de recuperação",
+        "alertConfirmMessage": "Se você perder sua frase de recuperação, não será possível recuperar sua conta.",
+        "alertConfirmUnderstand": "Sim, entendo o risco de perder minha frase de recuperação.",
+        "alertConfirmButton": "Continuar"
+      },
+      "write": {
+        "continueButton": "Eu já escrevi",
+        "description": "Você precisará desta frase para acessar sua conta em outro dispositivo.",
+        "title": "Anote sua frase mnemônica",
+        "alertTitle": "Copie sua frase",
+        "alertMessage": "Tenha cuidado onde você guarda sua frase. Sua carteira é tão segura quanto o lugar onde você armazena sua frase.",
+        "alertUnderstand": "Sim, entendo o risco de armazenar minha frase online.",
+        "alertButtonConfirm": "Continuar",
+        "alertButtonCancel": "Cancelar"
+      }
+    },
+    "ready": {
+      "title": "Sua carteira está pronta!",
+      "description": "Envie, receba e armazene suas moedas."
+    },
+    "dashboard": {
+      "title": "Saldo Atual",
+      "receiveButton": "Receber",
+      "sendButton": "Enviar"
+    },
+    "addFunds": {
+      "headerTitle": "Adicionar fundos",
+      "title": "Transferir da Carteira externa",
+      "subtitle": "Use o endereço a seguir para transferir MOBI ou XLM para sua carteira.",
+      "share": {
+        "title": "Endereço",
+        "subject": "Endereço"
+      },
+      "publicKey": {
+        "title": "Endereço"
+      },
+      "selectWallet": {
+        "title": "Selecione a carteira",
+        "label": "Carteira",
+        "wallet": "Selecione carteira",
+        "cancel": "Cancelar"
+      },
+      "buttons": {
+        "copy": "Copiar",
+        "share": "Compartilhar"
+      }
+    },
+    "loadingView": {
+      "description": "Por favor, espere",
+      "errorDescription": "Algo deu errado. Por favor, tente novamente.",
+      "errorTitle": "Erro",
+      "title": "Carregando",
+      "tryAgainButton": "Tente novamente"
+    },
+    "sidebarNavigation": {
+      "addFunds": "Adicionar fundos",
+      "withdrawFunds": "Retirar Fundos",
+      "version": "Versão:  {{appVersion}}-{{codePushVersion}} ({{buildVersion}})",
+      "copySecretKey": "Copiar Chave Secreta",
+      "secretKeyCopied": "A Chave Secreta foi copiada",
+      "support": "Suporte",
+      "payments": "Pagamentos"
+    },
+    "send": {
+      "amountForm": {
+        "headerTitle": "Mandar",
+        "selectAssetTitle": "Selecione o ativo",
+        "alertText": "Você tem apenas {{balance}} {{asset}} em seu saldo. Por favor, mude o valor para transferência.",
+        "alertTitle": "Montante inválido",
+        "ok": "OK"
+      },
+      "addressForm": {
+        "submitButton": "Pagar",
+        "addressFieldLabel": "Para",
+        "addressFieldPlaceholder": "Digitalize o código ou insira o endereço",
+        "memoFieldLabel": "Memo ID",
+        "memoFieldPlaceholder": "Opcional",
+        "permissionsConfirmTitle": "Permitir que o Mobius tire fotos e grave vídeos?",
+        "permissionsConfirmSettings": "Abrir configurações",
+        "alertTitle": "Os seguintes erros ocorreram:"
+      },
+      "success": {
+        "message": "Você enviou {{amount}} {{asset}} para o endereço {{destination}}"
+      }
+    },
+    "notice": {
+      "error": {
+        "title": "Falhou!",
+        "defaultMessage": "Algo deu errado. Por favor, tente novamente.",
+        "defaultActionLabel": "Tente novamente",
+        "networkErrorMessage": "Erro de rede. Verifique sua conexão.",
+        "insufficientBalanceMessage": "Você não tem dinheiro suficiente para esta operação. Verifique seu saldo."
+      },
+      "success": {
+        "title": "Sucesso!",
+        "defaultActionLabel": "Feito"
+      },
+      "goBack": "Retornar"
+    },
+    "validations": {
+      "isRequired": "É necessário",
+      "isValidPublicKey": "não é um endereço válido",
+      "isValidMnemonic": "não é uma frase mnemônica válida"
+    },
+    "auth": {
+      "recovery": {
+        "description": "Digite sua frase mnemônica para restaurar sua carteira.",
+        "mnemonicFieldLabel": "Frase Mnemônica",
+        "mnemonicFieldPlaceholder": "Escreva exatamente como está escrito",
+        "title": "Recupere sua conta",
+        "infoAlertText": "Ao criar uma nova carteira, você é solicitado a escrever uma frase que possa ser usada aqui para restaurar sua carteira. Infelizmente, sem sua frase, não há como restaurar sua carteira.",
+        "infoAlertTitle": "O que é uma frase mnemônica?",
+        "validationAlertTitle": "Os seguintes erros ocorreram:"
+      }
+    },
+    "payments": {
+      "sent": "Enviado",
+      "received": "Recebido",
+      "account": "Conta criada",
+      "headerTitle": "Pagamentos"
+    },
+    "currencies": {
+      "searchFieldPlaceholder": "Nome da moeda",
+      "removeCurrency": "Remover",
+      "changeIn24h": "em 24h"
+    }
+  }
+}

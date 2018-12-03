@@ -48,7 +48,7 @@
       }
     },
     "ready": {
-      "title": "Your wallet \n is ready!",
+      "title": "Your wallet is ready!",
       "description": "Send, receive, and store your coins."
     },
     "dashboard": {
@@ -141,9 +141,9 @@
         "mnemonicFieldLabel": "Mnemonic Phrase",
         "mnemonicFieldPlaceholder": "Type out exactly as it’s written",
         "title": "Recover Your Account",
-        "infoAlertText": "When you create a new wallet you’re asked to write down a text phrase that can be used here to restore your wallet. Unfortunately without your phrase there’s no way to restore your wallet.",
+        "infoAlertText": "When you create a new wallet, you’re asked to write down a text phrase that can be used here to restore your wallet. Unfortunately without your phrase there’s no way to restore your wallet.",
         "infoAlertTitle": "What is a mnemonic phrase?",
-        "validationAlertTitle": "Following errors occured:"
+        "validationAlertTitle": "Following errors occurred:"
       }
     },
     "payments": {
