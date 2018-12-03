@@ -49,8 +49,8 @@ android {
         applicationId 'network.mobius.wallet'
         applicationIdSuffix project.env.get('APPLICATION_ID_SUFFIX', '')
 
-        versionCode 28
-        versionName '1.1.0'
+        versionCode 29
+        versionName '1.2.0-0'
         versionNameSuffix project.env.get('VERSION_ID_SUFFIX', '')
 
         manifestPlaceholders = [
