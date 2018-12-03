@@ -10,7 +10,7 @@ test('test state/payments/reducer paymentsActions.reset', () => {
     }
   );
 
-  expect(expected).toEqual({ isLoading: true, list: [1, 2, 3] }); // ?
+  expect(expected).toEqual({ isLoading: true, list: [] });
 });
 
 test('test state/payments/reducer paymentsActions.setPayments', () => {
