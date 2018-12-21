@@ -49,7 +49,7 @@ android {
         applicationId 'network.mobius.wallet'
         applicationIdSuffix project.env.get('APPLICATION_ID_SUFFIX', '')
 
-        versionCode 30
+        versionCode 31
         versionName '1.2.0'
         versionNameSuffix project.env.get('VERSION_ID_SUFFIX', '')
 

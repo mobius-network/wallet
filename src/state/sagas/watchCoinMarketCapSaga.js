@@ -18,6 +18,8 @@ const cmcClient = new CoinMarketCap(
 );
 
 let watcher;
+let getCurrenciesTime = 0;
+let getCurrenciesData;
 
 function* getPrices() {
   try {
@@ -33,11 +35,19 @@ function* getPrices() {
 
 function* getCurrencies() {
   try {
-    const {
-      data: { data },
-    } = yield call(cmcClient.getCurrencies);
+    const now = new Date().getTime();
 
-    yield put(currenciesActions.setCurrencies(data));
+    if (now - getCurrenciesTime > 24 * 60 * 60 * 1000) {
+      getCurrenciesTime = now;
+
+      const {
+        data: { data },
+      } = yield call(cmcClient.getCurrencies);
+
+      getCurrenciesData = data;
+    }
+
+    yield put(currenciesActions.setCurrencies(getCurrenciesData));
   } catch (error) {
     console.log(error);
   }
