@@ -10,6 +10,8 @@ class CurrenciesList extends Component {
   static propTypes = {
     currencies: PropTypes.array.isRequired,
     onCurrencySelected: PropTypes.func,
+    onScroll: PropTypes.func,
+    sortedCurrencies: PropTypes.array,
     t: PropTypes.func.isRequired,
   };
 
@@ -19,21 +21,28 @@ class CurrenciesList extends Component {
   getUSDChange = ({ USD: { percent_change_24h } }) => (percent_change_24h != null ? toFixed(percent_change_24h, 3) : 0);
 
   render() {
-    const { currencies, onCurrencySelected, t } = this.props;
+    const {
+      sortedCurrencies,
+      currencies,
+      onCurrencySelected,
+      onScroll,
+      t,
+    } = this.props;
 
     return (
       <FlatList
-        data={currencies}
+        data={sortedCurrencies || currencies}
         keyExtractor={item => item.id}
+        onScroll={onScroll || null}
         renderItem={({
           item: {
-            id, symbol, quote, name,
+            id, imageUrl, symbol, quote, name,
           },
         }) => (
           <CurrencyItem
             key={id}
             description={symbol}
-            icon={{ uri: getCurrencyIconUri(id) }}
+            icon={{ uri: imageUrl || getCurrencyIconUri(id) }}
             onPress={() => onCurrencySelected(id)}
             percentChangeIn24Hours={this.getUSDChange(quote)}
             price={`$${this.getUSDPrice(quote)}`}

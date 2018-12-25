@@ -5,6 +5,7 @@ import {
   VictoryCandlestick,
   VictoryChart,
   VictoryTheme,
+  VictoryZoomContainer,
 } from 'victory-native';
 import { colors } from 'components/shared/Styleguide';
 import { LoadingIconView, LoadingIcon, Container } from './styles';
@@ -25,6 +26,7 @@ class Chart extends Component {
       <Container>
         {tokenHistory ? (
           <VictoryChart
+            containerComponent={<VictoryZoomContainer />}
             domainPadding={{ x: 50 }}
             height={275}
             padding={{

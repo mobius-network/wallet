@@ -36,6 +36,7 @@ class CurrencyItem extends Component {
     const {
       icon, title, symbol, price, percentChangeIn24Hours,
     } = this.props;
+
     return (
       <TouchableOpacity onPress={this.props.onPress}>
         <Container>

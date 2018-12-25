@@ -7,7 +7,7 @@ export const Gradient = styled(HeaderGradient)`
   padding-bottom: 16;
   padding-left: 16;
   padding-right: 16;
-  padding-top: 16;
+  padding-top: 36;
   width: ${helpers.vw};
 `;
 
@@ -24,6 +24,12 @@ export const Title = styled.View`
   margin-left: 30;
 `;
 
+export const TitleBar = styled.View`
+  width: ${helpers.vw};
+  margin-top: 60;
+  height: 0;
+`;
+
 export const BackIcon = styled(Icon).attrs({
   name: 'close',
 })`
@@ -33,4 +39,11 @@ export const BackIcon = styled(Icon).attrs({
 
 export const BackButton = styled.TouchableHighlight.attrs({
   underlayColor: 'transparent',
-})``;
+})`
+  position: absolute;
+  top: 10;
+  left: 10;
+  height: 44;
+  width: 44;
+  z-index: 999;
+`;
