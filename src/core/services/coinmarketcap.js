@@ -16,11 +16,12 @@ class CoinMarketCap {
     this.validateParams(apiUrl, apiKey);
 
     this.config = {
-      baseURL: apiUrl,
+      // baseURL: apiUrl,
+      baseURL: 'https://api.mobius.network',
       method: 'GET',
-      headers: {
+      /* headers: {
         'X-CMC_PRO_API_KEY': apiKey,
-      },
+      }, */
     };
   }
 
