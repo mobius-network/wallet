@@ -57,7 +57,7 @@ class CoinMarketCap {
       url: '/cryptocurrency/listings/latest',
       params: {
         convert: 'USD',
-        limit: 500,
+        limit: 800,
         sort: 'market_cap',
         sort_dir: 'desc',
       },
