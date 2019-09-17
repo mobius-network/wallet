@@ -29,7 +29,7 @@ class AlertCheckbox extends Component {
           isChecked={isChecked}
           onClick={() => onPress()}
         />
-        <Label>{label}</Label>
+        <Label onPress={() => onPress()}>{label}</Label>
       </Container>
     );
   }
