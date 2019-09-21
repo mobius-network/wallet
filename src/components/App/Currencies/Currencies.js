@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import TabSearch from 'components/shared/TabSearch';
 import CurrenciesList from './CurrenciesList';
 import Header from './Header';
 
@@ -34,9 +35,12 @@ class Currencies extends Component {
   handleBack = () => this.props.navigation.pop();
 
   render() {
-    const { t, setSearchQuery, searchQuery } = this.props;
+    const {
+      t, setSearchQuery, searchQuery, navigation,
+    } = this.props;
     return (
       <Container>
+        <TabSearch navigation={navigation} />
         <Header
           onBackButtonClick={this.handleBack}
           onSearchTextChange={typedCoinName => setSearchQuery(typedCoinName)}
