@@ -48,7 +48,10 @@ export const StackNavigator = createStackNavigator(
         header: null,
       }),
     },
-    Currencies: {
+    AllCurrencies: {
+      screen: Currencies,
+    },
+    PopularCurrencies: {
       screen: Currencies,
     },
     DrawerNavigator,

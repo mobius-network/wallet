@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import TabSearch from 'components/shared/TabSearch';
 import CurrenciesList from './CurrenciesList';
 import Header from './Header';
 
@@ -11,7 +12,7 @@ class Currencies extends Component {
     addUserCurrency: PropTypes.func,
     clearSearchQuery: PropTypes.func,
     navigation: PropTypes.shape({
-      pop: PropTypes.func.isRequired,
+      navigate: PropTypes.func.isRequired,
     }).isRequired,
     searchQuery: PropTypes.string,
     setSearchQuery: PropTypes.func,
@@ -31,10 +32,12 @@ class Currencies extends Component {
     this.handleBack();
   };
 
-  handleBack = () => this.props.navigation.pop();
+  handleBack = () => this.props.navigation.navigate('Dashboard');
 
   render() {
-    const { t, setSearchQuery, searchQuery } = this.props;
+    const {
+      t, setSearchQuery, searchQuery, navigation,
+    } = this.props;
     return (
       <Container>
         <Header
@@ -44,6 +47,7 @@ class Currencies extends Component {
           text={searchQuery}
         />
         <CurrenciesList onCurrencySelected={this.selectCurrency} />
+        <TabSearch navigation={navigation} />
       </Container>
     );
   }
