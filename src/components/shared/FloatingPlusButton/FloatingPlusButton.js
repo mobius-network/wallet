@@ -10,7 +10,7 @@ class FloatingPlusButton extends Component {
     }).isRequired,
   };
 
-  openCurrenciesScreen = () => this.props.navigation.navigate('Currencies');
+  openCurrenciesScreen = () => this.props.navigation.navigate('AllCurrencies');
 
   render() {
     return (

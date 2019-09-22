@@ -24,13 +24,13 @@ class TabSearch extends Component {
           onPress={this.openAllCurrenciesScreen}
           shape="square"
           testID="DASHBOARD_ALL_CURRENCIES_BUTTON"
-          title={t('dashboard.allCurrencies').toUpperCase()}
+          title={t('all').toUpperCase()}
         />
         <ActionButton
-          onPress={this.openSendScreen}
+          onPress={this.openPopularCurrenciesScreen}
           shape="square"
           testID="DASHBOARD_POPULAR_CURRENCIES_BUTTON"
-          title={t('dashboard.popularCurrencies').toUpperCase()}
+          title={t('popular').toUpperCase()}
         />
       </ButtonRow>
     );

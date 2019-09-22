@@ -12,7 +12,7 @@ class Currencies extends Component {
     addUserCurrency: PropTypes.func,
     clearSearchQuery: PropTypes.func,
     navigation: PropTypes.shape({
-      pop: PropTypes.func.isRequired,
+      navigate: PropTypes.func.isRequired,
     }).isRequired,
     searchQuery: PropTypes.string,
     setSearchQuery: PropTypes.func,
@@ -32,7 +32,7 @@ class Currencies extends Component {
     this.handleBack();
   };
 
-  handleBack = () => this.props.navigation.pop();
+  handleBack = () => this.props.navigation.navigate('Dashboard');
 
   render() {
     const {
@@ -40,7 +40,6 @@ class Currencies extends Component {
     } = this.props;
     return (
       <Container>
-        <TabSearch navigation={navigation} />
         <Header
           onBackButtonClick={this.handleBack}
           onSearchTextChange={typedCoinName => setSearchQuery(typedCoinName)}
@@ -48,6 +47,7 @@ class Currencies extends Component {
           text={searchQuery}
         />
         <CurrenciesList onCurrencySelected={this.selectCurrency} />
+        <TabSearch navigation={navigation} />
       </Container>
     );
   }
