@@ -94,3 +94,19 @@ class Dashboard {
 ```
 
 **Question 4:** Are there any bugs in the below code?
+No.
+```
+import AsyncStorage from '@react-native-community/async-storage';
+import firebase from 'react-native-firebase';
+import { effects } from 'redux-saga';
+import { authActions } from 'state';
+import { getType } from 'typesafe-actions';
+
+function* logout() {
+  const firebaseAuth = firebase.auth();
+  yield effects.call(firebaseAuth.signOut);
+  yield effects.call(AsyncStorage.removeItem, 'cookie');
+}
+
+export default effects.takeLatest(getType(authActions.logout), logout);
+```
