@@ -86,7 +86,7 @@
     "revalidate": "^1.2.0",
     "scrypt-async": "^2.0.0",
     "stellar-hd-wallet": "^0.0.7",
-    "stellar-sdk": "^0.10.2",
+    "stellar-sdk": "^8.2.3",
     "styled-components": "^4.0.3",
     "tweetnacl": "^1.0.0",
     "url": "^0.11.0",
